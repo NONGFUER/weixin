@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 忽略IOS将页面中的数字识别为电话号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 忽略Android平台中对邮箱地址的识别 -->
+    <meta name="format-detection" content="email=no" />
+    <!-- 缓存 -->
+	<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+	<meta HTTP-EQUIV="expires" CONTENT="0">
+    <title>订单详情</title>
+    <link rel="stylesheet" href="../../css/mui/mui.min.css" />
+    <link rel="stylesheet" href="../../css/common/base.css" />
+    <link rel="stylesheet" href="../../css/common/common.css" />
+    <link rel="stylesheet" href="../../css/carinsure/orderDetail.css"/>
+</head>
+<body>
+	<header>
+		<div class="h_back"><div id="backbtm" class="backbtm"><img src="../../images/back.png"/></div></div>
+		<div class="h_title">订单详情</div>
+		<div class="h_next">
+		</div>
+	</header>
+	<div id="order_index" class="mui-scroll-wrapper">
+		<div id="indexpart_scroll" class="mui-scroll">
+			 <div style="width:100%;">
+				 <div>
+					 <article id="vehicleArea" class="policymoneyarea swiper-slide ">
+					    <div class="bigTitle">
+					        <div class="vehicleArea_img"><img src="../../images/tiananlogo.png"></div>
+							<div class="biaoyu">
+								<p style="margin-top:12px;margin-bottom:5px;">天安车险</p>
+								<p style="margin-top:5px;margin-bottom:5px;">出行更放心</p>
+							</div>
+							<div class="sum" id="summoney"></div>
+						</div>
+					</article>
+					 <div class="border-1px-bottom"></div>
+					 <ul id="order_profile">
+					       <li class="border-1px-bottom">
+							   <div class="normal_li_left">订单号</div>
+							   <div class="normal_li_right" id="orderno" ></div>
+						    </li>
+						    <li class="border-1px-bottom">
+							   <div class="normal_li_left">订单状态</div>
+							   <div class="normal_li_right" id="orderStatus" ></div>
+						    </li>
+						    <li class="border-1px-bottom">
+							   <div class="normal_li_left">保险类别</div>
+							   <div class="normal_li_right">车险</div>
+						    </li>
+						    <li class="border-1px-bottom">
+							   <div class="normal_li_left">保险名称</div>
+							   <div class="normal_li_right" id="comtype"></div>
+						    </li>
+						    <li class="border-1px-bottom">
+							   <div class="normal_li_left">保险版本</div>
+							   <div class="normal_li_right" id="version"></div>
+						    </li>
+						    <li class="border-1px-bottom">
+							   <div class="normal_li_left">保险公司</div>
+							   <div class="normal_li_right" id="comtype1"></div>
+						    </li>
+						    <li id="busPolnoArea" class="border-1px-bottom" style="display: none;">
+							    <div class="normal_li_left">商业险保单号</div>
+							    <div class="normal_li_right" id="busPolno"></div>
+						    </li>
+						    <li id="businessAppnoArea" class="border-1px-bottom" style="display: none;">
+							    <div class="normal_li_left">商业险投保单号</div>
+							    <div class="normal_li_right" id="businessAppno"></div>
+						    </li>
+							<li id="jqxPolnoArea" style="display: none;">
+								<div class="normal_li_left">交强险保单号</div>
+								<div class="normal_li_right" id="jqxPolno"></div>
+							</li>
+							<li id="forceAppnoArea" class="border-1px-bottom" style="display: none;">
+								<div class="normal_li_left">交强险投保单号</div>
+								<div class="normal_li_right" id="forceAppno"></div>
+							</li>
+							<li class="border-1px-bottom">
+								<div class="normal_li_left">商业险保费</div>
+								<div class="normal_li_right" id="busmoney"></div>
+							</li>
+							<li class="border-1px-bottom">
+								<div class="normal_li_left">交强险保费</div>
+								<div class="normal_li_right" id="jqxmoney"></div>
+							</li>
+							<li class="border-1px-bottom">
+								<div class="normal_li_left">车船税</div>
+								<div class="normal_li_right" id="vehiclemoney"></div>
+							</li>
+							<li id="insuredNameArea" class="border-1px-bottom" style="display: none;">
+								<div class="normal_li_left">被保人姓名</div>
+								<div class="normal_li_right" id="insuredname"></div>
+							</li>
+							<li id="insuredNober" class="border-1px-bottom" style="display: none;">
+								<div class="normal_li_left">被保人证件号</div>
+								<div class="normal_li_right" id="insuredNo"></div>
+							</li>
+							<li id="insuredMobileArea" style="display: none;">
+								<div class="normal_li_left">被保人手机号</div>
+								<div class="normal_li_right" id="insuredMobile"></div>
+							</li>
+						</ul>
+						<ul id="see_details" class="border-1px-top">
+							<li>
+								<div class="special_li_left">查看详细投保信息</div>
+								<div class="special_li_right">
+									<div><img src="../../images/btn-right.png" style="vertical-align: middle;"/></div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="ZJEInfo">
+						 <!--  核保失败原因   -->
+						 <div id="hebaoFail_reason_area" style="display: none;">
+							<ul id="refusing_reason_ul" style="margin-top: 1rem;" class="border-1px-bottom">
+								<li class="refusing_reason_li" style="font-weight: bold;">
+								<span id="failName" style="margin-left: 5.55%;"></span></li>
+							</ul>
+							<div id="hebaoFailInfo"></div>
+							<div id="btn_backHome" style="padding-top: 3rem;background-color: #ebebeb;padding-left:0;padding-right:0;">
+								<div class="btn_touch" style="background-color: #f36f39;color:#fff;line-height: 1.5rem;">返回</div>
+							</div>
+						 </div>
+					 </div>
+				</div>
+				<div id="topay_btn_area" style="display: none;">
+					<div id="pay" class="btn_touch">去支付</div>
+				</div>
+		  </div>
+	</div>
+    <img id="zhezhaoImg"  style="width:100%;height:100%;position: absolute;top:0;left:0;z-index: 99;display:none;" src="../../images/22.png">
+</body>
+<script type="text/javascript" src="../../js/util/zepto.min.js" ></script>
+<script type="text/javascript" src="../../js/util/jweixin-1.1.0.js"></script>
+<script type="text/javascript" src="../../js/mui/mui.min.js" ></script>
+<script type="text/javascript" src="../../js/util/base.js" ></script>
+<script type="text/javascript" src="../../js/util/common.js" ></script> 
+<script type="text/javascript" src="../../js/util/underscore.js" ></script>
+<script type="text/javascript" src="../../js/util/wx-gzpt-share.js"></script>
+<script type="text/javascript" src="../../js/carinsure/orderDetail.js?v=20170726"></script>
+</html>
+

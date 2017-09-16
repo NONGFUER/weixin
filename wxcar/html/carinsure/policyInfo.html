@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+ <!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+ <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+ <!-- 忽略IOS将页面中的数字识别为电话号码 -->
+ <meta name="format-detection" content="telephone=no" />
+ <!-- 忽略Android平台中对邮箱地址的识别 -->
+ <meta name="format-detection" content="email=no" />
+  <!-- 缓存 -->
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<meta HTTP-EQUIV="expires" CONTENT="0">
+<title>随心易灵活个人交通意外保险</title>
+<link rel="stylesheet" href="../../../css/mui/mui.min.css" />
+<link rel="stylesheet" href="../../../css/mui/mui.picker.min.css" />
+<link rel="stylesheet" href="../../../css/common/base.css" />
+<link rel="stylesheet" href="../../../css/common/common.css" />
+<link rel="stylesheet" href="../../css/carinsure/policyInfo.css?s=20170506" />
+</head>
+<body>
+	<header>
+		<div class="h_back">
+			<div class="backindex"><img src="../../images/insureinfo_left.png" /></div>
+		</div>
+		<div class="h_title" id="pageTitle">保单详情</div>		
+	</header>
+	<div id="contentIndex" class="mui-scroll-wrapper">
+		<div id="insure_iscroll" class="mui-scroll">
+			<div class="bigTitle">
+				<div class="bigTitleLeft">
+					<p class="riskName">随心易灵活个人交通意外保险</p>
+					<p style="font-size:10px;"><span class="baodanhao">保单号：</span><span class="policyNo"></span></p>
+				</div>
+				<div class="bigTitleRight">
+					<img class="zhuangtai" src="../../images/baozhanging.png">
+				</div>
+			</div>
+			<!--    投保人信息 -->
+			<div class="toubaoren" id="toubaoren">
+				<article class="insureName border-1px-bottom">
+					<div style="width: 50%">
+						<span>投/被保人信息</span>
+					</div>
+				</article>
+				<ul class="TBR">
+					<li class="name border-1px-bottom">
+						<div class="li_title">姓名</div>
+						<div id="TBRName" class="li_value"></div>
+					</li>
+					<li class="IDType border-1px-bottom">
+						<div class="li_title">证件类型</div>
+						<div id="TBRIDType" class="li_value"></div>
+					</li>
+					<li class="ID border-1px-bottom">
+						<div class="li_title">证件号</div>
+						<div id="TBRID" class="li_value"></div>
+					</li>
+					<li class="birthday border-1px-bottom">
+						<div class="li_title">出生日期</div>
+						<div id="TBRBirthday" class="li_value"></div>
+					</li>
+					<li class="mobile border-1px-bottom">
+						<div class="li_title">手机号</div>
+						<div id="TBRMobile" class="li_value"></div>
+					</li>
+					<li class="mail border-1px-bottom">
+						<div class="li_title">邮箱</div>
+						<div id="TBRMail" class="li_value"></div>
+					</li>
+					<li class="riskQijian border-1px-bottom">
+						<div class="li_title">保险期间</div>
+						<div id="qijian" class="li_value"></div>
+					</li>
+					<li class="baofei border-1px-bottom">
+						<div class="li_title">保费</div>
+						<div id="baofei" class="li_value"></div>
+					</li>
+					<!-- <li class="qudao border-1px-bottom">
+						<div class="li_title">购买渠道</div>
+						<div id="qudao" class="li_value"></div>
+					</li> -->
+				</ul>
+			</div>
+			<!-- 保险责任 -->
+			<div id="chuxing_way" class="chuxing_way">
+            	<article class="insureName border-1px-bottom">
+					<div style="width: 100%">
+						<span>保险责任</span>
+					</div>
+				</article>
+				<table class="choose_way">
+					<tr class="chuxing_title">
+						<th class="kongbai"></th>
+						<th class="fangshi border-1px-bottom">出行方式</th>
+						<th class="fanwei border-1px-bottom">保障范围</th>
+						<th class="edu border-1px-bottom">保障额度</th>
+						<th class="dagou border-1px-bottom"></th>
+					</tr>
+					<!-- <tr class="feiji">
+						<td class="kongbai"></td>
+						<td class="fangshi border-1px-bottom">客运民航班机</td>
+						<td class="fanwei border-1px-bottom">意外身故、残疾</td>
+						<td class="edu border-1px-bottom">100万</td>
+						<td class="dagou border-1px-bottom"><img class="gou" src="../../images/gouxuan.png"/>
+					</tr>
+					<tr class="huoche">
+						<td class="kongbai"></td>
+						<td class="fangshi border-1px-bottom">客运火车、轻轨、地铁</td>
+						<td class="fanwei border-1px-bottom">意外身故、残疾</td>
+						<td class="edu border-1px-bottom">100万</td>
+						<td class="dagou border-1px-bottom"></td>
+					</tr>
+					<tr class="lunchuan">
+						<td class="kongbai"></td>
+						<td class="fangshi border-1px-bottom">客运轮船</td>
+						<td class="fanwei border-1px-bottom">意外身故、残疾</td>
+						<td class="edu border-1px-bottom">100万</td>
+						<td class="dagou border-1px-bottom"></td>
+					</tr>
+					<tr class="qiche">
+						<td class="kongbai"></td>
+						<td class="fangshi border-1px-bottom">客运公共汽车、电车、出租车</td>
+						<td class="fanwei border-1px-bottom">意外身故、残疾</td>
+						<td class="edu border-1px-bottom">100万</td>
+						<td class="dagou border-1px-bottom"></td>
+					</tr> -->
+				</table>
+			</div>
+			<!-- 保险条款 -->
+			<div id="riskTiaokuan" class="riskTiaokuan">
+            	<article class="insureName border-1px-bottom">
+					<div style="width: 100%">
+						<span>保险条款</span>
+						<img class="rightjiantou" src="../../images/right.png">
+					</div>
+				</article>
+			</div>			
+			<div class="anniu">返回</div>
+		
+		</div>
+	</div>
+</body>
+	<script type="text/javascript" src="../../js/util/zepto.min.js" ></script>
+	<script type="text/javascript" src="../../js/util/jweixin-1.1.0.js"></script>
+    <script type="text/javascript" src="../../js/mui/mui.min.js" ></script>
+    <script type="text/javascript" src="../../js/mui/mui.picker.min.js"></script>
+    <script type="text/javascript" src="../../js/util/base.js?s=201705010" ></script>
+    <script type="text/javascript" src="../../js/util/common.js" ></script>
+    <script type="text/javascript" src="../../js/util/underscore.js" ></script>
+    <script type="text/javascript" src="../../js/carinsure/policyInfo.js?s=201705010" ></script>
+</html>

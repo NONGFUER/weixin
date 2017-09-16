@@ -1,0 +1,64 @@
+body{
+	
+	width:100%;
+	overflow:hidden;
+	
+}
+
+
+
+.hide{ display:none;}
+
+.page{
+	width:100%;
+	height:100%;
+	position:absolute;
+	font-size:100px;
+	text-align:center;
+}
+
+/* .page .wrap{
+	height:500px;
+} */
+
+.page-1-1{ 
+	background-image:url(../../img/about001.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.page-2-1{ 
+	background-image:url(../../img/about002.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.page-3-1{ 
+	background-image:url(../../img/about003.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.page-4-1{ 
+	background-image:url(../../img/about004.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.page-5-1{ 
+	background-image:url(../../img/about005.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.page-6-1{ 
+	background-image:url(../../img/about006.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.page-current{
+	z-index:1;
+}
+
+.footer-img{
+	position:absolute;
+	left:48%;
+	top:88%; 
+	
+}

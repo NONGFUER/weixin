@@ -1,0 +1,43 @@
+@CHARSET "UTF-8";
+.background{
+   background: #fff;
+}
+#inpartmain{
+   position: absolute;
+   margin-top: 3.5833rem;
+   border-top: 2px solid #dee3de;
+}
+#inpartcontent{
+   position: absolute;
+   margin-top: 3.5833rem;
+   border-top: 2px solid #dee3de;
+}
+ /*商业险*/
+.SYinsure{
+   padding: 1rem;
+ }
+.SYinsure div{
+   font-size:14px;
+}
+.SYinsure p{
+   font-size: 12px;
+   color: #666;
+   line-height: 1.85rem;
+   margin-bottom: 0px;
+   text-align: justify;
+   text-indent: 24px;
+}
+ /*交强险*/
+.JQinsure{
+   padding: 1rem;
+}
+.JQinsure div{
+   font-size:14px;
+}
+.JQinsure p{
+   font-size: 12px;
+   color: #666;
+   line-height: 1.85rem;
+   margin-bottom: 0px;
+   text-align: justify;
+}

@@ -1,0 +1,150 @@
+@CHARSET "UTF-8";
+/* header{
+	background-color: #000000 !important;
+} */
+#order_index {
+	margin-top:44px;
+}
+.touxiang{
+	background-image: url(../../image/beijing2.png);
+	height: 150px;
+	width: 100%;
+	padding-top: 21px;
+	margin: auto;
+}
+.headImg{
+	height: 70px;
+	width: 70px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+ .touxiangImg{
+	border-radius: 50%;
+} 
+.name_job{
+	width: 99%;
+	margin: 0 auto;
+	color: #fff;
+	height: 17px;
+	line-height: 17px;
+}
+.touxiang_name{
+	padding-right: 15px;
+	width: 49%;
+	float: left;
+	text-align: right;
+	height: 17px;
+	line-height: 17px;
+}
+.shuxian{
+	font-size: 13px;
+	width: 1%;
+	float: left;
+	height: 17px;
+	line-height: 17px;
+}
+.touxiang_job{
+	padding-left: 15px;
+	width: 50%;
+	float: left;
+	text-align: left;
+	height: 17px;
+	line-height: 17px;
+}
+.baseInfo,.agentInfo,.bankCardInfo,.reviewFalse{
+	margin-top: 11px;
+	background-color: #fff;
+}
+.bankCardInfo{
+	margin-bottom: 20px;
+}
+.img{
+	width: 5%;
+	margin-left: 5%;
+	margin-bottom: 5px;
+	margin-right: 5px;
+}
+.agentRightImg{
+	width: 2.5%;
+    float: right;
+    margin-top: 17px;
+    margin-right: 17px;
+}
+.personInfo{
+	font-size: 16px;
+}
+.head{
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #c7d7d7;
+}
+.id,.practicingId,.bankName,.kaihuhang,.sheng,.shi{
+	margin-left: 10%;
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #c7d7d7;
+	font-size: 15px;
+}
+.phone,.salesmanNo,.bankCardNo{
+	margin-left: 10%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 15px;
+}
+.falseReason{
+	margin-left: 5%;
+	line-height: 28px;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* .left_title{
+	width: 40%;
+} */
+.right_value{
+	height: 48px;
+	line-height: 48px;
+	width: 62%;
+	font-family: "microsoft yahei";
+	text-align: right;
+	float: right;
+	margin-right: 10%;
+	color: #000;
+}
+.right_value1{
+	/* height: 48px; */
+	line-height: 48px;
+	width: 65%;
+	font-family: "microsoft yahei";
+	text-align: right;
+	float: right;
+	margin-right: 10%;
+	color: #000;
+	/* overflow: hidden;
+	whitespace: nowrap;
+	text-overflow: ellipsis; */
+}
+.kefuPhone{
+	font-size: 11px;
+	color: #888;
+	padding-left: 5%;
+	padding-top: 10px;
+}
+.kefuPhone a{
+	color: #ff6a00;
+	text-decoration: underline;
+}
+/* 下一步按钮 */
+.confirmbtn {
+    width: 94.6667%;
+    line-height: 45px;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    font-size: 17px;
+    color: #fff;
+    text-align: center;
+    background: #1b6bb8;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}

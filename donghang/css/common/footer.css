@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+
+/*  国福保主页底部标题导航   */
+footer {
+	position: fixed;
+	z-index: 10;
+	left: 0%;
+	bottom: 0%;
+	width: 100%;
+	border-top: 1px solid #ccc;
+	background-color: #fff;
+}
+/*footer div:nth-child(-n+4) {
+	float: left;
+	width: 24.5%;	
+}*/
+#footer_home,
+#footer_insurance,
+#footer_customer,
+#footer_personal {
+	float: left;
+	width: 24.5%;
+	height: 4.6875rem;
+}
+#footer_home div,
+#footer_insurance div,
+#footer_customer div,
+#footer_personal div {
+	width: 30.3%;  /* 80px/264px */
+	margin-left: 34.8%;
+}
+#footer_home p,
+#footer_insurance p,
+#footer_customer p,
+#footer_personal p {
+	width: 100%;  /* 264px */
+	color: #888;
+	text-align: center;
+}
+#footer_home p {
+	color: #fe5000;
+}

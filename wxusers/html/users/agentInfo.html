@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+	    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	    <!-- 忽略IOS将页面中的数字识别为电话号码 -->
+	    <meta name="format-detection" content="telephone=no" />
+	    <!-- 忽略Android平台中对邮箱地址的识别 -->
+	    <meta name="format-detection" content="email=no" />
+	    <title>代理人信息</title>
+	    <link rel="stylesheet" href="../../../css/mui/mui.min.css" />
+		<link rel="stylesheet" href="../../../css/mui/mui.picker.min.css" />
+	    <link rel="stylesheet" href="../../../css/common/base.css" />
+	    <link rel="stylesheet" href="../../../css/common/common.css" />
+	    <link rel="stylesheet" href="../../css/users/agentInfo.css?s=2016121318" />
+	</head>
+	<body>
+		<header>
+			<div class="h_back"><div class="backindex"><img src="../../image/insureinfo_left.png"/></div></div>
+			<div class="h_title" id="pageTitle">代理人信息</div>
+		</header>
+		<div id="order_index" class="mui-scroll-wrapper">
+			<div id="insure_iscroll" class="mui-scroll">
+				<div class="baseInfo">
+					<div class="head">
+						<span class="ft_14">基本信息</span>
+					</div>
+					<div id="" class="name contentInfo">
+						<span class="left_title">姓名</span>
+						<input  maxlength="18" id="name_input"  class="right_value" value="" readonly="readonly"/>
+					</div>
+					<div id="" class="phone contentInfo">
+						<span class="left_title">手机号</span>
+						<input  maxlength="11" class="right_value" id="phone_input" value="" readonly="readonly"/>
+					</div>
+					<div id="" class="id contentInfo">
+						<span class="left_title">身份证</span>
+						<input  maxlength="18" id="id_input"  class="right_value" value="" readonly="readonly"/>
+					</div>
+					<div id="" class="introducer contentInfo">
+						<span class="left_title">推荐人工号</span>
+						<input  maxlength="11" id="introducer_input"  class="right_value" value="" readonly="readonly"/>
+					</div>
+					<div id="" class="jobarea contentInfo">
+						<span class="left_title">入职地区</span>
+						<input  maxlength="11" class="right_value" id="jobarea_input" value="" readonly="readonly"/>
+					</div>
+					<div id="" class="education contentInfo">
+						<span class="left_title">学历</span>
+						<input  maxlength="18" id="education_input"  class="right_value" value="" readonly="readonly"/>
+					</div>
+					<div id="" class="nation contentInfo">
+						<span class="left_title">民族</span>
+						<input  maxlength="11" class="right_value" id="nation_input" value="" readonly="readonly"/>
+					</div>
+					<div id="" class="politics contentInfo">
+						<span class="left_title">政治面貌</span>
+						<input  maxlength="18" id="politics_input"  class="right_value" value="" readonly="readonly"/>
+					</div>
+				</div>
+				<div class="agentInfo">
+					<div class="head">
+						<span class="ft_14">代理人信息</span>
+					</div>
+					<div id="" class="practicingId contentInfo">
+						<span class="left_title">执业证编号</span>
+						<input  maxlength="18" id="practicingId_input"  class="right_value" value="" readonly="readonly"/>
+					</div>
+					<div id="" class="salesmanNo contentInfo">
+						<span class="left_title">业务员代码</span>
+						<input  maxlength="15" class="right_value" id="salesmanNo_input" value="" readonly="readonly"/>
+					</div>
+				</div>
+				<div class="bankCardInfo">
+					<div class="head">
+						<span class="ft_14">银行卡信息</span>
+					</div>
+					
+					<div id="" class="bankname contentInfo">
+						<span class="left_title">开户银行</span>
+						<input id="bankname_input"  class="right_value" value="" readonly="readonly"/>
+					</div>
+					<div id="" class="bankquyu contentInfo">
+						<span class="left_title">所属区域</span>
+						<input id="bankquyu_input"  class="right_value" value="" readonly="readonly"/>
+					</div>
+					<div id="" class="kaihuhang contentInfo">
+						<span class="left_title">支行名称</span>
+						<input id="zhihang_input"  class="right_value" value="" readonly="readonly"/>
+					</div>
+					<div id="" class="bankcardNo contentInfo">
+						<span class="left_title">银行卡号</span>
+						<input  maxlength="19" class="right_value" id="bankcardNo_input" value="" readonly="readonly"/>
+					</div>
+				</div>
+				<div class="tip">
+					<p>如对此信息有疑问，请拨打客服电话<a href="tel:4006895505">4006895505</a>进行咨询。</p>
+					<p>如需离职，请点击<a class="lizhi">我要离职</a>办理离职手续。</p>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="../../../js/util/zepto.min.js" ></script>
+    <script type="text/javascript" src="../../../js/mui/mui.min.js" ></script>
+    <script type="text/javascript" src="../../../js/mui/mui.picker.min.js"></script>
+    <script type="text/javascript" src="../../../js/util/base.js" ></script>
+    <script type="text/javascript" src="../../../js/util/common.js" ></script> 
+    <script type="text/javascript" src="../../js/users/agentInfo.js?s=2016121520" ></script> 
+</html>

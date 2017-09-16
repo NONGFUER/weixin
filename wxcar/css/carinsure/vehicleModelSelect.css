@@ -1,0 +1,367 @@
+@charset "utf-8";
+header {
+	position: fixed;
+	top:0;
+	z-index: 9999;
+}
+/*----------------------------品牌型号列表---------------------------------------*/ 
+.searcharea{
+	width: 100%;
+	background-color: #ebebeb;
+	position: fixed;
+	top: 44px;
+	z-index: 100;
+	/* padding-bottom: 0.733rem; */
+}
+
+.inputCssdiv{
+	margin-top:0.833rem;
+	border-radius:0.625rem;
+	border:1px solid #ccc;
+	background-color: #fff;
+	width: 78%;
+	height: 32px;
+	line-height: 32px;
+	margin-left: 5%;
+	float:left;
+}
+.noticediv{
+	width: 100%;
+	font-size: 14px;
+	padding-left: 5%;
+	padding-right: 3%;
+	color: #666;
+	clear:both;
+	padding-top:1.5rem;
+	padding-bottom: 0.4rem;
+	background-color: #ebebeb;
+	border-bottom: 1px solid #ccc;
+}
+.cusselectClass{
+	float: left;
+	width: 5%;
+    height: 1.5rem;
+	margin-top: 0.5rem;
+	margin-left: 0.5rem;
+	margin-right: 1rem;
+}
+.searcharea input{
+	width:73%;
+	font-size: 15px;
+	height:1.75rem;
+	line-height: 1.75rem;
+	margin-top:0.5rem;
+	margin-left:0.1rem;
+	border:0;
+	float:left;
+	outline:none;
+}
+.wrapper {
+	width: 100%;
+	/* height: 20rem; */
+	/* top: 6rem; */
+	margin-top: 7rem;
+	position: absolute;
+}
+.divWrapper {
+	width: 100%;
+	float: left;
+	position: relative;
+	background-color: #f7f7f7;
+	/* top:6rem; */
+	z-index: 100;
+/* 	padding-bottom:25px; */
+}
+.wrapper_line{
+	margin-left:5px;
+	margin-top:6px;
+	width:1px;
+	height:12px;
+	border-left:1px #ccc solid;
+	display:inline-block;
+}
+
+.div1 {
+	font-size: 1rem;
+    margin: 5px 10px;
+    color: #585858;
+    font-weight: bold;
+    text-indent: 7px;
+}
+
+.distance{
+	display:inline-block;
+	margin-left:5px;
+}
+
+.cusquxiaoClass{
+	width: 18px;
+	height: 18px;
+	margin-top: 0.4rem;
+/* 	margin-left: 1rem; */
+	margin-right: 1rem;
+	float:right;
+}
+.cancelbtn{
+	display:none;
+	font-size:1.5rem;
+	float: right;
+ 	margin-right:0.5rem;
+	margin-top:0.5rem;
+	color: #0066cc;
+	width:10%;
+	height:5rem;
+	line-height:5rem;
+	text-align:center;
+	font-family:"Hiragino Sans GB W3";
+/* 	background-color: red; */
+/* 	border:1px solid #ccc; */
+}
+.selectbtn{
+	font-size: 16px;
+    float: right;
+    margin-right: 0.5rem;
+    margin-top: 1.2rem;
+    color: #f36f39;
+    width: 14%;
+    height: 2.2rem;
+    line-height: 2.3rem;
+    text-align: center;
+    font-family: "Hiragino Sans GB W3";
+    /* background: #1b6bb8; */
+    border-radius: 0.525rem;
+}
+
+
+
+
+
+body{
+	background-color:#fff;
+ 	background-color:#f7f7f7; 
+	overflow-y:auto;
+}
+a{
+	text-decoration:none;
+	color:#888888;
+	/* font-weight:bold; */
+}
+section{
+	width:100%;
+/* 	height:600px; */
+ 	overflow: hidden; 
+	position: absolute;
+/* 	-webkit-backface-visibility: hidden; */
+	/*float:left;*/
+}
+aside{
+	width:10%;
+/* 	background-color:#f7f7f7; */
+	float:right;
+	margin-top:0.1rem;
+}
+aside ul{
+	list-style-type:none;
+	margin-top:0.5rem;
+}
+aside ul li{
+	float:left;
+	width:100%;
+	height:1.45rem;
+	color:#888888;
+	line-height:1.45rem;
+	text-align:center;
+	font-size:1rem;
+	font-family:"Helvetica";
+}
+
+
+.alph{
+	width:100%;
+	font-weight:bold;
+	height:2rem;
+	line-height:2rem;
+	text-indent:3.5%;
+	font-family:"Hiragino Sans GB W3";
+	border:0;
+	background-color:#f7f7f7;
+}
+.cusMesCont{
+	background-color:#fff;
+	list-style-type:none;
+	font-size:1.5rem;
+	font-family:"Hiragino Sans GB W3";
+/* 	width:96.5%; */
+	width:100%;
+	padding-left:3.5%;
+}
+.cusMesCont li{
+	background-color:#fff;
+	width:100%;
+	height:4.5rem;
+	line-height:4.5rem;
+	font-family:"Hiragino Sans GB W3";
+	border-bottom:1px solid #eee;
+}
+.cusMesCont li:last-child{
+	border-bottom:none;
+}
+
+.cusMesCont1{
+	background-color:#fff;
+	list-style-type:none;
+	font-size: 14px;
+	font-family:"Hiragino Sans GB W3";
+	/* 	width:96.5%; */
+	width:100%;
+	/* padding-left:3.5%; */
+}
+.cusMesCont1 li{
+	background-color:#fff;
+	width:100%;
+	padding: 1rem;
+	font-family:"Hiragino Sans GB W3";
+	color:#000;
+	border-bottom:1px solid #ccc;
+	word-wrap: break-word;
+	/* letter-spacing: 1px; */
+	font-size: 14px;
+}
+}
+.linoqua{
+	list-style-type:none;
+}
+.cancel{
+	float:right;
+	width:15%;
+	font-size:1.25rem;
+	font-family:"Hiragino Sans GB W3";
+	font-weight:bold;
+	color:#3366ff;
+	height:3rem;
+	line-height:3rem;
+	text-align:center;
+	
+}
+
+.searchfailContainer{
+	width:100%;
+}
+.searchfailContainer div{
+	font-size:1.5rem;
+	font-family:"Hiragino Sans GB W3";
+	font-weight:bold;
+	color:#999;
+	width:100%;
+	text-align:center;
+	margin-top:3rem;
+	margin-bottom:3rem;
+}
+.searchfailContainer span{
+	line-height:2.8rem;
+}
+.searchfailContainer img{
+	width:50%;
+	margin-left:25%;
+	float:left;
+	margin-bottom:2rem;
+}
+#customManage ul li{
+	font-size:0.84rem;
+	font-family:"Helvetica";
+}
+
+.nowishd1 {
+	text-align:center;
+	margin: 7.5rem auto;
+	width: 70%;
+/* 	background-color: #f7f7f7; */
+	height: 22.4375rem;
+	border-radius:3px;
+	margin-top: 35%;
+}
+.nowishd1 img{
+	margin-top:2.5rem;
+	height: 40.5%;
+	width: 40.5%;
+/* 	margin-left: 11.6875rem; */
+}
+
+.nowishd1 span {
+	width:100%;
+	height:5rem;
+	color: #888888;
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-top: 2.5rem;
+	float: left;
+	font-family:"Hiragino Sans GB W3";
+/* 	margin-left: 3.58rem; */
+}
+
+.addcustomerimg{
+	width: 13%;
+	position: fixed;
+	right: 4rem;
+	bottom: 8rem;
+}
+.quxiaoAdd{
+	width: 13%;
+	position: fixed;
+	right: 4rem;
+	bottom: 8rem;
+	z-index: 1000
+}
+.addcustomer{
+	position: fixed;
+	bottom: 9rem;
+	right: 10rem;
+	line-height:4rem;
+	background-color: #fff;
+	text-align: center;
+	width: 4rem;
+	height: 4rem;
+	float: right;
+	font-size:14px;
+	border-radius: 36rem;
+	z-index: 1000
+}
+.daorucustomer{
+	font-size:14px;
+	position: fixed;
+	bottom: 14rem;
+	float: right;
+	right: 4.5rem;
+	line-height:4rem;
+	background-color: #fff;
+	text-align: center;
+	width: 4rem;
+	height: 4rem;
+	border-radius: 36rem;
+	z-index: 1000
+}
+
+#searchABC{
+	position:fixed;
+	margin-left:40%;
+	margin-top:40%;
+	width:60px;
+	height:60px;
+	border:1px solid #ccc;
+	background-color:#fff;
+	text-align:center;
+}
+.showmore {
+	text-align: center;
+	font-size: 16px;
+	color: #585858;
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+}
+
+
+/*** 小写转大写 ***/
+#searchtext {
+    text-transform: Uppercase;
+}

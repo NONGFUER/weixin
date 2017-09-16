@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+<meta name="viewport"
+	content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<!-- 忽略IOS将页面中的数字识别为电话号码 -->
+<meta name="format-detection" content="telephone=no" />
+<!-- 忽略Android平台中对邮箱地址的识别 -->
+<meta name="format-detection" content="email=no" />
+<title>选择收货地址</title>
+<link rel="stylesheet" href="../../css/mui/mui.min.css" />
+<link rel="stylesheet" href="../../css/common/base.css" />
+<link rel="stylesheet" href="../../css/common/common.css" />
+<link rel="stylesheet"
+	href="../../css/carinsure/policyDeliveryAddress.css" />
+</head>
+<body>
+	<header>
+		<div class="h_back">
+			<div>
+				<img src="../../images/insureinfo_left.png"/>
+			</div>
+		</div>
+		<div class="h_title">选择收货地址</div>
+		<div class="h_next"></div>
+	</header>
+	<div id="insure_index" class="mui-scroll-wrapper">
+		<!-- 保单配送 -->
+		<div id="info_input" class="mui-scroll">
+		    <!-- <div id="submitorder" class="btn_jump_order_info">
+			    <div class="submitorder_name">
+			        <div class="submit_address">
+			             <img alt="buttonImage" src="../../images/policyDeliveryAddress_add.png">
+			             <span>新增保单配送地址</span>
+			         </div>
+			      </div>
+			   </div> -->
+			<!-- 保单配送地址列表 -->
+			<section id="policy_info">
+			</section>
+		</div>
+	</div>
+	
+			<!-- 新增保单配送地址-->
+		    <div id="submitorder" class="btn_jump_order_info">
+			    <div class="submitorder_name">
+			        <div class="submit_address">
+			             <img alt="buttonImage" src="../../images/xinzeng.png">
+			             <span>新增地址</span>
+			         </div>
+			      </div>
+			   </div>
+</body>
+<script type="text/javascript" src="../../js/util/zepto.min.js" ></script>
+<script type="text/javascript" src="../../js/mui/mui.min.js" ></script>
+<script type="text/javascript" src="../../js/util/base.js" ></script>
+<script type="text/javascript" src="../../js/util/underscore.js" ></script>
+<script type="text/javascript" src="../../js/carinsure/policyDeliveryAddress.js"></script>
+</html>
+

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<!-- 忽略IOS将页面中的数字识别为电话号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<!-- 忽略Android平台中对邮箱地址的识别 -->
+	<meta name="format-detection" content="email=no" />
+	<!-- 缓存 -->
+	<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+	<meta HTTP-EQUIV="expires" CONTENT="0">
+	<title>精确报价</title>
+	<link rel="stylesheet" href="../../css/mui/mui.min.css" />
+	<link rel="stylesheet" href="../../css/mui/mui.picker.min.css" />
+    <link rel="stylesheet" href="../../css/common/base.css" />
+    <link rel="stylesheet" href="../../css/common/common.css" />
+    <link rel="stylesheet" href="../../css/carinsure/quote.css?v=20170606"/>
+    
+</head>
+<body>
+    <div class="quoteArticle">
+	    <header>
+			<div class="h_back">
+				<div class="backindex"><img src="../../images/back.png"/></div>
+			</div>
+			<div class="h_title" id="pageTitle">精确报价</div>
+			<div class="h_next"></div>
+		</header>
+		<!-- 页面主体部分 -->
+		<div id="indexpart" class="container mui-scroll-wrapper">
+		   <div  class="mui-scroll">
+		  <!-- 报价信息部分 -->
+		  <div class="platePart">
+		      <!--   车牌部分 -->
+		     <table class="quoteTable border-1px-bottom">
+			       <tr>
+			         <td></td>
+			         <td><img class="cheliang" src="../../images/cheliang.png"></td>
+			         <td colspan="2">被保车辆 <span class="plateNo"></span></td>
+			       </tr>
+		    </table>
+		      <!--   保费部分-->
+		     <table class="priceTable">
+		       <tr>
+		         <td></td>
+		         <td class="border-1px-bottom"><img class="chexianLogo" src="../../images/tiananlogo.png"></td>
+		         <td class="border-1px-bottom"><div style="width:100%;">天安车险<br>出行更放心</div></td>
+		         <td class="border-1px-bottom"><span id="premium"></span></td>
+		         <td><img class="linkicon" src="../../images/xiala.png"></td>
+		       </tr>
+		    </table> 
+		    
+		    <table class="JQxquoteTable quoteTable">
+			       <tr>
+			         <td></td>
+			         <td><img class="cheliang" src="../../images/time.png"></td>
+			         <td><span class="tabel">交强险起保时间</span><input id="jqxBdate" class="datechoose" type="text"  readonly="readonly"/></td>
+			         <td><img class="linkicon" src="../../images/xiala.png"></td>
+		     </table>
+		     <table id="jqxtimeTable" class="quoteTable">
+			       <tr>
+			         <td></td>
+			         <td></td>
+			         <td colspan="2">交强险保费：<span id="jqxmoney"></span><span id="jqpj"></span></td>
+			       </tr>
+			 </table>   
+			 
+		     <table class="BusquoteTable quoteTable">
+		        <tr>
+		         <td></td>
+		         <td><img class="cheliang" src="../../images/time.png"></td>
+		         <td>商业险起保时间<input id="businessBdate" class="datechoose" type="text"  readonly="readonly"/></td>
+		         <td><img class="linkicon" src="../../images/xiala.png"></td>
+		        </tr> 
+		      </table>
+		      <table id="timeTable" class="quoteTable">
+			      <tr>
+			         <td></td>
+			         <td></td>
+			         <td colspan="2">商业险保费：<span id="busmoney"></span><span id="sypj"></span></td>
+			       </tr>
+			       <tr>
+			         <td></td>
+			         <td></td>
+			         <td colspan="2">车&nbsp;&nbsp;&nbsp;船&nbsp;&nbsp;&nbsp;税&nbsp;：<span id="vehicletaxPre"></span></td>
+			       </tr>
+			  </table>
+		    <div style="width:100%;height: 10px;background-color: #fff;"></div>
+		  </div>
+		    
+		    <!-- 配送地址部分 -->
+		  <div class="addressPart">
+		      <!--   邮寄地址 -->
+		     <table id="addressHead" class="quoteTable border-1px-bottom">
+			       <tr>
+			         <td></td>
+			         <td><img class="cheliang" src="../../images/address.png"></td>
+			         <td>保单邮寄地址</td>
+			         <td><img class="linkicon" src="../../images/xiala.png"></td>
+			       </tr>
+		    </table>
+		    <div class="addressInfo" style="display:none">
+		       <div class="addressInfoCell border-1px-bottom"><div id="sjrName"></div><div id="sjrPhone"></div></div>
+		       <div class="addressInfoCell"><span id="addresseeprovince"></span><span id="psAddress"></span></div>
+		    </div>
+		  </div> 
+		    <!-- 投保信息部分 -->
+		  <div class="toubaoPart">
+		      <!--   投保信息 -->
+		     <table class="quoteTable border-1px-bottom">
+			       <tr>
+			         <td></td>
+			         <td><img class="cheliang" src="../../images/toubaoxinxi.png"></td>
+			         <td>投保信息</td>
+			         <td></td>
+			       </tr>
+		    </table>
+		    <div class="addressInfo">
+		             <!--     被保人信息 -->
+		       <div class="addressInfoCell border-1px-bottom">
+		                        被保人信息与车主一致
+		           <div id="beibaoSwitch" class="mui-switch mui-switch-mini mui-active" style="float: right;margin-right: 20px;">
+					  <div class="mui-switch-handle"></div>
+					</div>             
+		       </div>
+		       <div class="beibaoCell">
+		          <ul class="policyholder_add_area">
+						<li class="border-1px-bottom">
+							<div class="policyholder_li_left">
+								<span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</span>
+							</div>
+							<div class="policyholder_li_center">
+								<input id="recognizee_name_input" type="text" value="请输入姓名" maxlength="20"  style="color: #888;">
+							</div>
+							<div class="policyholder_li_right">
+								<div class="import_client">
+								</div>
+							</div>
+						</li>
+						<li class="border-1px-bottom" id="policyholder_idtype_select">
+							<div class="policyholder_li_left">
+								<span>证件类型</span>
+							</div>
+							<div class="policyholder_li_center">
+								<input id="recognizee_idtype" name="01" type="text" value="身份证" style="color: #444;" disabled="disabled">
+							</div>
+							<div class="policyholder_li_right">
+							</div>
+						</li>
+						<li class="border-1px-bottom">
+							<div class="policyholder_li_left">
+								<span>证件号码</span>
+							</div>
+							<div class="policyholder_li_center">
+								<input type="text" id="recognizee_idnumber_input" maxlength="18" value="请输入证件号码"  style="color: #888;">
+							</div>
+							<div class="policyholder_li_right"></div>
+						</li>
+						<li class="border-1px-bottom">
+							<div class="policyholder_li_left">
+								<span>手机号码</span>
+							</div>
+							<div class="policyholder_li_center">
+								<input id="recognizee_phone_input" maxlength="11" type="tel" value="请输入手机号码"  style="color: #888;">
+							</div>
+							<div class="policyholder_li_right"></div>
+						</li>
+						<li class="emailUl border-1px-bottom" style="display:none;">
+							<div class="policyholder_li_left">
+								<span>邮箱</span>
+							</div>
+							<div class="policyholder_li_center">
+								<input id="recognizee_email_input" maxlength="50" type="text" value="请输入邮箱"  style="color: #888;">
+							</div>
+							<div class="policyholder_li_right"></div>
+						</li>
+					</ul>
+					<ul id="beibaoCardUl" class="policyholder_add_area" style="display:none;">
+						<li class="border-1px-bottom">
+							<div class="policyholder_li_left">
+								<span>有效起期</span>
+							</div>
+							<div class="policyholder_li_center">
+								<input id="recognizee_startDate_input" type="text"  value="请选择身份证有效起期"   style="color: #888;">
+							</div>
+							<div class="policyholder_li_right">
+								<div class="import_client">
+								  <img class="linkicon" src="../../images/xiala.png">
+								</div>
+							</div>
+						</li>
+						<li class="border-1px-bottom">
+							<div class="policyholder_li_left">
+								<span>有效止期</span>
+							</div>
+							<div class="policyholder_li_center">
+								<input id="recognizee_endDate_input" type="text"  value="请选择身份证有效止期"   style="color: #888;">
+							</div>
+							<div class="policyholder_li_right">
+								<div class="import_client">
+								   <img class="linkicon" src="../../images/xiala.png">
+								</div>
+							</div>
+						</li>
+						<li class="border-1px-bottom">
+							<div class="policyholder_li_left">
+								<span>民&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;族</span>
+							</div>
+							<div class="policyholder_li_center">
+								<input id="recognizee_nation_input" type="text" value="请选择民族"   style="color: #888;">
+							</div>
+							<div class="policyholder_li_right">
+								<div class="import_client">
+								    <img class="linkicon" src="../../images/xiala.png">
+								</div>
+							</div>
+						</li>
+						<li class="border-1px-bottom">
+							<div class="policyholder_li_left">
+								<span>签发机构</span>
+							</div>
+							<div class="policyholder_li_center">
+								<input id="recognizee_issuer_input" type="text" value="请输入签发机构"  maxlength="30" style="color: #888;">
+							</div>
+							<div class="policyholder_li_right">
+								<div class="import_client">
+								</div>
+							</div>
+						</li>
+					</ul>
+		       </div>
+		        <!--     投保人信息 -->
+		       <div class="addressInfoCell">投保人信息与车主一致
+		            <div id="toubaoSwitch" class="mui-switch mui-switch-mini mui-active" style="float: right;margin-right: 20px;">
+					  <div class="mui-switch-handle"></div>
+					</div>
+		       </div>
+		       <div class="toubaoCell">
+		          <ul class="policyholder_add_area">
+						<li class="border-1px-bottom">
+							<div class="policyholder_li_left">
+								<span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</span>
+							</div>
+							<div class="policyholder_li_center">
+								<input id="policyholder_name_input" type="text" value="请输入姓名" maxlength="20"  style="color: #888;">
+							</div>
+							<div class="policyholder_li_right">
+								<div class="import_client">
+								</div>
+							</div>
+						</li>
+						<li class="border-1px-bottom" id="policyholder_idtype_select">
+							<div class="policyholder_li_left">
+								<span>证件类型</span>
+							</div>
+							<div class="policyholder_li_center">
+								<input id="policyholder_idtype" name="01" type="text" value="身份证" style="color: #444;" disabled="disabled">
+							</div>
+							<div class="policyholder_li_right">
+							</div>
+						</li>
+						<li class="border-1px-bottom">
+							<div class="policyholder_li_left">
+								<span>证件号码</span>
+							</div>
+							<div class="policyholder_li_center">
+								<input type="text" id="policyholder_idnumber_input" maxlength="18" value="请输入证件号码"  style="color: #888;">
+							</div>
+							<div class="policyholder_li_right"></div>
+						</li>
+						<li class="border-1px-bottom">
+							<div class="policyholder_li_left">
+								<span>手机号码</span>
+							</div>
+							<div class="policyholder_li_center">
+								<input id="policyholder_phone_input" maxlength="11" type="tel" value="请输入手机号码"  style="color: #888;">
+							</div>
+							<div class="policyholder_li_right"></div>
+						</li>
+						<li class="emailUl border-1px-bottom" style="display:none;">
+							<div class="policyholder_li_left">
+								<span>邮箱</span>
+							</div>
+							<div class="policyholder_li_center">
+								<input id="policyholder_email_input" maxlength="50" type="text" value="请输入邮箱"  style="color: #888;">
+							</div>
+							<div class="policyholder_li_right"></div>
+						</li>
+					</ul>
+					<ul id="toubaoCardUl" class="policyholder_add_area"  style="display:none;">
+						<li class="border-1px-bottom">
+							<div class="policyholder_li_left">
+								<span>有效起期</span>
+							</div>
+							<div class="policyholder_li_center">
+								<input id="policyholder_startDate_input"  type="text" value="请选择身份证有效起期"   style="color: #888;">
+							</div>
+							<div class="policyholder_li_right">
+								<div class="import_client">
+								  <img class="linkicon" src="../../images/xiala.png">
+								</div>
+							</div>
+						</li>
+						<li class="border-1px-bottom">
+							<div class="policyholder_li_left">
+								<span>有效止期</span>
+							</div>
+							<div class="policyholder_li_center">
+								<input id="policyholder_endDate_input"  type="text" value="请选择身份证有效止期"   style="color: #888;">
+							</div>
+							<div class="policyholder_li_right">
+								<div class="import_client">
+								   <img class="linkicon" src="../../images/xiala.png">
+								</div>
+							</div>
+						</li>
+						<li class="border-1px-bottom">
+							<div class="policyholder_li_left">
+								<span>民&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;族</span>
+							</div>
+							<div class="policyholder_li_center">
+								<input id="policyholder_nation_input" type="text" value="请选择民族"   style="color: #888;">
+							</div>
+							<div class="policyholder_li_right">
+								<div class="import_client">
+								    <img class="linkicon" src="../../images/xiala.png">
+								</div>
+							</div>
+						</li>
+						<li class="border-1px-bottom">
+							<div class="policyholder_li_left">
+								<span>签发机构</span>
+							</div>
+							<div class="policyholder_li_center">
+								<input id="policyholder_issuer_input" type="text" value="请输入签发机构"  maxlength="30" style="color: #888;">
+							</div>
+							<div class="policyholder_li_right">
+								<div class="import_client">
+								</div>
+							</div>
+						</li>
+					</ul>
+		       </div>
+		    </div>
+		  </div>   
+		    <!--      我已阅读并同意以上内容 -->
+		      <div class="detailcomfrim">
+					<div id="submitorder" class="btn_jump_order_info">立即投保</div>
+			  </div>
+			   <!--  核保失败原因   -->
+			  <div id="hebaoFail_reason_area" style="width:90%;margin: 10px auto;background: #fff;color:#666;font-size: 14px;display:none;">
+				<ul id="refusing_reason_ul"  class="border-1px-bottom">
+					<li class="refusing_reason_li" style="font-weight: bold;line-height:46px;">
+					   <span id="failName" style="margin-left: 5.55%;">核保失败原因</span>
+					</li>
+				</ul>
+				<div id="hebaoFailInfo"></div>
+				<div style="background: #ebebeb;width:100%;padding:30px 0;">
+				  <div id="backBtn">返回</div>
+				</div>
+			 </div>
+		 </div>
+		</div>
+		
+		<!-- 重新报价弹窗 -->
+		<div class="baojiaDialog" style="position: fixed;width:100%;height:100%; z-index: 98;top: 0;right: 0;bottom: 0;left: 0;opacity: 1;background: rgba(0,0,0,.4);display:none;"></div>
+		<div id="dialog">
+		  <div class="tanchuang">
+		      <img class="logo" src="../../images/talogo.png">
+		      <p id="dialog_p">修改起保时间，系统会重新进行报价，是否确定修改</p>
+		      <div id="restartbj" class="button">是</div>
+		      <div class="button closeDialog">否</div>
+		  </div>
+		  <img class="chahao closeDialog" src="../../images/chahao2.png">
+		</div>
+		<div id="quoteDialog">
+	      <div class="zhuanbao"></div>
+	      <img class="zhuanbaoImg"/>
+	      <div class="zhuanbaoInput"><input id="querySequenceNo" type="text" placeholder="请输入验证码"></div>
+	      <div id="quote">确定</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../../js/util/zepto.min.js" ></script>
+    <script type="text/javascript" src="../../js/mui/mui.min.js" ></script>
+    <script type="text/javascript" src="../../js/mui/mui.picker.min.js"></script>
+    <script type="text/javascript" src="../../js/util/base.js" ></script>
+    <script type="text/javascript" src="../../js/util/common.js" ></script> 
+    <script type="text/javascript" src="../../js/carinsure/quote.js?v=20170731" ></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache, must-revalidate">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="Wed, 26 Feb 1997 08:21:57GMT">
+<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<!-- 忽略IOS将页面中的数字识别为电话号码 -->
+<meta name="format-detection" content="telephone=no" />
+<!-- 忽略Android平台中对邮箱地址的识别 -->
+<meta name="format-detection" content="email=no" />
+<title>pp停车测试页</title>
+
+<link rel="stylesheet" href="../../css/mui/mui.min.css" />
+<link rel="stylesheet" href="../../css/common/base.css" />
+<link rel="stylesheet" href="../../css/common/common.css" />
+
+<script type="text/javascript" src="../../js/util/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/mui/mui.min.js"></script>
+<script type="text/javascript" src="../../js/util/base.js"></script>
+<script type="text/javascript" src="../../js/util/common.js"></script>
+<script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script> 
+</head>
+<body>
+    <header>
+		<div class="h_back"><div class="backindex"><img src="../../images/back.png"></div></div>
+		<div class="h_title" id="pageTitle">pp停车测试页</div>
+		<div class="h_next"></div>
+	</header>
+	<div id="indexpart" class="mui-scroll-wrapper" style="margin-top:44px; width:100%">
+		<br/><label>用户名：</label><input id="userId" type="text" value="05TUiuKKluSupS2kKhtA22"><br/><br/>
+		<input id="submit" type="button" value="进入车险"/> <br/><br/>
+		<input id="query" type="button" value="车险列表"/><br/><br/>
+		<br/><br/>
+		<input id="dhsubmit" type="button" value="东航进入车险"/><br/><br/>
+		
+		<br/><br/><br/>
+		<a href="http://localhost:8080/tongdaoPlatform/weixin/donghang/html/carinsure/carMes.html?channel=10&randomno=53cd880d15be489bbd27851cba129e97">东航</a>
+		<br/><br/><br/>
+		<a href="http://localhost:8080/tongdaoPlatform/weixin/donghang/html/carinsure/orderDetail.html?globalno=S2IDH2017071000002&appno=0303200136320170000258">东航详情</a>
+		<br/><br/><br/>
+		<a href="http://localhost:8080/tongdaoPlatform/jointd/dhEnterPage.do?globalno=S2IDH2017071000002&channel=10&randomno=53cd880d15be489bbd27851cba129e97">东航转发进入</a>
+	</div>      
+</body>
+<script type="text/javascript">
+$(function(){
+	
+
+$("#submit").on("tap",function(){
+	var timestamp=new Date().getTime()+"";	
+	var userId=$("#userId").val();
+	var tdToken="TDlxojfdsfSSSljl";
+	var pptcToken="PTfoeawHkeJeDkLd";
+	var temp = md5(userId+"|"+tdToken.toUpperCase()+"|"+timestamp).toUpperCase();
+	var signature = md5(pptcToken+"|"+temp+"|"+tdToken).toUpperCase();
+	/* var sendData={
+	    "requestHead": {
+	        "timestamp": timestamp,
+	        "signature": signature.toUpperCase(),
+	        "issueChannel": "09"
+	    },
+		"requestBody": {
+			"userId": userId,
+	        "cityCode": "3440200",
+	    	"engineNo": "ASDWE23EASDQW",
+	    	"registerDate": "2017-03-05",
+	        "rackNo": "L12345678G6732566",
+	        "plateNo": "",
+			"ownerName": "李四",
+			"ownerMobile": "13162105658",
+			"ownerIdNo": "411421199309132055"
+	   }
+	};
+
+
+
+	$.ajax({
+		async : false,
+		type : "post",
+		url : base.url+"tdcx/test.do",
+		data : JSON.stringify(sendData),
+		dataType : 'json',
+		success : function(data) {
+			var timestamp=new Date().getTime()+"";	
+			var tdToken="TDlxojfdsfSSSljl";
+			var pptcToken="PTfoeawHkeJeDkLd";
+			var userId=$("#userId").val();
+			var temp = md5(userId+"|"+tdToken.toUpperCase()+"|"+timestamp).toUpperCase();
+			var signature = md5(pptcToken+"|"+temp+"|"+tdToken).toUpperCase();
+			userId=encodeURIComponent(userId); */
+			window.location.href=base.url+"jointd/enterPage.do?userId="+userId+"&timestamp="+timestamp+"&signature="+signature+"&issueChannel=09";
+	/* 	}
+	}); */
+})
+
+$("#dhsubmit").on("tap",function(){
+	window.location.href="http://localhost:8080/tongdaoPlatform/jointd/dhEnterPage.do?channel=10&randomno=18952067149";
+})
+
+$("#query").on("tap",function(){
+	var timestamp=new Date().getTime()+"";	
+	var tdToken="TDlxojfdsfSSSljl";
+	var pptcToken="PTfoeawHkeJeDkLd";
+	var userId=$("#userId").val();
+	var temp = md5(userId+"|"+tdToken.toUpperCase()+"|"+timestamp).toUpperCase();
+	var signature = md5(pptcToken+"|"+temp+"|"+tdToken).toUpperCase();
+	userId=encodeURIComponent(userId);
+	window.location.href=base.url+"jointd/checkOrder.do?userId="+userId+"&timestamp="+timestamp+"&signature="+signature+"&issueChannel=09";
+})
+
+
+})
+</script>
+</html>

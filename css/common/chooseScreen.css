@@ -1,0 +1,191 @@
+@CHARSET "UTF-8";
+
+ iPhone 4/4s landscape & portrait
+ */@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-device-pixel-ratio: 2)
+and (device-aspect-ratio: 2/3) {
+ 
+}
+ 
+/**
+ * iPhone 4/4s portrait
+ */@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-device-pixel-ratio: 2)
+and (device-aspect-ratio: 2/3)
+and (orientation:portrait)  {
+ 
+}
+ 
+/**
+ * iPhone 4/4s landscape
+ */@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-device-pixel-ratio: 2)
+and (device-aspect-ratio: 2/3)
+and (orientation:landscape) {
+ 
+ 
+}
+ 
+/**
+ *  iPhone 5/5s landscape & portrait
+ */@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2) {
+ 
+ 
+}
+ 
+/**
+ *  iPhone 5/5s portrait
+ */@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+ 
+}
+ 
+/**
+ *  iPhone 5/5s landscape
+ */@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+ 
+ 
+}
+ 
+/**
+ *  iPhone 5/5s landscape & portrait
+ */@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3) {
+ 
+}
+ 
+/**
+ *  iPhone 5/5s portrait
+ */@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) {
+ 
+}
+ 
+/**
+ *  iPhone 5/5s landscape
+ */@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: landscape) {
+ 
+}
+ 
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) { 
+    //iPhone 6 Portrait}
+     
+    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : landscape) { 
+    //iPhone 6 landscape
+     
+    }@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : portrait) { 
+    //iPhone 6+ Portrait}
+     
+    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : landscape) { 
+    //iPhone 6+ landscape}
+     
+    @media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px){ 
+    //iPhone 6 and iPhone 6+ portrait and landscape}
+     
+    @media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px) and (orientation : portrait){ 
+    //iPhone 6 and iPhone 6+ portrait}
+     
+    @media only screen and (max-device-width: 640px), 
+only screen and (max-device-width: 667px), 
+only screen and (max-width: 480px) 
+and (orientation : landscape){ 
+    //iPhone 6 and iPhone 6+ landscape}
+     
+/**
+ *  Galaxy S3 landscape & portrait
+ */@media screen
+and (device-width: 320px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 2) {
+ 
+}/**
+ *  Galaxy S3 portrait
+ */@media screen
+and (device-width: 320px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 2)
+and (orientation: portrait) {
+ 
+}/**
+ *  Galaxy S3 landscape
+ */@media screen
+and (device-width: 320px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 2)
+and (orientation: landscape) {
+ 
+}/**
+ *  Galaxy S4 landscape & portrait
+ */@media screen
+and (device-width: 320px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 3) {
+ 
+}/**
+ *  Galaxy S4 portrait
+ */@media screen
+and (device-width: 320px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 3)
+and (orientation: portrait) {
+ 
+}/**
+ *  Galaxy S4 landscape
+ */@media screen
+and (device-width: 320px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 3)
+and (orientation: landscape) {
+ 
+}/**
+ *  Galaxy S5 landscape & portrait
+ */@media screen
+and (device-width: 360px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 3) {
+ 
+}/**
+ *  Galaxy S4 portrait
+ */@media screen
+and (device-width: 360px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 3)
+and (orientation: portrait) {
+ 
+}/**
+ *  Galaxy S4 landscape
+ */@media screen
+and (device-width: 360px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 3)
+and (orientation: landscape) {
+ 
+}/**
+ *  HTC One landsc
+
+

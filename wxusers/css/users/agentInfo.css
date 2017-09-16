@@ -1,0 +1,63 @@
+/* header{
+	background-color: #000000 !important;
+} */
+#order_index {
+	margin-top:44px;
+}
+.baseInfo{
+	background-color: #fff;
+}
+.agentInfo{
+	margin-top: 11px;
+	background-color: #fff;
+}
+.bankCardInfo{
+	margin-top: 11px;
+	background-color: #fff;
+	margin-bottom: 2px;
+}
+.head{
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #c7d7d7;
+	padding-left: 5%;
+	color: #1b6bb8;
+}
+.contentInfo{
+	margin-left: 5%;
+	margin-right: 5%;
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #c7d7d7;
+	font-size: 15px;
+}
+.politics,.salesmanNo,.bankcardNo{
+	border-bottom: 0;
+}
+.right_value{
+	height: 48px;
+	line-height: 48px;
+	width: 62%;
+	font-family: "microsoft yahei";
+	font-size: 15px;
+	text-align: right;
+	float: right;
+	margin-right: 5%;
+	color: #000;
+}
+.tip{
+	width: 90%;
+	margin: auto;
+	color: #888;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+.tip p{
+	margin-bottom: 0;
+	font-size: 12px;
+}
+.tip a{
+	color: #ff6a00;
+	text-decoration: underline;
+}
+

@@ -1,0 +1,332 @@
+@CHARSET "UTF-8";
+header{
+	top:0;
+}
+.container{
+	position: relative;
+	margin-top:44px;
+/* 	background-color:#fff;  */
+	font-size: 16px;
+	color:#444;
+}
+/**-------------------------------- 被保车辆车牌 --------------------------------*/
+.quoteTable,.priceTable{
+	width:100%;
+	background-color: #fff;
+}
+.quoteTable td{
+	height:45px;
+}
+.quoteTable tr td:nth-child(1){
+	width:4.67%;
+}
+.quoteTable tr td:nth-child(2){
+	width:5.33%;
+}
+.quoteTable tr td:nth-child(3){
+	width:80%;
+	padding-left: 10px;
+}
+.quoteTable tr td:nth-child(4){
+	width:10%;
+	text-align: right;
+	padding-right: 20px;
+}
+.plateNo{
+	float: right;
+     padding-right: 20px;
+}
+/**--------------------------------------------- 商业险交强险 --------------------------------------*/
+.priceTable{
+	width:100%;
+}
+.priceTable td{
+	height:60px;
+	vertical-align: middle;
+}
+.priceTable tr td:nth-child(1){
+	width:4.67%;
+}
+.priceTable tr td:nth-child(2){
+	width:15.33%;
+}
+.priceTable tr td:nth-child(3){
+	width:30%;
+	font-size:14px;
+	color:#888;
+	text-align: center;
+}
+.priceTable tr td:nth-child(4){
+	width:40%;
+	text-align: right;
+}
+.priceTable tr td:nth-child(5){
+	width:10%;
+	text-align: right;
+	padding-right: 20px;
+}
+/* 向右箭头 */
+.linkicon {
+    width: 8px;
+    height: 10px;
+}
+/**-- 保费---- */
+#premium{
+	color:#e63f52;
+	font-size: 20px;
+}
+/**---------------------------------------------------- 起保时间---- ---------------------*/
+#businessBdate,#jqxBdate{
+	width:50%;
+	color:#444;
+	text-align: right;
+	float: right;
+}
+#timeTable,#jqxtimeTable{
+	font-weight: bold;
+	font-size: 14px;
+}
+#timeTable td,#jqxtimeTable td{
+	height: 30px;
+}
+#jqpj,#sypj{
+	float:right;
+	padding-right: 10px;
+}
+/**------------------------------------------ 配送地址 ---------------------------*/
+.addressPart,.toubaoPart{
+	margin-top: 10px;
+}
+
+.addressInfo{
+	width:100%;
+	padding-left: 4.67%;
+	background-color: #fff;
+}
+.addressInfoCell{
+	height:45px;
+	line-height:45px;
+}
+#sjrName{
+	width:30%;
+	float: left;
+}
+#jqxPhone{
+	width:40%;
+	float:left;
+}
+/*---------------------------------------- 投被保人信息------------------ */
+.toubaoPart{
+	margin-bottom: 10px;
+}
+.mui-switch{
+	margin-top: 9px;
+}
+/*----------------------------投保信息录入-----------------------------------*/ 
+.policyholder_add_area {
+	width: 100%;
+	background-color: #fff;
+}
+.policyholder_add_area input {
+	width: 100%;
+	font-size: 16px;
+	text-align: right;
+}
+.policyholder_add_area li {
+	margin-left: 5.55%;/* 60px */
+	width: 95.4%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+	color: #444;
+	display: -moz-box;
+	display: -webkit-box;
+	display: box;
+}
+.policyholder_add_area .policyholder_li_left {
+	-moz-box-flex: 26; 
+    -webkit-box-flex: 26; 
+    box-flex: 26;
+    width: 25.5%;
+}
+.policyholder_add_area .policyholder_li_center {
+	-moz-box-flex: 64; 
+    -webkit-box-flex: 64; 
+    box-flex: 64;
+    width: 62.7%;
+    text-align: right;
+}
+.policyholder_add_area .policyholder_li_right {
+	-moz-box-flex: 12; 
+    -webkit-box-flex: 12; 
+    box-flex: 12;
+    width: 11.7%;
+}
+.policyholder_add_area .policyholder_li_right div {
+	width: 25%; /* 42px/120px */
+	margin: auto;
+}
+.policyholder_add_area .policyholder_li_right .import_client {
+	width: 50%; /* 60px/120px */
+	margin: auto;
+}
+.btn_jump_recognizee_info_area {
+	padding-top: 2.22rem;
+	padding-bottom: 1rem;
+}
+.btn_jump_recognizee_info {
+	width: 94.6667%;
+    line-height: 3.75rem;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    background-color: #1b6bb8;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.beibaoCell,.toubaoCell{
+	 display: none; 
+}
+
+/**--- 我已阅读并同意以上内容 */
+.detailcomfrim {
+    width: 100%;
+    height: 14rem;
+}
+.gou_terms_line {
+    margin: 1rem 1.5rem;
+    font-size: 1.33rem;
+    word-wrap: normal;
+}
+.import {
+    width: 1.5rem;
+    margin: auto;
+    margin-top: -5px;
+    margin-right: 0.6rem;
+}
+.btn_jump_order_info {
+    width: 94.66674%;
+    line-height: 3.75rem;
+    margin: 30px auto;
+    font-size: 1.65rem;
+    color: #fff;
+    text-align: center;
+    background-color: #f36f39;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+
+#insurance_statement,#insurance_declaration{
+	color:#f36f39;
+}
+
+/**-- 重新报价弹窗 -----*/
+#dialog{
+	width:78%;
+    position: absolute;
+    top: 100px;
+    left: 11%;
+    text-align: center;
+    z-index: 1000;
+    display:none;
+}
+.tanchuang{
+	width:100%;
+	height:280px;
+	font-size: 18px;
+    background-color: #fff;
+    color:#000;
+    border-radius:8px;
+     
+}
+.logo{
+	width:70%;
+	margin: 18px auto 24px;
+}
+#dialog_p{
+	 color:#000;
+	 font-size: 18px;
+	 width: 90%;
+	 margin: auto;
+	 text-align: left;
+}
+.button{
+	width:86%;
+	margin: auto;
+	height:38px;
+	line-height:38px;
+	font-size: 18px;
+	border:1px solid #f36f39;
+	color:#f36f39;
+	border-radius:6px;
+	margin-top: 18px;
+}
+.chahao{
+	width:18.4%;
+	margin-top:40px;
+}
+
+
+
+
+#quoteIframe{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+
+
+
+/* 转保车验证码弹出窗 */
+#quoteDialog {
+    width: 78%;
+    position: absolute;
+    top: 25%;
+    left: 11%;
+    text-align: center;
+    z-index: 100;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 20px 0;
+    display: none;
+}
+.zhuanbao{
+	width:90%;
+	line-height:45px;
+	margin:auto;
+	text-align: center;
+}
+.zhuanbaoInput{
+	width:80%;
+	line-height:35px;
+	font-size: 14px;
+	margin: auto;
+	border: 1px solid #888;
+	padding: 0 10px;
+}
+.zhuanbaoImg{
+	width:80%;
+	margin: 10px auto;
+}
+#querySequenceNo{
+	width: 100%;
+    font-size: 18px;
+    color: rgb(136, 136, 136);
+    text-align: center;
+}
+#quote {
+    width: 80%;
+    margin: auto;
+    height: 38px;
+    line-height: 38px;
+    font-size: 18px;
+    border: 1px solid #f36f39;
+    color: #f36f39;
+    border-radius: 6px;
+    margin-top: 18px;
+}

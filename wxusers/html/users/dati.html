@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+	    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	    <!-- 忽略IOS将页面中的数字识别为电话号码 -->
+	    <meta name="format-detection" content="telephone=no" />
+	    <!-- 忽略Android平台中对邮箱地址的识别 -->
+	    <meta name="format-detection" content="email=no" />
+	    <title>代理人考试</title>
+	    <link rel="stylesheet" href="../../../css/mui/mui.min.css" />
+		<link rel="stylesheet" href="../../../css/mui/mui.picker.min.css" />
+	    <link rel="stylesheet" href="../../../css/common/base.css" />
+	    <link rel="stylesheet" href="../../../css/common/common.css" />
+	    <link rel="stylesheet" href="../../css/users/dati.css?s=2016121319" />
+	</head>
+	<body>
+		<header>
+			<div class="h_back"><div class="backindex"><img src="../../image/insureinfo_left.png"/></div></div>
+			<div class="h_title" id="pageTitle">代理人考试</div>
+		</header>
+		<div id="indexpart" class="mui-scroll-wrapper">
+		<div id="insure_iscroll" class="mui-scroll">
+			<div class="tishi">答对3道考题即通过考试</div>
+			<div class="content">
+				
+			</div>
+			<div id="confirm" class="confirmbtn">提交试卷</div>
+			
+		</div>
+		</div>
+		<!--  遮罩  提示框  没通过考试 -->
+			<div id="shadow" class="shadow" style="display:none;">
+				<div class="tip">
+					<div class="tiphead">
+						<p>温馨提示</p>
+						<!-- <img src="../../image/delete.png" class="cancleimg"> -->
+					</div>
+					<div class="tipbody">
+						<p>您一共答对了<span class="tipTrueNum"></span>道题，很遗憾没有通过考试，还要继续努力哦！</p>
+					</div>
+					<div class="tipfoot">
+						<div class="cancle">取消</div>
+						<div class="retest">重新考试</div>
+					</div>
+				</div>
+			</div>
+			<!--  遮罩  提示框  通过考试-->
+			<div id="shadowpass" class="shadowpass" style="display:none;">
+				<div class="tippass">
+					<div class="tiphead">
+						<p>温馨提示</p>
+						<!-- <img src="../../image/delete.png" class="cancleimg"> -->
+					</div>
+					<div class="tipbodypass">
+						<p>恭喜您，一共答对了<span class="tipTrueNum"></span>道题，分数为<span class="score"></span>分，考试通过！</p>
+					</div>
+					<div class="tipfoot">
+						<!-- <div class="cancle">取消</div> -->
+						<div class="sure">确定</div>
+					</div>
+				</div>
+			</div>
+	</body>
+	<script type="text/javascript" src="../../../js/util/zepto.min.js" ></script>
+    <script type="text/javascript" src="../../../js/mui/mui.min.js" ></script>
+    <script type="text/javascript" src="../../../js/mui/mui.picker.min.js"></script>
+    <script type="text/javascript" src="../../../js/util/base.js" ></script>
+    <script type="text/javascript" src="../../../js/util/common.js" ></script> 
+    <script type="text/javascript" src="../../js/users/dati.js?s=2016121509" ></script> 
+</html>

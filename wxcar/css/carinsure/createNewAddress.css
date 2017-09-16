@@ -1,0 +1,248 @@
+@charset "utf-8";
+#insure_index {
+	width: 100%;
+}
+/*-----------------------------保单配送-----------------------------------*/ 
+#info_input {
+	position: relative;
+	/*margin-top: 8.905rem;*/
+	/*margin-top: 9.5rem;*/
+	margin-top:44px;
+}
+
+#policy_info {
+	position: relative;
+	width: 100%;
+}
+#policy_info ul {
+	width: 100%;
+	/* background-color: #fff; */
+}
+#policy_info input {
+	/* width: 91%; */
+	width: 98%;
+	font-size: 14px;
+	/* text-align: right; */
+	text-align:left;
+}
+.ul_list_other li{
+	/* margin-left: 5.55%; *//* 60px */
+	/* width: 94.45%; */
+	width: 100%;
+	height: 44px;
+	line-height: 44px;
+	font-size: 14px;
+	color: #585858;
+	display: -moz-box;
+	display: -webkit-box;
+	display: box;
+	background-color: #fff;
+	padding-left: 4.45%;
+}
+.ul_list_other .margin-top{
+	height:80px;
+}
+.defautdiv{
+	margin-top: 1rem;
+}
+.policy-info{
+	/* width:100%; */
+	width:65.5%;
+	padding-right:6%;
+}
+.policy-info textarea{
+	padding-top: 1rem;
+    font-size: 14px;
+}
+.policy_left{
+	-moz-box-flex: 12; 
+    -webkit-box-flex: 12; 
+    box-flex: 12;
+}
+.policy_center {
+	-moz-box-flex: 12; 
+    -webkit-box-flex: 12; 
+    box-flex: 12;
+}
+.policy_right{
+	-moz-box-flex: 12; 
+    -webkit-box-flex: 12; 
+    box-flex: 12;
+}
+.policy_right .import_client {
+	width: 11%; /* 60px/120px */
+	margin: auto;
+} 
+.policy_center  .import_client {
+	width: 15%; /* 33px/33px */
+	margin: auto;
+}
+.policy_li_left {
+	-moz-box-flex: 10; 
+    -webkit-box-flex: 10; 
+    box-flex: 10;
+    /* width: 25.5%; */
+    width: 34%;
+}
+.policy_li_center {
+	-moz-box-flex: 76; 
+    -webkit-box-flex: 76; 
+    box-flex: 76;
+    /* width: 70.5%; */
+    width: 60%;
+    text-align: left;
+}
+.policy_li_center span{
+	float:left;
+	marign-left:-1rem;
+}
+.policy_li_right {
+	-moz-box-flex: 12; 
+    -webkit-box-flex: 12; 
+    box-flex: 12;
+    width: 5%;
+}
+.policy_li_right div {
+	width: 35%; /* 42px/120px */
+	margin: auto;
+}
+
+.term_li_left {
+	-moz-box-flex: 12; 
+    -webkit-box-flex: 12; 
+    box-flex: 12;
+    /* width: 25.5%; */
+}
+.term_li_center {
+	-moz-box-flex: 78; 
+    -webkit-box-flex: 78; 
+    box-flex: 78;
+    width: 80%;
+    text-align: left;
+}
+.term_li_center span{
+	float:left;
+	marign-left:-1rem;
+}
+.term_li_right {
+	-moz-box-flex: 12; 
+    -webkit-box-flex: 12; 
+    box-flex: 12;
+    width: 11.7%;
+}
+.term_li_right div {
+	width: 35%; /* 42px/120px */
+	margin: auto;
+	margin-right: 42%;
+}
+.import_client {
+	width: 35%; /* 60px/120px */
+	margin: auto;
+}
+.importClient {
+	width: 45%; /* 60px/120px */
+	margin: auto;
+	float:left;
+}
+.importClient img{
+	width: 3.5rem;
+}
+
+.imgmore {
+	width: 1rem;
+	height: 1.5rem;
+	margin: 0.2rem 0 0.2rem 2%;
+	vertical-align: middle;
+}
+
+.importsame{
+	width:1.5rem;
+	margin:auto;
+	margin-left: 3%;
+}
+.policy_li_left2 {
+	-moz-box-flex: 10; 
+    -webkit-box-flex: 10; 
+    box-flex: 10;
+    width: 45%;
+}
+.policy_li_center2 {
+	-moz-box-flex: 76; 
+    -webkit-box-flex: 76; 
+    box-flex: 76;
+    width: 35%;
+    text-align: left;
+}
+.policy_li_center2 span{
+	float:left;
+	marign-left:-1rem;
+}
+.policy_right_switch{
+	margin-right: 5%;	
+	width: 1rem;
+}
+/* switch */
+.switch_choose {
+	margin-right:5.56%;
+	
+	float: right;
+	/*width: 37.7%;*/
+	/* width: 6.2rem;
+	height: 3.125rem; */
+	width: 4.6rem;
+	height: 2.5rem;
+	line-height: 2rem; 
+	margin-top: 0.6975rem;
+	border: 1px solid #ccc;
+	 background-color: #f7f7f7;
+	border-radius: 1.5625rem;
+	/* background-color: #4cd964; */
+}
+.switch_choose_selected {
+	background-color: #4cd964;
+}
+.switch_choose_unselected {
+	background-color: #f7f7f7; 
+}
+.switch_choose span {
+	display: block;
+	float: left;
+	font-size: 14px;
+	text-align: center;
+	/* line-height: 3.125rem;  */
+    line-height: 1.72rem;
+    margin-top: 0.1rem;
+    /* height: 1.72rem; */
+    height: 2.12rem;
+}
+.switch_choose span:last-child {
+	float: right;
+}
+.policyholder_info_sex_selected {
+    /* width: 3.125rem; */
+    width: 50%;
+    /* color: #fe5000; */
+    color: #585858;
+    border-radius: 3.125rem;
+    /* background-color: #fe5000; */
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+.policyholder_info_sex_unselected {
+    /* width: 1.8rem; */
+    width: 50%;
+    color: #585858;
+}
+/* 按钮 */
+.btn_jump_order_info {
+	width: 94%;
+    line-height: 3.6rem;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    /* background: #1b6bb8; */
+    background: #f36f39;
+    border-radius: 0.5rem;
+}

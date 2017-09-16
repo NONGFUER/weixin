@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 忽略IOS将页面中的数字识别为电话号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 忽略Android平台中对邮箱地址的识别 -->
+    <meta name="format-detection" content="email=no" />
+    <title>投保信息</title>
+    <link rel="stylesheet" href="../../css/mui/mui.min.css" />
+	<link rel="stylesheet" href="../../css/mui/mui.picker.min.css" />
+    <link rel="stylesheet" href="../../css/common/base.css" />
+    <link rel="stylesheet" href="../../css/common/common.css" />
+    <link rel="stylesheet" href="../../css/carinsure/insureMes.css" />
+    
+    <script type="text/javascript" src="../../js/util/zepto.min.js" ></script>
+    <script type="text/javascript" src="../../js/mui/mui.min.js" ></script>
+    <script type="text/javascript" src="../../js/mui/mui.picker.min.js"></script>
+    <script type="text/javascript" src="../../js/util/base.js" ></script>
+    <script type="text/javascript" src="../../js/util/common.js" ></script>
+    <script type="text/javascript" src="../../js/util/underscore.js" ></script>
+    <script type="text/javascript" src="../../js/carinsure/insureMes.js" ></script>
+</head>
+<body>
+	<header id="original">
+		<div class="h_back"><div class="backindex"><img src="../../images/back.png"/></div></div>
+	    <div class="h_title">投保信息</div>
+		<div class="h_next"><div><img /></div></div>
+	</header>
+			<div id="indexarea" class="mui-scroll-wrapper">
+				<section class="detailcontainer" class="mui-scroll">
+					<article id="vehicleArea" class="policymoneyarea swiper-slide border-1px-bottom">
+						<div class="bigTitle">
+					        <div class="vehicleArea_img"><img src="../../images/tiananlogo.png"/></div>
+							<div class="biaoyu">
+								<p style="margin-top:12px;margin-bottom:5px;">天安车险</p>
+								<p style="margin-top:5px;margin-bottom:5px;">出行更放心</p>
+							</div>
+							<div class="sum" id="summoney"></div>
+						</div>
+					</article>
+					<div id="jqDate" class="startTime" style="display:none;">
+						<div class="time_img"><img src="../../images/time.png"/></div>
+						<div class="time_words">交强险起保时间</div>
+						<div class="time_time">
+							<input id="start_date"  readonly="readonly"/>
+						</div>
+					</div>
+					<!-- 交强险保费 -->
+					<div class="jiaoqiangxian border-1px-bottom">
+						<table class="jqxBigTitle border-1px-bottom">
+							<tr>
+								<td class="jqxTitle">交强险保费：</td>
+								<td id="jqxmoney"  class="jqxFee"></td>
+								<td id="jqpj" class="leibie"></td>
+							</tr>
+						</table>
+					    <table id="jqxTime" class="jqxTable border-1px-bottom" style="display: none">
+							<tr>
+								<td class="jqxLittleTitle">保单起始日期</td>
+								<td class="date"><span id="jqxBegindate"></span> 00:00 起</td>
+							</tr>
+							<tr>
+								<td class="jqxLittleTitle">保单截止日期</td>
+								<td class="date"><span id="jqxEnddate"></span> 24:00 止</td>
+							</tr>
+						</table>
+						<table class="jqxTable border-1px-bottom">
+							<tr id="jqxTr" style="display: none">
+								<td class="jqxLittleTitle">交强险</td>
+								<td class="jqxBotton">
+									<div class="jqxBotton1">投保</div>
+								</td>
+								<td id="jqxPre" class="jqxLittleFee"></td>
+							</tr>
+							<tr id="vehicletaxTr" style="display: none">
+								<td class="jqxLittleTitle">车船税</td>
+								<td class="jqxBotton">
+									<div class="jqxBotton1">投保</div>
+								</td>
+								<td id="vehicletaxPre" class="jqxLittleFee"></td>
+							</tr>
+						</table>
+					</div>
+					<!-- 商业险保费 -->
+					<div class="jiaoqiangxian border-1px-bottom">
+						<div id="syDate" class="startTime" style="display:none;">
+							<div class="time_img"><img src="../../images/time.png"/></div>
+							<div class="time_words">商业险起保时间</div>
+							<div class="time_time">
+								<input id="bus_start_date"  readonly="readonly"/>
+							</div>
+						</div>
+						<table class="jqxBigTitle border-1px-bottom">
+							<tr>
+								<td class="jqxTitle">商业险保费：</td>
+								<td id="busmoney"  class="jqxFee"></td>
+								<td id="sypj" class="leibie"></td>
+							</tr>
+						</table>
+						<table id="busTime" class="jqxTable border-1px-bottom" style="display:none;">
+							<tr>
+								<td class="jqxLittleTitle">保险起始日期</td>
+								<td class="date"><span id="businessBegindate"></span> 00:00 起</td>
+							</tr>
+							<tr>
+								<td class="jqxLittleTitle">保单截止日期</td>
+								<td class="date"><span id="businessEnddate"></span> 24:00 止</td>
+							</tr>
+						</table>
+						<table id="cxRisk" class="jqxTable border-1px-bottom">
+						</table>
+					</div>
+					<article id="carMesarea" class="policyItem margin1rem border-1px-bottom">
+						<span class="policyname">车辆信息</span>
+						<img src="../../images/index_bottom.png"/>
+						<span class="policyPrice"></span>
+					</article>
+					<section id="carMes" class="message border-1px-bottom">
+						<table>
+							<tr>
+								<td>车牌号</td>
+								<td id="im_plateno"></td>
+							</tr>
+							<tr>
+								<td>车主姓名</td>
+								<td id="im_ownerName"></td>
+							</tr>
+							<tr>
+								<td>品牌型号</td>
+								<td id="im_vehicleBrand"></td>
+							</tr>
+							<tr>
+								<td>车辆识别代码</td>
+								<td id="im_rackNo"></td>
+							</tr>
+							<tr>
+								<td>发动机号</td>
+								<td id="im_engineNo"></td>
+							</tr>
+							<tr>
+								<td>注册日期</td>
+								<td id="im_registerDate"></td>
+							</tr>
+						</table>
+					</section>
+					<article id="insurantarea" class="policyItem margin1rem border-1px-bottom">
+						<span class="policyname">被保人信息</span>
+						<img src="../../images/index_bottom.png"/>
+						<span class="policyPrice"></span>
+					</article>
+					<section id="insurant" class="message border-1px-bottom">
+						<table>
+							<tr>
+								<td>姓名</td>
+								<td id="im_insuredname"></td>
+							</tr>
+							<tr>
+								<td>证件类型</td>
+								<td id="im_insuredidtype"></td>
+							</tr>
+							<tr>
+								<td>证件号码</td>
+								<td id="im_insuredidno"></td>
+							</tr>
+							<tr>
+								<td>手机号码</td>
+								<td id="im_insuredmobile"></td>
+							</tr>
+						</table>
+					</section>
+					
+					<article id="policyholderarea" class="policyItem margin1rem border-1px-bottom">
+						<span class="policyname">投保人信息</span>
+						<img src="../../images/index_bottom.png"/>
+						<span class="policyPrice"></span>
+					</article>
+					<section id="policyholder" class="message border-1px-bottom">
+						<table>
+							<tr>
+								<td>姓名</td>
+								<td id="im_phname"></td>
+							</tr>
+							<tr>
+								<td>证件类型</td>
+								<td id="im_phidtype"></td>
+							</tr>
+							<tr>
+								<td>证件号码</td>
+								<td id="im_phidno"></td>
+							</tr>
+							<tr>
+								<td>手机号码</td>
+								<td id="im_phtelephone"></td>
+						   </tr>
+					  </table>
+				</section>
+				
+				<article id="zsfw" class="policyItem margin1rem border-1px-bottom">
+						<span class="policyname">专属服务</span>
+						<img src="../../images/index_bottom.png"/>
+						<span class="policyPrice"></span>
+				</article>
+				<section id="zs-info" class="message border-1px-bottom">
+						<div id="chunk"  class="chunk">
+						</div>
+				</section>
+		  </section>
+	  </div>
+</body>
+</html>

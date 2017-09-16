@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+/** 
+ *maweiwei
+ *2016/03/31
+ *协议保单模板页面样式
+ **/
+ .background{
+	background: #fff;
+ }
+ #inpartmain{
+ 	position: absolute;
+ 	margin-top: 3.5833rem;
+    border-top: 2px solid #dee3de;
+ }
+ .sp_content{
+    padding: 1rem;
+ }
+.sp_conimg{
+	width: 100%;
+}
+
+ 

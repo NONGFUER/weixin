@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+	    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	    <!-- 忽略IOS将页面中的数字识别为电话号码 -->
+	    <meta name="format-detection" content="telephone=no" />
+	    <!-- 忽略Android平台中对邮箱地址的识别 -->
+	    <meta name="format-detection" content="email=no" />
+	    <title>代理人信息登记</title>
+	    <link rel="stylesheet" href="../../../css/mui/mui.min.css" />
+		<link rel="stylesheet" href="../../../css/mui/mui.picker.min.css" />
+		<link rel="stylesheet" href="../../../css/mui/mui.poppicker.css" />
+	    <link rel="stylesheet" href="../../../css/common/base.css" />
+	    <link rel="stylesheet" href="../../../css/common/common.css" />
+	    <link rel="stylesheet" href="../../css/users/agentInfoRegister.css?s=2016121318" />
+	</head>
+	<body>
+		<header>
+			<div class="h_back">		    
+				<div id="backindex">
+					<img class="closeimg" src="../../image/11.png"/>
+				</div>
+				<div id="closeword">关闭</div>
+			</div>
+			<div class="h_title" id="pageTitle">代理人信息登记</div>
+		</header>
+		<div id="order_index" class="mui-scroll-wrapper">
+			<div id="insure_iscroll" class="mui-scroll">
+				<div class="baseInfo">
+					<div class="head">
+						<img class="img" src="../../image/insureinfo_name.png" /><span class="ft_14">基本信息</span>
+					</div>
+					<div class="baseInfoContent">
+						<div id="" class="name contentInfo">
+							<div class="left_title">姓名</div>
+							<input  maxlength="18" id="name_input"  class="right_value" value="" readonly="readonly"/>
+						</div>
+						<div id="" class="phone contentInfo">
+							<div class="left_title">手机号</div>
+							<input  maxlength="11" class="right_value" id="phone_input" value="" readonly="readonly"/>
+						</div>
+						<div id="" class="id contentInfo">
+							<div class="left_title">身份证</div>
+							<input  maxlength="18" id="id_input"  class="right_value" value="" readonly="readonly"/>
+						</div>
+						<div id="" class="introducer contentInfo">
+							<div class="left_title">推荐人工号</div>
+							<input  maxlength="11" autocomplete="off" type="text"  id="introducer_input"  class="right_value" value="" onblur="getJobarea()"/>
+							<!-- <div class="rightImg"><img class="rightjiantou" src="../../image/btn-right.png"/></div> -->
+						</div>
+						<div id="" class="jobarea contentInfo">
+							<div class="left_title">入职地区</div>
+							<input  maxlength="11" class="right_value" id="jobarea_input" value="" readonly="readonly"/>
+							<div class="rightImg"><img class="rightjiantou" src="../../image/btn-right.png"/></div>
+						</div>
+						<div id="" class="education contentInfo">
+							<div class="left_title">学历</div>
+							<input  maxlength="18" id="education_input"  class="right_value" value="" readonly="readonly"/>
+							<div class="rightImg"><img class="rightjiantou" src="../../image/btn-right.png"/></div>
+						</div>
+						<div id="" class="nation contentInfo">
+							<div class="left_title">民族</div>
+							<input  maxlength="11" class="right_value" id="nation_input" value="" readonly="readonly"/>
+							<div class="rightImg"><img class="rightjiantou" src="../../image/btn-right.png"/></div>
+						</div>
+						<div id="" class="politics contentInfo">
+							<div class="left_title">政治面貌</div>
+							<input  maxlength="18" id="politics_input"  class="right_value" value="" readonly="readonly"/>
+							<div class="rightImg"><img class="rightjiantou" src="../../image/btn-right.png"/></div>
+						</div>
+					</div>
+				</div>
+				<div class="bankCardInfo">
+					<div class="head">
+						<img class="img" src="../../image/id.png" />
+						<span class="ft_14">银行卡信息</span>
+						<!-- <span class="banktip">（此信息用于佣金发放，请认真填写）</span> -->
+					</div>
+					<div class="bankCardInfoContent">
+						<div id="" class="bankname contentInfo">
+							<div class="left_title">开户银行</div>
+							<input id="bankname_input"  class="right_value" value="" readonly="readonly"/>
+							
+							<div class="rightImg"><img class="rightjiantou" src="../../image/btn-right.png"/></div>
+						</div>
+						<div id="" class="bankquyu contentInfo">
+							<div class="left_title">所属区域</div>
+							<input id="bankquyu_input"  class="right_value" value="" readonly="readonly"/>
+							<div class="rightImg_sheng"><img class="rightjiantou" src="../../image/btn-right.png"/></div>
+						</div>
+						<div id="" class="kaihuhang contentInfo">
+							<div class="left_title">支行名称</div>
+							<input id="zhihang_input"  class="right_value" value="" readonly="readonly"/>
+							<div class="rightImg_zhihang"><img class="rightjiantou" src="../../image/btn-right.png"/></div>
+						</div>
+						<div id="" class="bankcardNo contentInfo">
+							<div class="left_title">银行卡号</div>
+							<input maxlength="19" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" autocomplete="off" type="text" class="right_value" id="bankcardNo_input" value=""/>
+						</div>
+					</div>
+			</div>
+			<div class="banktip">
+				<span><img src="../../image/13.png">此信息用于佣金发放，必须填写本人银行卡信息</span>
+			</div>
+			<div id="confirm" class="confirmbtn">下一步</div>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="../../../js/util/zepto.min.js" ></script>
+    <script type="text/javascript" src="../../../js/mui/mui.min.js" ></script>
+    <script type="text/javascript" src="../../../js/mui/mui.picker.min.js"></script>
+    <script type="text/javascript" src="../../../js/mui/mui.poppicker.js"></script>
+    <script type="text/javascript" src="../../../js/util/base.js" ></script>
+    <script type="text/javascript" src="../../../js/util/common.js" ></script> 
+    <script type="text/javascript" src="../../js/users/agentInfoRegister.js?s=20161221" ></script> 
+</html>

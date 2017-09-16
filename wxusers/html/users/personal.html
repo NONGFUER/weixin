@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8">
+    <!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 忽略IOS将页面中的数字识别为电话号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 忽略Android平台中对邮箱地址的识别 -->
+    <meta name="format-detection" content="email=no" />
+    <title>个人中心</title>
+    <link rel="stylesheet" href="../../../css/mui/mui.min.css" />
+	<link rel="stylesheet" href="../../../css/mui/mui.picker.min.css" />
+    <link rel="stylesheet" href="../../../css/common/base.css" />
+    <link rel="stylesheet" href="../../../css/common/common.css" />
+    <link rel="stylesheet" href="../../css/users/personal.css?s=2016121319" />
+	</head>
+	<body>
+		<header>
+		<div class="h_back"><div class="backindex"><img src="../../image/insureinfo_left.png"/></div></div>
+		<div class="h_title" id="pageTitle">个人中心</div>
+		<div class="change_account">切换账号</div>
+		</header>
+		
+		<div id="order_index" class="mui-scroll-wrapper">
+			<div id="insure_iscroll" class="mui-scroll">
+			<div id="" class="personInfo">
+				<div class="touxiang">
+					<div class="headImg"><img src="" class="touxiangImg"/></div>
+					<div class="name_job">
+						<div class="touxiang_name"></div>
+						<div class="shuxian">|</div>
+						<div class="touxiang_job"></div>
+					</div>
+				</div>
+				<div class="baseInfo" style="display:none;">
+					<div class="head">
+						<img class="img" src="../../image/insureinfo_name.png" /><span class="ft_14">基本信息</span>
+					</div>
+					<div id="" class="id">
+						<span class="left_title">身份证号</span>
+						<input  maxlength="18" id="id_input"  class="right_value" value="" readonly="readonly"/>
+					</div>
+					<div id="" class="phone">
+						<span class="left_title">手机号</span>
+						<input  maxlength="11" class="right_value" id="phone_input" value="" readonly="readonly"/>
+					</div>
+				</div>
+				<div class="agentInfo" style="display:none;">
+					<div class="head agentHead">
+						<img class="img" src="../../image/insureinfo_name.png" />
+						<span class="ft_14">代理人信息</span>
+						<img class="agentRightImg img" src="../../image/btn-right.png"/>
+					</div>
+					<div id="" class="practicingId">
+						<span class="left_title">执业证编号</span>
+						<input  maxlength="18" id="practicingId_input"  class="right_value" value="" readonly="readonly"/>
+					</div>
+					<div id="" class="salesmanNo">
+						<span class="left_title">业务员代码</span>
+						<input  maxlength="11" class="right_value" id="salesmanNo_input" value="" readonly="readonly"/>
+					</div>
+				</div>
+				<div class="bankCardInfo" style="display:none;">
+					<div class="head">
+						<img class="img" src="../../image/id.png" />
+						<span class="ft_14">银行卡信息</span>
+					</div>
+					<div id="" class="bankName">
+						<span class="left_title">开户银行</span>
+						<input  id="bankName_input"  class="right_value" value="" readonly="readonly"/>
+					</div>
+					<div id="" class="sheng">
+						<span class="left_title">所属省</span>
+						<input  id="sheng_input"  class="right_value" value="" readonly="readonly"/>
+					</div>
+					<div id="" class="shi">
+						<span class="left_title">所属市</span>
+						<input  id="shi_input"  class="right_value" value="" readonly="readonly"/>
+					</div>
+					<div id="" class="kaihuhang">
+						<span class="left_title">支行名称</span>
+						<input  id="kaihuhang_input"  class="right_value1" value="" readonly="readonly"/>
+					</div>
+					<div id="" class="bankCardNo">
+						<span class="left_title">银行卡号</span>
+						<input  class="right_value" id="bankCardNo_input" value="" readonly="readonly"/>
+					</div>
+				</div>
+				<div class="reviewFalse" style="display:none;">
+					<div class="head">
+						<img class="img" src="../../image/gantanhao.png" />
+						<span class="ft_14">审核失败</span>
+					</div>
+					<div id="" class="falseReason">
+						<span class="left_title falsereason"></span>
+					</div>
+				</div>
+				<p class="kefuPhone" style="display:none;">请拨打客服电话<a href="tel:4006895505">4006895505</a>，了解审核进度。</p>
+			</div>
+			
+			<div id="confirm" class="confirmbtn" style="display:none;"></div>
+			</div>
+		</div>
+		<a id="load" style="position:absolute;z-index:10;bottom:100px;right:20px;color:#1b6bb8;font-size: 15px;display:none;"  href="../../../wxagents/html/users/loadPage.html">下载同道APP，申请成为代理人</a>
+	</body>
+	<script type="text/javascript" src="../../../js/util/zepto.min.js" ></script>
+    <script type="text/javascript" src="../../../js/mui/mui.min.js" ></script>
+    <script type="text/javascript" src="../../../js/mui/mui.picker.min.js"></script>
+    <script type="text/javascript" src="../../../js/util/base.js" ></script>
+    <script type="text/javascript" src="../../../js/util/common.js" ></script> 
+    <script type="text/javascript" src="../../js/users/personal.js?s=20170609" ></script> 
+</html>

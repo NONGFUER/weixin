@@ -1,0 +1,45 @@
+/* header{
+	background-color: #000000 !important;
+} */
+.banner {
+	margin-top:44px;
+}
+.content{
+	background-color: #fff;
+	padding-left: 5%;
+	font-size: 16px;
+	margin-top: 10px;
+}
+#name{
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #c7d7d7;
+}
+#phone{
+	height: 50px;
+	line-height: 50px;
+}
+.right_value{
+	height: 48px;
+	line-height: 48px;
+	width: 65% !important;
+	font-family: "microsoft yahei";
+	text-align: right;
+	float: right;
+	margin-right: 10%;
+	color: #000;
+	font-size: 16px;
+}
+/* 立即答题按钮 */
+.confirmbtn {
+    width: 94.6667%;
+    line-height: 45px;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    font-size: 17px;
+    color: #fff;
+    text-align: center;
+    background: #1b6bb8;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}

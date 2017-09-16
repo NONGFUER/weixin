@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<!-- 忽略IOS将页面中的数字识别为电话号码 -->
+		<meta name="format-detection" content="telephone=no" />
+		<!-- 忽略Android平台中对邮箱地址的识别 -->
+		<meta name="format-detection" content="email=no" />
+		<title>认证提交成功</title>
+		<link rel="stylesheet" href="../../../css/mui/mui.min.css" />
+		<link rel="stylesheet" href="../../../css/mui/mui.picker.min.css" />
+		<link rel="stylesheet" href="../../../css/common/base.css" />
+		<link rel="stylesheet" href="../../../css/common/common.css" />
+		<!--<link rel="stylesheet" href="../../css/users/lead.css" />-->
+		<style type="text/css">
+			header .h_back div {
+				width: 20%;
+				float: left;
+			}
+			
+			#closeword {
+				margin-top: 2px;
+				margin-left: 5px;
+				width: 30px;
+				line-height: 44px;
+				font-size: 12px;
+				float: left;
+				color: #fff;
+			}
+			.about {
+				margin-top: 13px !important;
+			}
+			
+			.img1 {
+				max-width: 200% !important;
+				width: 232% !important;
+			}
+			
+			#order_index {
+				margin-top: 44px;
+			}
+			
+			.cter {
+				font-weight: normal !important;
+				font-size: 16px;
+				text-align: center;
+				color: #fff;
+			}
+			
+			.cephalosome {
+				background-image: url(../../image/background.png);
+				background-size: 100% 100%;
+				width: 100%;
+				height: 320px;
+				text-align: center;
+			}
+			
+			.sign {
+				margin-top: 45px;
+				width: 48%;
+			}
+			
+			.w {
+				font-weight: normal !important;
+				font-size: 16px;
+				text-align: left;
+				color: #fff;
+			}
+			
+			.written {
+				margin-top: 24px;
+				width: 90%;
+				margin-left: 6%;
+			}
+			
+			.written1 {
+				width: 82%;
+				margin-left: 9%;
+			}
+			
+			.about {
+				color: #1B6BB8;
+				font-weight: 800;
+				float: left;
+				margin-left: 7%;
+				text-align: center;
+				width: 40%;
+				line-height: 39px;
+				height: 39px;
+				border: 1px solid #1B6BB8;
+				border-radius: 5px;
+			}
+			
+			body {
+				background-color: #fff;
+			}
+			
+			.start {
+				background-color: #1B6BB8;
+				color: #fff;
+				margin-top: 13px;
+				float: left;
+				margin-left: 7%;
+				text-align: center;
+				width: 87%;
+				line-height: 39px;
+				height: 39px;
+				border: 1px solid #1B6BB8;
+				border-radius: 5px;
+			}
+			
+			.foot {
+				font-size: 14px;
+				float: left;
+				margin-left: 26%;
+				text-align: center;
+				width: 50%;
+				line-height: 39px;
+				height: 39px;
+				border-top: 1px solid #ccc;
+				margin-top: 17px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<div class="h_back">
+				<div id="backbtm" class="backbtm"><img class="" src="../../image/11.png" /></div>
+				<div id="closeword">
+					关闭
+				</div>
+			</div>
+			<div class="h_title">认证提交成功</div>
+			<div class="h_next">
+				<!-- <div class="imgIcon"><img src="../../imgs/public/dh_share.png"/></div>  -->
+			</div>
+		</header>
+		<div id="order_index" class="mui-scroll-wrapper">
+			<div id="insure_iscroll" class="mui-scroll">
+				<div id="" class="cephalosome">
+					<img src="../../image/sign.png" class="sign" />
+					<div id="" class="written">
+						<p class="cter">恭喜您，认证已提交成功！</p>
+
+					</div>
+					<div id="" class="written1">
+						<p class="w">我们将尽快完成审核，并与您进一步联系。</p>
+					</div>
+				</div>
+				<div id="" style="text-align: center;padding-top: 12px;">
+					同道，只为志同道合的你。
+				</div>
+				<div id="" class="button">
+					<div id="tongdao" class="about">
+						关于同道
+					</div>
+					<div id="taby" class="about">
+						关于天安佰盈
+					</div>
+				</div>
+				<div id="personal" class="start">
+					个人中心
+				</div>
+				<div id="enter" class="foot">
+					其他账号登录？
+				</div>
+
+			</div>
+		</div>
+		<script type="text/javascript" src="../../../js/util/zepto.min.js"></script>
+		<script type="text/javascript" src="../../../js/mui/mui.min.js"></script>
+		<script type="text/javascript" src="../../../js/mui/mui.picker.min.js"></script>
+		<script type="text/javascript" src="../../../js/util/base.js"></script>
+		<script type="text/javascript" src="../../../js/util/common.js"></script>
+		<script>
+			$(function() {
+
+				var str = window.location.search;
+				str = str.substr(9, str.length);
+				str = UrlDecode(str);
+				parm = JSON.parse(str);
+
+				/* 设置滑动区域 */
+				$.setscroll();
+				$(".h_back").bind("tap", function() {
+					WeixinJSBridge.call('closeWindow');
+				});
+				$("#taby").bind("tap", function() {
+					window.location.href = "aboutBY.html?jsonKey=" + getUrlQueryString("jsonKey") + "&s=1";
+				});
+				$("#tongdao").bind("tap", function() {
+					window.location.href = "tongdaoIntro.html?jsonKey=" + getUrlQueryString("jsonKey") + "&s=1";
+				});
+				$("#enter").bind("tap", function() {
+					window.location.href = "phoneValidate.html?openid=" + parm.openId;
+				});
+				$("#certification").bind("tap", function() {
+					window.location.href = "certification.html?mobile=" + parm.phone + "&openid=" + parm.openId;
+				});
+				$("#personal").bind("tap", function() {
+					window.location.href = "personal.html?openid=" + parm.openId;
+				});
+
+			});
+			$.setscroll = function() {
+				var Scrollheight = window.innerHeight - $("header").height();
+				$("#order_index").height(Scrollheight);
+				mui("#order_index").scroll();
+			};
+		</script>
+	</body>
+
+</html>

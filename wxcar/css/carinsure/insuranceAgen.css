@@ -1,0 +1,139 @@
+@CHARSET "UTF-8";
+#indexpart{
+	margin-top: 44px;
+}
+
+.list{
+	margin-top: 10px;
+	background: #fff;
+	font-size: 14px;
+	color: #444;
+}
+.list1{
+	background: #fff;
+	font-size: 14px;
+	color: #444;
+}
+/* 表格头 */
+.tableHead{
+	line-height: 46px;
+    height: 46px;
+}
+.insureImg {
+    width: 12px;
+    height: 18px;
+    float: left;
+    margin-left: 4%;
+    margin-right: 2.8%;
+    margin-top: 13px;
+}
+
+
+.table{
+	margin-left: 3%;
+	width:94%;
+}
+.table td{
+	line-height: 50px;
+}
+/* 必填项标志 */
+.star{
+	color:red;
+}
+
+
+.linkicon {
+    width: 7px;
+    height: 10px;
+    float: right;
+    margin-top: 5px;
+    margin-right: 15px;
+}
+.table tr td:FIRST-CHILD{
+	width: 35%;
+    padding-left: 5px;
+}
+
+.table tr td input {
+    width: 82%;
+    height:20px;
+    line-height:20px;
+    font-size: 14px;
+    text-align: left;
+    background-color: #fff;
+    float: right;
+    font-family: "microsoft yahei";
+    margin-top:5px;
+    color: #888;
+}
+input::-webkit-input-placeholder { 
+    color: #ccc;
+    line-height: 20px;
+}
+
+/* 下一步按钮 */
+.confirmbtn {
+    width: 44%;
+    line-height: 3.75rem;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    background: #f36f39;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    margin-left:4%;
+    float:left;
+}
+
+#hzNote{
+    width: 80%;
+    font-size: 14px;
+    text-align: left;
+    background-color: #fff;
+    float: right;
+    font-family: "microsoft yahei";
+    margin-top: 5px;
+    color: #888;
+} 
+
+
+/** 选择按钮 */
+.butian{
+	float:right;
+	margin-right:20px;
+	height:46px;
+	line-height:46px;
+}
+.ckeckbox{
+	width:31px;
+	font-size:14px;
+	float:left;
+	color:#888;
+}
+.choose{
+	width: 14px;
+    margin-top: 15px;
+    margin-right: 8px;
+    float: left;
+}
+.title{
+	float:left;
+	color:#666;
+	font-weight:700;
+}
+
+/**---- 核保失败原因 ---*/
+#hebaoFailInfo {
+    background-color: #fff;
+    padding-left: 5.55%;
+    padding-right: 14px;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    width: 100%;
+    line-height: 2rem;
+    font-size: 14px;
+    color: #585858;
+    word-wrap: break-word;
+}

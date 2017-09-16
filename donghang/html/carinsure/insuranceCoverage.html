@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<!-- 忽略IOS将页面中的数字识别为电话号码 -->
+		<meta name="format-detection" content="telephone=no" />
+		<!-- 忽略Android平台中对邮箱地址的识别 -->
+		<meta name="format-detection" content="email=no" />
+		<title>选择投保方案</title>
+		<link rel="stylesheet" href="../../css/mui/mui.min.css" />
+		<link rel="stylesheet" href="../../css/mui/mui.picker.min.css" />
+		<link rel="stylesheet" href="../../css/common/base.css" />
+		<link rel="stylesheet" href="../../css/common/common.css" />
+		<link rel="stylesheet" href="../../css/carinsure/insuranceCoverage.css"/>
+	</head>
+	<body>
+	<header>
+		<div class="h_back" id="insureback">
+			<div id="backImg">
+				<img src="../../images/back.png" />
+			</div>
+		</div>
+		<div class="h_title" id="pageTitle">选择投保方案</div>
+		<div class="h_next"></div>
+	</header>
+	<div class="mainPage mui-scroll-wrapper">
+	  <div class="mui-scroll">
+		<div class="content">
+			<div>
+				<div class="tab_titles">
+				   <div id="ziyou" class="tab_title">
+						<a class="tab_title_a active" href="#">
+							<div style="float:left;margin-top: 1px;margin-left: 15%;margin-right: 5px;"><img src="../../images/siji1.png"/></div>
+							<p style="float:left;">老司机套餐</p>
+						</a>
+					</div>
+					<div id="zunxiang" class="tab_title">
+						<a class="tab_title_a" href="#">
+							<div style="float:left;margin-top: 1px;margin-left: 19%;margin-right: 5px;"><img src="../../images/renqi1.png"/></div>
+							<p style="float:left;">人气套餐</p>
+						</a>
+					</div>
+					<div id="jizhi" class="tab_title">
+						<a class="tab_title_a" href="#">
+							<div style="float:left;margin-top: 1px;margin-left: 8%;margin-right: 5px;"><img src="../../images/youhui1.png"/></div>
+							<p>极致优惠套餐</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div id="item1">
+					<!-- 交强险区域 -->
+					<div class="content-title border-1px-bottom">
+						<img class="title-img" src="../../images/baoxian.png"/>
+						<b>交强险+车船税</b>
+					    <!-- <span class="toubao"><span class="TB-words">投保</span><img id="toubao-img" class="title-img" src="../../imgs/carinsure/insureinfo_roundno.png"></span> -->
+						<div class="toubao">投保</div>
+					</div>
+					<div class="content-title JQX-content border-1px-bottom" style="display:none;">
+						<table class="content-table1">
+						<tr>
+							<td></td>
+							<td>交强险起期</td>
+							<td></td>
+							<td>
+								<input id="jiaoqiangBdate" class="datechoose" type="text" value="请选择日期" readonly="readonly"/>
+							
+							</td>
+						</tr>
+					    </table>
+					</div>
+					<!-- 商业险区域 -->
+					<div class="content-title SYX-title border-1px-bottom">
+						<img class="title-img" src="../../images/shangyexian.png"/>
+						<b>商业险</b>
+						<div class="sytoubao">投保</div>
+						<div id="wenhao" style="width:20%;float: right;"><img class="wenhao" src="../../images/wenhao1.png"/></div>
+					</div>
+					<div class="content-title SYX-content border-1px-bottom" style="display:none;">
+						<table class="content-table1">
+						<tr>
+							<td></td>
+							<td>商业险起期</td>
+							<td></td>
+							<td>
+								<input id="businessBdate" class="datechoose" type="text" value="" readonly="readonly"/>
+							</td>
+						</tr>
+					    </table>
+					</div>
+					<!-- 主险区域 -->
+					<!-- <div class="content-title mainRisk-title border-1px-bottom">
+						<img class="title-img" src="../../images/zhuxian.png"/>
+						<span>主险</span>
+					</div> -->
+					<div id="mainInsurecontent" class="insurecontent swiper-slide">
+						
+					</div>
+					<!-- 附加险区域 -->
+					<!-- <div class="content-title FJXcontent border-1px-bottom">
+						<img class="title-img" src="../../images/fujiaxian.png"/>
+						<span>附加险</span>
+					</div> -->
+					<div id="additionInsurecontent" class="insurecontent swiper-slide border-1px-bottom">
+						
+					</div>
+					
+					<!-- 专属服务 -->
+					<div class="zsfuTitle content-title border-1px-bottom">
+						<img class="title-img" src="../../images/zhuanshufuwu.png"/>
+						<b>专属服务</b>
+						<img class="zsfwxiala" src="../../images/xiala1.png">
+					</div>
+					<div class="services" style="display:none;">
+						
+					</div>
+					
+					<!-- 确定按钮区域 -->
+					<div class="confirmbutton">下一步</div>
+				</div>
+				
+			</div>
+		</div>
+	  </div>
+	</div>
+	<div id="order_index" class="servicePage mui-scroll-wrapper">
+		<div class="mui-scroll">
+				<div id="title"></div>
+				<div id="inner"></div>
+		</div>
+	</div>
+	<!-- 精确报价预览  -->
+   	<div id="accprice_index" class="mui-scroll-wrapper" style="display: none;">
+	  <div class="mui-scroll">
+		<section class="detailcontainer swiper-slide">
+			<article id="vehicleArea" class="policymoneyarea swiper-slide border-1px-bottom">
+			    <div style="width: 100%;">
+			        <div class="vehicleArea_img"><img/></div>
+					<span class="policyname" style="margin-left:1.56%;font-weight:bold;">合计保费</span>
+					<span class="sum" id="summoney"></span>
+				</div>
+			</article>
+			<article id="VCIprice" class="policymoneyarea margin1rem swiper-slide border-1px-bottom">
+				<div class="policyArea_img"><img/></div>
+				<span class="policyname" style="margin-left:1.56%;">商业保险费<span id="elrLevelCOM" style="font-size: 13px"></span></span>
+				<div class='linkicon2'><img src="../../images/beneficiaryUp.png"/></div>
+				<span class="policymoney" id="busmoney"></span>
+			</article>
+			<article class="VCIdate swiper-slide">
+				<div class="VCI_data">
+				    <ul>
+				        <li class="border-1px-bottom">
+				            <div class="VCI_data_left">保单起始日期</div>
+				            <div class="VCI_data_center">
+				                <span id="busBeginDate"></span>&nbsp;&nbsp;<span>00:00&nbsp;&nbsp;起</span> 
+				            </div>
+				            <div class="VCI_data_right"></div>
+				        </li>
+				        <li class="border-1px-bottom">
+				            <div class="VCI_data_left">保单截止日期</div>
+				            <div class="VCI_data_center"><span id="busEndDate"></span>&nbsp;&nbsp;<span>24:00&nbsp;&nbsp;止</span></div>
+				            <div class="VCI_data_right"></div>
+				        </li>
+				    </ul>
+				</div>
+			</article>
+			<section id="policycontent" class="swiper-slide border-1px-bottom">
+				
+			</section>
+			
+			<article id="TCIprice" class="policymoneyarea margin1rem swiper-slide border-1px-bottom">
+				<div class="policyArea_img"><img/></div>
+				<span class="policyname" style="margin-left:1.56%;">交强保险费<span id="elrLevelCTP" style="font-size: 13px"></span></span>
+				<div class='linkicon2'><img src="../../images/beneficiaryUp.png"/></div>
+				<span class="policymoney" id="jqxmoney"></span>
+			</article>
+			<article id="jqxDateArea" class="TCIdate swiper-slide" style="display: none;">
+				<div class="VCI_data">
+				    <ul>
+				        <li class="border-1px-bottom">
+				            <div class="VCI_data_left">保单生成日期</div>
+				            <div class="VCI_data_center"><span id="jqxBeginDate"></span>&nbsp;&nbsp;<span>00:00&nbsp;&nbsp;起</span></div>
+				            <div class="VCI_data_right"></div>
+				        </li>
+				        <li>
+				            <div class="VCI_data_left">保单截止日期</div>
+				            <div class="VCI_data_center"><span id="jqxEndDate"></span>&nbsp;&nbsp;<span>24:00&nbsp;&nbsp;止</span></div>
+				            <div class="VCI_data_right"></div>
+				        </li>
+				    </ul>
+				</div>
+			</article>
+			
+			<article id="vehicleDateArea" class="policymoneyarea margin1rem swiper-slide border-1px-bottom" style="display: none;">
+				<div class="policyArea_img"><img/></div>
+				<span class="policyname" style="margin-left:1.56%;">车船税</span>
+				<span class="policymoney policyright" id="vehiclemoney"></span>
+			</article>
+           <div class="confirmbtn">立即投保</div>
+		</section>
+	 </div>
+  	</div>
+  	<!-- 重新报价弹窗 -->
+	<div class="baojiaDialog" style="position: fixed;width:100%;height:100%; z-index: 98;top: 0;right: 0;bottom: 0;left: 0;opacity: 1;background: rgba(0,0,0,.4);display: none;"></div>
+	<div id="dialog">
+	  <div class="tanchuang">
+	      <div class="zhuanbao"></div>
+	      <img class="zhuanbaoImg"/>
+	      <div class="zhuanbaoInput"><input id="querySequenceNo" type="text" placeholder="请输入验证码"></div>
+	      <div id="restartbj" class="button">确定</div>
+	  </div>
+	</div>
+	<script type="text/javascript" src="../../js/util/zepto.min.js"></script>
+	<script type="text/javascript" src="../../js/mui/mui.min.js" ></script>
+    <script type="text/javascript" src="../../js/mui/mui.picker.min.js"></script>
+	<script type="text/javascript" src="../../js/util/base.js"></script>
+	<script type="text/javascript" src="../../js/util/common.js"></script>
+	<script type="text/javascript" src="../../js/carinsure/insuranceCoverage.js"></script>
+	</body>
+</html>

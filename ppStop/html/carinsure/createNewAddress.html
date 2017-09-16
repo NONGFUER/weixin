@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+<meta name="viewport"
+	content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<!-- 忽略IOS将页面中的数字识别为电话号码 -->
+<meta name="format-detection" content="telephone=no" />
+<!-- 忽略Android平台中对邮箱地址的识别 -->
+<meta name="format-detection" content="email=no" />
+<title>新建保单配送地址</title>
+<link rel="stylesheet" href="../../css/mui/mui.min.css" />
+<link rel="stylesheet" href="../../css/mui/mui.picker.min.css" />
+<link rel="stylesheet" href="../../css/common/base.css" />
+<link rel="stylesheet" href="../../css/common/common.css" />
+<link rel="stylesheet"href="../../css/carinsure/createNewAddress.css" />
+
+<script type="text/javascript" src="../../js/util/zepto.min.js" ></script>
+<script type="text/javascript" src="../../js/mui/mui.min.js" ></script>
+<script type="text/javascript" src="../../js/mui/mui.picker.min.js"></script>
+<script type="text/javascript" src="../../js/util/base.js" ></script>
+<script type="text/javascript" src="../../js/mui/city.data-3.js" ></script>
+<script type="text/javascript" src="../../js/carinsure/createNewAddress.js"></script>
+</head>
+<body>
+	<header>
+		<div class="h_back">
+			<div>
+				<img src="../../images/insureinfo_left.png"/>
+			</div>
+		</div>
+		<div class="h_title">添加收货地址</div>
+		<div class="h_next"></div>
+	</header>
+	<div id="insure_index" class="mui-scroll-wrapper">
+		<div id="insure_iscroll" class="mui-scroll">
+			<!-- 保单配送 -->
+			<div id="info_input">
+				<!-- 保单配送 -->
+				<div id="policy_info">
+					<ul class="ul_list_other">
+						<li class="border-1px-bottom">
+							<div class="policy_li_left">
+								<span>收件人姓名</span>
+								<input type="hidden" id="currentId">
+							</div>
+							<div class="policy_li_center">
+								<input id="recipient_name_input" type="text" value="请输入收件人姓名" maxlength="20"/>
+							</div>
+							<div class="policy_li_right">
+								<div class="import_client">
+									<img />
+								</div>
+							</div>
+						</li>
+						<li class="border-1px-bottom">
+							<div class="policy_li_left">
+								<span>手机号码</span>
+							</div>
+							<div class="policy_li_center">
+								<input id="recipient_phone_input" maxlength="11" type="tel"
+									value="请输入收件人手机号" />
+							</div>
+							<div class="policy_li_right"></div>
+						</li>
+						<li class="border-1px-bottom">
+							<div class="policy_li_left">
+								<span>选择省市</span>
+							</div>
+							<div id="provinceList" class="policy_li_center" style="text-align: center;">
+								<input id="recognizee_city_input" name="" type="text" value="请选择城市" style=" width: 88%;color:#585858;" readonly /> 
+								<img class="imgmore" src="../../images/btn-right.png">
+							</div>
+							<div class="policy_li_right"></div>
+						</li>
+						<li class="margin-top">
+							<div class="policy_li_left">
+								<span>详细地址</span>
+							</div>
+							<div class="policy-info">
+								<textarea id="recipient_address_input" maxlength="25">详细地址(如门牌号等)</textarea>
+							</div>
+						</li>
+						<li class="border-1px-bottom defautdiv">
+							<div class="policy_li_left">
+								<span style="color: #f36f39">设置为默认地址</span>
+							</div>
+							<div class="policy_li_center">
+							
+							</div>
+							<div class="policy_right_switch">
+								<div>
+									<p class="switch_choose">
+										<span class="policyholder_info_sex_selected"><!-- 否 --></span>
+										<span class="policyholder_info_sex_unselected"><!-- 是 --></span>
+									</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div id="confirm" class="btn_jump_order_info">保存</div>
+		</div>
+	</div>
+</body>
+</html>
+

@@ -1,0 +1,67 @@
+@CHARSET "UTF-8";
+/** 
+ *maweiwei
+ *2016/03/31
+ *债权转让协议页面样式
+ **/
+ .background{
+	background: #fff;
+ }
+ #inpartmain{
+ 	position: absolute;
+ 	margin-top: 3.5833rem;
+    border-top: 2px solid #dee3de;
+ }
+ .sp_content{
+    padding: 1rem;
+ }
+ .sp_introd{
+    width: 100%;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.85rem;
+    text-align: justify;
+ }
+ .sp_title{
+    width: 100%;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    line-height: 3rem;
+ }
+ .sp_introd p,.sp_cont p{
+    text-align: justify;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.85rem;
+    margin-bottom: 0px;
+    text-align: justify;
+ }
+ .sp_cont{
+    width: 100%;
+    padding-left: 0.85rem;
+ }
+ .dp_table{
+ 	width: 100%;
+    border: 1px solid #666;
+    border-top: none;
+ }
+  .dp_table tr{
+    border-top: 1px solid #666;
+ }
+ .table_td{
+    border-right: 1px solid #666;
+ }
+ .tr{
+ 	text-align: right;
+ }
+ .mt1{
+ 	margin-top: 1rem;
+ }
+ .mt5{
+ 	margin-top: 0.5rem;
+ }
+ 
+ 
+ 
+ 

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 忽略IOS将页面中的数字识别为电话号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 忽略Android平台中对邮箱地址的识别 -->
+    <meta name="format-detection" content="email=no" />
+    <title>订单详情</title>
+    <link rel="stylesheet" href="../../css/mui/mui.min.css" />
+    <link rel="stylesheet" href="../../css/common/base.css" />
+    <link rel="stylesheet" href="../../css/common/common.css" />
+    <link rel="stylesheet" href="../../css/carinsure/quotationDetail.css" />
+</head>
+<body>
+	<header id="original">
+		<div class="h_back">
+			<div id="backImg">
+				<img src="../../images/back.png">
+			</div>
+		</div>
+	    <div class="h_title">订单详情</div>
+		<div class="h_next"><div><img /></div></div>
+	</header>
+	<!-- 精确报价预览 -->
+   	<div id="accprice_index" class="mui-scroll-wrapper">
+		  <div class="mui-scroll">
+			<section class="detailcontainer swiper-slide">
+				<article id="vehicleArea" class="policymoneyarea swiper-slide border-1px-bottom">
+				    <div class="bigTitle">
+				        <div class="vehicleArea_img"><img src="../../images/tiananlogo.png"/></div>
+						<div class="biaoyu">
+							<p style="margin-top:12px;margin-bottom:5px;">天安车险</p>
+							<p style="margin-top:5px;margin-bottom:5px;">出行更放心</p>
+						</div>
+						<div class="sum" id="summoney"></div>
+					</div>
+				</article>
+				<div id="jqDate" class="startTime" style="display:none;">
+					<div class="time_img"><img src="../../images/time.png"/></div>
+					<div class="time_words">交强险起保时间</div>
+					<div class="time_time">
+						<input id="start_date"  readonly="readonly"/>
+					</div>
+				</div>
+				<!-- 交强险保费 -->
+				<div class="jiaoqiangxian border-1px-bottom">
+					<table class="jqxBigTitle border-1px-bottom">
+						<tr>
+							<td class="jqxTitle">交强险保费：</td>
+							<td id="jqxmoney"  class="jqxFee"></td>
+							<td id="jqpj" class="leibie"></td>
+						</tr>
+					</table>
+				    <table id="jqxTime" class="jqxTable border-1px-bottom" style="display: none">
+						<tr>
+							<td class="jqxLittleTitle">保单起始日期</td>
+							<td class="date"><span id="jqxBegindate"></span> 00:00 起</td>
+						</tr>
+						<tr>
+							<td class="jqxLittleTitle">保单截止日期</td>
+							<td class="date"><span id="jqxEnddate"></span> 24:00 止</td>
+						</tr>
+					</table>
+					<table class="jqxTable border-1px-bottom">
+						<tr id="jqxTr" style="display: none">
+							<td class="jqxLittleTitle">交强险</td>
+							<td class="jqxBotton">
+								<div class="jqxBotton1">投保</div>
+							</td>
+							<td id="jqxPre" class="jqxLittleFee"></td>
+						</tr>
+						<tr id="vehicletaxTr" style="display: none">
+							<td class="jqxLittleTitle">车船税</td>
+							<td class="jqxBotton">
+								<div class="jqxBotton1">投保</div>
+							</td>
+							<td id="vehicletaxPre" class="jqxLittleFee"></td>
+						</tr>
+					</table>
+				</div>
+				<!-- 商业险保费 -->
+				<div class="jiaoqiangxian border-1px-bottom">
+					<div id="syDate" class="startTime" style="display:none;">
+						<div class="time_img"><img src="../../images/time.png"/></div>
+						<div class="time_words">商业险起保时间</div>
+						<div class="time_time">
+							<input id="bus_start_date"  readonly="readonly"/>
+						</div>
+					</div>
+					<table class="jqxBigTitle border-1px-bottom">
+						<tr>
+							<td class="jqxTitle">商业险保费：</td>
+							<td id="busmoney"  class="jqxFee"></td>
+							<td id="sypj" class="leibie"></td>
+						</tr>
+					</table>
+					<table id="busTime" class="jqxTable border-1px-bottom" style="display:none;">
+						<tr>
+							<td class="jqxLittleTitle">保险起始日期</td>
+							<td class="date"><span id="businessBegindate"></span> 00:00 起</td>
+						</tr>
+						<tr>
+							<td class="jqxLittleTitle">保单截止日期</td>
+							<td class="date"><span id="businessEnddate"></span> 24:00 止</td>
+						</tr>
+					</table>
+					<table id="cxRisk" class="jqxTable border-1px-bottom">
+					</table>
+				</div>
+				
+	           <div class="backDown confirmbtn">立即投保</div>
+	           <div class="backDown quotationbtn">重新报价</div>
+			</section>
+		 </div>
+	</div>
+</body>
+<script type="text/javascript" src="../../js/util/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/mui/mui.min.js" ></script>
+<script type="text/javascript" src="../../js/util/base.js"></script>
+<script type="text/javascript" src="../../js/util/common.js"></script>
+<script type="text/javascript" src="../../js/carinsure/quotationDetail.js"></script>
+</html>

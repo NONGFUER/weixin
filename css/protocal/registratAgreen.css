@@ -1,0 +1,53 @@
+@CHARSET "UTF-8";
+/* 内部显示样式 */
+.bodybackground{
+	background-color: #fff;
+}
+#indexpart{
+	position: absolute;
+ 	margin-top: 3.5833rem;
+    border-top: 2px solid #dee3de;
+}
+.wds_list{
+	padding: 1rem;
+}
+.rga_agreen{
+	width:100%;
+	line-height:1.875rem;
+	color:#333;
+	font-size:12px;
+	margin-bottom:1rem;
+	text-indent: 26px;
+	text-align: justify;
+}
+.wds_list h2{
+	width:100%;
+	font-size:14px;
+	color:#000;
+	margin-bottom:1rem;
+}
+.rga_list{
+	width:100%;
+	text-align: justify;
+}
+.rga_list ul{
+	width:100%;
+	margin-bottom:1rem;
+}
+.rga_list ul li{
+	line-height:2rem;
+	font-size:12px;
+	color:#333;
+	text-indent: 26px;	
+	word-break: break-all;
+	word-wrap: break-word;
+}
+.rga_list ul li span{
+	font-weight: bold;
+}
+.list{
+	font-size:12px;
+	text-indent: 26px;
+	margin-bottom: 1rem;
+	text-align: justify;
+}

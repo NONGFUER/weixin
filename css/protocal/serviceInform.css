@@ -1,0 +1,66 @@
+@CHARSET "UTF-8";
+/* 内部显示样式 */
+.bodybackground{
+	background-color: #fff;
+	font-size:12px;
+	color:#666;
+}
+#indexcontent{
+	position: absolute;
+ 	margin-top: 3.5833rem;
+    border-top: 2px solid #dee3de;
+}
+.wds_list{
+	padding: 1rem;
+	text-align: justify;
+}
+.wds_list p{
+	color:#666;
+}
+.rga_txt{
+	text-indent: 26px;
+}
+.rga_list{
+	width:100%;
+	margin-top: 1rem;
+}
+.rga_list ul{
+	width:100%;
+	margin-bottom:1rem;
+}
+.rga_list ul li{
+	line-height:2rem;
+	text-indent: 26px;	
+	word-break: break-all;
+	word-wrap: break-word;
+}
+.rga_list ul li:before{
+	content: " ";
+	width:0.8rem;
+	height: 0.8rem;
+	display: inline-block;
+	margin-right: 1rem;
+	background: url(../../imgs/public/orangecircle.png) no-repeat;
+	background-size: 100% 100%;
+}
+.rga_company{
+	width:72%;
+	float:right;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.rga_li{
+	width:100%;
+	margin-top: 1rem;
+}
+.rga_li ul{
+	width:100%;
+	margin-bottom:1rem;
+}
+.rga_li ul li{
+	line-height:2rem;
+	text-indent: 26px;	
+	word-break: break-all;
+	word-wrap: break-word;
+}

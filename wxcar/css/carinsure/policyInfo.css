@@ -1,0 +1,152 @@
+#contentIndex{
+	margin-top:44px;
+}
+.bigTitle{
+	width:100%;
+	height:80px;
+	background-color:#fff;
+}
+.bigTitleLeft{
+	width:78%;
+	float:left;
+	padding-top:10px;
+	padding-left:6.67%;
+}
+.riskName{
+	font-size:15px;
+	color:#000;
+	line-height:28px;
+	margin-bottom:0;
+}
+.policyNo{
+	font-size:12px;
+	color:#888;
+	line-height:28px;
+	margin-bottom:0;
+}
+.bigTitleRight{
+	width:22%;
+	float:right;
+	margin-top:20px;
+}
+.zhuangtai{
+	width:65px;
+	height:33px;
+}
+.toubaoren{
+	margin-top:10px;
+	margin-bottom:11px;
+	width:100%;
+	background-color:#fff;
+}
+.insureName{
+	height: 47px;
+    line-height: 47px;
+    padding-left: 6.67%;
+    background-color: #fff;
+    color: #000;
+    font-size:14px;
+}
+.TBR{
+	margin-left:4.5%;
+	width:100%;
+}
+.name,.IDType,.ID,.birthday,.mobile,.mail,.riskQijian,.baofei,.qudao{
+	height:47px;
+	line-height:47px;
+	width:100%;
+}
+.li_title{
+	float:left;
+	width:30.23%;
+	font-size:14px;
+	color:#888;
+	padding-left: 3%;
+}
+.li_value{
+	width:58.97%;
+	height:47px;
+	line-height:47px;
+	float:left;
+	color:#000;
+	text-align:right;
+	font-size:14px;
+}
+.choose_way{
+	width:100%;
+	background-color:#fff;
+}
+.chuxing_title{
+	width:100%;
+	color:#6ba3fd;
+	font-size:12px;
+	height:28px;
+	line-height:28px;
+}
+table{
+	border-left:0;
+	border-right:0;
+	padding:0;
+	margin:0;
+}
+.feiji,.huoche,.qiche,.lunchuan{
+	height:27px;
+	line-height:27px;
+	color:#666;
+	font-size:12px;
+}
+
+.kongbai{
+	width:10px;
+}
+.fangshi{
+	width:46%;
+	padding-left:13px;
+	text-align:left;
+	text-align:left;
+}
+.fanwei{
+	width:30%;
+	text-align:center;
+}
+.edu{
+	width: 15%;
+    text-align: center;
+}
+/* .dagou{
+	padding-left:5px;
+} */
+.gou{
+	height:15px;
+	width:15px;
+}
+.riskTiaokuan{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.rightjiantou{
+	float:right;
+	margin-right:6%;
+	width: 8px;
+    height: 12px;
+    margin-top: 17px;
+}
+.anniu{
+	width:87.5%;
+	height:40px;
+	line-height:40px;
+	margin:auto;
+	margin-top: 35px;
+	margin-bottom:25px;
+	background-color:#6ba3fd;
+	color:#fff;
+	font-size:18px;
+	text-align:center;
+	border-radius:5px;
+}
+.agenter {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: #fff;
+}

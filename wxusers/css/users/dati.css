@@ -1,0 +1,137 @@
+/* header{
+	background-color: #000000 !important;
+} */
+#indexpart{
+	margin-top: 44px;
+}
+.tishi{
+	height: 35px;
+	line-height: 35px;
+	font-size: 15px;
+	color: #333;
+	padding-left: 3%;
+}
+.content{
+	background-color: #fff;
+	padding-left: 3%;
+	line-height: 25px;
+	font-size: 16px;
+	color: #333;
+	padding-left: 3%;
+	/* padding-top: 10px; */
+	padding-right: 3%;
+}
+.kaoti{
+	border-bottom:1px dashed #ccc; 
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.xuanxiang{
+	width: 100%;
+    padding-left: 20px;
+    padding-top: 15px;
+}
+.chooseImg{
+	width: 15px;
+    height: 15px;
+    margin-bottom: 2px;
+    margin-right:4px;
+}
+.kaoti:nth-of-type(5){
+	border-bottom: 0;
+}
+.shadow,.shadowpass{
+	z-index: 10;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	/* height: 120%; */
+	background: rgba(0, 0, 0, 0.3);
+	filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+	/* display: none; */
+}
+.option{
+	color: #878787;
+}
+.tip,.tippass{
+	z-index: 11;
+	width: 74%;
+	height: 174px;
+	/* font-size: 16px; */
+	margin-top: 50%;
+    margin-left: 13%;
+}
+.tip p,.tippass p{
+	font-size: 16px;
+}
+
+.tiphead{
+	height: 45px;
+	line-height: 45px;
+	border-radius: 10px 10px 0 0;
+	background-color: #fafafa;
+}
+.tiphead p{
+	color: #1b6bb8;
+	margin: 0;
+	text-align: center;
+	font-weight: bold;
+}
+.cancleimg{
+	z-index: 12;
+	float: right;
+	width: 12px;
+	margin-top: -38px;
+	margin-right: 10px;
+}
+.tipbody,.tipbodypass{
+	/* height: 85px; */
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+}
+.tipbody p, .tipbodypass p{
+	text-indent: 2em;
+	color: #333;
+	line-height: 30px;
+	width: 90%;
+    margin: auto;
+    padding-top: 11px;
+}
+.tipfoot{
+	height: 45px;
+	border-radius: 0 0 10px 10px;
+	background-color: #fafafa;
+	color: #1b6bb8;
+}
+.cancle,.retest{
+	float: left;
+	width: 49.5%;	
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+}
+.sure{
+	width: 99.5%;	
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+}
+.cancle{
+	border-right: 1px solid #ccc;
+}
+/* 下一步按钮 */
+.confirmbtn {
+    width: 94.6667%;
+    line-height: 45px;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    font-size: 17px;
+    color: #fff;
+    text-align: center;
+    background: #1b6bb8;
+    border-radius: 0.5rem;
+    margin-bottom: 30px;
+}
+

@@ -1,0 +1,658 @@
+@charset "utf-8";
+.mainPage{
+	width: 100%;
+	margin-top: 44px;
+}
+.header{
+	
+}
+/* .content{
+	margin-top: 44px;
+} */
+/* tab选项卡 */
+.tab_titles{
+	height: 45px;
+	line-height: 45px;
+}
+.tab_title{
+	height: 45px;
+	line-height: 45px;	
+	font-size: 14px;
+	float: left;
+	margin-left:1px;
+	width: 33%;
+	background-color: #fff;
+}
+.tab_title .active p{
+	color: #f36f39;
+	display: block;
+	/* border-bottom: 2px solid #1b6bb8; */
+}
+.tab_title_a{
+	color: #333;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	border-bottom: 2px solid #fff;
+}
+
+#item1,#item2,#item3{
+	margin-top: 6px;
+}
+/* 标题 */
+.content-title{
+	height: 50px;
+	line-height: 50px;
+	font-size: 14px;
+	color: #444;
+	background-color:#fff;
+	padding-left: 5.6%;
+	padding-right: 5.6%;
+}
+.title-img{
+	height: 16px;
+	width: 16px;
+}
+.content-table{
+	table-layout:fixed;
+	width: 100%;
+}
+.content-table tr td:first-child{
+	width: 6%;
+}
+.content-table tr td:nth-child(2){
+	width: 40.3%;
+}
+.content-table tr td:nth-child(3){
+	width: 32.2%;
+}
+.content-table tr td:nth-child(4){
+	width: 21.5%;
+}
+
+/* 商业险、交强险内容 */
+.content-table1{
+	table-layout:fixed;
+	width: 100%;
+}
+.content-table1 input{
+	color: #333;
+}
+.content-table1 tr td:first-child{
+	width: 6%;
+}
+.content-table1 tr td:nth-child(2){
+	width: 34%;
+}
+.content-table1 tr td:nth-child(3){
+	width: 25%;
+}
+.content-table1 tr td:nth-child(4){
+	width: 35%;
+}
+.JQX-content{
+	display: none;
+}
+.toubao{
+	display: block;
+    text-align: center;
+    float: right;
+    width: 65px;
+    height: 25px;
+    line-height: 24px;
+    border: 1px solid #f36f39;
+    color: #f36f39;
+    border-radius: 5px;
+    margin-top: 12px;
+}
+/******* 商业险投保按钮样式 **********/
+.sytoubao{
+    text-align: center;
+    float: right;
+    width: 65px;
+    height: 25px;
+    line-height: 24px;
+    border: 1px solid #f36f39;
+    color: #f36f39;
+    border-radius: 5px;
+    margin-top: 12px;
+    margin-left: 10px;
+}
+.wenhao{
+	height:14px;
+	width:14px;
+	float:right;
+	margin-top: 19px;
+}
+/* .TB-words{
+	margin-right:6px;
+}
+.toubao img{
+	margin-bottom: 2px;
+} */
+
+/* 主险  */
+.insurecontent{
+	background-color:#fff;
+}
+.insurecontent table{
+	width:100%;
+	font-size: 14px;
+	font-family: "microsoft yahei",sans-serif;
+}
+.insurecontent table tr{
+	height:4.25rem;
+}
+.insurecontent table tr td:nth-child(1){
+	padding-left:8.6%;
+	width:40%;
+	font-family: "microsoft yahei",sans-serif;
+	color: #444;
+}
+.insurecontent table tr td:nth-child(2){
+	width: 25%;
+}
+.insurecontent table tr td:nth-child(2) input{
+	width:59%;
+	height:25px;
+	line-height: 25px;
+	text-align:center;
+	/* background-color:#f5f3f4; */
+	font-size: 14px;
+	border-radius:0.5rem;
+	/* border: 1px solid #f36f39; */
+}
+.insurecontent table tr td:nth-child(3){
+	width: 21%;
+	text-align:right;
+	/* padding-right:calc(4.8% * 1.059322);
+	padding-right:-webkit-calc(4.8% * 1.059322); */
+	color:#ccc;
+	font-size: 13px;
+	/* padding-right: 8.6%; */
+}
+.insurecontent table tr td:first-child img{
+	width:1.5rem;
+	height:1.5rem;
+	margin-right:1%;
+}
+.insurecontent table tr td:last-child img{
+	width:1rem;
+	height:1rem;
+	/* margin-right:10%; */
+}
+.number{
+	display:none;
+}
+.choose2{
+	background-color: #f7f7f7;
+}
+.choose2 input{
+	background-color: #fff;
+}
+
+/* 专属服务 */
+.services{
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 4px;
+	table-layout: fixed;
+	padding-bottom: 8px;
+	color: #333;
+	padding-left: 3%;
+	background-color: #fff;
+	padding-top: 5px;
+}
+.zsfwtitle{
+	float: left;
+	margin: 3px;
+	width: 30%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 14px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+.zsfwactive{
+	background-color: #f36f39;
+	color: #fff;
+}
+#jiaoqiangBdate{
+	color: #333;
+	font-size: 15px;
+	font-family: 'Microsoft YaHei', sans-serif;
+}
+#businessBdate{
+	font-size: 15px;
+	font-family: 'Microsoft YaHei', sans-serif;
+}
+
+
+/* 下一步按钮 */
+.confirmbutton{
+	width: 94.6667%;
+	line-height: 3.75rem;
+	margin: 0 auto;
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    background: #f36f39;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.servicePage{
+	display: none;
+	background: #fff;
+}
+#order_index {
+	margin-top: 44px;
+}
+#title{
+	text-align: center;
+	font-size: 16px;
+	margin-top: 15px;
+}
+#inner{
+	margin-top: 20px;
+}
+#inner p{
+	text-indent:2em;
+	padding-left: 4%;
+	padding-right: 3%;
+}
+
+/* 精确报价预览页面 */
+#accprice_index {
+	margin-top:44px;
+}
+.detailcontainer{
+	width:100%;
+	/*margin-top:4.5rem;*/
+	margin-bottom:1.5rem;
+}
+.policymoneyarea table{
+	width:100%;
+	text-align:right;
+	background-color:#fff;
+	font-size: 16px;
+	color:#585858;
+	font-family: "microsoft yahei",sans-serif;
+}
+.policymoneyarea table tr{
+	height:44px;
+	line-height:44px;
+}
+.policymoneyarea table tr td input{
+	width: 58%;
+	font-size: 16px;
+	color: #585858;
+	text-align: right;
+	background-color: #fff;
+	float: right;
+	font-family: "microsoft yahei",sans-serif;
+	margin-right: 5%;
+}
+.policymoneyarea,.insureName{
+	width:100%;
+	height: 50px;
+	line-height: 50px;
+	background-color:#fff;
+	font-size: 16px;
+}
+.linkiconbtn{
+	width: 1.6rem;
+    height: 1.6rem;
+    float: left;
+    margin-left: 2.8%;
+    margin-right: 2.8%;
+    margin-top: 1.6rem;
+}
+.policyname{
+	font-size: 16px;
+	color:#585858;
+}
+.policyperiodname{
+	font-size:15px;
+	color:#585858;
+	float:left;
+	margin-left:5.6%;
+}
+.policymoney{
+	font-size:15px;
+	color:#ff5000;
+	float:right;
+}
+.policyright{
+	margin-right:9.6%!important;
+}
+.linkicon2{
+	width:1.5rem;
+	height:1.5rem;
+	float:right;
+	margin:0 2.8% 0 1.15%;
+}
+.vehicleArea_img{
+	width: 10%;
+    padding-left: 5.55%;
+    float: left;
+}
+.policyArea_img{
+	width: 10%;
+    padding-left: 5.55%;
+    float: left;
+}
+.VCIdate,.TCIdate{
+	width:100%;
+	font-size:1rem;
+	color:#585858;
+}
+.policydatename{
+	line-height:3.125rem;
+	font-size:1rem;
+	float:left;
+	margin-left:5.6%;
+}
+.policydate{
+	width:45%;
+	height:100%;
+	float:right;
+	text-align:right;
+	margin-right:calc(1.5rem + 4.8% + 3.15%);
+	margin-right:-webkit-calc(1.5rem +4.8% +3.15%);
+	margin-right: 4.8%;
+	
+}
+.policydate span{
+	line-height:2.25rem;
+	background-color:#fff;
+}
+
+#policycontent{
+	background-color:#fafafa;
+}
+.sum{
+	margin-right: 2.6rem;
+    color: #fe5000;
+    float: right;
+    font-weight: bold;
+}
+#policycontent table{
+	margin-left:5.6%;
+	width:94.4%;
+	font-size: 13px;
+	font-family: "microsoft yahei",sans-serif;
+}
+#policycontent table tr{
+	height: 44px;
+}
+#policycontent table tr td:nth-child(1){
+	width:20%;
+}
+#policycontent table tr td:nth-child(2){
+	width:55%;
+}
+#policycontent table tr td:nth-child(3){
+	width: 25%;
+    text-align: right;
+    padding-right: 3rem;
+}
+#policycontent table tr td:nth-child(4){
+	width:26%;
+	text-align:right;
+	padding-right:calc((1.5rem + 4.8% + 3.15%) * 1.059322);
+	padding-right:-webkit-calc((1.5rem + 4.8% + 3.15%)* 1.059322);
+	padding-right: 4.8%;
+}
+
+.mainpolicy{
+	width: 3rem;
+	height: 1.6rem;
+	line-height: 1.6rem;
+	font-size: 10px;
+	color: #fff;
+	text-align: center;
+	background: #f5692c;
+	border-radius:0.3125rem;
+	-webkit-border-radius:0.3125rem;
+}
+.additionpolicy{
+	width:3.5rem;
+	height:1.6rem;
+	line-height: 1.6rem;
+	font-size: 10px;
+	color: #fff;
+	text-align: center;
+	background: #41d857;
+	border-radius:0.3125rem;
+	-webkit-border-radius:0.3125rem;
+}
+.franchise{
+	width:4.5rem;
+	height:1.6rem;
+	line-height: 1.6rem;
+	font-size: 10px;
+	color: #fff;
+	text-align: center;
+	background: #5bbdea;
+	border-radius:0.3125rem;
+	-webkit-border-radius:0.3125rem;
+}
+
+.margin1rem{
+	margin-top:1rem;
+}
+.VCI_data{
+	width:100%;
+}
+.VCI_data ul{
+	width: 100%;
+	background-color: #fafafa;
+	margin: 0;
+}
+.VCI_data li {
+	margin-left:5.55%;
+	width: 94.45%;
+	height: 44px;
+	line-height: 44px;
+	font-size: 12px;
+	color: #333;
+	display: -moz-box;
+	display: -webkit-box;
+	display: box;
+}
+.VCI_data .VCI_data_left {
+	-moz-box-flex: 46;
+	-webkit-box-flex: 46;
+	box-flex: 46;
+	width: 45.2%;
+}
+.VCI_data .VCI_data_center {
+	-moz-box-flex: 46;
+	-webkit-box-flex: 46;
+	box-flex: 46;
+	text-align:right;
+	width: 45.4%;
+}
+.VCI_data .VCI_data_right {
+	-moz-box-flex: 10;
+	-webkit-box-flex: 10;
+	box-flex: 10;
+	width: 9.3%;
+}
+.btmblankarea{
+	width:100%;
+	height:5.5rem;
+}
+.info_choose {
+	width: 25%;
+	height: 2.5rem;
+	line-height: 2.5rem; 
+	margin-top: 0.6875rem;
+	border: 1px solid #ccc;
+	border-radius: 1.5rem;
+	float:right;
+	background-color: #fe5000;
+    margin-right:2.6rem;
+}
+.info_choose span {
+	display: block;
+	float: left;
+	font-size: 1rem;
+	text-align: center;
+	line-height: 2.5rem; 
+    margin-top: -1px;
+}
+.info_choose span:last-child {
+	float: right;
+}
+
+.info_selected {
+	width: 50%;
+	color: #333;
+	border-radius: 3.5rem;
+	background-color: #fff;
+	margin-top: -1px;
+}
+.info_unselected {
+	width: 50%;
+	color: #fff;	
+}
+.confirmbtnarea{
+	width: 100%;
+	height:5rem;
+	position:fixed;
+	bottom:0;
+	left:0;
+	z-index:8888;
+	background-color:#fff;
+	display:-webkit-box;
+	-webkit-flow:row;
+	text-align:center;
+}
+.confirmbtnarea div{
+	-webkit-box-flex:1;
+	padding:0.5rem 0 0.5rem 0;
+}
+.confirmbtnarea div span{
+	line-height:2rem;
+	font-size:1.33rem;
+	color:#585858;
+}
+.confirmbtnarea div span.sum{
+	font-size:1.65rem;
+	color:#5ab6e7;
+}
+.confirmbtn {
+	width: 94%;
+    line-height: 3.75rem;
+    margin: 0 auto;
+    /* margin-left: 5%; */
+    margin-top: 2.5rem;
+    font-size: 1.65rem;
+    color: #fff;
+    text-align: center;
+    background: #1b6bb8;
+    border-radius: .5rem;
+}
+.tab_titles img{
+	width:14px;
+	height:14px;
+}
+.nochoosebjmp{
+	width:70px;
+	height:25px;
+	color:#aeb2b7;
+	border:1px solid #aeb2b7;
+	border-radius:5px;
+	text-align:center;
+}
+.choosebjmp{
+	width:70px;
+	height:25px;
+	line-height:25px;
+	color:#277eeb;
+	border:1px solid #277eeb;
+	border-radius:5px;
+	text-align:center;
+}
+.nochooserisk{
+	width:65px;
+	height:25px;
+	color:#aeb2b7;
+	border:1px solid #aeb2b7;
+	border-radius:5px;
+	text-align:center;
+}
+.chooserisk{
+	width:65px;
+	height:25px;
+	color:#f36f39;
+	border:1px solid #f36f39;
+	border-radius:5px;
+	text-align:center;
+}
+.zsfwxiala{
+	height: 10px;
+    width: 14px;
+    float: right;
+    margin-top: 19px;
+}
+
+
+/* 转保车验证码弹出窗 */
+#dialog {
+    width: 78%;
+    position: absolute;
+    top: 25%;
+    left: 11%;
+    text-align: center;
+    z-index: 100;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 20px 0;
+    display: none;
+}
+.zhuanbao{
+	width:90%;
+	line-height:45px;
+	margin:auto;
+	text-align: center;
+}
+.zhuanbaoInput{
+	width:80%;
+	line-height:35px;
+	font-size: 14px;
+	margin: auto;
+	border: 1px solid #888;
+	padding: 0 10px;
+}
+.zhuanbaoImg{
+	width:80%;
+	margin: 10px auto;
+}
+#querySequenceNo{
+	width: 100%;
+    font-size: 18px;
+    color: rgb(136, 136, 136);
+    text-align: center;
+}
+.button {
+    width: 80%;
+    margin: auto;
+    height: 38px;
+    line-height: 38px;
+    font-size: 18px;
+    border: 1px solid #f36f39;
+    color: #f36f39;
+    border-radius: 6px;
+    margin-top: 18px;
+}
+
+
+

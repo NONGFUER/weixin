@@ -1,0 +1,605 @@
+@charset "utf-8";
+/* 小写转大写 */
+#plate_number_input,#owner_idNo,#vehicle_identification_input{
+	text-transform:Uppercase;
+}
+#order_index {
+	position: relative;
+	margin-top:44px;
+}
+#indexpart {
+	position:relative;
+	width: 100%;
+}
+.x-input-el {
+    display: block;
+    /*add:防止闪屏*/
+    -webkit-user-modify: read-write-plaintext-only!important;
+}
+.carimg{
+	width:100%;
+	/* margin-bottom:1rem; */
+}
+
+/*------------------------------------------------------------------------------*/
+.mescontainer{
+	width:100%;
+	font-size: 16px;
+}
+.mescontainer table{
+	width:100%;
+	text-align:right;
+	background-color: #fff;
+	font-size: 14px;
+	color:#444;
+}
+.mescontainer table tr{
+	height: 45px;
+}
+/* .ownerTable tr:last-child td{
+	border-bottom: none;
+} */
+
+.mescontainer table tr td:nth-child(1){
+	width:4.67%;
+}
+.mescontainer table tr td:nth-child(2){
+	width:5.3%;
+	text-align:left;
+}
+.mescontainer table tr td:nth-child(3){
+	width:26%;
+	text-align:left;
+	/* padding-left: 2.4%; */
+	color:#444;
+	font-size:14px;
+}
+.mescontainer table tr td:nth-child(4){
+	width:30.8%;
+}
+.mescontainer table tr td:nth-child(5){
+	width:30.8%;
+}
+.mescontainer table tr td:nth-child(6){
+	width:4.4%;
+}
+.mescontainer table input{
+	width: 93.8%;
+	font-size: 14px;
+	color: #000;
+	text-align: left;
+	background-color: #fff;
+	float: left;
+	font-family: "microsoft yahei";
+}
+.linkicon{
+	width: 8px;
+	height: 10px;
+	float:right;
+}
+.chooseicon{
+	width:14px;
+	height:14px;
+}
+.confirmbtn{
+	width: 94.6667%;
+	line-height: 40px; 
+	margin: 0 auto;
+	margin-top:45px;
+	font-size: 15px;
+	color: #fff;
+	text-align: center;
+	background: #f36f39;
+	border-radius: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+
+/*------------------------------------------------------------------------------*/
+
+.icon{
+	width: 10px;
+	height: 14px;
+}
+.mui-scroll{
+	position:relative;
+}
+#plateNum{
+	color:#888;
+}
+/*----------------------------------------------------------------------------------*/
+
+.ownerTable tr:last-child td{
+	border-bottom: none;
+}
+/* .mescontainer table tr td:nth-child(1){
+	width:5.5%;
+}
+.mescontainer table tr td:nth-child(2){
+	width:58%;
+	text-align:left;
+}
+.mescontainer table tr td:nth-child(3){
+	width:31.8%;
+	text-align:left;
+}
+.mescontainer table tr td:nth-child(4){
+	width:5.5%;
+}
+.mescontainer table:nth-child(1) td:nth-child(2){
+	width:31.8%;
+}
+.mescontainer table:nth-child(1) td:nth-child(3){
+	width:58%;
+	text-indent:0.625rem;
+}
+.mescontainer table:nth-child(2) td:nth-child(3){
+	text-align:right;
+	border-left:1px solid #ccc;
+	background-color:#f7f7f7;
+	font-size: 14px;
+}
+.mescontainer table:nth-child(2) td:nth-child(4){
+	background-color:#f7f7f7;
+}
+.mescontainer table:nth-child(3) td{
+	border-bottom:none;
+	border-bottom:1px solid #cccccc;
+}
+.mescontainer table:nth-child(3) td:nth-child(2){
+	width:89.8%;
+}
+.mescontainer table:nth-child(3) td:nth-child(3){
+	width:5.5%;
+}
+.mescontainer table input{
+	width: 58%;
+	font-size: 16px;
+	color: #ccc;
+	text-align: right;
+	background-color: #fff;
+	float: right;
+	font-family: "microsoft yahei";
+	margin-right: 8%;
+}
+.mescontainer table:nth-child(3) input{
+	margin-right: 7.5%;
+}
+.mescontainer table:nth-child(1) input{
+	color: #585858;
+}
+.color{
+	color: #585858!important;
+} */
+.linkicon{
+	width: 8px;
+	height: 10px;
+	float:right;
+	margin-top:0.3rem;
+}
+.uniticon{
+	float:right;
+}
+.chooseicon1{
+	width:45px;
+	height:27px;
+	float:right;
+	margin-top:0.15rem;
+	margin-left:0.45rem;
+}
+.confirmbtn{
+	width: 91.6667%;
+	line-height: 3.75rem; 
+	margin: 0 auto;
+	margin-top:2.5rem;
+	font-size: 1.5rem; /* 54px */
+	color: #fff;
+	text-align: center;
+	background: #f36f39;
+	border-radius: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+
+/*--------------------------------车辆具体信息----------------------------------------------*/
+.mesdetail{
+	width: 100%;
+	/* margin-top: 0.75rem; */
+	/* display: none; */
+}
+.mesdetail table{
+	width: 100%;
+	text-align: right;
+	background-color: #fff;
+	font-size: 14px;
+	color: #585858;
+}
+.mesdetail table tr{
+	height:45px;
+}
+/* .mesdetail table tr td{
+	border-bottom:1px solid #ccc;
+} */
+.mesdetail table tr td:nth-child(1){
+	width: 3%;
+}
+.mesdetail table tr td:nth-child(2){
+	width: 33.3%;
+	text-align: left;
+	padding-left:5px;
+}
+.mesdetail table tr td:nth-child(3){
+	width: 51.88%;
+	text-align: left;
+}
+.mesdetail table tr td:nth-child(4){
+	width: 4%;
+}
+.mesdetail table tr:last-child td{
+	border-bottom: none;
+}
+.mesdetail table tr td input{
+	width: 80%;
+	font-size: 14px;
+	color: #888;
+	/* text-align: right; */
+	background-color: #fff;
+	/* float: right; */
+	font-family: "microsoft yahei";
+	/* margin-right: 13%; */
+}
+.mesdetail table tr:last-child td input{
+	width: 80%;
+	margin-right: 2%;
+	color: #585858;
+}
+.selectTdInput{
+	margin-right: 2%;
+	color: #585858;
+}
+#specialCarFlag{
+	width:1.5rem;
+	height:1.5rem;
+	/* float:left; */
+	margin-top:0.15rem;
+	margin-left:0.625rem;
+	margin-right: 0.625rem;
+}
+.litterhelp{
+	margin-top: 0.8rem;
+	float: right;
+	width: 28%!important;
+}
+.litterhelp img{
+	width: 3.125rem;
+	margin: 0 auto;
+	margin-bottom: 0.5rem;
+	float: right;
+	margin-right: 1.4rem;
+}
+.litterhelp span{
+	font-size: 1.25rem;
+	color: #585858;
+	font-family: "microsoft yahei";
+	width: 51%;
+}
+.litterhelp2{
+	/* margin-top: 2rem;
+	margin-bottom: 2rem; */
+	display: inline;
+	float: right;
+	/* width: 30%; */
+	text-align: center;
+}
+.litterhelp2 img{
+	width: 2.225rem;
+	margin: 0.5rem auto;
+	/* margin-bottom: 0.5rem; */
+	float: right;
+	margin-right: 2.5625rem;
+}
+.litterhelp2 span{
+	margin-right: 1.5625rem;
+	float: right;
+	font-size: 0.84rem;
+	color: #fff;
+	font-family: "microsoft yahei";
+	margin-top: -3.4rem;
+}
+.shadow{
+	z-index: 999;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+	filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+	display: none;
+}
+.littlehelp{
+	z-index: 1000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none; 
+}
+#info_choose div{
+	text-align:right;
+	color:#585858!important;
+}
+#info_car_choose div{
+	text-align:right;
+}
+#info_GPS_select div{
+	text-align:right;
+}
+
+/*------------------------具体车型选择弹框------------------------*/
+.carselectarea{
+	position: absolute;
+	left: 3.7%;
+	top: 50%;
+	margin-top: -15.1rem;
+	width: 92.6%;
+	height: 30.2rem;
+	background-color: #fff;
+	z-index: 1111;
+	border-radius: 0.625rem;
+	color: #585858;
+	display: none;
+}
+.carselectarea h3{
+	font-size: 1.75rem;
+	color: #888;
+	line-height:100%;
+	margin: 1.2rem 0 1.6rem 1.2rem;
+	font-weight: normal;
+}
+#carselect_div {
+	position:relative;
+	width: 100%;
+}
+.cartype{
+	width:94%;
+	margin-left:3%;
+	float:left;
+}
+.car{
+	width:100%;
+	height:5.625rem;
+	border:1px solid #888;
+	border-radius:0.625rem;
+	margin-top:0.625rem;
+}
+.car.choosed{
+	border-color:#ff5000;
+	background:url(../../images/choosedsign.png) 0 0 no-repeat;
+	background-size:2.1rem 2.1rem;
+}
+.car div{
+	width:92%;
+	margin:0 auto;
+	line-height:100%;
+}
+.car div:first-child{
+	margin-top:1rem;
+	margin-bottom:1.4rem;
+}
+.car div:first-child span{
+	font-size:1.33rem;
+	margin-right:0.625rem;
+}
+.car div:last-child span{
+	font-size:1.25rem;
+	margin-right:0.625rem;
+}
+.car div:last-child span:last-child{
+	font-size:1rem;
+	margin-right:0.3125rem;
+	float:right;
+}
+.car div:last-child span:nth-child(4){
+	font-size:1.5rem;
+	margin-right:0;
+	color:#ff5000;
+	float:right;
+}
+.confirmarea{
+	display: -webkit-box;
+	-webkit-flow: row;
+	position: absolute;
+	width: 100%;
+	height: 4.5rem;
+	line-height: 4.5rem;
+	bottom: 0%;
+	text-align: center;
+}
+.confirmarea span{
+	height:100%;
+	-webkit-box-flex:1;
+	display:block;
+	font-size:1.5rem;
+	color:#ff5000;
+}
+.confirmarea span:first-child{
+	border-right:1px solid #888;
+}
+
+
+
+/*-------------------------没有查询到-------------------------*/
+.unfindarea {
+	position: fixed;
+	left: 3.7%;
+	top: 50%;
+	margin-top: -6.4rem;
+	z-index: 1111;
+	width: 92.6%;
+	height: 12.8rem;
+	background-color: #fff;
+	border-radius: 0.625rem;
+	color: #585858;
+	display: none;
+}
+.hint {
+	font-size: 1.75rem;
+	padding: 2rem;
+	text-align: center;
+}
+.confirmsection {
+	display: -webkit-box;
+	-webkit-flow: row;
+	position: absolute;
+	width: 100%;
+	height: 4.5rem;
+	line-height: 4.5rem;
+	bottom: 0;
+	text-align: center;
+}
+.confirmsection span {
+	height: 100%;
+	-webkit-box-flex: 1;
+	display: block;
+	font-size: 1.5rem;
+	color: #ff5000;
+}
+.vehicleselect{
+	position: absolute;
+	display:none;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+/* ----分享 -----*/
+.td_sharepop{
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(0,0,0,0.3);
+    display: none;
+}
+.td_share{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+    background: #fff;
+    z-index: 1000;
+    display: none;
+}
+.td_sharedown{
+    width: 100%;
+    height: 104px;
+    padding-top: 14px;
+}
+.td_sharetype{    
+	width: 24.9%;
+    font-size: 14px;
+    color: #757575;
+    text-align: center;
+    float: left;
+}
+.td_sharetypeimg{
+    width: 56%;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+}
+
+.title{
+	height:46px;
+	line-height:46px;
+	padding-left:4%;
+	background-color:#fff;
+}
+.carimg{
+	width:30%;
+	font-size:16px;
+	color:#444;
+	float:left;
+	font-weight:blod;
+}
+.carimg img{
+	width:18px;
+	height:16px;
+	margin-right:8px;
+}
+.howInput{
+	float:right;
+	width:32%;
+	font-size:12px;
+	color:#888;
+	padding-right:15px;
+	text-align: right;
+}
+.howInput img{
+	width:12px;
+	height:12px;
+	margin-left:4px;
+}
+.chezhuInfo{
+	margin-top:10px;
+}
+/** 如何填写弹窗样式 */
+#cjh{
+	width:84%;
+	font-size: 18px;
+    color: #fff;
+    position: absolute;
+    top: 169px;
+    left: 8%;
+    z-index: 1000;
+    text-align: center;
+}
+
+/* .mui-btn-blue, .mui-btn-primary, input[type=submit]{
+	border:1px solid #277eeb;
+	background-color:#277eeb
+}
+.mui-poppicker-header, .mui-btn{
+	font-size:10pt;
+}
+.mui-poppicker-btn-cancel{
+	color:#277eeb;
+	border:0;
+	background-color:#555557;
+	font-size:15px;
+}
+
+.mui-poppicker{
+	background-color:#555557;
+}
+.mui-picker{
+	background-color:#d1d5db;
+} */
+
+
+/********* 条款 **************/
+.gou_terms_line {
+    margin: 1rem 1.5rem;
+    font-size: 1.33rem;
+    word-wrap: normal;
+}
+.import {
+    width: 1.5rem;
+    margin: auto;
+    margin-top: -5px;
+    margin-right: 0.6rem;
+}
+#insurance_statement, #insurance_declaration {
+    color: #f36f39;
+}
+
+#quoteIframe {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+}

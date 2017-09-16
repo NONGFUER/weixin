@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+ <!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+ <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+ <!-- 忽略IOS将页面中的数字识别为电话号码 -->
+ <meta name="format-detection" content="telephone=no" />
+ <!-- 忽略Android平台中对邮箱地址的识别 -->
+ <meta name="format-detection" content="email=no" />
+  <!-- 缓存 -->
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<meta HTTP-EQUIV="expires" CONTENT="0">
+<title>全球抗癌疾病保险</title>
+<link rel="stylesheet" href="../../../css/mui/mui.min.css" />
+<link rel="stylesheet" href="../../../css/mui/mui.picker.min.css" />
+<link rel="stylesheet" href="../../../css/common/base.css" />
+<link rel="stylesheet" href="../../../css/common/common.css" />
+<link rel="stylesheet" href="../../css/carinsure/cancerPolicyInfo.css" />
+</head>
+<body>
+	<header>
+		<div class="h_back">
+			<div class="backindex"><img src="../../images/insureinfo_left.png" /></div>
+		</div>
+		<div class="h_title" id="pageTitle">保单详情</div>
+		<div class="change_account"></div>
+	</header>
+	<div id="contentIndex" class="mui-scroll-wrapper">
+		<div id="insure_iscroll" class="mui-scroll">
+			<div class="bigTitle">
+				<div class="bigTitleLeft">
+					<p class="riskName"></p>
+					<p style="font-size:10px;"><span class="baodanhao">保单号：</span><span class="policyNo"></span></p>
+				</div>
+				<div class="bigTitleRight">
+					<img class="zhuangtai" src="../../images/baozhanging.png">
+				</div>
+			</div>
+			<!--    投保人信息 -->
+			<div class="toubaoren" id="toubaoren">
+				<article class="insureName border-1px-bottom">
+					<div style="width: 50%">
+						<span>投保人信息</span>
+					</div>
+				</article>
+				<ul class="TBR">
+					<li class="name border-1px-bottom">
+						<div class="li_title">姓名</div>
+						<div id="TBRName" class="li_value"></div>
+					</li>
+					<li class="IDType border-1px-bottom">
+						<div class="li_title">证件类型</div>
+						<div id="TBRIDType" class="li_value"></div>
+					</li>
+					<li class="ID border-1px-bottom">
+						<div class="li_title">证件号</div>
+						<div id="TBRID" class="li_value"></div>
+					</li>					
+					<li class="riskQijian border-1px-bottom">
+						<div class="li_title">保险期间</div>
+						<div id="qijian" class="li_value"></div>
+					</li>
+					<li class="baofei border-1px-bottom">
+						<div class="li_title">保费</div>
+						<div id="baofei" class="li_value"></div>
+					</li>
+					<!-- <li class="qudao border-1px-bottom">
+						<div class="li_title">购买渠道</div>
+						<div id="qudao" class="li_value"></div>
+					</li> -->
+				</ul>
+			</div>
+			<div id="agenter" class="agenter">
+            	<article class="insureName border-1px-bottom" style="padding-right: 6.67%;">
+					<div style="width:50%;float:left">
+						<span>被保人信息</span>
+					</div>
+					<div  class="tong">
+						<span>同投保人</span>
+					</div>
+				</article>
+				<ul class="BBR">
+					<li class="name border-1px-bottom">
+						<div class="li_title">姓名</div>
+						<div id="BBRName" class="li_value"></div>
+					</li>
+					<li class="IDType border-1px-bottom">
+						<div class="li_title">证件类型</div>
+						<div id="BBRIDType" class="li_value"></div>
+					</li>
+					<li class="ID border-1px-bottom">
+						<div class="li_title">证件号</div>
+						<div id="BBRID" class="li_value"></div>
+					</li>															
+				</ul>
+			</div>
+			<!-- 保险责任 -->
+			<div id="chuxing_way" class="chuxing_way">
+            	<article class="insureName border-1px-bottom">
+					<div style="width: 100%">
+						<span>保险责任</span>
+					</div>
+				</article>
+				<div class="choose_way" style="font-size:14px">
+					<div class="bar clearfix">
+						<div class="">保障方案</div>
+						<div class="">保障范围</div>
+						<div class="">保障额度</div>
+					</tr>					
+				</div>
+			</div>
+			<!-- 保险条款 -->
+			<div id="riskTiaokuan" class="riskTiaokuan">
+            	<article class="insureName border-1px-bottom">
+					<div style="width: 100%">
+						<span>保险条款</span>
+						<img class="rightjiantou" src="../../images/right.png">
+					</div>
+				</article>
+			</div>
+			<!-- <div class="anniu1">电子保单分享</div> -->
+			<div class="anniu2">返回</div>
+		
+		</div>
+	</div>
+	<img id="zhezhaoImg"  style="width:100%;height:100%;position: absolute;top:0;left:0;z-index: 99;display:none;" src="../../images/shadow.png">
+</body>
+	<script type="text/javascript" src="../../js/util/zepto.min.js" ></script>
+	<script type="text/javascript" src="../../js/util/jweixin-1.1.0.js"></script>	
+    <script type="text/javascript" src="../../js/mui/mui.min.js" ></script>
+    <script type="text/javascript" src="../../js/mui/mui.picker.min.js"></script>
+    <script type="text/javascript" src="../../js/util/base.js" ></script>
+    <script type="text/javascript" src="../../js/util/common.js" ></script>
+    <script type="text/javascript" src="../../js/util/underscore.js" ></script>
+    <script type="text/javascript" src="../../js/util/wx-gzpt-share.js"></script>	
+    <script type="text/javascript" src="../../js/carinsure/cancerPolicyInfo.js?v=20170523" ></script>
+</html>

@@ -1,0 +1,66 @@
+.cephalosome{
+	background-image: url(../../image/background.png);
+	background-size: 100% 100%;
+	width: 100%;
+	height: 320px;
+	text-align: center;
+}
+.sign{
+	margin-top: 45px;
+	width: 48%;
+}
+.w{
+	font-weight: normal !important;
+	font-size: 16px;
+	text-align: left;
+	color: #fff;
+}
+.written{
+	margin-top: 24px;
+	width: 90%;
+	margin-left: 6%;
+}
+.written1{
+	width: 82%;
+	margin-left: 9%;
+}
+.about{
+	color: #1B6BB8;
+	font-weight: 800;
+	margin-top:100px;
+	float: left;
+	margin-left: 7%;
+	text-align: center;
+	width: 40%;
+	line-height: 39px;
+	height: 39px;
+	border:1px solid #1B6BB8;
+	border-radius: 5px;
+}
+body{
+	background-color: #fff;
+}
+.start{
+	background-color: #1B6BB8;
+	color: #fff;
+	margin-top:13px;
+	float: left;
+	margin-left: 7%;
+	text-align: center;
+	width: 87%;
+	line-height: 39px;
+	height: 39px;
+	border:1px solid #1B6BB8;
+	border-radius: 5px;
+}
+.foot{	
+	font-size: 14px;
+	float: left;
+	margin-left: 26%;
+	text-align: center;
+	width: 50%;
+	line-height: 39px;
+	height: 39px;
+	border-top:1px solid #ccc;
+	margin-top: 17px;
+}

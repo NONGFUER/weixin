@@ -1,0 +1,188 @@
+@CHARSET "UTF-8";
+/** 
+ *maweiwei
+ *2016/02/28
+ *支付成功页面样式
+ **/
+header .h_title {
+	  width: 50%;
+}
+.indexpart{
+	width: 100%;
+	display:none;
+}
+/* 支付结果页面上半部分 */
+.ps_contup{
+	color: #f36f39;
+	margin-top: 4px;
+	padding-top: 2.83rem;
+	background-color: white;
+}
+.ps_payicon{
+	margin: 0 auto;
+    width: 12rem;
+    margin-top: -15px;
+}
+.ps_paytext{
+    margin-top: 0.35rem;
+}
+.ps_payfont{
+	font-size: 24px;
+	font-weight: bold;
+}
+/* 支付结果页面下半部分 */
+.ps_contdown{
+	color: #888;
+	font-size: 12px;
+	margin-top: 6.83rem;
+	margin-left: 1.75rem;
+    padding-bottom: 1.33rem;
+}
+.ps_contdownimg{
+	width: 1.5rem;
+	float: left;
+	margin-right: 0.5rem;
+    display: none;
+}
+.ps_shuoming{
+	margin-left: 2rem;
+    margin-right: 2rem;
+    word-break: break-all;
+}
+/* 下载app */
+.ps_appload{
+    width: 95%;
+    height: 3.42rem;
+    color: #fff;
+    font-size:18px;
+    margin:  auto;
+    line-height: 3.32rem;
+    background: #f36f39;
+    border-radius: 0.5rem;
+}
+.ps_apploadimg{
+    width: 2.66rem;
+    margin-left: 1.9rem;
+    margin-right: 1rem;
+    float: left;
+}
+.ps_btn{
+    width: 40%;;
+	height: 3.67rem;
+	color: #f36f39;
+	font-size: 18px;
+	text-align: center;
+	line-height: 3.67rem;
+	margin: 0 auto;
+	margin-top: 4.17rem;
+    margin-bottom: 3rem;
+	border-radius: 0.67rem;
+	border: 2px solid #f36f39;
+}
+/* 底部按钮 */
+.pf_btneare{
+    width: 87%;
+    height: 5rem;
+	margin: 0 auto;
+	margin-top: 4.17rem;
+    margin-bottom: 3rem;
+    display:none;
+}
+.pf_btn{
+    width: 46%;
+	height: 3.67rem;
+	color: #f36f39;
+	font-size: 18px;
+	text-align: center;
+	line-height: 3.67rem;
+	border-radius: 0.67rem;
+	border: 2px solid #f36f39;
+	float: left;
+}
+.pf_mr{
+	margin-right: 1.67rem;
+}
+/* 倒计时 */
+.ps_counttimepop{
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 999;
+    display: none;
+}
+.ps_counttimecont{
+	width: 60%;
+    height: 9rem;
+    background: #fff;
+    margin: 0 auto;
+    margin-top: 60%;
+    border-radius: 0.5rem;
+}
+.ps_counttimetitle{
+	width: 100%;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.ps_counttime{
+    width: 100%;
+    height: 3rem;
+    text-align: center;
+    font-size: 1.85rem;
+    line-height: 3rem;
+}
+.ps_counttimenum{
+	width:15%;
+    display: inline-block;
+}
+.text{
+	text-align: center;
+	margin-top: 5%;
+	font-weight: 600;
+}
+.dingdan{
+	padding-bottom: 0.7rem;
+	font-size: 15px;
+	padding-left: 1.5rem;
+	padding-top: 0.7rem;
+	margin-top: 7%;
+	border-top: 1px solid #EDEDED;
+	color: #505050;
+	
+}
+.dingdan-header{
+	  margin-bottom: 0.7rem;
+	float: left;
+}
+.dingdan-number{
+	float: left;
+}
+.phone-number{
+	color: #f36f39;
+	width: 40%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<!-- 忽略IOS将页面中的数字识别为电话号码 -->
+<meta name="format-detection" content="telephone=no" />
+<!-- 忽略Android平台中对邮箱地址的识别 -->
+<meta name="format-detection" content="email=no" />
+<title>支付结果</title>
+<link rel="stylesheet" href="../../css/mui/mui.min.css" />
+<link rel="stylesheet" href="../../css/common/base.css" />
+<link rel="stylesheet" href="../../css/common/common.css" />
+<link rel="stylesheet" href="../../css/carinsure/payResolt.css" />
+</head>
+<body class="bodybackground">
+	<header>
+		<div class="h_back"><div class="dhback"></div></div>
+		<div class="h_title" id="pageTitle">支付结果</div>
+		<div class="h_next"></div>
+	</header> 
+	<div id="indexpart" class="indexpart mui-scroll-wrapper" style="margin-top:44px;">
+	  <div class="mui-scroll">
+		<div class="ps_contup">
+			<div class="ps_contup">
+			<div class="ps_payicon"><img/></div>
+			<div  class="text payResult"></div>
+			<div class="dingdan">
+				<div class="dingdan-header">
+					订单编号：
+				</div>
+				<div class="dingdan-number ps_paydingdan"></div>
+			</div>
+			<div  class="dingdan">
+				<div  class="dingdan-header">
+					下单时间：
+				</div>
+				<div  class="dingdan-number orderTime"></div>
+			</div>
+			<div  class="dingdan fee">
+				<div class="dingdan-header">
+					投保金额：
+				</div>
+				<div class="dingdan-number orderMoney"></div>
+			</div>
+			<div  class="dingdan">
+				<div class="dingdan-header">
+					订单状态：
+				</div>
+				<div class="dingdan-number orderStatus"></div>
+			</div>
+			<div class="dingdan">
+				<ul>
+					<li>备注：&nbsp;如有相关疑问请联系服务人员，或拨打客服电话：<a href="tel:4006895505"><span class="phone-number">4006895505</span></a>。</li>
+				</ul>
+			</div>
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+	 	<!-- 返回 -->
+		<div style="text-align: center;margin-top: 20px;margin-bottom: 20px;" class="ps_appload">
+			<span >返回</span>
+		</div>
+		<div style="text-align: center;margin-top: 40px;margin-bottom: 20px;"><img style="width:40%;" src="../../images/ewm.png"></div>
+   </div>
+</div>
+  <div class="ajax_prevent" style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;z-index: 1000;background:#fff;"><div class="ajax_prevent_a" style="width: 80%; margin-left: 10%; text-align: center; color: rgb(88, 88, 88); margin-top: 100px; background-clip: padding-box;"><img src="../../images/loading.gif" style="width:100%"></div></div>	
+</body>
+<script type="text/javascript" src="../../js/util/zepto.min.js" ></script>
+<script type="text/javascript" src="../../js/mui/mui.min.js" ></script>
+<script type="text/javascript" src="../../js/util/base.js" ></script>
+<script type="text/javascript" src="../../js/util/common.js" ></script>
+<script type="text/javascript" src="../../js/carinsure/payResoltWX.js?v=20170426" ></script>
+</html>

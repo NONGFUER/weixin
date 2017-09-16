@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<!-- 忽略IOS将页面中的数字识别为电话号码 -->
+		<meta name="format-detection" content="telephone=no" />
+		<!-- 忽略Android平台中对邮箱地址的识别 -->
+		<meta name="format-detection" content="email=no" />
+		<title>实名认证</title>
+		<link rel="stylesheet" href="../../../css/mui/mui.min.css" />
+		<link rel="stylesheet" href="../../../css/mui/mui.picker.min.css" />
+		<link rel="stylesheet" href="../../../css/common/base.css" />
+		<link rel="stylesheet" href="../../../css/common/common.css" />
+		<!--<link rel="stylesheet" href="../../css/users/certification.css" />-->
+		<style type="text/css">
+			.main {
+				padding-left: 10%;
+				height: 100px;
+				margin-top: 10px;
+				background-color: #fff;
+			}
+			
+			.phone {
+				margin-top: 15px;
+				width: 7%;
+				float: left;
+			}
+			
+			.phone_entry {
+				margin-left: 3%;
+				margin-top: 17px;
+				width: 80% !important;
+				float: left;
+			}
+			
+			.phoneN {
+				height: 50px;
+				border-bottom: 1px solid #e5e5e5;
+			}
+			
+			.valificationCode {
+				margin-left: 3%;
+				margin-top: 16px;
+				width: 80% !important;
+			}
+			
+			.button {
+				border-radius: 5px;
+				width: 38%;
+				text-align: center;
+				font-size: 16px;
+				line-height: 30px;
+				margin-top: 10px;
+				color: #fff;
+				height: 30px;
+				background-color: #1B6BB8;
+				float: right;
+				margin-right: 5%;
+			}
+			
+			.dagou {
+				float: left;
+				margin-left: 5%;
+				margin-top: 43px;
+				width: 4%;
+			}
+			
+			.zcxy {
+				float: right;
+				margin-top: -5%;
+				margin-right: 70%;
+				font-size: 12px;
+			}
+			
+			.agreement {
+				margin-top: 39px;
+				width: 80%;
+				float: right;
+				font-size: 14px;
+				margin-right: 7%;
+			}
+			
+			.bule {
+				color: #1B6BB8;
+			}
+			
+			.btn_jump_policy_distribution {
+				width: 94.6667%;
+				line-height: 3.75rem;
+				margin: 0 auto;
+				color: #fff;
+				text-align: center;
+				background-color: #1b6bb8;
+				border-radius: 0.667rem;
+				margin-bottom: 1.5rem;
+				margin-top: 35px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="order_index" class="mui-scroll-wrapper">
+			<div id="insure_iscroll" class="mui-scroll">
+				<div id="" class="banner">
+					<img src="../../image/banner.png" />
+				</div>
+				<div id="" class="main">
+					<div id="" class="phoneN">
+						<img src="../../image/name.png" class="phone" />
+						<input maxlength="10"  type="text" class="phone_entry" id="phone_input" value="请输入您的真实姓名" />
+
+					</div>
+					<div id="">
+						<img src="../../image/id.png" class="phone" />
+						<input maxlength="18" onKeyUp="value=value.replace(/[^a-zA-Z0-9]/g,'')" type="text" class="valificationCode" id="id_input" value="请输入您的身份证号" />
+
+					</div>
+
+				</div>
+				<div id="stakeholder_info">
+
+					<div id="nextstep" class="btn_jump_policy_distribution f_19">确定</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../../js/util/zepto.min.js"></script>
+		<script type="text/javascript" src="../../../js/mui/mui.min.js"></script>
+		<script type="text/javascript" src="../../../js/mui/mui.picker.min.js"></script>
+		<script type="text/javascript" src="../../../js/util/base.js"></script>
+		<script type="text/javascript" src="../../../js/util/common.js"></script>
+		<script type="text/javascript" src="../../js/users/certificationShare.js?v=0324"></script>
+	</body>
+
+</html>

@@ -1,0 +1,197 @@
+@CHARSET "UTF-8";
+/** 
+ *maweiwei
+ *2016/02/23
+ *搭伙项目公共头部和底部样式
+ **/
+body{
+	background: #ebebeb;
+}
+/*头部样式*/
+header{
+	position: absolute;
+	z-index: 99;
+	width: 100%;
+    height: 44px;
+    line-height: 44px;
+    background-color: #f36f39;
+}
+header .h_back {
+    float: left;
+    width: 24%;
+    height: 44px;
+    color: #000;
+    padding-left: 4%;
+}
+header .h_back div{
+    width: 12%;
+    height: 44px;
+}
+header .h_icon {
+    float: left;
+    width: 50%;
+    font-size: 1.5rem;
+    height: 3.5833rem;
+    color: #000;
+    margin-left: 4.5%;
+}
+header .h_icon div{
+    width: 10%;
+    display: inline-block;
+}
+header .fontSmall{
+	font-size:10px;
+	color:#939393;
+}
+header .h_title {
+    float: left;
+    width: 50%;
+    font-size: 18px;
+    color: #000;
+    text-align: center;
+    font-weight: 500;
+    color: #fff;
+}
+
+header .h_next {
+    float: right;
+    width: 20%;
+    height: 44px;
+    color: #000;
+    margin-left: 4.5%;
+}
+header .h_next div{
+    width: 23%;
+    margin-left: 52%;
+}
+.dh_active{
+	color: #1b6bb8;
+}
+/*  底部标题导航样式   */
+footer{
+	position:absolute;
+	bottom:0;
+	width: 100%;    
+	height:58px;
+	font-size: 1rem;
+	color: #a7a7aa;
+	z-index: 999;
+	background: #fff;
+	border-top: 1px solid #a7a7aa;
+}
+
+.footer_sub{
+	text-align:center;
+	float: left;
+	width: 24.5%;
+	margin-bottom: 0.25rem;
+}
+.footer-icon{
+    width: 2.25rem;
+    height: 2.25rem;
+    margin: 0.5rem 0 0.1rem 39%;
+}
+
+
+/* 页面背景色 */
+.bodyback{
+	background: #ebebeb;
+}
+.indexcontent{
+	width: 100%;
+}
+/* 列表样式 */
+.gzpt_ul{
+    width: 100%;
+    padding-left: 26px;
+    margin-top: 10px;
+    background: #fff;
+}
+.gzpt_li{
+    width: 100%;
+    height: 55px;
+    padding-top: 19px;
+    border-top: 1px solid #e8e8e8;
+}
+.gzpt_ul .gzpt_li:FIRST-CHILD{
+    border-top: none;
+}
+.gzpt_liicon{
+	width: 6.5%;
+    margin-right: 15px;
+	float: left;
+	position:relative;
+	bottom:2px;
+}
+
+.gzpt_lifont{
+	width: 50%;
+    font-size: 16px;
+    color: #515151;
+    float: left;
+}
+.gzpt_linotice{
+    width: 34%;
+    font-size: 16px;
+    color: #f5692c;
+    float: left;
+    text-align: right;
+    margin-top:1px;
+}
+.gzpt_limore{
+	width: 3%;
+	margin-right: 25px;
+	float: right;
+}
+.noRecord{
+    width: 100%;
+    color: #888;
+    font-size: 16px;
+    margin-top: 49%;
+    text-align: center;
+    display: none;
+}
+.noRecordimg{
+    width: 32%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+
+/*--------------------------------重写mui部分样式--------------------------*/
+
+input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {
+    line-height: 22px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+    padding: inherit;
+    -webkit-user-select: text;
+    border: none;
+    border-radius: 0;
+    outline: 0;
+    background-color: #fff;
+    -webkit-appearance: none;
+}
+/* 上拉加载底部样式 */
+.mui-pull-bottom-tips {
+	text-align: center;
+	background-color: #efeff4;
+	font-size: 15px;
+	line-height: 40px;
+	color: #777;
+}	
+.mui-toast-container{
+	width: 100%;
+	margin: 0 auto;
+	bottom: 100px;
+}
+.mui-toast-message{
+	width: 200px;
+	height: 3rem;
+	padding: 0; 
+	font-size: 14px;
+	margin: 0 auto;
+	border-radius: 2rem;
+	line-height: 3rem;
+}
