@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+	    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	    <!-- 忽略IOS将页面中的数字识别为电话号码 -->
+	    <meta name="format-detection" content="telephone=no" />
+	    <!-- 忽略Android平台中对邮箱地址的识别 -->
+	    <meta name="format-detection" content="email=no" />
+		<title>健康告知</title>
+		<link rel="stylesheet" type="text/css" href="../../../css/usage/insurance/common.css">
+		<style type="text/css">
+			html {
+				min-height: 100%;
+			}			
+			body {
+				font: .12rem/1.5 SimHei, Microsoft YaHei, SimSun, Arial, Verdana;
+				background: #fff;
+			}
+		</style>
+		<link rel="stylesheet" href="../../../css/usage/insurance/healthNotice.css" type="text/css">
+			<script>
+			(function(e, t) {
+				function i() {
+					var i = t.documentElement;
+					n = i.offsetWidth, i.style.fontSize = 0.3125 * n + "px";
+					var o = parseFloat(e.getComputedStyle(i, null)["font-size"]),
+						u = 0.3125 * n;
+					o !== u && (o > u + 1 || o < u - 1) && (i.style.fontSize = "126.4px")
+				}
+				var n, r = function() {
+					setTimeout(function() {
+						i()
+					}, 300)
+				};
+				i(), e.addEventListener("resize", r)
+			})(window, document);
+		</script>
+	</head>
+	<body>
+		<div id="body_mian">					
+		 <div class="healthy-box">
+			<h1 class="h01">健康告知</h1>
+			<div class="box" id="healthTold">
+				被保险人有以下任何一种情况均不得投保本产品，如有隐瞒或告知不实，足以影响保险公司承保决定的，所签发的保单将视为无效，保险公司有权解除合同。对于合同解除前发生的任何事故，保险公司不承担任何责任。<br />
+				
+			</div>
+			<div class="box">
+                <div class="infromCon"></div>
+                <div class="aBox01" style="overflow: hidden;"><!--如果不是续保跳下单页-->
+                    <a id="btnHaif" class="btnHaif yes fl">全部为否</a>
+                    <a data-error="很抱歉，被保人的健康状况不满足该保险投保规定。" class="nobtnHaif no ri errorBtn">部分为否</a>
+                </div>
+             </div>
+             <div class="mudule_select healthy-box healthy-error" id="jwx_notice_tips">
+            	<div class="content">
+                	<p><span class="text_error"></span>如有疑问，请联系客服</p>
+                	<a class="a1 kefuPhone">4006895505<span class="iconfont">&#xe6140;</span></a>
+                	<div class="d1">
+                    	<a href="javascript:;" class="btnHaif fl close" style="margin-right:5%;">选错啦</a>
+                    	<a id="otherProduct" class="btnHaif ri nobtnHaif ">看看其他产品</a>
+                	</div>
+            	</div>
+        	</div>
+    	</div>
+    	<input type="hidden" id="productId" value="329">
+		</div>
+	</body>
+	
+	<script  src="../../../js/lib/widget/mui/mui.min.js" charset="utf-8"></script>
+	<script  src="../../../js/usage/insurance/all.js" charset="utf-8"></script>
+	<script  src="../../../js/lib/common/base.js" ></script> 
+	<script  src="../../../js/lib/common/common.js" ></script> 
+	<script  src="../../../js/usage/insurance/head.js" charset="utf-8"></script>
+	<script  src="../../../js/usage/insurance/healthNotice.js" charset="utf-8"></script>
+</html>

@@ -1,0 +1,23 @@
+.result-download{
+    margin: 20px auto 0 auto;
+    width:85%;
+    padding: 24px 0 20px 0;
+    border-radius: 5px;
+}
+.result-download p{
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    color: #999;
+}
+.download-botton{
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    width:62.5%;
+    margin: 0 auto 10px auto;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ff6e1a;
+    color: #ff6e1a;
+}

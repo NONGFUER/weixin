@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>支付结果</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="../../../css/lib/widget/mui/mui.min.css" />
+    <link rel="stylesheet" href="../../../css/lib/common/base.css">
+    <link rel="stylesheet" href="../../../css/lib/common/common.css">
+    <link rel="stylesheet" href="../../../css/usage/insurance/payResult.css">
+</head>
+<body>
+    <div class="result whitebackground" >
+        <div class="result-status">
+            <img class="result-status_img" src="../../../image/common/paySuccess.png" >
+            <p class="result-status_p" id="payResult">支付成功</p>
+        </div>
+        <div class="result-content">
+            <dl>
+                <dt>详细信息</dt>
+                <dd>支付金额：<span id="prem"></span></dd>
+                <dd>产品名称：<span id="productName"></span></dd>
+                <dd><span class="letter3">订单号</span>：<span id="orderNo"></span></dd>
+                <dd style="display:none" class="reason">失败原因：<span id="">网络发生改变，导致支付失败！</span></dd>
+            </dl>
+        </div>      
+    </div>
+    <div class="result-download whitebackground" style="display:none">         
+        <div class="download-botton">下载同道保险APP</div>
+        <p>下载APP可以获得更多专业保险服务</p>          
+    </div>
+    <div class="result-click" style="display:none" id="success">
+        <div class="result-button backProduct" >返回首页</div>  
+        <div class="result-button on1">再次购买</div>  
+    </div>
+    <div class="result-click" id="fail">
+        <div class="result-button backProduct" >返回首页</div>  
+        <div class="result-button on1" id="orderDetail">保单详情</div>  
+    </div>
+    <form id="f1" action="" style="display:none;" method='post'>
+					<textarea id="requestDoc" name="requestDoc"></textarea>
+					<input type="submit" value="Submit" />
+				</form>
+    <script src="../../../js/lib/common/jquery-1.11.0.js"></script>
+    <script src="../../../js/lib/widget/mui/mui.min.js"></script>
+    <script src="../../../js/lib/common/base.js"></script>
+    <script src="../../../js/lib/common/common.js"></script>
+    <script src="../../../js/usage/insurance/payResult.js"></script>
+</body>
+</html>
