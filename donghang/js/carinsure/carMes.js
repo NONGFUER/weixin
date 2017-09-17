@@ -455,6 +455,7 @@ $(function() {
 	// 车辆详细信息确认按钮
 	$("#confirm2").unbind("tap").bind("tap",function() {
 		 $("#vehicle_identification_input").val($("#vehicle_identification_input").val().toUpperCase());//车辆识别代码小写转大
+		 $("#engine_number_input").val($("#engine_number_input").val().toUpperCase());//车辆发动机号小写转大
 		 $("#owner_idNo").val($("#owner_idNo").val().toUpperCase());//身份证小写转大写
 			// 解绑实时检查车辆详细信息
 			unBindblurCheackCarinfo();
@@ -470,7 +471,7 @@ $(function() {
                     return false;
 			}
            if(sessionStorage.getItem("checkFlag")=="0"){
-        	   if($("#checkNo").val()=="请输入验证码"){
+        	   if($("#checkNo").val()=="请输入验证码"||$.isNull($("#checkNo").val())){
         		   if($("#yanzhengmaImg").css("display")!="none"){
 					    modelAlert("请输入验证码！");
 					    return false;
@@ -762,6 +763,7 @@ function blurCheackCarinfo() {
 
 	// 发动机号验证
 	$("#engine_number_input").change(function() {
+        $("#engine_number_input").val($("#engine_number_input").val().toUpperCase());
 		if ($("#engine_number_input").val().length == 19) {
 			$("#engine_number_input").val($("#engine_number_input").val().toUpperCase());
 		}

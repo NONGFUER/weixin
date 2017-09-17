@@ -133,8 +133,11 @@ $.loadData = function(param) {
 				else if(orderStatus=="07"){
 					orderStatus="承保中 ";
 				}
+				else if(orderStatus=="09"){
+					orderStatus="承保成功 ";
+				}
 				else if(orderStatus=="10"){
-					orderStatus="承保成功";
+					orderStatus="保障中";
 				}
 				else if(orderStatus=="02"){
 					orderStatus="已过期";

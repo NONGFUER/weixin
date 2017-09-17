@@ -337,6 +337,10 @@ function getOrderStatus(orderStatus){
 		status.color = 'color: #888888';
 		status.statusValue="支付失败";
 	}
+	else if(orderStatus=="09"){
+		status.color = 'color: #f5692c';
+		status.statusValue="待生效";
+	}
 	else if(orderStatus=="10"){
 		status.color = 'color: #f5692c';
 		status.statusValue="承保成功";

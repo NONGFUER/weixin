@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<!-- 忽略IOS将页面中的数字识别为电话号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<!-- 忽略Android平台中对邮箱地址的识别 -->
+	<meta name="format-detection" content="email=no" />
+	<title>职业风险类别表</title>
+	<link rel="stylesheet" href="../../css/lib/widget/mui/mui.min.css" />
+	<link rel="stylesheet" href="../../css/lib/common/base.css" />
+	<link rel="stylesheet" href="../../css/lib/common/common.css" />
+	<link rel="stylesheet" href="../../css/usage/agreement/tiaokuan.css" />		
+</head>
+<body>	
+	<div id="noticecontent" class="mui-scroll-wrapper">
+		<section id="noticecontainer2" class="noticecontainer mui-scroll">
+			<div class="notice">
+			<p class="b">职业风险类别表</p>					
+			<p>
+				<table class="gridtable">
+					<tr><td>序号</td><td>职业类</td><td>风 险类别</td></tr>
+					<tr>
+						<td>1</td>
+						<td>办公室文职类，指国家机关、党政、社团、一般事业单位和工商企业单位的内勤管理人员等</td>
+						<td>一类</td></tr>
+					<tr>
+						<td>2</td>
+						<td>一类职业类别中的外勤人员(如司机、维修工、清洁工、导游等)及制造业中的生产管理、技术人员、体育教练员等</td>
+						<td>二类</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>制造业中的一般工人、一般体育项目的运动员等</td>
+						<td>三类</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>建筑工程人员、足球、拳击及滑雪运动员等</td>
+						<td>四类</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>空运、航运人员、伐木业等</td>
+						<td>五类</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>坑外作业的矿产勘探、开采类、航天类</td>
+						<td>六类</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>石棉产业、工业爆破、农药生产、农药喷洒、烟花爆竹、军火工业、矿工、强酸强碱企业、渔民、防爆警察、现役军人(包括武警，不含文职人员)。</td>
+						<td>原则拒保</td>
+					</tr>
+				</table>
+			</p>
+			<p>
+				备注：1、职业风险类别表仅作为确定职业风险类别的依据，表中无法对应的职业类别，详见《人身意外伤害个人类职业风险类别表》。
+			</p>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>																
+			</div>
+			</section>
+	</div>
+	</body>
+	<script type="text/javascript" src="../../js/lib/common/zepto.min.js"></script>
+	<script type="text/javascript" src="../../js/lib/widget/mui/mui.min.js" ></script>
+	<script type="text/javascript" src="../../js/lib/common/base.js" ></script>
+    <script type="text/javascript" src="../../js/lib/common/common.js" ></script>		
+    <script>    		
+		var myScroll;
+		$(function() {
+			/*设置滑动区域*/
+			$.setscroll();
+		});		
+		/*设置滑动区域*/
+		$.setscroll = function() {
+			var Scrollheight = window.innerHeight - $("header").height() - 10;
+			$("#noticecontent").height(Scrollheight + "px");
+		};
+		function backlast(){
+			var urlParm = JSON.parse(UrlDecode(getUrlQueryString("jsonKey")));			
+			urlParm.title = "投保信息";
+			var jsonStr = UrlEncode(JSON.stringify(urlParm));
+			window.location.href = base.url +"tongdaoApp/html/insurance/main/insure.html?jsonKey="+jsonStr;
+		}
+	</script>
+</html>

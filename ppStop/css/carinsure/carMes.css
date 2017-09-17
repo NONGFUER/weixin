@@ -18,7 +18,6 @@
 }
 .carimg{
 	width:100%;
-	/* margin-bottom:1rem; */
 }
 
 /*------------------------------------------------------------------------------*/
@@ -36,9 +35,6 @@
 .mescontainer table tr{
 	height: 45px;
 }
-/* .ownerTable tr:last-child td{
-	border-bottom: none;
-} */
 
 .mescontainer table tr td:nth-child(1){
 	width:4.67%;
@@ -66,7 +62,7 @@
 .mescontainer table input{
 	width: 93.8%;
 	font-size: 14px;
-	color: #000;
+	color: #585858;
 	text-align: left;
 	background-color: #fff;
 	float: left;
@@ -111,65 +107,6 @@
 .ownerTable tr:last-child td{
 	border-bottom: none;
 }
-/* .mescontainer table tr td:nth-child(1){
-	width:5.5%;
-}
-.mescontainer table tr td:nth-child(2){
-	width:58%;
-	text-align:left;
-}
-.mescontainer table tr td:nth-child(3){
-	width:31.8%;
-	text-align:left;
-}
-.mescontainer table tr td:nth-child(4){
-	width:5.5%;
-}
-.mescontainer table:nth-child(1) td:nth-child(2){
-	width:31.8%;
-}
-.mescontainer table:nth-child(1) td:nth-child(3){
-	width:58%;
-	text-indent:0.625rem;
-}
-.mescontainer table:nth-child(2) td:nth-child(3){
-	text-align:right;
-	border-left:1px solid #ccc;
-	background-color:#f7f7f7;
-	font-size: 14px;
-}
-.mescontainer table:nth-child(2) td:nth-child(4){
-	background-color:#f7f7f7;
-}
-.mescontainer table:nth-child(3) td{
-	border-bottom:none;
-	border-bottom:1px solid #cccccc;
-}
-.mescontainer table:nth-child(3) td:nth-child(2){
-	width:89.8%;
-}
-.mescontainer table:nth-child(3) td:nth-child(3){
-	width:5.5%;
-}
-.mescontainer table input{
-	width: 58%;
-	font-size: 16px;
-	color: #ccc;
-	text-align: right;
-	background-color: #fff;
-	float: right;
-	font-family: "microsoft yahei";
-	margin-right: 8%;
-}
-.mescontainer table:nth-child(3) input{
-	margin-right: 7.5%;
-}
-.mescontainer table:nth-child(1) input{
-	color: #585858;
-}
-.color{
-	color: #585858!important;
-} */
 .linkicon{
 	width: 8px;
 	height: 10px;
@@ -202,8 +139,6 @@
 /*--------------------------------车辆具体信息----------------------------------------------*/
 .mesdetail{
 	width: 100%;
-	/* margin-top: 0.75rem; */
-	/* display: none; */
 }
 .mesdetail table{
 	width: 100%;
@@ -215,9 +150,6 @@
 .mesdetail table tr{
 	height:45px;
 }
-/* .mesdetail table tr td{
-	border-bottom:1px solid #ccc;
-} */
 .mesdetail table tr td:nth-child(1){
 	width: 3%;
 }
@@ -239,12 +171,9 @@
 .mesdetail table tr td input{
 	width: 80%;
 	font-size: 14px;
-	color: #888;
-	/* text-align: right; */
+	color: #585858;
 	background-color: #fff;
-	/* float: right; */
 	font-family: "microsoft yahei";
-	/* margin-right: 13%; */
 }
 .mesdetail table tr:last-child td input{
 	width: 80%;
@@ -258,7 +187,6 @@
 #specialCarFlag{
 	width:1.5rem;
 	height:1.5rem;
-	/* float:left; */
 	margin-top:0.15rem;
 	margin-left:0.625rem;
 	margin-right: 0.625rem;
@@ -282,17 +210,13 @@
 	width: 51%;
 }
 .litterhelp2{
-	/* margin-top: 2rem;
-	margin-bottom: 2rem; */
 	display: inline;
 	float: right;
-	/* width: 30%; */
 	text-align: center;
 }
 .litterhelp2 img{
 	width: 2.225rem;
 	margin: 0.5rem auto;
-	/* margin-bottom: 0.5rem; */
 	float: right;
 	margin-right: 2.5625rem;
 }
@@ -558,26 +482,6 @@
     text-align: center;
 }
 
-/* .mui-btn-blue, .mui-btn-primary, input[type=submit]{
-	border:1px solid #277eeb;
-	background-color:#277eeb
-}
-.mui-poppicker-header, .mui-btn{
-	font-size:10pt;
-}
-.mui-poppicker-btn-cancel{
-	color:#277eeb;
-	border:0;
-	background-color:#555557;
-	font-size:15px;
-}
-
-.mui-poppicker{
-	background-color:#555557;
-}
-.mui-picker{
-	background-color:#d1d5db;
-} */
 
 
 

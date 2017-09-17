@@ -72,7 +72,7 @@
 									<td class="border-1px-bottom"><img class="icon" src="/tongdaoPlatform/weixin/ppStop/images/chukudan.png"></td>
 									<td class="border-1px-bottom">出单渠道</td>
 									<td class="border-1px-bottom">
-										<input id="issueChannel"  type="text" readonly />
+										<input id="issueChannel"  type="text" readonly placeholder="请选择渠道"/>
 							 	    </td>
 									<td class="border-1px-bottom">
 										<img class='linkicon' src="/tongdaoPlatform/weixin/ppStop/images/xiala.png">  
@@ -84,8 +84,7 @@
 									<td class="border-1px-bottom icon"><img class="icon" src="/tongdaoPlatform/weixin/ppStop/images/sheng.png"></td>
 									<td class="border-1px-bottom">投保省份</td>
 									<td class="border-1px-bottom">
-										<input id="car_sheng" name=""  type="text"
-											 class="" readonly />
+										<input id="car_sheng" name=""  type="text" class="" readonly placeholder="请选择省份"/>
 							 	    </td>
 									<td class="border-1px-bottom">
 										<img class='linkicon' src="/tongdaoPlatform/weixin/ppStop/images/xiala.png"> 
@@ -97,8 +96,7 @@
 									<td class="border-1px-bottom icon"><img class="icon" src="/tongdaoPlatform/weixin/ppStop/images/chengshi.png"></td>
 									<td class="border-1px-bottom">投保城市</td>
 									<td class="border-1px-bottom">
-										<input id="car_shi" name=""  type="text"
-											 class="" readonly />
+										<input id="car_shi" name=""  type="text" class="" readonly placeholder="请选择城市"/>
 							 	    </td>
 									<td class="border-1px-bottom">
 										<img class='linkicon' src="/tongdaoPlatform/weixin/ppStop/images/xiala.png">
@@ -112,7 +110,7 @@
 									<td class="border-1px-bottom icon"><img class="icon" src="/tongdaoPlatform/weixin/ppStop/images/chepai.png"></td>
 									<td class="border-1px-bottom" style="padding-right: 1.05rem;">车牌号码</td>
 									<td>
-										<input type="text" id="plate_number_input" autocomplete="off" style="margin:0;" maxlength="8" value="请输入车牌号码" />
+										<input type="text" id="plate_number_input" autocomplete="off" style="margin:0;" maxlength="8" placeholder="请输入车牌号码" />
 									</td>
 		 							<td class="border-1px-bottom" id="plateNum">
 		 							    <div>
@@ -141,13 +139,13 @@
 							<tr>
 								<td class=""></td>
 								<td class="border-1px-bottom">车辆识别代码</td>
-								<td class="border-1px-bottom"><input type="text" id="vehicle_identification_input" autocomplete="off" maxlength="17" value="请输入车辆识别代码"/></td>
+								<td class="border-1px-bottom"><input type="text" id="vehicle_identification_input" autocomplete="off" maxlength="17" placeholder="请输入车辆识别代码"/></td>
 								<td class="border-1px-bottom"></td>
 							</tr>
 							<tr>
 								<td class=""></td>
 								<td class="border-1px-bottom">发动机号</td>
-								<td class="border-1px-bottom"><input type="text" id="engine_number_input" maxlength="19" autocomplete="off"  value="请输入发动机号"/></td>
+								<td class="border-1px-bottom"><input type="text" id="engine_number_input" maxlength="19" autocomplete="off"  placeholder="请输入发动机号"/></td>
 								<td class="border-1px-bottom"></td>
 							</tr>
 							<tr id="vehicle_registration_date_select">
@@ -155,7 +153,7 @@
 								<td class="border-1px-bottom">车辆注册日期</td>
 								<td class="border-1px-bottom">
 									<img class='linkicon' src='/tongdaoPlatform/weixin/ppStop/images/xiala.png'/>
-									<input style="margin-right: 7%;" id="vehicle_registration_date" value="请选择注册日期" readonly="readonly"/>
+									<input style="margin-right: 7%;" id="vehicle_registration_date" placeholder="请选择注册日期" readonly="readonly"/>
 								</td>
 								<td class="border-1px-bottom"></td>
 							</tr>
@@ -172,7 +170,7 @@
 								<td class="border-1px-bottom">过户日期</td>
 								<td class="border-1px-bottom">
 									<img class='linkicon' src='/tongdaoPlatform/weixin/ppStop/images/xiala.png'/>
-									<input type="text" style="margin-right: 7%;color: #585858;" id="specialCarDate" value="请选择过户日期" readonly="readonly"/>
+									<input type="text" style="margin-right: 7%;color: #585858;" id="specialCarDate" placeholder="请选择过户日期" readonly="readonly"/>
 								</td>
 								<td class="border-1px-bottom"></td>
 							</tr>
@@ -180,24 +178,24 @@
 								<td class=""></td>
 								<td class="border-1px-bottom">品牌型号</td>
 								<td class="border-1px-bottom"><img class='linkicon' src="/tongdaoPlatform/weixin/ppStop/images/xiala.png">
-								    <input id="brand_model_input" style="margin-right: 6%;" autocomplete="off" value="请选择品牌型号" readonly="readonly"/></td>
+								    <input id="brand_model_input" style="margin-right: 6%;" autocomplete="off" placeholder="请选择品牌型号" readonly="readonly"/></td>
 								<td class="border-1px-bottom"></td>
 							</tr>
 							<tr id="seatSelect">
 								<td class=""></td>
 								<td class="border-1px-bottom">车辆座位数</td>
 								<td class="border-1px-bottom">
-									<input id="seat" type="number" style="margin-right: 9%;color: #585858;" autocomplete="off" maxlength="1"/></td>
+									<input id="seat" type="number" style="margin-right: 9%;color: #585858;" autocomplete="off" maxlength="1" placeholder="请输入车辆座位数"/></td>
 								<td class="border-1px-bottom"></td>
 							</tr>
 							
 							<tr id="info_car_select">
 								<td class=""></td>
-								<td class="">是否外地车</td>
-								<td class="" id="info_car_choose">
+								<td class="border-1px-bottom">是否外地车</td>
+								<td class="border-1px-bottom" id="info_car_choose">
 								   <img id="choosecar" class="chooseicon1" src="/tongdaoPlatform/weixin/ppStop/images/guanbi.png"/>
 								</td>
-								<td class=""></td>
+								<td class="border-1px-bottom"></td>
 							</tr>
 						</table>
 						<table id="fuelTypeTable" style="display:none;">
@@ -206,7 +204,7 @@
 								<td class="border-1px-bottom">能源种类</td>
 								<td class="border-1px-bottom">
 								    <img class='linkicon' src='/tongdaoPlatform/weixin/ppStop/images/xiala.png'/>
-							     	<input type="text" id="fuelType" style="margin-right: 7%;" autocomplete="off" value="请选择能源种类" readonly="readonly"/>
+							     	<input type="text" id="fuelType" style="margin-right: 7%;" autocomplete="off" placeholder="请选择能源种类" readonly="readonly"/>
 								</td>
 								<td class="border-1px-bottom"></td>
 							</tr>
@@ -217,14 +215,14 @@
 								<td class="border-1px-bottom">车辆来历凭证种类</td>
 								<td class="border-1px-bottom">
 								    <img class='linkicon' src='/tongdaoPlatform/weixin/ppStop/images/xiala.png'/>
-								    <input type="text" id="certificateType" style="margin-right: 7%;" autocomplete="off" value="请选择凭证种类" readonly="readonly"/>
+								    <input type="text" id="certificateType" style="margin-right: 7%;" autocomplete="off" placeholder="请选择凭证种类" readonly="readonly"/>
 								</td>
 								<td class="border-1px-bottom"></td>
 							</tr>
 							<tr>
 								<td class=""></td>
 								<td class="border-1px-bottom">车辆来历凭证编号</td>
-								<td class="border-1px-bottom"><input type="text" id="certificateNo" maxlength="30" value="请输入凭证编号" autocomplete="off"/></td>
+								<td class="border-1px-bottom"><input type="text" id="certificateNo" maxlength="30" placeholder="请输入凭证编号" autocomplete="off"/></td>
 								<td class="border-1px-bottom"></td>
 							</tr>
 							<tr>
@@ -232,7 +230,7 @@
 								<td class="border-1px-bottom">车辆来历凭证所载日期</td>
 								<td class="border-1px-bottom">
 								    <img class='linkicon' src='/tongdaoPlatform/weixin/ppStop/images/xiala.png'/>
-								    <input type="text" id="certificateDate" style="margin-right: 7%;" autocomplete="off" value="请选择凭证所载日期" readonly="readonly"/>
+								    <input type="text" id="certificateDate" style="margin-right: 7%;" autocomplete="off" placeholder="请选择凭证所载日期" readonly="readonly"/>
 								</td>
 								<td class="border-1px-bottom"></td>
 							</tr>
@@ -241,7 +239,7 @@
 							<tr id="">
 								<td class=""></td>
 								<td class="border-1px-bottom" style="width:50%;">
-								    验证码：<input id="checkNo" type="text"  style="width:65%;">
+								    验证码：<input id="checkNo" type="text" placeholder="请输入验证码" style="width:65%;" maxlength="6">
 								</td>
 								<td class="border-1px-bottom" style="width:20%;">
 								     <img id="checkImg" alt="验证码图片"  style="width:100%;">
@@ -258,7 +256,7 @@
 								<td class=""></td>
 								<td class="border-1px-bottom">车主姓名</td>
 								<td class="border-1px-bottom">
-									<input type="text" id="owner_name" autocomplete="off" value="请输入车主姓名" maxlength="20"/>
+									<input type="text" id="owner_name" autocomplete="off" placeholder="请输入车主姓名" maxlength="20"/>
 								</td>
 								<td class="border-1px-bottom"></td>
 							</tr>
@@ -266,7 +264,7 @@
 								<td class=""></td>
 								<td class="border-1px-bottom">车主身份证号</td>
 								<td class="border-1px-bottom">
-									<input type="text" id="owner_idNo" autocomplete="off" maxlength="18" value="请输入车主身份证号"/>
+									<input type="text" id="owner_idNo" autocomplete="off" maxlength="18" placeholder="请输入车主身份证号"/>
 								</td>
 								<td class="border-1px-bottom"></td>
 							</tr>
@@ -274,14 +272,14 @@
 								<td class=""></td>
 								<td class="border-1px-bottom">手机号码</td>
 								<td class="border-1px-bottom">
-									<input type="tel" id="owner_mobile" autocomplete="off" maxlength="11" value="请输入车主手机号码"/>
+									<input type="tel" id="owner_mobile" autocomplete="off" maxlength="11" placeholder="请输入车主手机号码"/>
 								</td>
 								<td class="border-1px-bottom"></td>
 							</tr>
 							<tr id="plateEmail" style="display:none;">
 								<td class="border-1px-bottom"></td>
 								<td class="border-1px-bottom">车主邮箱</td>
-								<td class="border-1px-bottom"><input type="text" id="owner_email" maxlength="50" autocomplete="off" value="请输入车主邮箱"/></td>
+								<td class="border-1px-bottom"><input type="text" id="owner_email" maxlength="50" autocomplete="off" placeholder="请输入车主邮箱"/></td>
 								<td class="border-1px-bottom"></td>
 							</tr>
 						</table>
@@ -291,7 +289,7 @@
 								<td class="border-1px-bottom">身份证有效起期</td>
 								<td class="border-1px-bottom">
 								    <img class='linkicon' src='/tongdaoPlatform/weixin/ppStop/images/xiala.png'/>
-								    <input type="text" id="certiStartDate" style="margin-right: 7%;" autocomplete="off" value="请选择身份证有效起期" readonly="readonly"/>
+								    <input type="text" id="certiStartDate" style="margin-right: 7%;" autocomplete="off" placeholder="请选择身份证有效起期" readonly="readonly"/>
 								</td>
 								<td class="border-1px-bottom"></td>
 							</tr>
@@ -300,7 +298,7 @@
 								<td class="border-1px-bottom">身份证有效止期</td>
 								<td class="border-1px-bottom">
 								    <img class='linkicon' src='/tongdaoPlatform/weixin/ppStop/images/xiala.png'/>
-								    <input type="text" id="certiEndDate" style="margin-right: 7%;" autocomplete="off" value="请选择身份证有效止期" readonly="readonly"/>
+								    <input type="text" id="certiEndDate" style="margin-right: 7%;" autocomplete="off" placeholder="请选择身份证有效止期" readonly="readonly"/>
 								</td>
 								<td class="border-1px-bottom"></td>
 							</tr>
@@ -309,7 +307,7 @@
 								<td class="border-1px-bottom">民族</td>
 								<td class="border-1px-bottom">
 								    <img class='linkicon' src='/tongdaoPlatform/weixin/ppStop/images/xiala.png'/>
-								    <input type="text" id="nation" style="margin-right: 7%;" autocomplete="off" value="请选择民族" readonly="readonly"/>
+								    <input type="text" id="nation" style="margin-right: 7%;" autocomplete="off" placeholder="请选择民族" readonly="readonly"/>
 								</td>
 								<td class="border-1px-bottom"></td>
 							</tr>
@@ -317,7 +315,7 @@
 								<td class=""></td>
 								<td class="border-1px-bottom">签发机构</td>
 								<td class="border-1px-bottom">
-									<input type="text" id="issuer" autocomplete="off" maxlength="30" value="请输入签发机构"/>
+									<input type="text" id="issuer" autocomplete="off" maxlength="30" placeholder="请输入签发机构"/>
 								</td>
 								<td class="border-1px-bottom"></td>
 							</tr>

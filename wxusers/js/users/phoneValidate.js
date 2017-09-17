@@ -257,7 +257,7 @@ function  getRegCodeRequest(){
 		},
 		"body": {
 			"userName": $("#phone_input").val(),
-			"type": "103"
+			"type": "1105"//103
 		}
 	};
 	$.reqAjaxs( url, reqData, getRegCodeCallBack );

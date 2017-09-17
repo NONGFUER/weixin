@@ -1,0 +1,83 @@
+#cancer_product{
+	
+}
+.h_order{
+	float: right;
+    width: 24%;
+    height: 44px;
+    color: #000;
+}
+.orderimg{
+	width: 15px;
+	float: right;
+	margin-right: 15px;
+}
+.risk_detail{
+	margin-bottom: 5px;
+}
+.risk_body{
+	height: 125px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	
+}
+.baby_img{
+	background:url(../../image/cancerRisk/baby.png) no-repeat;	
+	background-size: 100% 100%;
+}
+.man_img{
+	background:url(../../image/cancerRisk/man.png) no-repeat;	
+	background-size: 100% 100%;
+}
+.woman_img{
+	background:url(../../image/cancerRisk/woman.png) no-repeat;	
+	background-size: 100% 100%;
+}
+.left_text{
+	padding: 2px;
+	position: relative;
+	top:5px ;
+	left: 5px;
+	float: left;
+	background-color: #4CD964;
+	color: #FFF;
+}
+.right_icon{
+	padding: 2px;
+	position: relative;
+	top:5px ;
+	right: 5px;	
+	float: right;
+	background-color: #4CD964;
+	color: #FFF;
+}
+.risk_footer{
+	width: 100%;
+	background: #fff;
+	padding: 5px;
+}
+.risk_bottom{
+	width: 100%;
+	padding: 5px;
+}
+.risk_footer div{
+	float: left;
+	width: 33%;
+	font-size:12px;
+}
+.limitMoney{
+	font-weight: 900 ;
+}
+.commissionScale{
+	text-align: center;
+}
+.saleArea{
+	text-align: right;
+}
+.clearfix:after {
+	content:"";
+	display:block;
+	height:0;
+	visibility:hidden;
+	clear:both;
+}

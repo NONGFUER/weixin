@@ -1,0 +1,104 @@
+@charset "utf-8";
+.jwx_policy {
+	width: 100%;
+	background: #F3F2F0
+}
+
+
+.jwx_policy .gather {
+	width: 100%;
+	background: #fff;
+	position: relative
+}
+
+.jwx_policy .gather:after {
+	content: "";
+	width: 100%;
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+	background: #fff;
+	left: 0;
+	z-index: 10
+}
+
+.jwx_policy .gather:last-child:after {
+	display: none
+}
+
+.jwx_policy .gather .info {
+	height: .4rem;
+	line-height: .4rem;
+	position: relative;
+	overflow: hidden
+}
+
+
+.jwx_policy .gather dt {
+	height: .341rem;
+	line-height: .341rem;
+	font-size: .136rem;
+	color: #222;
+	position: relative
+}
+.jwx_policy .gather .content {
+	width: 100%;
+	margin-left: .22rem;
+	height: 100%;
+	border-bottom: 1px #e1e1e1 solid;
+	box-sizing: border-box;
+	overflow: hidden
+}
+
+
+.jwx_policy .gather .label {
+	width: .9rem;
+	font-size: .12rem;
+	color: #222
+}
+
+.jwx_policy .gather .wenben {
+	width: 2.2rem;
+	height: 100%;	
+}
+
+.jwx_policy .gather input {
+	width: 90%;
+    height: .14rem;
+    overflow: hidden;
+    display: inline-block;
+    color: #333;
+    line-height: .14rem;
+    box-sizing: border-box;
+    padding: 0 5px;
+    border: 0;
+    font-size: .12rem;
+    text-align: right;
+    margin: 15px 0;
+}
+
+.jwx_policy .gather ::-webkit-input-placeholder {
+	color: #ccc
+}
+
+.insureTitle{
+	margin-left: 0px !important;
+	padding-left: 0.22rem;
+	font-weight: bold;
+}
+
+
+.next {
+    height: 45px;
+    width: 92%;
+    margin: 40px auto 0 auto;
+    background: #1B6BB8;
+    border-radius: 10px;
+    line-height: 45px;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 0.145rem;
+}
+ 

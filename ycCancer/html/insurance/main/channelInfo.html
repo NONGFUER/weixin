@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+	    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	    <!-- 忽略IOS将页面中的数字识别为电话号码 -->
+	    <meta name="format-detection" content="telephone=no" />
+	    <!-- 忽略Android平台中对邮箱地址的识别 -->
+	    <meta name="format-detection" content="email=no" />
+		<title>渠道信息</title>
+		<link rel="stylesheet" href="../../../css/lib/widget/mui/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/usage/insurance/common.css">
+		<style type="text/css">
+			html {
+				min-height: 100%;
+			}			
+			body {
+				
+			}
+		</style>
+		<link rel="stylesheet" href="../../../css/usage/insurance/channelInfo.css" type="text/css">
+			<script>
+			(function(e, t) {
+				function i() {
+					var i = t.documentElement;
+					n = i.offsetWidth, i.style.fontSize = 0.3125 * n + "px";
+					var o = parseFloat(e.getComputedStyle(i, null)["font-size"]),
+						u = 0.3125 * n;
+					o !== u && (o > u + 1 || o < u - 1) && (i.style.fontSize = "126.4px")
+				}
+				var n, r = function() {
+					setTimeout(function() {
+						i()
+					}, 300)
+				};
+				i(), e.addEventListener("resize", r)
+			})(window, document);
+		</script>
+	</head>
+	<body>
+		<header class="module_new_header" id="module_new_header" style="display: block">
+       		<a class="iconfont a1">&#xe628;</a>
+       		<div class="text_content">渠道信息</div>
+   		</header>
+   		<div class="jwx_policy mui-scroll-wrapper" id="jwx_policy" style="margin-top: 44px;">
+       	  <div class="mui-scroll">
+       		<div id="jwx_policy_content" style="padding-bottom: .45rem;">   
+       		
+       		    <!--渠道信息 -->                      
+	              <dl class="gather t10">
+	                <dt><div class="content insureTitle">渠道信息</div></dt>
+	                <dd class="info">           
+	                    <div class="content">
+	                        <div class="label fl">邮储网点代码</div>
+	                        <div class="wenben fl">
+	                            <input type="text" id="dotCode" maxlength="12" data-code="" data-midcode=""  placeholder="请输入邮储中介代码">
+	                        </div>
+	                    </div>
+	                </dd>
+	                <dd class="info">                   
+	                    <div class="content">
+	                        <div class="label fl">中介名称</div>
+	                        <div class="wenben fl">
+	                           <input type="text" id="dotName" readonly="readonly">
+	                        </div>
+	                    </div>
+	                </dd>
+	                <dd class="info">                  
+	                    <div class="content">
+	                        <div class="label fl">归属机构名称</div>
+	                        <div class="wenben fl">
+	                            <input type="text" id="institutionName" readonly="readonly">
+	                        </div>
+	                    </div>
+	                </dd>
+	                <dd class="info ">
+	                    <div class="content">
+	                        <div class="label fl">所属市/州</div>
+	                        <div class="wenben fl">
+	                            <input type="text" id="cityName" readonly="readonly">
+	                        </div>
+	                    </div>
+	                </dd>
+	                
+	                <dd class="info ">
+	                    <div class="content">
+	                        <div class="label fl">县市/现业</div>
+	                        <div class="wenben fl">
+	                            <input type="text" id="cityXy" readonly="readonly">
+	                        </div>
+	                    </div>
+	                </dd>
+	            </dl>  
+	       	       
+                       
+	            <!--佰盈信息-->
+	            <dl class="gather t10">
+	                <dt><div class="content insureTitle">佰盈信息</div></dt>
+	                <dd class="info">                  
+	                    <div class="content">
+	                        <div class="label fl">业务员工号</div>
+	                        <div class="wenben fl">
+	                          <input type="text" id="agentCode" readonly="readonly"/>
+	                        </div>
+	                    </div>
+	                </dd>                             
+	                <dd class="info">
+	                    <div class="content">
+	                        <div class="label fl">业务员名称</div>
+	                        <div class="wenben fl">
+	                            <input type="text" id="salesmanName" readonly="readonly"/>
+	                        </div>
+	                    </div>
+	                </dd>
+	           </dl>
+            
+                <div id="next" class="next">下一步</div>
+            </div>
+		</div>	
+	 </div>	
+	 <form id="f1" action="" style="display:none;" method='post'>
+					<textarea id="requestDoc" name="requestDoc"></textarea>
+					<input type="submit" value="Submit" />
+				</form>
+	</body>
+	<script src="../../../js/lib/common/zepto.min.js"></script>
+    <script src="../../../js/lib/widget/mui/mui.min.js"></script>
+    <script src="../../../js/lib/common/base.js"></script>
+    <script src="../../../js/lib/common/common.js"></script>
+    <script src="../../../js/usage/insurance/head.js"></script>
+	<script type="text/javascript" src="../../../js/usage/insurance/channelInfo.js" charset="utf-8"></script>
+</html>

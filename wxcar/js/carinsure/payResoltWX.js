@@ -36,11 +36,13 @@ function init(data,orderStatus){
 		orderStatusName="支付成功";
 	}else if(orderStatus=="06"){
 		orderStatusName="支付失败";
+	}else if(orderStatus=="09"){
+		orderStatusName="待生效";
 	}else if(orderStatus=="10"){
 		orderStatusName="承保成功";
 	}
 	$(".orderStatus").html(orderStatusName);
-	if(orderStatus== "07"||orderStatus== "10"){
+	if(orderStatus== "07"||orderStatus== "09"||orderStatus== "10"){
 		$(".payResult").html("支付成功");
 		$(".orderMoney").html(data.returns.gfbCxOffer.totalPre);
 		$(".ps_payicon img").attr("src","../../images/pay.png");

@@ -508,7 +508,7 @@ $(function() {
                     return false;
 			}
            if(sessionStorage.getItem("checkFlag")=="0"){
-        	   if($("#checkNo").val()=="请输入验证码"){
+        	   if($("#checkNo").val()=="请输入验证码"||$.isNull($("#checkNo").val())){
         		   if($("#yanzhengmaImg").css("display")!="none"){
 					    modelAlert("请输入验证码！");
 					    return false;

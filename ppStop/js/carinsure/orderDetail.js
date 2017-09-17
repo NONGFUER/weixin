@@ -123,8 +123,10 @@ $.loadData = function(param) {
 					$("#failName").html("支付失败原因");// 支付失败原因
 					$("#hebaoFailInfo").html(param.cxInfo.cxOrder.refuseReason);// 支付失败原因
 					$("#orderStatus").html("支付失败");
+				}else if(cxorderStatus=="09"){
+					$("#orderStatus").html("承保成功");	
 				}else if(cxorderStatus=="10"){
-					$("#orderStatus").html("承保成功");
+					$("#orderStatus").html("保障中");
 				}else if(cxorderStatus=="02"){
 					$("#orderStatus").html("已过期");				
 				}else if(cxorderStatus=="99"){

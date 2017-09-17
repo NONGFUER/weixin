@@ -116,9 +116,13 @@ $.questionListCallBack = function(param) {
 					color = 'color: #888888';
 					orderStatus="支付失败";
 				}
-				else if(orderStatus=="10"){
+				else if(orderStatus=="09"){
 					color = 'color: #f5692c';
 					orderStatus="承保成功";
+				}
+				else if(orderStatus=="10"){
+					color = 'color: #f5692c';
+					orderStatus="保障中";
 				}
 				else if(orderStatus=="02"){
 					color = 'color: #888888';

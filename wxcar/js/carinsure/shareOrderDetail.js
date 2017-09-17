@@ -1,7 +1,4 @@
-var comparyCode = "";// 车险保险公司编号
 var cxSessionId = "";// 车险投保唯一流水号"15061915143671823305";
-var fromFlag = "";// 来自跳转页面标志
-var isShowBtn = "";// N  从车险列表进入
 var orderPrams = "";// 页面传递订单信息
 var proNo = "";// 投保单号 有商业用商业 没有商业用交强
 var phName = "";// 投保人姓名
@@ -188,10 +185,6 @@ $.loadData = function(param) {
 					$("#plateNo").html(param.cxInfo.cxOrder.plateno);
 				}
 
-				if (!$.isNull(fromFlag) && fromFlag == "policyDistribution"&& cxorderStatus == "03") {// 从保单配送页面过来
-					$("#changeChar").show();
-					$("#backbtm").hide();
-				}
 				
 				if (cxorderStatus == "03") {// “核保失败”状态，显示核保失败原因
 					$("#hebaoFail_reason_area").show();
@@ -207,6 +200,10 @@ $.loadData = function(param) {
 							param.cxInfo.cxOrder.refuseReason);// 支付失败原因
 				} else {
 					$("#hebaoFail_reason_area").hide();
+				}
+				if (cxorderStatus == '09') {
+					$("#btn_area").hide();
+					$("#topay_btn_area").hide();
 				}
 				if (cxorderStatus == '10') {//已承保，不显示操作按钮
 					$("#btn_area").hide();
