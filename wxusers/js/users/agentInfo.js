@@ -26,7 +26,7 @@ $(function(){
 	$.init();
 	
 	$(".h_back").unbind("tap").bind("tap",function(){
-		window.location.href="personal.html?openid="+openId;
+		window.location.href = "personal.html?mobile=" + phone + "&roleType=02&customerId=" + customerId + "&openid=" + openId;
 	})
 	//我要离职
 	$(".lizhi").unbind("tap").bind("tap",function(){
@@ -38,13 +38,16 @@ $(function(){
 })
 
 $.init = function(){
-	var url = base.url + "registerUser/agentQuery.do";
+	var url = base.url + "agent/agentQuery.do";
 	
 	var reqData = {
 			"head":{
-				
+				"userCode":"",
+				"channel" :"02",
+				"transTime":"",
+				"transToken":""
 			},"body":{
-				"mobile":phone,
+				"type":"1",
 				"customerId":customerId
 			}
 	}
@@ -54,7 +57,7 @@ $.init = function(){
 
 $.InfocallBack = function(data){
 	//console.log(data);
-	parm = data.returns.bxWxAgent;
+	parm = data.returns.agentInfo;
 	if(data.statusCode == "000000"){
 		if(parm != "" && parm != null){
 			

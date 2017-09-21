@@ -14,6 +14,12 @@ var fromtype = getUrlQueryString("fromtype");
 var mobile = getUrlQueryString("mobile");
 var openid = getUrlQueryString("openid");
 var customerId = getUrlQueryString("customerId");
+var jsonKey = getUrlQueryString("jsonKey");
+var wxchannel = getUrlQueryString("wxchannel");
+var roleType = getUrlQueryString("roleType");
+if(jsonKey){
+	var urlParm = JSON.parse(UrlDecode(jsonKey));
+}
 var name = "";
 var isNo = "";
 $(function() {
@@ -91,9 +97,11 @@ function realNameRequest(customerId,name,idNo,mobile){
 //实名回调
 function realNameCallBack(data){
 	if(data.statusCode=="000000"){
-		if(fromtype == "3"){
+		if(fromtype == "1"){
 			//跳转到“个人中心”
-			toPersonHtml(openid);
+			toPersonHtml(mobile,customerId,openid);
+		}else if(fromtype == "licai"){
+			tolicaiHtml();
 		}
 	}else{
 		modelAlert(data.statusMessage);
@@ -102,10 +110,16 @@ function realNameCallBack(data){
 }
 
 //跳转到“个人中心”personal.html
-function toPersonHtml(openid){
-	window.location.href = "personal.html?openid="+openid;
+function toPersonHtml(mobile,customerId,openid){
+	window.location.href = "personal.html?mobile=" + mobile + "&roleType=01&fromtype=1&customerId=" + customerId + "&openid=" + openid + "&wxchannel="+wxchannel;
 }
 //跳转投保
 function toOnlineInsureHtml(openid){
 	window.location.href = base.url + "tongdaoApp/html/share/insurance/main/insure.html?openid="+openid;
+}
+/*跳转到理财购买页*/
+function tolicaiHtml(openid){
+	urlParm.openid=openid;
+	var jsonStr = UrlEncode(JSON.stringify(urlParm));
+	window.location.href = base.url + "tongdaoApp/html/managemoney/productDetailsWeChat/productDetailsWeChat.html?jsonKey="+jsonStr;
 }

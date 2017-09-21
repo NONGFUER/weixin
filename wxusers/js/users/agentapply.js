@@ -18,6 +18,8 @@ $(function(){
 	name = parm.name;
 	ID = parm.ID;
 	phone = parm.phone;
+	customerId = parm.customerId;
+	wxchannel = parm.wxchannel;
 	//从上一个页面取值，渲染页面
 	$("#name_input").val(parm.name+"");
 	$("#phone_input").val(parm.phone+"");
@@ -29,7 +31,8 @@ $(function(){
 				"openId":openId,
 				"name":name,
 				"ID":ID,
-				"phone":phone
+				"phone":phone,
+				"customerId":customerId
 			}
 			var jsonKey = UrlEncode(JSON.stringify(sendData));
 			window.location.href = "dati.html?jsonKey=" + jsonKey;
@@ -43,6 +46,6 @@ $(function(){
 	
 	//点击切换账号，跳转到手机验证页面
 	$(".change_account").unbind("tap").bind("tap",function(){
-		window.location.href = "phoneValidate.html?openid="+openId+"&fromtype=3";
+		window.location.href = "phoneValidate.html??mobile=" + phone + "&roleType=01&customerId=" + customerId + "&openid=" + openId + "&wxchannel="+wxchannel;
 	})
 })

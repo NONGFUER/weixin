@@ -39,7 +39,7 @@ function toCommodityList(){
 	urlParm.rightIco = "0";
 	urlParm.downIco = "0";
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
-	window.location.href = base.url + "tongdaoApp/html/insurance/main/commodityList.html?jsonKey="+jsonStr;
+	window.location.href = base.url + "weixin/ycCancer/html/insurance/main/commodityList.html?jsonKey="+jsonStr;
 }
 function toProductDetail(){	
 	urlParm.title = "投保信息";
@@ -47,7 +47,7 @@ function toProductDetail(){
 	urlParm.rightIco = "0";
 	urlParm.downIco = "0";
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
-	window.location.href = base.url + "tongdaoApp/html/insurance/main/insure.html?jsonKey="+jsonStr;
+	window.location.href = base.url + "weixin/ycCancer/html/insurance/main/insure.html?jsonKey="+jsonStr;
 }
 function getArticlesReq(cId){
 	var url = base.url+'offlineCommodityComDetail/getOfflineCommodityClauseList.do';	

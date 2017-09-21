@@ -196,13 +196,13 @@
 					window.location.href = "tongdaoIntro.html?jsonKey=" + getUrlQueryString("jsonKey") + "&s=1";
 				});
 				$("#enter").bind("tap", function() {
-					window.location.href = "phoneValidate.html?openid=" + parm.openId;
+					window.location.href = "phoneValidate.html?openid=" + parm.openId+"&fromtype=1&wxchannel="+parm.wxchannel;
 				});
 				$("#certification").bind("tap", function() {
 					window.location.href = "certification.html?mobile=" + parm.phone + "&openid=" + parm.openId;
 				});
 				$("#personal").bind("tap", function() {
-					window.location.href = "personal.html?openid=" + parm.openId;
+					window.location.href = "personal.html?fromtype=1&mobile=" + parm.phone + "&customerId=" + parm.customerId + "&openid=" + parm.openId + "&wxchannel="+parm.wxchannel;
 				});
 
 			});

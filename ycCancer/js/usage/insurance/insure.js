@@ -196,7 +196,7 @@ $(function(){
 		urlParm.userCode = mobile;
 		urlParm.title = "常用投保人";
 		urlParm.rightIco = "4";
-		urlParm.frompage = "insureHtml"
+		urlParm.frompage = "insureHtmlWechat"
 		var jsonStr = UrlEncode(JSON.stringify(urlParm));
 	    window.location.href= base.url + "tongdaoApp/html/useApplicant/useApplicant.html?jsonKey="+jsonStr;
 	    return false;

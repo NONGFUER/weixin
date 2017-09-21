@@ -61,7 +61,7 @@ $(function() {
 
 	// 去支付按钮
 	$("#topay_btn_area").unbind("tap").bind("tap",function() {
-		window.open(payUrl);
+		window.location.href =payUrl;
 	});
 });
 

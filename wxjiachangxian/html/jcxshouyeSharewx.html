@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+ <!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+ <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+ <!-- 忽略IOS将页面中的数字识别为电话号码 -->
+ <meta name="format-detection" content="telephone=no" />
+ <!-- 忽略Android平台中对邮箱地址的识别 -->
+ <meta name="format-detection" content="email=no" />
+  <!-- 缓存 -->
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<meta HTTP-EQUIV="expires" CONTENT="0">
+<title>驾乘人员意外伤害保险</title>
+<link rel="stylesheet" href="../../../tongdaoApp/css/lib/widget/mui/mui.min.css" />
+<link rel="stylesheet" href="../../../tongdaoApp/css/lib/widget/mui/mui.picker.min.css" />
+<link rel="stylesheet" href="../../../tongdaoApp/css/lib/common/base.css" />
+<link rel="stylesheet" href="../../../tongdaoApp/css/lib/common/common.css" />
+<link rel="stylesheet" href="../../../tongdaoApp/css/usage/insurance/jiachengxian/jcxshouyeShare.css" />
+<link rel="stylesheet" href="../../../tongdaoApp/css/usage/insurance/jiachengxian/jcxtiaokuan.css" />
+</head>
+<body>
+	<div class="PageInfo" style="width:100%;display:none">
+		<!-- <header>
+			<div class="h_back h_back1">
+				<div class="backindex" style="width:14%;"><img src="../../images/left.png" /></div>
+			</div>
+			<div class="h_title" id="pageTitle1">驾乘人员意外伤害保险</div>
+			<div>
+				<div></div>
+			</div>
+		</header> -->
+	   	<div  class="mui-scroll-wrapper">
+			<div id="insure_iscroll1" class="mui-scroll">
+				<div class="banner1">
+	   				<img class="bannerImg1" src="../../../tongdaoApp/image/insurance/jcx/bannerjiachengxian.png">
+	   			</div>
+	   			<div class="shengyu">
+	   				<div class="shengyu1">剩余<span class="shengyuNum"></span>份</div>
+	   			</div>
+	   			<div class="tablepng">
+	   				<img src="../../../tongdaoApp/image/insurance/jcx/table.png">
+	   			</div>
+	   			<div class="xuxian">
+	   				<img src="../../../tongdaoApp/image/insurance/jcx/xuxian.png">
+	   			</div>
+	   			<div class="userInfo">
+	   				<div class="name userInfoDiv">
+	   					<div class="div1">
+	   						<div class="nameimg"><img src="../../../tongdaoApp/image/insurance/jcx/jcxname.png"></div>
+	   					</div>
+	   					<div class="div2 nameinput">
+	   						<input id="nameValue" type="text" value="请输入姓名" maxlength="20">
+	   					</div>
+	   				</div>
+	   				<div class="IDcard userInfoDiv">
+	   					<div class="div1">
+	   						<div class="IDimg"><img src="../../../tongdaoApp/image/insurance/jcx/jcxIDcard.png"></div>
+	   					</div>
+	   					<div class="div2 IDinput">
+	   						<input id="IDcardValue" type="text" value="请输入身份证号码" maxlength="18">
+	   					</div>
+	   				</div>
+	   				<div class="mobile userInfoDiv">
+	   					<div class="div1">
+	   						<div class="mobileimg"><img src="../../../tongdaoApp/image/insurance/jcx/jcxmobile.png"></div>
+	   					</div>
+	   					<div class="div2 mobileinput">
+	   						<input id="mobileValue" type="text" value="请输入手机号码" maxlength="11">
+	   					</div>
+	   				</div>
+	   				<div class="chepai userInfoDiv">
+	   					<div class="div1">
+	   						<div class="chepaiimg"><img src="../../../tongdaoApp/image/insurance/jcx/jcxchepai.png"></div>
+	   					</div>
+	   					<div class="div2 chepaiinput">
+	   						<input id="chepaiValue" type="text" autocomplete="off" value="请输入车牌号码"  maxlength="8" style="text-transform:uppercase;">
+	   					</div>
+	   				</div>
+	   				<div class="mail userInfoDiv">
+	   					<div class="div1">
+	   						<div class="mailimg"><img src="../../../tongdaoApp/image/insurance/jcx/jcxmail.png"></div>
+	   					</div>
+	   					<div class="div2 mailinput">
+	   						<input id="mailValue" type="text" value="请输入电子邮箱（选填）" maxlength="20">
+	   					</div>
+	   				</div>
+	   			</div>
+	   			<div class="queren">
+	   				<!-- <img id="kuang" class="kuang" src="../../images/jcxyigouxuan.png"/>
+	   				<div class="yiyuedu">我已阅读并同意<span class="tiaokuan">《保险条款》</span>和<span class="xuzhi">《投保须知》</span></div> -->
+	   				<span><img id="kuang" class="kuang" src="../../../tongdaoApp/image/insurance/jcx/jcxyigouxuan.png"/>
+	   				<span class="yiyuedu">我已阅读并同意<span class="tiaokuan">《保险条款》</span>和<span class="xuzhi">《投保须知》</span></span></span>
+	   			</div>
+	   			
+	   		</div>
+	   	</div>
+	   	<div class="anniumen">
+	   		<div class="kefu">
+	   			<a class="" href="tel:4006895505">
+			   	<div class="kefuimg"><img src="../../../tongdaoApp/image/insurance/jcx/kefu.png"/></div>
+			   	<div class="kegu1">客服</div>
+		   	</a>
+	   		</div>
+		   	
+		   	<div class="guanzhu">
+		   		下载同道保险APP		   		
+		   	</div>
+		   	<div class="toubao">免费投保</div>
+	   	</div>
+	   	<div class="success" style="display:none;">
+	   		<div class="successImg"><img src="../../../tongdaoApp/image/insurance/jcx/gongxi.png"></div>
+	   		<div class="successWord">领取保障成功</div>
+	   		<div class="successAnniu">下载同道保险APP</div>
+	   	</div>
+	   	<div class="shadow" style="position:absolute;top:0;left:0;z-index:999;width:100%;height:100%;opacity:0.5;background-color:#000;display:none;"></div>
+	</div>
+
+   	
+</body>
+	<script type="text/javascript" src="../../../tongdaoApp/js/lib/common/zepto.min.js" ></script>
+    <script type="text/javascript" src="../../../tongdaoApp/js/lib/widget/mui/mui.min.js" ></script>
+    <script type="text/javascript" src="../js/lib/common/base.js" ></script>
+    <script type="text/javascript" src="../js/lib/common/common.js" ></script>
+	<script type="text/javascript" src="../js/lib/common/jweixin-1.1.0.js"></script>
+    <script type="text/javascript" src="../js/wx/jcxshouyeSharewx.js" ></script>
+</html>

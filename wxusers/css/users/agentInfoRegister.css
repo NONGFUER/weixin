@@ -39,53 +39,53 @@
 	float: left;
 	color: #fff;
 }
-.baseInfoContent,.bankCardInfoContent{
-	width: 89.5%;
-	margin-left: 10%;
+
+.insure-form-group {
+	background-color: #fff;
 }
-.contentInfo{
-	height: 50px;
-	line-height: 50px;
-	border-bottom: 1px solid #c7d7d7;
-	font-size: 15px;
+
+dt,
+dd {
+	height: 40px;
+	padding: 9px 0;
+	border-bottom: 1px solid #e0e0e0;
 }
-.left_title{
-	width: 27.5%;
-	float: left;
+
+.group-title {
+	border-bottom: 1px solid #e0e0e0;
+	padding-left: 4.4%;
 }
-.right_value{
-	height: 48px;
-	line-height: 48px;
-	width: 61%;
-	font-family: "microsoft yahei";
-	font-size: 15px;
+
+.group-title-main {
+	font-size: 16px;
+	font-weight: bold;
+	display: inline-block;
+}
+
+label {
+	color: #333;
+	font-size: 14px;
+}
+
+dd input[type=text] {
+	font-size: 14px;
+	height: 22px;
+	padding: 1px 0;
+	color: #333;
 	text-align: right;
-	float: left;
-	/* margin-right: 10%; */
-	color: #000;
+	width: 60%;
+	display: inline-block;
+	float: right;
 }
-input[type=text]{
-	height: 20px;
-	line-height: 15px;
-	width: 62%;
-	font-family: "microsoft yahei";
-	font-size: 15px;
-	text-align: right;
-	float: left;
-	margin-top: 14.5px;
-	color: #000;
+
+.insure-form-group {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
 }
-.rightImg,.rightImg_sheng,.rightImg_shi,.rightImg_zhihang{
-	width: 8%;
-	float: left;
-	margin-left: 3%;
-	height: 48px;
-	line-height: 48px;
-	
-}
-.rightjiantou{
-	width: 30%;
-	margin-bottom: 2px;
+
+.insure-form-group dd {
+	margin-left: 4.4%;
+	padding-right: 4.4%;
 }
 .banktip{
 	font-size: 12px;
@@ -103,11 +103,11 @@ input[type=text]{
     width: 94.6667%;
     line-height: 45px;
     margin: 0 auto;
-    margin-top: 2.5rem;
+    margin-top: 25px;
     font-size: 17px;
     color: #fff;
     text-align: center;
     background: #1b6bb8;
-    border-radius: 0.5rem;
-    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    margin-bottom: 15px;
 }

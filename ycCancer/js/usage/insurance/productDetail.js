@@ -31,7 +31,7 @@ $(function(){
     sendCaldoRequest( ccId );
     //calOptionsRender(data4);
     if( roleType != "00" && isComing != "1"){
-    	 showRightIcon();
+    	 
     }
     /**拨打电话*/
 	$(".kefu").unbind("tap").bind("tap",function(){
@@ -424,9 +424,9 @@ function buyBind(){
 			return false;
 		}
 		if( healthFlag == "y"){
-			isLogin(roleType,toHealthHtml);
+			toHealthHtml();
 		}else{
-			isLogin(roleType,toInsure);
+			toInsure();
 		}				
 	});	
 }
@@ -450,7 +450,11 @@ function toInsure(){
 	urlParm.cPieces = cPieces;
 	urlParm.cVersion = cVersion;
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
-	window.location.href = "insure.html?jsonKey="+jsonStr;
+	if( roleType == "00" || roleType == "" ){
+		window.location.href = base.url + "weixin/wxusers/html/users/phoneValidate.html?jsonKey="+jsonStr+"&fromtype=cancerWechat&openid="+openid;
+	}else{
+		window.location.href = "insure.html?jsonKey="+jsonStr;
+	}
 }
 //跳转到健康告知页面
 function toHealthHtml(){
@@ -472,7 +476,11 @@ function toHealthHtml(){
 	urlParm.cPieces = cPieces;
 	urlParm.cVersion = cVersion;
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
-	window.location.href = "healthNotice.html?jsonKey="+jsonStr;
+	if( roleType == "00" || roleType == "" ){
+		window.location.href = base.url + "weixin/wxusers/html/users/phoneValidate.html?jsonKey="+jsonStr+"&fromtype=cancerHealthWechat&openid="+openid;
+	}else{
+		window.location.href = "healthNotice.html?jsonKey="+jsonStr;
+	}
 }
 
 //跳转到商品列表页

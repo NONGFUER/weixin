@@ -97,19 +97,22 @@ $(function() {
 				mui.alert("请上传身份证反面照片！","温馨提示");
 				return false;
 			}
-			var url = base.url + "identificationControl/image.do";
+			var url = base.url + "agent/image.do";
 			var reqData = {
 					"head":{
 						"userCode":parm.phone,
 						"transTime":$.getTimeStr(),
-						"channel":"2"
+						"channel":"02",
+						"transToken":""
 					},"body":{
 						 "imagelist":[{
 							 "image":image1
 						 },{
 							 "image":image2
 						 }],
-
+						 "customerId":parm.customerId,
+						 "userName":parm.phone,
+						 "wxchannel":"02"
 					}
 				
 			};

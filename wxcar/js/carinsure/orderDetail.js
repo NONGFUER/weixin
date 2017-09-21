@@ -54,12 +54,7 @@ $(function() {
 		    }
 		});
 	}
-	if(parm.head.fromtype!=null){
-		$("#hebao,#pay").css("width","90%");
-		$(".shareBtn").hide();
-	}else{
-		getConfig(method); 
-	}
+	getConfig(method); 
 
 	
 	//返回按钮
@@ -95,7 +90,7 @@ $(function() {
 	});
 	// 去支付按钮
 	$("#pay").unbind("tap").bind("tap",function() {
-		window.open(payUrl);
+		window.location.href =payUrl;
 	});
 });
 

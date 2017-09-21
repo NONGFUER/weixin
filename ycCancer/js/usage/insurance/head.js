@@ -84,7 +84,7 @@ var requestUrl = {
 var urlParm = JSON.parse(UrlDecode(getUrlQueryString("jsonKey")));
 
 var isComing    = urlParm.isComing ? urlParm.isComing : "";			//即将上线
-
+var openid		= urlParm.openid;
 var mobile      = urlParm.mobile;                //"18900001111";  //urlParm.mobile;//用户手机号
 var customerId  = urlParm.customerId;            //"8";            //urlParm.customerId;//用户id
 var name		= urlParm.name;					 //姓名

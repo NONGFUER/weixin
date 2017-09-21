@@ -2,6 +2,8 @@ var validateCode = "";
 var openid = getUrlQueryString("openid");
 var fromtype = getUrlQueryString("fromtype");
 var jsonKey = getUrlQueryString("jsonKey");
+var wxchannel = getUrlQueryString("wxchannel");
+var inviterPhone = getUrlQueryString("inviterPhone") ? getUrlQueryString("inviterPhone") : "";
 if(jsonKey){
 	var urlParm = JSON.parse(UrlDecode(jsonKey));
 }
@@ -292,7 +294,8 @@ function validate(phoneNo) {
 			 "loginSystem": "03",	//03同道出行 04 通道代理人
 			 "systemVersion":"",
 			 "loginType": "",
-			 "openId": openid							
+			 "openId": openid,
+			 "inviterPhone":inviterPhone
 		}
 	};
 	$.reqAjaxs(url, reqData, loginCallBack );
@@ -306,8 +309,9 @@ function loginCallBack(data){
 		var customerId = data.returns.customerBasic.id + "";
 		var userName = data.returns.customerBasic.userName;
 		var type = data.returns.customerBasic.type;
-		if(fromtype == "3") { //个人中心
-			window.location.href = "personal.html?openid=" + openid;
+		var idAuth = data.returns.customerBasic.idAuth;
+		if(fromtype == "1") { //个人中心
+			window.location.href = "personal.html?fromtype=1&mobile=" + userName + "&roleType=" + type + "&customerId=" + customerId + "&openid=" + openid + "&wxchannel="+wxchannel+"&idAuth="+idAuth;
 		}else if( fromtype == "online" ){		
 			toOnlineInsureHtml(customerId,userName,type);
 		}else if( fromtype == "onlineHealth" ){
@@ -316,7 +320,13 @@ function loginCallBack(data){
 			toJcxInsureHtml(customerId,userName,type);
 		}else if( fromtype == "ghx" ){
 			toOnlineInsureHtml(customerId,userName,type);
-		}		
+		}else if( fromtype == "licai" ){
+			toOnlicaiHealthHtml(customerId,userName,type);
+		}else if( fromtype == "cancerWechat" ){
+			toCancerWechatHtml(customerId,userName,type);
+		}else if( fromtype == "cancerHealthWechat" ){
+			toCancerHealthWechatHtml(customerId,userName,type);
+		}				
 	}else{
 		modelAlert(data.statusMessage);
 	}	
@@ -345,4 +355,28 @@ function toOnlineHealthHtml(customerId,userName,type){
 	urlParm.roleType = type;
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
 	window.location.href = base.url + "tongdaoApp/html/share/insurance/main/healthNotice.html?jsonKey="+jsonStr;
+}
+//跳转youchu在线投保||挂号线
+function toCancerWechatHtml(customerId,userName,type){
+	urlParm.customerId = customerId;
+	urlParm.mobile = userName;
+	urlParm.roleType = type;
+	var jsonStr = UrlEncode(JSON.stringify(urlParm));
+	window.location.href = base.url + "weixin/ycCancer/html/insurance/main/insure.html?jsonKey="+jsonStr;
+}
+//跳转youchu健康告知
+function toCancerHealthWechatHtml(customerId,userName,type){
+	urlParm.customerId = customerId;
+	urlParm.mobile = userName;
+	urlParm.roleType = type;
+	var jsonStr = UrlEncode(JSON.stringify(urlParm));
+	window.location.href = base.url + "weixin/ycCancer/html/insurance/main/healthNotice.html?jsonKey="+jsonStr;
+}
+/*跳转理财*/
+function toOnlicaiHealthHtml(customerId,userName,type){
+	urlParm.customerId = customerId;
+	urlParm.userCode = userName;
+	urlParm.roleType = type;
+	var jsonStr = UrlEncode(JSON.stringify(urlParm));
+	window.location.href = base.url + "tongdaoApp/html/managemoney/productDetailsWeChat/productDetailsWeChat.html?jsonKey="+jsonStr;
 }
