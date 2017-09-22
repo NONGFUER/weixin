@@ -2445,6 +2445,17 @@ $.phonePrivate = function(phone){
 	return phoneOhter;	
 }
 /**
+ * @function 姓名除姓之外隐去
+ */
+$.namePrivate = function(name){
+	if(name){
+		var nameOther = name.replace(/([\u4e00-\u9fa5]{1})[\u4e00-\u9fa5]*/g,'$1**');
+	}else{
+		var nameOther = '';
+	}
+	return nameOther;
+}
+/**
  * @function  身份证中间四位隐去
  */
 $.certifiPrivate = function(ID){

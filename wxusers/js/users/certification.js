@@ -102,6 +102,12 @@ function realNameCallBack(data){
 			toPersonHtml(mobile,customerId,openid);
 		}else if(fromtype == "licai"){
 			tolicaiHtml();
+		}else if(fromtype == "2"){
+			tomydingdanHtml();
+		}else if(fromtype == "3"){
+			tomybaodanHtml();
+		}else if(fromtype == "7"){
+			tojcxHtml();
 		}
 	}else{
 		modelAlert(data.statusMessage);
@@ -119,6 +125,24 @@ function toOnlineInsureHtml(openid){
 }
 /*跳转到理财购买页*/
 function tolicaiHtml(openid){
+	urlParm.openid=openid;
+	var jsonStr = UrlEncode(JSON.stringify(urlParm));
+	window.location.href = base.url + "tongdaoApp/html/managemoney/productDetailsWeChat/productDetailsWeChat.html?jsonKey="+jsonStr;
+}
+/*跳转到我的订单*/
+function tomydingdanHtml(openid){
+	urlParm.openid=openid;
+	var jsonStr = UrlEncode(JSON.stringify(urlParm));
+	window.location.href = base.url + "tongdaoApp/html/account/myOrder/allOrderWeChat.html?jsonKey="+jsonStr;
+}
+/*跳转到我保单*/
+function tomybaodanHtml(openid){
+	urlParm.openid=openid;
+	var jsonStr = UrlEncode(JSON.stringify(urlParm));
+	window.location.href = base.url + "tongdaoApp/html/account/myOrder/policyListWeChat.html?jsonKey="+jsonStr;
+}
+/*跳转到驾常险*/
+function tojcxHtml(openid){
 	urlParm.openid=openid;
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
 	window.location.href = base.url + "tongdaoApp/html/managemoney/productDetailsWeChat/productDetailsWeChat.html?jsonKey="+jsonStr;

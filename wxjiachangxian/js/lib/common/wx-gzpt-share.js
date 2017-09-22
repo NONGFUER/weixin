@@ -4,7 +4,7 @@
 var method;
 function getConfig(fuc) {
 	method=fuc
-	var url = base.url + "wxBa/getConfig.do";// 获取验证码
+	var url = base.url + "wxBasic/getConfig.do";// 获取验证码
 	var data = {
 		"url" : encodeURIComponent(location.href.split('#')[0])
 	};

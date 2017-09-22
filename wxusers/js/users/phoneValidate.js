@@ -291,13 +291,18 @@ function validate(phoneNo) {
 			 "uuid":"",
 			 "version":"",
 			 "mobileSf":"",
-			 "loginSystem": "03",	//03同道出行 04 通道代理人
+			// "loginSystem": "03",	//03同道出行 04 通道代理人
 			 "systemVersion":"",
 			 "loginType": "",
 			 "openId": openid,
 			 "inviterPhone":inviterPhone
 		}
 	};
+	if( wxchannel == "02" ){
+		reqData.body.loginSystem = "04";
+	}else{
+		reqData.body.loginSystem = "03";
+	}
 	$.reqAjaxs(url, reqData, loginCallBack );
 }
 function loginCallBack(data){
@@ -326,7 +331,15 @@ function loginCallBack(data){
 			toCancerWechatHtml(customerId,userName,type);
 		}else if( fromtype == "cancerHealthWechat" ){
 			toCancerHealthWechatHtml(customerId,userName,type);
-		}				
+		}else if( fromtype == "7" ){
+			toOnjiachangHealthHtml(customerId,userName,type);
+		}else if( fromtype == "2" ){
+			mydingdanHtml(customerId,userName,type);
+		}else if( fromtype == "3" ){
+			mybaodanHtml(customerId,userName,type);
+		}else if( fromtype == "8" ){
+			toOnjiachangHealthHtml(customerId,userName,type);
+		}			
 	}else{
 		modelAlert(data.statusMessage);
 	}	
@@ -379,4 +392,28 @@ function toOnlicaiHealthHtml(customerId,userName,type){
 	urlParm.roleType = type;
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
 	window.location.href = base.url + "tongdaoApp/html/managemoney/productDetailsWeChat/productDetailsWeChat.html?jsonKey="+jsonStr;
+}
+/*我的订单*/
+function mydingdanHtml(customerId,userName,type){
+	urlParm.customerId = customerId;
+	urlParm.userCode = userName;
+	urlParm.roleType = type;
+	var jsonStr = UrlEncode(JSON.stringify(urlParm));
+	window.location.href = base.url + "tongdaoApp/html/account/myOrder/allOrderWeChat.html?jsonKey="+jsonStr;
+}
+/*我的保单*/
+function mybaodanHtml(customerId,userName,type){
+	urlParm.customerId = customerId;
+	urlParm.userCode = userName;
+	urlParm.roleType = type;
+	var jsonStr = UrlEncode(JSON.stringify(urlParm));
+	window.location.href = base.url + "tongdaoApp/html/account/myOrder/policyListWeChat.html?jsonKey="+jsonStr;
+}
+/*跳驾乘险*/
+function toOnjiachangHealthHtml(customerId,userName,type){
+	urlParm.customerId = customerId;
+	urlParm.mobile = userName;
+	urlParm.roleType = type;
+	var jsonStr = UrlEncode(JSON.stringify(urlParm));
+	window.location.href = base.url + "weixin/wxjiachangxian/html/zhuanqu.html?jsonKey="+jsonStr;
 }
