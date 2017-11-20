@@ -324,6 +324,10 @@ function loginCallBack(data) {
 			toOnlineInsureHtml(customerId, userName, type);
 		} else if(fromtype == "onlineHealth") {
 			toOnlineHealthHtml(customerId, userName, type);
+		}  else if(fromtype == "onlineX") {
+			toOnlineInsureHtmlX(customerId, userName, type);
+		} else if(fromtype == "onlineHealthX") {
+			toOnlineHealthHtmlX(customerId, userName, type);
 		} else if(fromtype == "jcx") {
 			toJcxInsureHtml(customerId, userName, type);
 		} else if(fromtype == "ghx") {
@@ -444,4 +448,25 @@ function toOnjiachangHealthHtml(customerId, userName, type) {
 	urlParm.customerId = customerId;
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
 	window.location.href = base.url + "weixin/wxjiachangxian/html/zhuanqu.html?jsonKey=" + jsonStr;
+}
+//跳转在线投保||挂号线||保全家
+function toOnlineInsureHtmlX(customerId, userName, type) {
+	urlParm.customerId = customerId;
+	urlParm.mobile = userName;
+	urlParm.roleType = type;
+	var jsonStr = UrlEncode(JSON.stringify(urlParm));
+	if( urlParm.ccId == "21" ){	//
+		window.location.href = base.url + "tongdaoApp/html/insurance/yian/familyInsure.html?jsonKey=" + jsonStr; 
+	}else{
+		window.location.href = base.url + "tongdaoApp/html/insurance/main/insure.html?jsonKey=" + jsonStr;
+	}
+	
+}
+//跳转健康告知
+function toOnlineHealthHtmlX(customerId, userName, type) {
+	urlParm.customerId = customerId;
+	urlParm.mobile = userName;
+	urlParm.roleType = type;
+	var jsonStr = UrlEncode(JSON.stringify(urlParm));
+	window.location.href = base.url + "tongdaoApp/html/insurance/main/healthNotice.html?jsonKey=" + jsonStr;
 }
