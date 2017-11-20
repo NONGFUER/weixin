@@ -112,7 +112,7 @@ $(function() {
 						 }],
 						 "customerId":parm.customerId,
 						 "userName":parm.phone,
-						 "wxchannel":"02"
+						 "wxchannel":"01"
 					}
 				
 			};

@@ -123,7 +123,9 @@ $(function() {
 				if(mail == "" || mail == null || mail == "请输入电子邮箱（选填）") {
 					mail = "";
 				}
-
+				if(shareMobile==''||shareMobile==null||shareMobile=='null'){
+					shareMobile=mobile
+				}
 				var url = base.url + "insuranceSave/insuranceSaveInfo.do"
 				var reqData = {
 					"head": {
@@ -140,7 +142,7 @@ $(function() {
 						"sex": sex, //投保人性别
 						"pwd": ID, //投保人身份证						    
 						"customePhone": mobile, //登录用户手机号
-						"inviterPhone": mobile,
+						"inviterPhone": shareMobile,
 						"flag": "1", //1 公众号  2 分享 3 app
 						"commodityCombinationId": "15",
 						"commodityId": "21",

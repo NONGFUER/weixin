@@ -36,8 +36,8 @@ $(function() {
 		}
 		shareStr = JSON.stringify(shareStr);
 		shareStr = UrlEncode(shareStr); // 加密过后的操作
-		var shareurl=base.url+'cxweixin/html/carinsure/shareOrderDetail.html?jsonStr='+shareStr;// 分享链接
-		var shareImgUrl=base.url+"cxweixin/img/carshare.png";
+		var shareurl=base.url+'weixin/wxcar/html/carinsure/shareOrderDetail.html?jsonKey='+shareStr;// 分享链接
+		var shareImgUrl=base.url+"weixin/wxcar/images/carshare.png";
 		//分享给朋友
 		wx.onMenuShareAppMessage({
 		    title: '同道出行', // 分享标题

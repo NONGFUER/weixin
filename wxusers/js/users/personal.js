@@ -10,7 +10,7 @@ var shenhestate = "00";//审核步骤：01考试完成，02基础信息已提交
 var headImgUrl = getUrlQueryString("headImgUrl");
 var openId =  getUrlQueryString("openid");
 var wxchannel = getUrlQueryString("wxchannel");
-
+var customerState = "1";//0离职
 $(function() {	
 	init();
 	//点击切换账号，进入手机验证页面
@@ -71,6 +71,7 @@ $.infoCallBack = function(data){
 				phone    = customerBasic.mobile;
 				customerId = customerBasic.id+"";
 				idAuth = customerBasic.idAuth;
+				customerState = customerBasic.status;//离职状态
 				if( idAuth == "0" ){
 					//mobile=17317957601&roleType=01&customerId=89149&openid=ohNt9vwoSa9L2X66vFoc-q7UItg8&wxchannel=02&idAuth=0
 					window.location.href = "certification.html?customerId="+customerId+"&mobile="+phone+"&roleType="+roletype+"&openid="+openId+"&wxchannel="+wxchannel;
@@ -149,11 +150,46 @@ $.infoCallBack = function(data){
 					if( wxchannel == "01" ){
 						$("#load").show();
 					}else {						
-						
-						//未申请
-						if(shenhestate == "00"){						
-								$(".confirmbtn").html("申请成为代理人");
-								/*$(".confirmbtn").html("下载同道APP，申请成为代理人");*/
+						if( customerState == "0"){
+							$(".confirmbtn").html("代理人离职，6个月不能申请代理人!");
+							$(".confirmbtn").show();
+							$(".confirmbtn").css("background-color","#ccc");
+						}else{						
+							//未申请
+							if(shenhestate == "00"){						
+									$(".confirmbtn").html("申请成为代理人");
+									/*$(".confirmbtn").html("下载同道APP，申请成为代理人");*/
+									$(".confirmbtn").show();
+									$(".confirmbtn").unbind("tap").bind("tap",function(){
+										var sendData = {
+												"openId":openId,
+												"name":name,
+												"ID":ID,
+												"phone":phone,
+												"customerId":customerId,
+												"wxchannel":wxchannel
+										}
+										var jsonStr = UrlEncode(JSON.stringify(sendData));
+										window.location.href="agentapply.html?jsonKey=" + jsonStr;
+									})												
+							}else if(shenhestate == "01"){//考试完成
+								$(".confirmbtn").html("填写代理人信息");
+								$(".confirmbtn").show();
+								$(".confirmbtn").unbind("tap").bind("tap",function(){
+									var sendData = {
+											"openId":openId,
+											"name":name,
+											"ID":ID,
+											"phone":phone,
+											"flag":"2",
+											"customerId":customerId,
+											"wxchannel":wxchannel
+									}
+									var jsonStr = UrlEncode(JSON.stringify(sendData));
+									window.location.href="agentInfoRegister.html?jsonKey=" + jsonStr;
+								})
+							}else if(shenhestate == "02"){//基础信息已提交
+								$(".confirmbtn").html("录入影像资料");
 								$(".confirmbtn").show();
 								$(".confirmbtn").unbind("tap").bind("tap",function(){
 									var sendData = {
@@ -165,65 +201,35 @@ $.infoCallBack = function(data){
 											"wxchannel":wxchannel
 									}
 									var jsonStr = UrlEncode(JSON.stringify(sendData));
-									window.location.href="agentapply.html?jsonKey=" + jsonStr;
-								})												
-						}else if(shenhestate == "01"){//考试完成
-							$(".confirmbtn").html("填写代理人信息");
-							$(".confirmbtn").show();
-							$(".confirmbtn").unbind("tap").bind("tap",function(){
-								var sendData = {
-										"openId":openId,
-										"name":name,
-										"ID":ID,
-										"phone":phone,
-										"flag":"2",
-										"customerId":customerId,
-										"wxchannel":wxchannel
-								}
-								var jsonStr = UrlEncode(JSON.stringify(sendData));
-								window.location.href="agentInfoRegister.html?jsonKey=" + jsonStr;
-							})
-						}else if(shenhestate == "02"){//基础信息已提交
-							$(".confirmbtn").html("录入影像资料");
-							$(".confirmbtn").show();
-							$(".confirmbtn").unbind("tap").bind("tap",function(){
-								var sendData = {
-										"openId":openId,
-										"name":name,
-										"ID":ID,
-										"phone":phone,
-										"customerId":customerId,
-										"wxchannel":wxchannel
-								}
-								var jsonStr = UrlEncode(JSON.stringify(sendData));
-								window.location.href="addImage.html?jsonKey=" + jsonStr;
-							})
-						}
-						else if(shenhestate == "03"){//影像资料已上传，审核中
-							$(".kefuPhone").show();
-							$(".confirmbtn").html("审核中");
-							$(".confirmbtn").css("background-color","#ccc");
-							$(".confirmbtn").show();
-						}else if(shenhestate == "04"){//审核失败
-							if(customerBasic.status != "0"){//0:离职，1：在职
-								$(".reviewFalse").show();
+									window.location.href="addImage.html?jsonKey=" + jsonStr;
+								})
 							}
-							$(".confirmbtn").html("重新提交审核资料");
-							
-							$(".confirmbtn").show();
-							$(".confirmbtn").unbind("tap").bind("tap",function(){
-								var sendData = {
-										"openId":openId,
-										"name":name,
-										"ID":ID,
-										"phone":phone,
-										"flag":"1",
-										"customerId":customerId,
-										"wxchannel":wxchannel
+							else if(shenhestate == "03"){//影像资料已上传，审核中
+								$(".kefuPhone").show();
+								$(".confirmbtn").html("审核中");
+								$(".confirmbtn").css("background-color","#ccc");
+								$(".confirmbtn").show();
+							}else if(shenhestate == "04"){//审核失败
+								if(customerBasic.status != "0"){//0:离职，1：在职
+									$(".reviewFalse").show();
 								}
-								var jsonStr = UrlEncode(JSON.stringify(sendData));
-								window.location.href="agentInfoRegister.html?jsonKey=" + jsonStr;
-							})
+								$(".confirmbtn").html("重新提交审核资料");
+								
+								$(".confirmbtn").show();
+								$(".confirmbtn").unbind("tap").bind("tap",function(){
+									var sendData = {
+											"openId":openId,
+											"name":name,
+											"ID":ID,
+											"phone":phone,
+											"flag":"1",
+											"customerId":customerId,
+											"wxchannel":wxchannel
+									}
+									var jsonStr = UrlEncode(JSON.stringify(sendData));
+									window.location.href="agentInfoRegister.html?jsonKey=" + jsonStr;
+								})
+							}							
 						}
 				} 
 				}

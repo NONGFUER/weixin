@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 忽略IOS将页面中的数字识别为电话号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 忽略Android平台中对邮箱地址的识别 -->
+    <meta name="format-detection" content="email=no" />
+    <!-- 缓存 -->
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+	<meta HTTP-EQUIV="expires" CONTENT="0">
+    <title>品牌型号选择</title>
+    <link rel="stylesheet" href="../../css/mui/mui.min.css" />
+    <link rel="stylesheet" href="../../css/common/base.css" />
+    <link rel="stylesheet" href="../../css/common/common.css" />
+    <link rel="stylesheet" href="../../css/carinsure/vehicleModelSelect.css"/>
+    <link rel="stylesheet" href="../../css/carinsure/vehiclequery.css"/>
+</head>
+<body>
+	<header>
+		<div class="h_back"><div class="backindex"><img src="../../images/back.png"/></div></div>
+		<div class="h_title" id="pageTitle">品牌型号选择</div>
+		<div class="h_next"></div>
+	</header>
+	<div>
+	     <!-- 客户搜索 style="display:none;" -->
+		 <div class="searcharea">
+		    <div style="width:100%;height:44px;">
+			 	<div class="inputCssdiv">
+				 	<img class="cusselectClass" src="../../images/cusselect.png">
+					<input type="text" class="searchtext" id="searchtext" placeholder="请输入关键字点击查询" style="color:#585858;"/>
+				</div>
+				<div id="selectbtn" class="selectbtn">搜索</div>
+			</div>
+			<div class="noticediv"><span style="word-break:break-all;color:#ff5151;">提示：请按照行驶证上品牌型号如“别克SGM7180”可只填写汉字、字母和数字。进口车辆请填写时间实际品牌型号，如“奥迪AUDI Q7”，您可以按照之前保单型号填写，或询问车辆经销商</span></div>
+		</div>
+		<!-- 无车型信息提示 --> 
+		<div id="maindiv" style="display:none">
+			<section id="section1" class="">
+				<div class="nowishd1">
+					<img src="../../images/noProduct.png"/>
+					<span>抱歉，没有查到您的车型！</span>
+				</div>
+			</section>
+		</div>
+		<!-- 品牌型号列表 -->
+		<div id="wrapper" class="wrapper mui-scroll-wrapper">
+			<section id="customManageWrapper" class="mui-scroll">
+				<div class="divWrapper" >
+				    <div id="searchcustomer">
+				        
+				    </div>
+				</div>
+			</section>	 
+		</div>
+	</div>
+	<!-- 弹窗 -->
+	<div class="dialog" style="position: fixed;width:100%;height:100%; z-index: 98;top: 0;right: 0;bottom: 0;left: 0;opacity: 1;background: rgba(0,0,0,.4);display:none;"></div>
+	<!-- 江苏地区验证码 -->
+	<div class="note-div">
+		<div class="note-div_title">
+			<div>验证码验证</div>
+			<div class="note-div_title_right"></div>
+		</div>
+		<div class="note-div_body">
+			<div class="note-div_body_input">
+				<ul>
+					<li>
+						<span>
+							<input id='yan' type="text" maxlength="6" placeholder="请输入验证码" />
+						</span>
+						<span class="dianji">
+						     <img id="checkImg">
+						</span>
+					</li>
+				</ul>
+				<div class="note-div-button">
+					<div  id="submit" class="note-div-btn">
+						确定
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+    <script type="text/javascript" src="../../js/util/zepto.min.js" ></script>
+    <script type="text/javascript" src="../../js/mui/mui.min.js" ></script>
+    <script type="text/javascript" src="../../js/util/base.js" ></script>
+    <script type="text/javascript" src="../../js/util/common.js" ></script> 
+    <script type="text/javascript" src="../../js/carinsure/vehiclequery.js" ></script>
+</html>

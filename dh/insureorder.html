@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<!-- 忽略IOS将页面中的数字识别为电话号码 -->
+<meta name="format-detection" content="telephone=no" />
+<!-- 忽略Android平台中对邮箱地址的识别 -->
+<meta name="format-detection" content="email=no" />
+<!-- 缓存 -->
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<meta HTTP-EQUIV="expires" CONTENT="0">
+<title>订单详情</title>
+<link rel="stylesheet" href="css/mui/mui.min.css" />
+<link rel="stylesheet" href="css/mui/mui.picker.min.css" />
+<link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+
+<header  id="header" class="mui-bar mui-bar-nav header">
+	<a id="back" class="mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<h1 class="mui-title">订单详情</h1>
+</header>
+
+<div class="mui-content">
+	<div id="scroll" class="mui-scroll-wrapper">
+		<div class="mui-scroll">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+						<div class="mui-col-xs-3 mui-text-left"><img class="bigimg" src="img/logo.png"/></div>
+						<div class="mui-col-xs-3 mui-text-left"><b class="graytext">&nbsp;天安车险<br />出行更放心</b></div>
+						<div class="mui-col-xs-6 mui-text-right"><b class="feetext"><h3 id="totalpre"></h3></b></div>
+					</div>
+				</li>
+			</ul>
+			<br>
+			<div id="globalno"></div>
+			<ul class="mui-table-view">
+				<li id="guide" class="mui-table-view-cell">
+					<div class="mui-row">
+						<div class="mui-col-xs-11 mui-text-left"><b class="notice">续保或重新投保</b></div>
+						<div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+					</div>
+				</li>
+				
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+						<div class="mui-col-xs-4 mui-text-left"><b class="blacktext">保单状态</b></div>
+						<div class="mui-col-xs-8 mui-text-right"><span id="orderstatus" class="redtext"></span></div>
+					</div>
+				</li>
+
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+					    <div class="mui-col-xs-4 mui-text-left"><b class="blacktext">保险类别</b></div>
+					    <div class="mui-col-xs-8 mui-text-right"><span id="insuretype" class="graytext"></span></div>
+					</div>
+					<br>
+					<div class="mui-row">
+					    <div class="mui-col-xs-4 mui-text-left"><b class="blacktext">保险名称</b></div>
+					    <div class="mui-col-xs-8 mui-text-right"><span id="companytype" class="graytext"></span></div>
+					</div>
+					<br>
+					<div class="mui-row">
+					    <div class="mui-col-xs-4 mui-text-left"><b class="blacktext">保险版本</b></div>
+					    <div class="mui-col-xs-8 mui-text-right"><span id="version" class="graytext"></span></div>
+					</div>
+					<br>
+					<div class="mui-row">
+					    <div class="mui-col-xs-4 mui-text-left"><b class="blacktext">保险公司</b></div>
+					    <div class="mui-col-xs-8 mui-text-right"><span id="company" class="graytext"></span></div>
+					</div>
+				</li>
+
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+						<div class="mui-col-xs-4 mui-text-left"><b class="blacktext">投保单号</b></div>
+						<div class="mui-col-xs-8 mui-text-right"><span id="appno" class="graytext"></span></div>
+					</div>
+					<br>
+					<div class="mui-row">
+						<div class="mui-col-xs-4 mui-text-left"><b class="blacktext">保单号</b></div>
+						<div class="mui-col-xs-8 mui-text-right"><span id="polno" class="graytext"></span></div>
+					</div>
+				</li>
+
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+					    <div class="mui-col-xs-4 mui-text-left"><b class="blacktext">商业险投保单号</b></div>
+					    <div class="mui-col-xs-8 mui-text-right"><span id="businessappno" class="graytext"></span></div>
+					</div>
+					<br>
+					<div class="mui-row">
+					    <div class="mui-col-xs-4 mui-text-left"><b class="blacktext">商业险保单号</b></div>
+					    <div class="mui-col-xs-8 mui-text-right"><span id="businesspolno" class="graytext"></span></div>
+					</div>
+				</li>
+
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+					    <div class="mui-col-xs-4 mui-text-left"><b class="blacktext">交强险投保单号</b></div>
+					    <div class="mui-col-xs-8 mui-text-right"><span id="jqxappno" class="graytext"></span></div>
+					</div>
+					<br>
+					<div class="mui-row">
+					    <div class="mui-col-xs-4 mui-text-left"><b class="blacktext">交强险保单号</b></div>
+					    <div class="mui-col-xs-8 mui-text-right"><span id="jqxpolno" class="graytext"></span></div>
+					</div>
+				</li>
+
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+					    <div class="mui-col-xs-4 mui-text-left"><b class="blacktext">商业险保费</b></div>
+					    <div class="mui-col-xs-8 mui-text-right"><span id="businesspre" class="graytext"></span></div>
+					</div>
+					<br>
+					<div class="mui-row">
+					    <div class="mui-col-xs-4 mui-text-left"><b class="blacktext">交强险保费</b></div>
+					    <div class="mui-col-xs-8 mui-text-right"><span id="jqxpre" class="graytext"></span></div>
+					</div>
+					<br>
+					<div class="mui-row">
+					    <div class="mui-col-xs-4 mui-text-left"><b class="blacktext">车船税</b></div>
+					    <div class="mui-col-xs-8 mui-text-right"><span id="vehicletaxpre" class="graytext">车船税</span></div>
+					</div>
+				</li>
+
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+					    <div class="mui-col-xs-4 mui-text-left"><b class="blacktext">被保人姓名</b></div>
+					    <div class="mui-col-xs-8 mui-text-right"><span id="insuredname" class="graytext"></span></div>
+					</div>
+					<br>
+					<div class="mui-row">
+						<div class="mui-col-xs-4 mui-text-left"><b class="blacktext">被保人手机号</b></div>
+						<div class="mui-col-xs-8 mui-text-right"><span id="insuredmobile" class="graytext"></span></div>
+					</div>
+					<br>
+					<div class="mui-row">
+					    <div class="mui-col-xs-4 mui-text-left"><b class="blacktext">被保人身份证号</b></div>
+					    <div class="mui-col-xs-8 mui-text-right"><span id="insuredidcard" class="graytext"></span></div>
+					</div>
+				</li>
+
+
+				
+				<li id="detail" class="mui-table-view-cell">
+					<div class="mui-row">
+					    <div class="mui-col-xs-11 mui-text-left"><b class="notice">查看详细投保信息</b></div>
+					    <div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+					</div>
+				</li>
+			</ul>
+			<br/>
+			<p class="mui-text-center">&nbsp;天安财险服务电话：95505</p>
+			<br/>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/zepto/zepto.min.js" ></script>
+<script type="text/javascript" src="js/mui/mui.min.js" ></script>
+<script type="text/javascript" src="js/mui/mui.picker.min.js" ></script>
+<script type="text/javascript" src="js/operatedata.js"></script>
+<script type="text/javascript" src="js/insureorder.js?v=20171030"></script>
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="js/ajaxservice.js"></script>
+<script type="text/javascript" src="js/constant.js?v=20171030"></script>
+
+</html>

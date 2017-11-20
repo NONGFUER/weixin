@@ -6,6 +6,7 @@ var listArray = [];
 var lowAge = "";
 var upAge = "";
 var healthFlag = "";
+var CommodityInfo = [];
 $(function(){
 	if( isComing == "1"){
 		$("#toubao").css({background:"#ccc"});
@@ -25,14 +26,11 @@ $(function(){
     	choiceBind( calNames[i] );
     }
 	listChoiceBind();
-	console.log(calChoices);
-	console.log(choiceEdit);
+	textBind();//借贷险中的输入框作为试算条件，触发绑定
+	//console.log(calChoices);console.log(choiceEdit);
     //根据保费试算项进行保费试算
     sendCaldoRequest( ccId );
-    //calOptionsRender(data4);
-    if( roleType != "00" && isComing != "1"){
-    	 
-    }
+    //calOptionsRender(data4);    
     /**拨打电话*/
 	$(".kefu").unbind("tap").bind("tap",function(){
     	callService("4006895505",".kefuPhone");
@@ -109,14 +107,14 @@ function sendProductInfoRequest(ccId,cityCode,provinceCode,type){
  * @function 试算
  */
 function calDoRender(data){
-    console.log(data);
+    //console.log(data);
     cPrem = data.returns.premiun;
     $("#jwx_foot_price").text("价格：￥" + data.returns.premiun);
 }
 
 //试算条件
 function calOptionsRender(data){
-    console.log(data);
+    //console.log(data);
     if( data.statusCode == ajaxStatus.success ){
         var body = data.returns;
         var calOptionDtos = body.calOptionDtos;
@@ -126,8 +124,10 @@ function calOptionsRender(data){
            var calCode    = calOptionDtos[i].calCode;
            var isCal	  = calOptionDtos[i].isCal;
            var showType   = calOptionDtos[i].showType;
-           var calOptions = calOptionDtos[i].calOptions;       
-           upAndLowDate( calCode, calOptions );
+           var calOptions = calOptionDtos[i].calOptions;
+           if( isCal == "1" ){
+        	   upAndLowDate( calCode, calOptions );
+           }         
            var str = "";
            if( isCal == "1" ){      	   
         	   str += '<div class="d1 biCal" id="cal'+j+'" name="'+calCode+'">';
@@ -146,18 +146,21 @@ function calOptionsRender(data){
     }
 }
 //为了解决默认加载是蒜香问题
-function appendStr(showType,calOptions,calCode){
-	 var calDetails = calOptionDetails(calOptions,calCode);//针对listArea拼接
-     var listChoice = listChioceDetails(calOptions);//针对list,拼接          
+function appendStr(showType,calOptions,calCode){	     
 	if( showType == 'date'){        	   
  	  var str = '<input id="birthdate" type="text" readonly="readonly">';
     }else if( showType == 'listArea' ){
+      var calDetails = calOptionDetails(calOptions,calCode);//针对listArea拼接
  	  var str = calDetails;
     }else if( showType == 'label' ){
  	  var str = calOptions[0].enuContent;
     }else if( showType == 'list' ){
+      var listChoice = listChioceDetails(calOptions);//针对list,拼接 
  	  var str = listChoice;
-    } 
+    }else if( showType == 'text' ){
+      $('div[name='+calOptions[0].calCode+']').attr("data-value",calOptions[0].enuCode);
+      var str = '<input id="moneytext" type="number" value="'+ calOptions[0].enuContent +'" placeholder="1000元起">元<br><p class="red12">请输入1000或者其整数倍，最高可保200万元</p>'
+    }  
 	$('div[name='+calCode+'] .conter').append(str);
 }
 
@@ -214,7 +217,7 @@ function addChoice(){
 		}
 		choiceEdit.push(calObj);
 		calChoices.push(chioceValue);
-		console.log(calChoices);
+		//console.log(calChoices);
 	});
 }
 
@@ -232,8 +235,32 @@ function choiceBind( calName ){
 		var choiceValue = $(this).attr("data-value");
 		$('div[name='+calName+']').attr("data-value",choiceValue);
 		addChoice();
-		console.log(calName +":"+$(this).attr("data-value"));//
+		//console.log(calName +":"+$(this).attr("data-value"));//
 		sendCaldoRequest( ccId );
+	});
+}
+
+//借贷险中的输入框作为试算条件，触发绑定
+function textBind(){
+	$(document).on("input propertychange","#moneytext",function(e){
+		 var re = /^[1-9][0-9]*0{3}$/i;
+		if(this.value.length >= 4 && this.value%1000 === 0 && re.test(this.value) && this.value <= 2000000){
+			$('div[name="pieces"]').attr('data-value',this.value/1000);
+			addChoice();
+			sendCaldoRequest(ccId);
+		}
+	})
+	$(".cbutton").unbind("tap").bind("tap",function(){
+		var re = /^[1-9][0-9]*0{3}$/i;
+		var moneytext = $("#moneytext").val(); 
+		if(moneytext.length >= 4 && moneytext%1000 === 0 && re.test(moneytext) && moneytext <= 2000000){
+			$('div[name="pieces"]').attr('data-value',moneytext/1000);
+			addChoice();
+			sendCaldoRequest(ccId);
+		}else{
+			modelAlert("请输入1000或者其整数倍，最高可保200万元");
+			return false;
+		}
 	});
 }
 
@@ -267,12 +294,13 @@ function upAndLowDate( code, options){
  * @param {*} data 
  */
 function productInfoRender(data){
-    console.log(data);
+    //console.log(data);
     if( data.statusCode == ajaxStatus.success ){
         var body = data.returns;
         var commodityCombinationModuleMapper = body.commodityCombinationModuleMapper;
         var commodityCombination             = body.commodityCombination;
-        var companyProfile 					 = body.companyProfile;
+        	CommodityInfo                    = body.CommodityInfo;
+        var companyProfile 					 = body.companyProfile;       
         var healthTold						 = body.healthTold;			//健康告知
         if(healthTold.length != 0){
         	healthFlag = "y"
@@ -299,7 +327,7 @@ function moduleStr(mapperList){
 	}else {
 		str += '<dl class="mb10 whitebackground">';
 		str += '<dt class="dt">' + mapperList.moduleName + '</dt>';
-		str += '<dd class="dd">';	
+		str += '<dd class="dd" style="position:relative">';	
 		if( mapperList.moduleType == "02" ){
 			if( mapperList.moduleName == "保障责任" ){
 				str += tableGener(mapperList.modueInfo);
@@ -309,7 +337,11 @@ function moduleStr(mapperList){
 		}else if( mapperList.moduleType == "03" ){//链接
 			str += '<span class="btn1 fl" onclick="toCommodityList()">合同条款</span><span href="#" data-url="'+mapperList.modueInfo+'" class="btn1 ri" id="hetongDemo">合同样张</span>'
 		}else if(  mapperList.moduleType == "01"  ){
-			str += '<img src="' + mapperList.modueInfo + '" class="mb10">';
+			if( ccId == "22" && mapperList.moduleName == "保障责任"){
+				str += '<a style="position: absolute;top: 0; left: 0;right: 0; bottom: 0;z-index: 2;" href="http://jichupro.oss-cn-szfinance.aliyuncs.com/commodityCombination/module/bwyl_yy.pdf"></a><img src="' + mapperList.modueInfo + '" class="mb10">';
+			}else{
+				str += '<img src="' + mapperList.modueInfo + '" class="mb10">';
+			}
 		}      								
 		str += '</dd></dl>';
 	}
@@ -388,7 +420,7 @@ function timeRender(data){
     	$("#insuredAge input").attr("data-options",'{"type":"date","value":"'+defaultTime+'","beginYear":'+year+',"beginMonth":'+month+',"beginDay":'+day+',"endYear":'+endYear+',"endMonth":'+endMonth+',"endDay":'+endDay+'}');	
     	$("#insuredAge input").val(defaultTime);
     	var age = $.getAge(defaultTime);
-		console.log(":" + age);
+		//console.log(":" + age);
 		$("div[name='insuredAge']").attr("data-value",age);
     	changeDate("birthdate");
     }else {
@@ -408,7 +440,7 @@ function changeDate(id){
 			picker.show(function(rs) {
 				result.value = rs.text;
 				var age = $.getAge(rs.text);
-				console.log(id + ":" + age);
+				//console.log(id + ":" + age);
 				$("div[name='insuredAge']").attr("data-value",age);				
 				addChoice();
 				sendCaldoRequest( ccId );
@@ -432,15 +464,29 @@ function buyBind(){
 }
 //跳转到投保页面
 function toInsure(){
+	if( ccId == COMMODITYCOMBINE_ID.JDX ){
+		var re = /^[1-9][0-9]*0{3}$/i;
+		var moneytext = $("#moneytext").val(); 
+		if(moneytext.length >= 4 && moneytext%1000 === 0 && re.test(moneytext) && moneytext <= 2000000){		
+		}else{
+			modelAlert("请输入1000或者其整数倍，最高可保200万元");
+			return false;
+		}
+	}	
 	if($("div[name='versions']").length != 0){
-		cId = $("div[name='versions']").find(".on").attr("data-cid");
-		cName = ccName + "" + $("div[name='versions']").find(".on").html() ;
+		cId = $("div[name='versions']").find(".on").attr("data-cid");		
 		cVersion = $("div[name='versions']").attr("data-value");
-		//alert(cId+":"+cName);
+		var indax =$("div[name='versions']").find("li").index($(".on"));
 	}
+	if( CommodityInfo.length == 1 ){
+		urlParm.bzPic = CommodityInfo[0].banner;
+		urlParm.cName = CommodityInfo[0].commodityName;
+	}else if( CommodityInfo.length >= 2){
+		urlParm.bzPic = CommodityInfo[indax].banner;
+		urlParm.cName = CommodityInfo[indax].commodityName;
+	}	
 	title = "投保信息"
-	urlParm.cId = cId;
-	urlParm.cName = cName;
+	urlParm.cId = cId;	
 	urlParm.cPrem = cPrem;
 	urlParm.title = title;
 	urlParm.leftIco = "1";
@@ -452,17 +498,23 @@ function toInsure(){
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
 	if( roleType == "00" || roleType == "" ){
 		window.location.href = base.url + "weixin/wxusers/html/users/phoneValidate.html?jsonKey="+jsonStr+"&fromtype=cancerWechat&openid="+openid;
-	}else{
-		window.location.href = "insure.html?jsonKey="+jsonStr;
+	}else{		
+		window.location.href = "insure.html?jsonKey="+jsonStr;		
 	}
 }
 //跳转到健康告知页面
 function toHealthHtml(){
 	if($("div[name='versions']").length != 0){
-		cId = $("div[name='versions']").find(".on").attr("data-cid");
-		cName = ccName + "" + $("div[name='versions']").find(".on").html() ;
+		cId = $("div[name='versions']").find(".on").attr("data-cid");		
 		cVersion = $("div[name='versions']").attr("data-value");
-		//alert(cId+":"+cName);
+		var indax =$("div[name='versions']").find("li").index($(".on"));
+	}
+	if( CommodityInfo.length == 1 ){
+		urlParm.bzPic = CommodityInfo[0].banner;
+		urlParm.cName = CommodityInfo[0].commodityName;
+	}else if( CommodityInfo.length >= 2){
+		urlParm.bzPic = CommodityInfo[indax].banner;
+		urlParm.cName = CommodityInfo[indax].commodityName;
 	}
 	title = "健康告知"
 	urlParm.cId = cId;
@@ -502,6 +554,20 @@ function toHetongDemo(obj){
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
 	window.location.href = base.url + "tongdaoApp/html/agreement/hetong.html?jsonKey="+jsonStr;
 }
+
+
+
+function toUrl(){
+	urlParm.title = "职业风险类别表";
+	urlParm.leftIco = "1";
+	urlParm.rightIco = "0";
+	urlParm.downIco = "0";
+	urlParm.frompage = "proDetail";
+	urlParm.search = window.location.search;
+	var jsonStr = UrlEncode(JSON.stringify(urlParm));
+	window.location.href = base.url+"tongdaoApp/html/agreement/profession.html?jsonKey="+jsonStr;
+}
+
 function shareHandle(){
 	//var shareList = getProductShare(ccId);
 	var title = ccName;

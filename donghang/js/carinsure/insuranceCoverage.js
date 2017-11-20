@@ -619,7 +619,18 @@ $.submitCallBack = function(paramList) {
 		checkFlag="";//校验类别0:交强，1:商业
 		querySequenceNo="";//商业险投保查询码
 		queryCheckCode="";//商业险投保 验证码图片的base64字符串
-		modelAlert(paramList.statusMessage);
+		var content = ta_translate(ta_filter(paramList.statusMessage));
+		
+		var carmodelnew = getCarmodelNew(content);
+		if(carmodelnew != ""){//车型选择与车辆真实型号不符
+			modelAlert(content,"按照此品牌型号重新报价",function(){
+				sessionStorage.setItem("brandKey", carmodelnew);//搜索关键字
+				window.location.href="vehiclequery.html"+window.location.search;
+			});
+			
+		}else{
+			modelAlert(content);
+		}
 	}
 };
 // 添加主附险内容

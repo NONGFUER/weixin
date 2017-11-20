@@ -25,7 +25,7 @@ $(function() {
 	//获取订单信息模块初始化
 	$.loadOrderInf();
 	if(parm.body.cityCode=="3110000"){//北京地区
-		  $("#toubaoCardUl,#beibaoCardUl").show("fast");
+		  $("#toubaoCardUl,#beibaoCardUl,.emailUl").show("fast");
 	}
 	if(parm.body.cityCode=="3440300"){//深圳地区
 		  $(".emailUl").show("fast");
@@ -316,7 +316,7 @@ function cheackInsuredInfo() {
 				return false;
 			}
 		}
-		if(parm.body.cityCode=="3440300"){//深圳地区
+		if(parm.body.cityCode=="3440300"||parm.body.cityCode=="3110000"){//深圳地区  北京地区
 			// 被保人邮箱验证
 			var recognizee_email_input=$("#recognizee_email_input").val(); // 被保人邮箱
 			if ($.isNull(recognizee_email_input) || recognizee_email_input == "请输入邮箱") {
@@ -400,7 +400,7 @@ function cheackInsuredInfo() {
 				return false;
 			}
 		}
-		if(parm.body.cityCode=="3440300"){//深圳地区
+		if(parm.body.cityCode=="3440300"||parm.body.cityCode=="3110000"){//深圳地区  北京地区
 			// 投保人邮箱验证
 			var policyholder_email_input=$("#policyholder_email_input").val(); // 投保人邮箱
 			if ($.isNull(policyholder_email_input) || policyholder_email_input == "请输入邮箱") {
@@ -587,7 +587,7 @@ $.loadData = function(param) {
 						$.toAjaxs(url, data, function(param){
 							param = eval("(" + param + ")");
 							if (param.status.statusCode == "000000") {
-								if(param.gfbDistribution!=""){
+								if(param.cxDistribution!=""){
 									addressInfo.province = param.cxDistribution.province;
 									addressInfo.address = param.cxDistribution.address;
 									if (addressInfo != "" && addressInfo != null) {//该用户有默认地址
@@ -610,9 +610,18 @@ $.loadData = function(param) {
 						$(".addressInfo").show();
 					}
 				}
-				/*车船税为0时提示*/
-				if(param.cxInfo.cxOffer.vehicletaxPre==0){
-					modelAlert("您当前购买的车险保单无法代缴车船税，如需了解详情，可拨打客服热线 4006895505 进行咨询");
+				
+				var vehicletaxPre=param.cxInfo.cxOffer.vehicletaxPre;
+				var forceBeginYear=param.cxInfo.cxOffer.jqxBegindate!=null?new Date(param.cxInfo.cxOffer.jqxBegindate.time).getFullYear():"";
+				var curYear=new Date().getFullYear()
+				var nextYear=curYear+1;
+				//如果用户购买交强险起保时间为当前系统时间的后一年，且需缴纳的车船税金额为零时，给出以下提示：
+				if(vehicletaxPre==0){
+					if(forceBeginYear==nextYear){
+						modelAlert("当前时间购买交强险只能缴纳"+curYear+"年的车船税。如您需代缴"+nextYear+"年的车船税，可在"+nextYear+"年内购买交强险。");
+					}else{/*车船税为0时提示*/
+						modelAlert("您当前购买的车险保单无法代缴车船税，如需了解详情，可拨打客服热线 4006895505 进行咨询");
+					}
 				}
 				
 				if(parm.body.samebeibao!=null){//被保人信息与车主不一致
@@ -735,7 +744,7 @@ function hebao(){
 	    	  var phnation=sametoubao=="1"?cxOrder.nation:$("#policyholder_nation_input").val();// 投保人民族
 	    	  var phissuer=sametoubao=="1"?cxOrder.issuerAuthority:$("#policyholder_issuer_input").val();// 投保人签发机构
 	    }
-	    if(parm.body.cityCode=="3440300"){//深圳地区
+	    if(parm.body.cityCode=="3440300"||parm.body.cityCode=="3110000"){//深圳地区   北京地区
 	    	var insuredemail=samebeibao=="1"?cxOrder.ownerEmail:$("#recognizee_email_input").val();// 被保人邮箱
 	    	var phemail=sametoubao=="1"?cxOrder.ownerEmail:$("#policyholder_email_input").val();// 投保人邮箱
 	    }
@@ -781,7 +790,7 @@ function hebao(){
 			data.body.addressInsuredDto.insurednation=insurednation;
 			data.body.addressInsuredDto.insuredissuer=insuredissuer;
 		}
-		 if(parm.body.cityCode=="3440300"){//深圳地区
+		 if(parm.body.cityCode=="3440300"||parm.body.cityCode=="3110000"){//深圳地区   北京地区
 			data.body.addressInsuredDto.insuredemail=insuredemail;// 被保人邮箱
 			data.body.addressInsuredDto.phemail=phemail;// 投保人邮箱
 	    }

@@ -122,6 +122,7 @@
 								</tr>
 							</table>
 						</div>
+						<div id="tip" class="mui-text-center" style="margin: 10px 10px 0 10px;font-size: 14px;color: #f36f39;"></div>
 						<div id="confirm1" class="confirmbtn">立即购买</div>
 						<!-- 车辆基本信息立即购买按钮 -->
 						<div class="gou_terms_line">
@@ -249,6 +250,7 @@
 					    </table>
 						<div class="title border-1px-bottom chezhuInfo">
 				    		<div class="carimg"><img src="/tongdaoPlatform/weixin/ppStop/images/cheliang.png" />车主信息</div>
+				    		<div class="sfzHowInput">如何填写<img src="/tongdaoPlatform/weixin/ppStop/images/wenhao.png" /></div>
 				    		<div></div>
 				    	</div>
 					    <table class="ownerTable">
@@ -313,7 +315,7 @@
 							</tr>
 							<tr>
 								<td class=""></td>
-								<td class="border-1px-bottom">签发机构</td>
+								<td class="border-1px-bottom">身份证签发机构</td>
 								<td class="border-1px-bottom">
 									<input type="text" id="issuer" autocomplete="off" maxlength="30" placeholder="请输入签发机构"/>
 								</td>
@@ -363,14 +365,20 @@
 	<!-- 填写小助手 -->
 	<!-- 遮罩和卡片填写示例 -->
 	<div class="shadow"></div>
-	 <!-- 遮罩提示 -->
+	 <!-- 行驶证提示 -->
 	<div id="cjh" style="display: none;">
 	 	<p style="text-align: center;color:#fff;">请按照行驶证填写</p>
 	 	<img style="width:100%;" src="/tongdaoPlatform/weixin/ppStop/images/xingshizheng.png">
 	 	<img style="height:30px;width:30px;margin-top: 20px;" src="/tongdaoPlatform/weixin/ppStop/images/chahao.png">
 	 	
 	 </div>
-
+	 <!-- 身份证遮罩提示 -->
+	 <div id="sfz" style="display: none;">
+	 	<p style="text-align: center;color:#fff;">请按照身份证填写</p>
+	 	<img style="width:100%;" src="/tongdaoPlatform/weixin/ppStop/images/idcard.png">
+	 	<img style="height:30px;width:30px;margin-top: 20px;" src="/tongdaoPlatform/weixin/ppStop/images/chahao.png">
+	 	
+	 </div>
 	<iframe id="vehicleselect" class="vehicleselect"></iframe>
 	<iframe id="quoteIframe" class="bi_iframe"></iframe>
 </body>
@@ -379,7 +387,7 @@
     <script type="text/javascript" src="/tongdaoPlatform/weixin/ppStop/js/mui/mui.picker.min.js"></script>
     <script type="text/javascript" src="/tongdaoPlatform/weixin/ppStop/js/util/base.js" ></script>
     <script type="text/javascript" src="/tongdaoPlatform/weixin/ppStop/js/util/common.js" ></script> 
-    <script type="text/javascript" src="/tongdaoPlatform/weixin/ppStop/js/carinsure/carMes.js?20170703" ></script>
+    <script type="text/javascript" src="/tongdaoPlatform/weixin/ppStop/js/carinsure/carMes.js?20171025" ></script>
     <script type="text/javascript" src="/tongdaoPlatform/weixin/ppStop/js/carinsure/vehicleModelSelect.js" ></script>
     <script type="text/javascript" charset="utf-8">
 		var slider = mui("#slider");

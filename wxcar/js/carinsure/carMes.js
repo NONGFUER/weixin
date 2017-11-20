@@ -24,6 +24,7 @@ var parm;
 var cxSessionId;
 var fgFlag="";//费改地区  1：是费改地区   0：不是费改地区
 var carPlate="";//车牌
+var registDate="";//注册日期全局变量
 $(function() {
 	var openid = "";
 	var userName="";
@@ -84,6 +85,7 @@ $(function() {
 						var arr = cityName.split(/[-]/);
 						$("#car_sheng").val(arr[0]);
 						$("#car_shi").val(arr[1]);
+						$("#tip").html(getContentByProvince($("#car_sheng").val()));
 					}
 					if(!$.isNull(data.returns.cxOrder.provinceCode)){
 						$("#car_sheng").attr("name",data.returns.cxOrder.provinceCode);
@@ -146,7 +148,7 @@ $(function() {
 							}
 						}
 					}
-					if(citynum=="3440300"){//深圳地区
+					if(citynum=="3440300"||citynum=="3110000"){//深圳地区  北京地区
 						if(!$.isNull(data.returns.cxOrder.ownerEmail)){ //邮箱
 						   $("#owner_email").val(data.returns.cxOrder.ownerEmail).css("color","#585858");
 						}
@@ -203,13 +205,21 @@ $(function() {
 	}
 	$(".backindex").hide();//隐藏返回按钮
 	$.setscrollarea("indexpart");
-    $(".howInput").bind("tap",function() {//车辆识别代码提示
+    $(".howInput").bind("tap",function() {//行驶证提示
       	$("#cjh").show();
       	$(".shadow").show();
+    });
+    $(".sfzHowInput").bind("tap",function() {//身份证提示
+      	$("#sfz,.shadow").show();
     });
     $("#cjh").bind("tap",function() {//车辆识别代码提示遮罩
     	setTimeout(function(){
      	   $("#cjh,.shadow").hide();
+     	},200);
+    });
+    $("#sfz").bind("tap",function() {//身份证提示遮罩
+    	setTimeout(function(){
+     	   $("#sfz,.shadow").hide();
      	},200);
     });
 	$(".h_back").unbind("tap").bind("tap",function() {
@@ -313,8 +323,7 @@ $(function() {
 		  if (vehicle_registration_date == "请选择注册日期") {
 			  vehicle_registration_date = "";
 		  }
-		  openDataNowDate("vehicle_registration_date");
-		  $("#brand_model_input").val("请选择品牌型号");
+		  openDataNowDate("vehicle_registration_date","zcrqi");
 		});
 	
 	// 过户日期调用日期控件
@@ -329,7 +338,6 @@ $(function() {
 			specialCarDate = "";
 		}
 		openDataNowDate("specialCarDate");
-		$("#brand_model_input").val("请选择品牌型号");
 	});
 	$("#specialCarDate_select").hide();
 	
@@ -380,6 +388,7 @@ $(function() {
 
 	// 车辆基本信息确认按钮
 	$("#confirm1").unbind("tap").bind("tap",function() {
+		$("#brand_model_input").val("请选择品牌型号");
 		if($("#issueChannel").attr("channelCode")=="08"&&parm.head.accesstype!="02"){
 			modelAlert("该渠道暂不支持出单！");
 			return false;
@@ -437,7 +446,7 @@ $(function() {
 						}else{
 							$("#fuelTypeTable,#cardTable,#lailiTable").hide();
 						}
-						if(citynum=="3440300"){//深圳地区
+						if(citynum=="3440300"||citynum=="3110000"){//深圳地区  北京地区
 							$("#plateEmail").show();
 						}else{
 							$("#plateEmail").hide();
@@ -482,7 +491,12 @@ $(function() {
 			$(".vehicleInfo").show();
 	        $(".litterhelp").hide();
 	        $("#searchcustomer").empty();
-	        $("#searchtext").val("请输入关键字点击查询").css("color", "#cccccc");
+	        var brandKey=sessionStorage.getItem("brandKey");
+	        if(brandKey!=null&&brandKey!=""||brandKey!=undefined){
+	        	$("#searchtext").val(brandKey).css("color", "#585858");
+	        }else{
+	        	$("#searchtext").val("请输入关键字点击查询").css("color", "#cccccc");
+	        }
 			setTimeout(function() {
 				mui('#wrapper').scroll().scrollTo(0,0,0);//100毫秒滚动到顶
 			}, 100);
@@ -584,7 +598,7 @@ $(function() {
 					cxCarMessage.certificateDate=$.trim($("#certificateDate").val())
 				}
 			}
-			if(citynum=="3440300"){//深圳地区
+			if(citynum=="3440300"||citynum=="3110000"){//深圳地区  北京地区
 			    cxOrder.ownerEmail = $("#owner_email").val();// 车主邮箱
 			}
 			var carinfoMes={
@@ -1096,7 +1110,7 @@ function cheackCarinfo() {
 			}
 		}
 	}
-	if(citynum=="3440300"){//深圳地区
+	if(citynum=="3440300"||citynum=="3110000"){//深圳地区  北京地区
 		if ($.isNull(owner_email) || owner_email == "请输入车主邮箱") {
 			modelAlert("请输入车主邮箱！");
 			cheakCarinfoFlag = false;
@@ -1281,6 +1295,10 @@ $.loadData = function(param) {
 								doc.getElementById("plate_number_input").style.color = "#888";
 								doc.getElementById("plate_number_input").name = "";
 								citynum = "";
+								if(shengList[num].id!="8"){//非江苏地区
+									document.getElementById('yanzhengmaImg').style.display="none";
+								}
+								document.getElementById('tip').innerHTML=getContentByProvince(selectResult.value);
 								selectPicker.dispose();// 释放组件资源
 							});
 				})(mui, document);
@@ -1382,6 +1400,7 @@ $.addInfo = function(param){
 						var arr = cityName.split(/[-]/);
 						$("#car_sheng").val(arr[0]);
 						$("#car_shi").val(arr[1]);
+						$("#tip").html(getContentByProvince($("#car_sheng").val()));
 					}
 					if(!$.isNull(param.cxInfo.cxOrder.cityCode)){
 						citynum=param.cxInfo.cxOrder.cityCode;
@@ -1404,11 +1423,20 @@ $.addInfo = function(param){
 							}
                             $("#fuelTypeTable,#cardTable").show();
 						}
-						if(citynum=="3440300"){//深圳地区
-							if(!$.isNull(data.returns.cxOrder.ownerEmail)){ //邮箱
+						if(citynum=="3440300"||citynum=="3110000"){//深圳地区  北京地区
+							if(!$.isNull(param.cxInfo.cxOrder.ownerEmail)){ //邮箱
 							   $("#owner_email").val(param.cxInfo.cxOrder.ownerEmail).css("color","#585858");
 							   $("#plateEmail").show();
 							}
+						}
+						if($("#car_sheng").attr("name")=="8"){//江苏地区
+							var checkcode=param.cxInfo.cxOrder.checkcode;
+							if(checkcode!=null){
+								$("#checkNo").val(checkcode);
+								
+							}
+							$("#checkImg").attr("src","data:image/png;base64,"+sessionStorage.getItem("checkImg"));
+							$("#yanzhengmaImg").show();
 						}
 					}
 					if (param.cxInfo.cxOrder.newcarFlag == "1") {
@@ -1601,4 +1629,40 @@ function selectChannel(){
 			citynum = "";
 		});
 	});
+}
+
+
+function getContentByProvince(province)
+{
+    var content = "此地区今日能查询及投保 ${DATE} 前的车险<br/>新车未上牌无此限制";
+
+    switch (province)
+    {
+        case "上海市": day = 30;break;//上海市
+        case "江苏省": day = 40;break;//江苏省
+        case "浙江省": day = 60;break;//浙江省
+        case "山东省": day = 60;break;//山东省
+        default: day = 90;
+    }
+
+    var now = new Date().getTime();
+    var str =  new Date(now + day * 24 * 60 * 60 * 1000).Format("yyyy-MM-dd");
+
+    return content.replace("${DATE}",str);
+}
+
+Date.prototype.Format = function (fmt) { //author: meizz
+    var o = {
+        "M+": this.getMonth() + 1, //月份
+        "d+": this.getDate(), //日
+        "h+": this.getHours(), //小时
+        "m+": this.getMinutes(), //分
+        "s+": this.getSeconds(), //秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+        "S": this.getMilliseconds() //毫秒
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
 }

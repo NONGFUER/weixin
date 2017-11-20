@@ -16,7 +16,13 @@ var COMMODITYCOMBINE_ID ={
 	    "SWFR" : "11",	//商务飞人
 	    "XPXSX": "12",   //码上长大(省心版)
 	    "XPXAX": "12",   //码上长大(省心版)
-	    "GHX"  : "14"
+	    "GHX"  : "14",
+	    "LYX"  : "16",	 //旅意险
+	    "ZHX"  : "18",	 //账号险
+	    "JDX"  : "19",	 //借贷险
+	    "LRX"  : "20",	 //老人险
+	    "BQJ"  : "21",    //易安保全家疾病保险
+	    "BWYL" : "22"    //易安百万医疗险
 	}
 var COMMODITY_ID ={
 		"MCAN" : "1",
@@ -78,7 +84,17 @@ var requestUrl = {
     ghxPay				 : base.url + 'ghxOrder/pay.do',				//@wxw
     //健康告知
     heathTold			 : base.url + 'commodityCombination/getHealthTold.do',//@gxj
-    notice				 : base.url + 'commodityCombination/getNotice.do'//@gxj
+	notice				 : base.url + 'commodityCombination/getNotice.do',//@gxj
+	//借贷险投保
+    xgChooseArea         : base.url + 'ecardChannel/selectAreaByParams.do',
+    xgDefalultArea       : base.url + 'ecardChannel/selectDefaulInsuredArea.do',
+    xgInfo               : base.url + 'ecardChannel/getXGInfo.do',
+    xgToubao             : base.url + 'ecardChannel/toubao.do',
+    //易安保全家
+    bqjInsure			 : base.url + 'preservation/bqjcreateOrder.do',	//保全家投保接口@wxw
+    bqjPay				 : base.url + 'preservation/bqjPay.do',				//保全家支付@wxw
+  //议案百万医疗
+    yianInsure           : base.url + "yiAn/insure.do"
 }
 //全局变量
 var urlParm = JSON.parse(UrlDecode(getUrlQueryString("jsonKey")));
@@ -121,39 +137,9 @@ var peiouFlag = urlParm.peiouFlag ? urlParm.peiouFlag : "0";
 var zinvFlag = urlParm.zinvFlag ? urlParm.zinvFlag : "0";
 var qitaFlag = urlParm.qitaFlag ? urlParm.qitaFlag : "0";
 var banbenFlag = urlParm.banbenFlag ? urlParm.banbenFlag : "01";
-// 18	18900001111				王晓伟
+//绿意险
+var cGuaranteeTerm = '';
 
-// 1	00400001	天安防癌险（男神版）
-// 2	00400002	天安防癌险（女神版）
-// 3	00400003	天安防癌险（少儿版）
-// 4	00600001	弘康安溢保两全保险
-// 5	00600002	弘康安盈保年金保险
-// 6	00400004	锦绣吉顺
-// 7	00400005	锦程交通意外险
-// 8	00400006	健康佳人（佳丽福）
-// 9	00400007	健康安享
-// 10	00400008	“邻里和睦”家财综合保障计划
-// 11	00400009	商务飞人（精英版）
-// 12	00400010	天安“码上长大”学平险
-// 13	00400011	天安车险
-// 14	00500001	挂号服务费用补偿保险
-// 101	00900001	富德人寿富康宝年金保险
-// 102	00300001	华夏福临门年金保险（2015铂金版）
-// 103	00300002	华夏健康人生重大疾病保险
-// 104	00100001	泰康乐安康终身重大疾病保险
-// 105	00100002	泰康乐行综合意外保障计划
-// 106	00100003	泰康乐鑫两全保险（分红型）
-// 107	00200001	阳光人寿健康保终身恶性肿瘤疾病保险
-// 108	00200002	阳光人寿金喜连连年金保险
-// 109	00200003	阳光人寿康世宁终身重大疾病保险
-// 110	00200004	阳光人寿孝顺保恶性肿瘤疾病保险
-// 111	01000001	恒大恒久健康终身重大疾病保险（2017版）
-// 112	01000002	恒大金财人生保险计划（分红型）
-// 113	01000003	恒大千万护航两全保险产品计划
-// 114	01000004	恒大鑫福
-// 118	004000011	天安防癌险（男神版）
-// 119	004000022	天安防癌险（女神版）
-// 120	004000032	天安防癌险（少儿版）
 var PRODUCT_SHARE = {
 		"MCAN" : "男性百万恶性肿瘤险-直付100万，全球抗癌疾病保险，15元起,"+name+"为你推荐男性百万恶性肿瘤险。",		
 		"FCAN" : "女性百万恶性肿瘤险-直付100万，全球抗癌疾病保险，70元起,"+name+"为你推荐女性百万恶性肿瘤险。",		

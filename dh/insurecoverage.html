@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<!-- 忽略IOS将页面中的数字识别为电话号码 -->
+<meta name="format-detection" content="telephone=no" />
+<!-- 忽略Android平台中对邮箱地址的识别 -->
+<meta name="format-detection" content="email=no" />
+<!-- 缓存 -->
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<meta HTTP-EQUIV="expires" CONTENT="0">
+<title>选择投保方案</title>
+<link rel="stylesheet" href="css/mui/mui.min.css" />
+<link rel="stylesheet" href="css/mui/mui.picker.min.css" />
+<link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+
+<header  id="header" class="mui-bar mui-bar-nav header">
+	<a id="back" class="mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<h1 class="mui-title">选择投保方案</h1>
+</header>
+
+<div id="main" class="mui-content">
+	<div class="mui-row">
+		<div id="meal1" class="mui-col-xs-4 mui-text-center segmented">
+			<img id="meal1img" class="smallimg" src="img/driver.png"/>
+			<img id="meal1imglight"class="smallimg" src="img/driverlight.png"/>
+			&nbsp;老司机套餐
+		</div>
+		<div id="meal2" class="mui-col-xs-4 mui-text-center segmented">
+			<img id="meal2img" class="smallimg" src="img/fire.png"/>
+			<img id="meal2imglight" class="smallimg" src="img/firelight.png"/>
+			&nbsp;人气套餐
+		</div>
+		<div id="meal3" class="mui-col-xs-4 mui-text-center segmented">
+			<img id="meal3img" class="smallimg" src="img/setmeal.png"/>
+			<img id="meal3imglight" class="smallimg" src="img/setmeallight.png"/>
+			&nbsp;极致优惠套餐
+		</div>
+	</div>
+
+	<div class="mui-content-padded">
+		<div id="scroll" class="mui-scroll-wrapper">
+			<div class="mui-scroll">
+
+				<ul class="mui-table-view">
+					<li id="jqx" class="mui-table-view-cell">
+						<div class="mui-row">
+					        <div class="mui-col-xs-1 mui-text-center"><img class="smallimg" src="img/insurejq.png"/></div>
+					        <div class="mui-col-xs-5 mui-text-left"><span class="blacktext"><b>交强险+车船税</b></span></div>
+					        <div class="mui-col-xs-6 mui-text-center"><span class="cover">投保</span></div>
+					    </div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-row">
+					        <div class="mui-col-xs-1 mui-text-center"><img class="smallimg" src="img/insurebusiness.png"/></div>
+					        <div class="mui-col-xs-5 mui-text-left"><span class="blacktext"><b>商业险</b></span></div>
+					        <div class="mui-col-xs-6 mui-text-right"><img id="buyinsure" class="smallimg" src="img/ask.png"/></div>
+					    </div>
+					</li>
+                    <li id="riskrecord" class="mui-table-view-cell">
+                        <div class="mui-row">
+                            <div class="mui-col-xs-5 mui-text-center"><span class="blacktext"></span></div>
+                            <div class="mui-col-xs-3 mui-text-center"><span class="cover"></span></div>
+                            <div class="mui-col-xs-4 mui-text-center"><span class="abatement"></span></div>
+                        </div>
+                    </li>
+
+					<li id="specialriskrecord" class="mui-table-view-cell special plainbackground">
+						<div class="mui-row">
+							<div class="mui-col-xs-2 mui-text-center"><img class="smallimg" src="img/warning.png"/></div>
+							<div class="mui-col-xs-10 mui-text-left"><span class="graytext">以&nbsp;下&nbsp;4&nbsp;项&nbsp;保&nbsp;险&nbsp;需&nbsp;任&nbsp;选&nbsp;2&nbsp;项&nbsp;或&nbsp;2&nbsp;项&nbsp;以&nbsp;上</span></div>
+						</div>
+					</li>
+
+					<li id="service" class="mui-table-view-cell">
+						<div class="mui-row">
+					        <div class="mui-col-xs-1 mui-text-center"><img class="smallimg" src="img/service.png"/></div>
+					        <div class="mui-col-xs-10 mui-text-left"><span class="blacktext"><b>专属服务</b></span></div>
+							<div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+						</div>
+					</li>
+					<li id="servicerecord" class="mui-table-view-cell">
+						<div class="mui-row">
+							<div class="mui-col-xs-4"><span class="service"></span></div>
+							<div class="mui-col-xs-4"><span class="service"></span></div>
+							<div class="mui-col-xs-4"><span class="service"></span></div>
+						</div>
+					</li>
+					<li id="servicenotice" class="mui-table-view-cell notice">
+
+					</li>
+				</ul>
+
+				<div class="mui-content-padded " >
+					<p class="mui-text-left notice"></p>
+					<button id="submit" type="button" class="mui-btn mui-btn-block mui-btn-outlined submitbtn">下&nbsp;&nbsp;一&nbsp;&nbsp;步</button>
+					<br/>
+                    <p class="mui-text-center">&nbsp;天安财险服务电话：95505</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/zepto/zepto.min.js" ></script>
+<script type="text/javascript" src="js/mui/mui.min.js" ></script>
+<script type="text/javascript" src="js/mui/mui.picker.min.js" ></script>
+<script type="text/javascript" src="js/operatedata.js"></script>
+<script type="text/javascript" src="js/insurecoverage.js"></script>
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="js/ajaxservice.js"></script>
+<script type="text/javascript" src="js/constant.js"></script>
+</html>

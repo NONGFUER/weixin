@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<!-- 忽略IOS将页面中的数字识别为电话号码 -->
+<meta name="format-detection" content="telephone=no" />
+<!-- 忽略Android平台中对邮箱地址的识别 -->
+<meta name="format-detection" content="email=no" />
+<title>关于我们</title>
+<link rel="stylesheet" type="text/css" href="../../css/lib/widget/mui/mui.min.css" />
+<link rel="stylesheet" type="text/css" href="../../css/lib/common/base.css" />
+<link rel="stylesheet" type="text/css" href="../../css/lib/common/common.css" />
+<link rel="stylesheet" type="text/css" href="../../css/usage/agreement/companyIntro.css">
+</head>
+<body>
+    <!-- <header class="mui-bar mui-bar-nav" id="header">
+		<a id="main_btn_goBack" class="btn_goBack mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">关于我们</h1>
+	</header> -->
+	<div id="content" style="margin-top: 0px;" class="mui-scroll-wrapper">
+		 <div class="mui-scroll">
+		     <div class="bg">
+		       	<img class="head-pic" src="../../image/common/cibg1.png"/>
+		     	<p class="p1">&emsp;&emsp;天安佰盈保险销售有限公司成立于2006年12月，总部设在北京，注册资本3亿人民币，是一家全国性的专业保险代理机构。天安佰盈保险销售有限公司股东实力雄厚，其独资法人为：天安财产保险股份有限公司。天安佰盈主要代理销售保险产品，代理收取保险费，代理相关保险业务的损失勘察和理赔，努力为企业客户、个人客户提供全方位的财富管理、风险管理综合服务。</p>
+		     	<img class="head-pic" src="../../image/common/cibg2.png"/>
+		      	<p class="p2">&emsp;&emsp;天安财产保险股份有限公司是中国首家由企业出资组建的股份制商业保险公司和国内第四家财产保险公司，成立于1995年1月，总部设在上海浦东，注册资本17,763,751,770元。经过近三年的快速发展，公司销售业绩不断提升、销售队伍产能及数量不断增加、投资收益连续三年位居行业领先水平。现拥有33家分公司（含航运保险中心）、263家地市级中支公司及933家支公司级营业网点，经营区域覆盖了除港澳台、西藏、青海、宁夏及内蒙古以外的全国主要行政区域。</p>
+		     </div>
+	     </div>
+	 </div>    
+</body>
+<script type="text/javascript" src="../../js/lib/widget/mui/mui.min.js"></script>
+<script type="text/javascript" src="../../js/lib/common/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/lib/common/base.js"></script>
+<script type="text/javascript" src="../../js/lib/common/common.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.setscroll();
+	$("#main_btn_goBack").unbind("tap").bind("tap",function() {
+		if(systemsource == "ios"){
+			objcObject.OpenUrl("back");
+		}else if(systemsource == "android"){
+			android.goBack();
+		}
+	});
+})
+/* 设置滑动区域 */
+$.setscroll = function() {
+	var Scrollheight = window.innerHeight - $("header").height();
+	$("#content").height(Scrollheight + "px");
+	mui(".mui-scroll-wrapper").scroll();
+	$(".bg").css("min-height",Scrollheight);
+};
+
+function backlast(){
+	sysback();
+}
+</script>
+</html>
+

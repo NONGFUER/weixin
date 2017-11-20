@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<!-- 忽略IOS将页面中的数字识别为电话号码 -->
+<meta name="format-detection" content="telephone=no" />
+<!-- 忽略Android平台中对邮箱地址的识别 -->
+<meta name="format-detection" content="email=no" />
+<!-- 缓存 -->
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<meta HTTP-EQUIV="expires" CONTENT="0">
+<title>车辆信息</title>
+<link rel="stylesheet" href="css/mui/mui.min.css" />
+<link rel="stylesheet" href="css/mui/mui.picker.min.css" />
+<link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+
+<header  id="header" class="mui-bar mui-bar-nav header">
+	<a id="back" class="mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<h1 class="mui-title">车辆信息</h1>
+</header>
+
+<div class="mui-content">
+	<div id="scroll" class="mui-scroll-wrapper">
+		<div class="mui-scroll">
+		   <div class="mui-row">
+				<div class="mui-col-xs-12 mui-text-center graytext">页面由 td-pro.ta-by.com 提供</div>
+			</div>
+			<div id="slider" class="mui-slider" >
+				<div class="mui-slider-group mui-slider-loop">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="carguide.html"><img src="img/banner2.png"></a>
+					</div>
+					<!-- 第一张 -->
+					<div class="mui-slider-item">
+						<a href="carguide.html"><img src="img/banner1.png"></a>
+					</div>
+					<!-- 第二张 -->
+					<div class="mui-slider-item">
+						<a href="carguide.html"><img src="img/banner2.png"></a>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="carguide.html"><img src="img/banner1.png"></a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+			<ul class="mui-table-view">
+			      <!-- zdx -->
+				<li id="channel" class="mui-table-view-cell" style="display:none;">
+					<div class="mui-row">
+				        <div class="mui-col-xs-1 mui-text-center"><img class="smallimg" src="img/car.png"/></div>
+				        <div class="mui-col-xs-3 mui-text-left "><b class="blacktext">出单渠道</b></div>
+				        <div class="mui-col-xs-7 mui-text-left"><input class="blacktext" type="text" readonly autocomplete="off" placeholder="请选择渠道"></div>
+				        <div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+				    </div>
+				</li>
+				<li id="province" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-1 mui-text-center"><img class="smallimg" src="img/province.png"/></div>
+				        <div class="mui-col-xs-3 mui-text-left "><b class="blacktext">投保省份</b></div>
+				        <div class="mui-col-xs-7 mui-text-left"><input class="blacktext" type="text" readonly autocomplete="off" placeholder="请选择省份"></div>
+				        <div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+				    </div>
+				</li>
+				<li id="city" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-1 mui-text-center"><img class="smallimg" src="img/city.png"/></div>
+				        <div class="mui-col-xs-3 mui-text-left "><b class="blacktext">投保城市</b></div>
+				        <div class="mui-col-xs-7 mui-text-left"><input class="blacktext" type="text" readonly placeholder="请选择城市"></div>
+				        <div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+				    </div>
+				</li>
+				<li id="plate" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-1 mui-text-center"><img class="smallimg" src="img/plate.png"/></div>
+				        <div class="mui-col-xs-3 mui-text-left "><b class="blacktext">车牌号码</b></div>
+				        <div class="mui-col-xs-4 mui-text-left"><input class="blacktext" type="text" autocomplete="off" maxlength="8" placeholder="请输入车牌号" onkeyup="this.value=this.value.toUpperCase()" ></div>
+				        <div class="mui-col-xs-4 ">
+							<div id="newplate" class="mui-row">
+								<div class="mui-col-xs-2">
+									<img class="smallimg" src="img/uncheck.png"/>
+								</div>
+								<div class="mui-col-xs-10"><h5>新车未上牌</h5></div>
+	 						</div>
+				        </div>
+				    </div>
+				</li>
+			</ul>
+			<div class="mui-content-padded" >
+				<p id="notice" class="mui-text-center notice">&nbsp;</p>
+
+				<button id="submit" type="button" class="mui-btn mui-btn-block mui-btn-outlined submitbtn">立即购买</button>
+				<br/>
+                <p class="mui-text-center">&nbsp;天安财险服务电话：95505</p>
+				<br />
+				<p>
+					<img class="smallimg" src="img/check.png" >&nbsp;我已认真阅读
+					<a class="notice" href="protocals.html">《保险条款》</a>、
+					<a class="notice" href="noticeprotocal.html">《投保须知》</a>，
+					了解并接受包括有关责任条款及免除责任条款等约定。
+				</p> 
+				<div id="scollfill" style="height: 150px;display: none;" >&nbsp;</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/zepto/zepto.min.js" ></script>
+<script type="text/javascript" src="js/mui/mui.min.js" ></script>
+<script type="text/javascript" src="js/mui/mui.picker.min.js" ></script>
+<script type="text/javascript" src="js/operatedata.js?v=20171120"></script>
+<script type="text/javascript" src="js/insuremain.js?v=20171120"></script>
+<script type="text/javascript" src="js/util.js?v=20171120"></script>
+<script type="text/javascript" src="js/ajaxservice.js"></script>
+<script type="text/javascript" src="js/constant.js?v=20171120"></script>
+</html>

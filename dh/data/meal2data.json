@@ -1,0 +1,470 @@
+{
+  "status": {
+    "channel": "",
+    "returns": {},
+    "statusCode": "000000",
+    "statusMessage": "",
+    "transTime": "",
+    "transToken": "",
+    "userCode": ""
+  },
+  "cxProduct": {
+    "add_risk": [
+      {
+        "deductible_default": "02",
+        "deductible_flag": "02",
+        "dutyDetails": [
+          {
+            "dutyAmount": "0",
+            "enuCode": "01",
+            "enuContent": "不投保"
+          },
+          {
+            "dutyAmount": "1",
+            "enuCode": "02",
+            "enuContent": "投保"
+          }
+        ],
+        "duty_code": "GlassBrokenCoverage",
+        "duty_default": "01:不投保",
+        "duty_name": "玻璃单独破碎险",
+        "need_select": "1",
+        "need_select_mp": "1",
+        "showSeq": "6",
+        "zf_flag": "02"
+      },
+      {
+        "deductible_default": "02",
+        "deductible_flag": "01",
+        "dutyDetails": [
+          {
+            "dutyAmount": "1",
+            "enuCode": "01",
+            "enuContent": "投保"
+          },
+          {
+            "dutyAmount": "0",
+            "enuCode": "02",
+            "enuContent": "不投保"
+          }
+        ],
+        "duty_code": "SelfIgniteCoverage",
+        "duty_default": "02:不投保",
+        "duty_name": "自燃损失险",
+        "need_select": "1",
+        "need_select_mp": "1",
+        "showSeq": "8",
+        "zf_flag": "02"
+      },
+      {
+        "deductible_default": "02",
+        "deductible_flag": "01",
+        "dutyDetails": [
+          {
+            "dutyAmount": "0",
+            "enuCode": "01",
+            "enuContent": "不投保"
+          },
+          {
+            "dutyAmount": "1",
+            "enuCode": "02",
+            "enuContent": "投保"
+          }
+        ],
+        "duty_code": "EngineWadingCoverage",
+        "duty_default": "02:不投保",
+        "duty_name": "发动机涉水损失险",
+        "need_select": "2",
+        "need_select_mp": "1",
+        "showSeq": "9",
+        "zf_flag": "02"
+      },
+      {
+        "deductible_default": "02",
+        "deductible_flag": "01",
+        "dutyDetails": [
+          {
+            "dutyAmount": "0",
+            "enuCode": "01",
+            "enuContent": "不投保"
+          },
+          {
+            "dutyAmount": "1000",
+            "enuCode": "02",
+            "enuContent": "1千"
+          },
+          {
+            "dutyAmount": "2000",
+            "enuCode": "03",
+            "enuContent": "2千"
+          },
+          {
+            "dutyAmount": "3000",
+            "enuCode": "04",
+            "enuContent": "3千"
+          }
+        ],
+        "duty_code": "NewEquipmentCoverage",
+        "duty_default": "02:不投保",
+        "duty_name": "新增设备损失险",
+        "need_select": "2",
+        "need_select_mp": "1",
+        "showSeq": "10",
+        "zf_flag": "02"
+      },
+      {
+        "deductible_default": "02",
+        "deductible_flag": "01",
+        "dutyDetails": [
+          {
+            "dutyAmount": "0",
+            "enuCode": "01",
+            "enuContent": "不投保"
+          },
+          {
+            "dutyAmount": "2000",
+            "enuCode": "02",
+            "enuContent": "2千"
+          },
+          {
+            "dutyAmount": "5000",
+            "enuCode": "03",
+            "enuContent": "5千"
+          },
+          {
+            "dutyAmount": "10000",
+            "enuCode": "04",
+            "enuContent": "1万"
+          }
+        ],
+        "duty_code": "MentalDistressCoverage",
+        "duty_default": "02:不投保",
+        "duty_name": "精神损害抚慰金责任险",
+        "need_select": "2",
+        "need_select_mp": "1",
+        "showSeq": "11",
+        "zf_flag": "02"
+      },
+      {
+        "deductible_default": "02",
+        "deductible_flag": "02",
+        "dutyDetails": [
+          {
+            "dutyAmount": "0",
+            "enuCode": "01",
+            "enuContent": "不投保"
+          },
+          {
+            "dutyAmount": "1",
+            "enuCode": "02",
+            "enuContent": "投保"
+          }
+        ],
+        "duty_code": "AppointRepairCoverage",
+        "duty_default": "02:不投保",
+        "duty_name": "指定专修厂特约险",
+        "need_select": "2",
+        "need_select_mp": "1",
+        "showSeq": "12",
+        "zf_flag": "02"
+      }
+    ],
+    "base": {
+      "commodityNo": "0419900101",
+      "company_code": "00004",
+      "product_id": "004199001",
+      "product_name": "天安车险自定义"
+    },
+    "cxPriservice": [
+      {
+        "createdBy": "",
+        "dateCreated": null,
+        "dateUpdated": null,
+        "id": 1,
+        "remark": "",
+        "serviceInfo": "<p>被保险车辆如发生3000元以下且不涉及人伤的保险事故，经我司定损确认后，仅需驾驶证、行驶证、身份证、银行卡、事故证明材料（免证明案件除外）、维修发票（免发票案件除外）即可办理理赔。<\\/p>",
+        "serviceTitle": "小额快赔",
+        "updatedBy": ""
+      },
+      {
+        "createdBy": "",
+        "dateCreated": null,
+        "dateUpdated": null,
+        "id": 2,
+        "remark": "",
+        "serviceInfo": "<p>在非保单承保地区出险，您可享受在出险当地办理查勘、定损、送交理赔材料、领取赔款等理赔流程。具体公司服务网点可咨询全国统一客服电话95505或登录公司官网首页查询。<\\/p>",
+        "serviceTitle": "全国通赔",
+        "updatedBy": ""
+      },
+      {
+        "createdBy": "",
+        "dateCreated": null,
+        "dateUpdated": null,
+        "id": 3,
+        "remark": "",
+        "serviceInfo": "<p>您可享受我司全国365天*24小时免费非事故汽车道路救援服务。<\\/p>",
+        "serviceTitle": "非事故道路救援",
+        "updatedBy": ""
+      },
+      {
+        "createdBy": "",
+        "dateCreated": null,
+        "dateUpdated": null,
+        "id": 4,
+        "remark": "",
+        "serviceInfo": "<p>如您的爱车是9座及以下的，在事故定损维修过程中，经被保险人、修理厂和保险公司三方协商确认需更换的零配件，我司可根据您的要求对车辆维修后零配件是否更换进行检验。<\\/p>\\r\\n     <p>你修车我检验流程：<\\/p>\\r\\n     <p>（1）您可通过直接拨打95505，选择1号键进行预约，或通过扫码关注“天安直通车险”微信号-->服务中心“你修车我检验” -->填写“车牌+手机”进行预约；<\\/p>\\r\\n     <p>（2）95505客服人员将登记您的信息，安排检验人员为您服务；<\\/p>\\r\\n     <p>（3）检验人员将与您电话预约时间、地点，进行检验服务。<\\/p>",
+        "serviceTitle": "你修车我检验",
+        "updatedBy": ""
+      },
+      {
+        "createdBy": "",
+        "dateCreated": null,
+        "dateUpdated": null,
+        "id": 5,
+        "remark": "",
+        "serviceInfo": "<p>投保后，您可至我司官网下载车易赔APP，即可享受掌上理赔服务。<\\/p>",
+        "serviceTitle": "车易赔掌上服务",
+        "updatedBy": ""
+      },
+      {
+        "createdBy": "",
+        "dateCreated": null,
+        "dateUpdated": null,
+        "id": 6,
+        "remark": "",
+        "serviceInfo": "<p>发生保险事故，当事故责任核定无误，定损完成后，在出险地监管部门允许的前提下，我司可将理赔款直接划至您授权的维修单位的账户内，免去繁琐的转账流程。<\\/p>",
+        "serviceTitle": "赔款直赔",
+        "updatedBy": ""
+      },
+      {
+        "createdBy": "",
+        "dateCreated": null,
+        "dateUpdated": null,
+        "id": 7,
+        "remark": "",
+        "serviceInfo": "<p>使用车易赔掌上服务的客户，被保险车辆发生单方事故，在第一现场报案后，通过车易赔客户端视频连线，可免除等待理赔人员现场查勘，且无需提供事故证明。<\\/p>\\r\\n     <p>服务条件：<\\/p>\\r\\n     <p>（1）仅发生单方碰撞事故，不涉及人员伤亡及第三方财产损失的；<\\/p>\\r\\n     <p>（2）仅车辆外观件、车身漆面受损；（车辆外观件是指：前后保险杠、前后翼子板、发动机罩、后行李箱盖、车顶、车门、前照灯、后尾灯）<\\/p>\\r\\n     <p>（3）在我公司理赔人员指导下，使用车易赔客户端视频连线，经我司理赔人员确认的案件。\\r\\n<\\/p>",
+        "serviceTitle": "免事故现场（非车易赔）",
+        "updatedBy": ""
+      },
+      {
+        "createdBy": "",
+        "dateCreated": null,
+        "dateUpdated": null,
+        "id": 8,
+        "remark": "",
+        "serviceInfo": "<p>（1）被保险车辆发生单方事故，在不涉及人员伤亡及第三方财产损失的，仅本车外观件、车身漆面受损的，经我司第一现场查勘无误的，可免开具事故证明。<\\/p>\\r\\n     <p>（2）被保险车辆发生单方事故，不涉及人员伤亡及第三方财产损失，仅本车外观件、车身漆面受损的，客户报案后第一现场拍摄照片，并通过微信等方式通知我司理赔人员，经我司人员确认允许离开现场，且损失金额2000元以内的，可免开具事故证明。\\r\\n<\\/p>",
+        "serviceTitle": "免事故证明（非车易赔）",
+        "updatedBy": ""
+      },
+      {
+        "createdBy": "",
+        "dateCreated": null,
+        "dateUpdated": null,
+        "id": 9,
+        "remark": "",
+        "serviceInfo": "<p>使用车易赔掌上服务的客户，被保险车辆发生单方事故，在第一现场报案后，通过车易赔客户端视频连线，可免除等待理赔人员现场查勘，且无需提供事故证明。<\\/p>\\r\\n     <p>服务条件：<\\/p>\\r\\n     <p>（1）仅发生单方碰撞事故，不涉及人员伤亡及第三方财产损失的；<\\/p>\\r\\n     <p>（2）仅车辆外观件、车身漆面受损；（车辆外观件是指：前后保险杠、前后翼子板、发动机罩、后行李箱盖、车顶、车门、前照灯、后尾灯）<\\/p>\\r\\n     <p>（3）在我公司理赔人员指导下，使用车易赔客户端视频连线，经我司理赔人员确认的案件。\\r\\n<\\/p>",
+        "serviceTitle": "车易赔免事故现场、事故证明",
+        "updatedBy": ""
+      },
+      {
+        "createdBy": "",
+        "dateCreated": null,
+        "dateUpdated": null,
+        "id": 10,
+        "remark": "",
+        "serviceInfo": "<p>发生车损险保险事故，经我公司定核损确认，您无需向我司提供事故车辆维修发票即可进行索赔。多方事故，免收其他事故责任方发票，需须相关提供赔偿凭证或赔偿协议，证明已履行相应的赔偿责任。总损失金额一万元以内。<\\/p>",
+        "serviceTitle": "免收修理发票",
+        "updatedBy": ""
+      },
+      {
+        "createdBy": "",
+        "dateCreated": null,
+        "dateUpdated": null,
+        "id": 11,
+        "remark": "",
+        "serviceInfo": "<p>发生机动车辆单方事故后，在不涉及人员伤亡及第三方财产损失的，仅本车外观件、车身漆面受损的，您仅需在第一现场拨打95505报案后，即可到我司进行索赔，但必须提供修理发票。事故损失金额不得超过500元，保险期间内不限。<\\/p>",
+        "serviceTitle": "免定损",
+        "updatedBy": ""
+      },
+      {
+        "createdBy": "",
+        "dateCreated": null,
+        "dateUpdated": null,
+        "id": 12,
+        "remark": "",
+        "serviceInfo": "<p>我司将对您的事故车辆中涉及底盘、供油系统等与安全有关的配件采用“更换为主”的高质量修理方案。<\\/p>",
+        "serviceTitle": "以换为主，安心维修",
+        "updatedBy": ""
+      },
+      {
+        "createdBy": "",
+        "dateCreated": null,
+        "dateUpdated": null,
+        "id": 13,
+        "remark": "",
+        "serviceInfo": "<p>提供包括：<\\/p>\\r\\n     <p>（1）从报案起全流程理赔程序、理赔资料及理赔处理等指导；<\\/p>\\r\\n     <p>（2）住院、伤残评定等阶段的咨询和建议；<\\/p>\\r\\n     <p>（3）事故处理、诉讼相关法律法规咨询和建议。<\\/p>\\r\\n     <p>服务条件：通过95505报案的车险人伤案件。\\r\\n<\\/p>",
+        "serviceTitle": "人伤理赔全程指引",
+        "updatedBy": ""
+      },
+      {
+        "createdBy": "",
+        "dateCreated": null,
+        "dateUpdated": null,
+        "id": 14,
+        "remark": "",
+        "serviceInfo": "<p>为车险客户提供人伤调解协助，客户协同受害人方可前往我司各理赔网点或与我司电话预约时间地点（含交警大队、法院、仲裁、人民调解委员会等）进行人伤调解，帮助客户达成有效赔偿协议，避免不必要损失和事故处理纠纷烦扰。<\\/p>\\r\\n     <p>服务条件：<\\/p>\\r\\n     <p>（1）通过95505报案的车险人伤案件；<\\/p>\\r\\n     <p>（2）事故责任明确，治疗终结，理赔单证资料齐全；<\\/p>\\r\\n     <p>（3）客户、受害人方都同意在我司各理赔网点或与我司预约的时间地点（含交警大队、法院、仲裁、人民调解委员会等）进行人伤调解。\\r\\n<\\/p>\\r\\n     <p>人伤调解协助服务流程：<\\/p>\\r\\n     <p>（1）客户拨打95505表示需要我司协助人伤调解；<\\/p>\\r\\n     <p>（2）坐席人员联系对应我司人伤跟踪岗，并告知客户联系方式，由我司人伤跟踪岗主动联系客户，与客户明确所需提供理赔资料，约定人伤调解时间与地点（含交警大队、法院、仲裁、人民调解委员会等）；<\\/p>\\r\\n     <p>（3）我司人伤跟踪岗在约定人伤调解日前一日联系客户，与客户再次确认调解预约信息；<\\/p>\\r\\n     <p>（4）客户协同受害人方前往约定地点，提供人伤理赔资料，在我司专业人伤调解岗陪同下进行人伤调解；<\\/p>\\r\\n     <p>（5）客户也可直接联系人伤案件指定的人伤跟踪岗进行调解预约。<\\/p>",
+        "serviceTitle": "人伤调解协助",
+        "updatedBy": ""
+      }
+    ],
+    "ins_notices": null,
+    "main_risk": [
+      {
+        "deductible_default": "01",
+        "deductible_flag": "01",
+        "dutyDetails": [
+          {
+            "dutyAmount": "1",
+            "enuCode": "01",
+            "enuContent": "投保"
+          },
+          {
+            "dutyAmount": "0",
+            "enuCode": "02",
+            "enuContent": "不投保"
+          }
+        ],
+        "duty_code": "CarLossCoverage",
+        "duty_default": "01:投保",
+        "duty_name": "机动车损失险",
+        "need_select": "1",
+        "need_select_mp": "1",
+        "showSeq": "1",
+        "zf_flag": "01"
+      },
+      {
+        "deductible_default": "01",
+        "deductible_flag": "01",
+        "dutyDetails": [
+          {
+            "dutyAmount": "1000000",
+            "enuCode": "07",
+            "enuContent": "100万"
+          },
+          {
+            "dutyAmount": "1500000",
+            "enuCode": "08",
+            "enuContent": "150万"
+          }
+        ],
+        "duty_code": "ThirdPartyCoverage",
+        "duty_default": "01:100万",
+        "duty_name": "第三者责任险",
+        "need_select": "1",
+        "need_select_mp": "1",
+        "showSeq": "2",
+        "zf_flag": "01"
+      },
+      {
+        "deductible_default": "01",
+        "deductible_flag": "01",
+        "dutyDetails": [
+          {
+            "dutyAmount": "30000",
+            "enuCode": "03",
+            "enuContent": "3万/座"
+          },
+          {
+            "dutyAmount": "40000",
+            "enuCode": "04",
+            "enuContent": "4万/座"
+          },
+          {
+            "dutyAmount": "50000",
+            "enuCode": "05",
+            "enuContent": "5万/座"
+          },
+          {
+            "dutyAmount": "100000",
+            "enuCode": "06",
+            "enuContent": "10万/座"
+          },
+          {
+            "dutyAmount": "200000",
+            "enuCode": "07",
+            "enuContent": "20万/座"
+          }
+        ],
+        "duty_code": "DriverCoverage",
+        "duty_default": "01:3万/座",
+        "duty_name": "驾驶人责任险",
+        "need_select": "1",
+        "need_select_mp": "1",
+        "showSeq": "3",
+        "zf_flag": "01"
+      },
+      {
+        "deductible_default": "01",
+        "deductible_flag": "01",
+        "dutyDetails": [
+          {
+            "dutyAmount": "30000",
+            "enuCode": "03",
+            "enuContent": "3万/座"
+          },
+          {
+            "dutyAmount": "40000",
+            "enuCode": "04",
+            "enuContent": "4万/座"
+          },
+          {
+            "dutyAmount": "50000",
+            "enuCode": "05",
+            "enuContent": "5万/座"
+          },
+          {
+            "dutyAmount": "100000",
+            "enuCode": "06",
+            "enuContent": "10万/座"
+          },
+          {
+            "dutyAmount": "200000",
+            "enuCode": "07",
+            "enuContent": "20万/座"
+          }
+        ],
+        "duty_code": "PassengerCoverage",
+        "duty_default": "01:3万/座",
+        "duty_name": "乘客责任险",
+        "need_select": "1",
+        "need_select_mp": "1",
+        "showSeq": "4",
+        "zf_flag": "01"
+      },
+      {
+        "deductible_default": "01",
+        "deductible_flag": "01",
+        "dutyDetails": [
+          {
+            "dutyAmount": "1",
+            "enuCode": "01",
+            "enuContent": "投保"
+          },
+          {
+            "dutyAmount": "0",
+            "enuCode": "02",
+            "enuContent": "不投保"
+          }
+        ],
+        "duty_code": "TheftCoverage",
+        "duty_default": "01:投保",
+        "duty_name": "全车盗抢险",
+        "need_select": "1",
+        "need_select_mp": "1",
+        "showSeq": "5",
+        "zf_flag": "01"
+      }
+    ],
+    "policy_terms": []
+  }
+}

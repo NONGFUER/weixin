@@ -523,14 +523,14 @@
 	font-size:16px;
 	color:#444;
 	float:left;
-	font-weight:blod;
+	font-weight:bold;
 }
 .carimg img{
 	width:18px;
 	height:16px;
 	margin-right:8px;
 }
-.howInput{
+.howInput,.sfzHowInput{
 	float:right;
 	width:32%;
 	font-size:12px;
@@ -538,7 +538,7 @@
 	padding-right:15px;
 	text-align: right;
 }
-.howInput img{
+.howInput img,.sfzHowInput img{
 	width:12px;
 	height:12px;
 	margin-left:4px;
@@ -558,23 +558,14 @@
     text-align: center;
 }
 
-/* .mui-btn-blue, .mui-btn-primary, input[type=submit]{
-	border:1px solid #277eeb;
-	background-color:#277eeb
+/* 省份证提示样式 */
+#sfz{
+	width:84%;
+	font-size: 18px;
+    color: #fff;
+    position: absolute;
+    top: 70px;
+    left: 8%;
+    z-index: 1000;
+    text-align: center;
 }
-.mui-poppicker-header, .mui-btn{
-	font-size:10pt;
-}
-.mui-poppicker-btn-cancel{
-	color:#277eeb;
-	border:0;
-	background-color:#555557;
-	font-size:15px;
-}
-
-.mui-poppicker{
-	background-color:#555557;
-}
-.mui-picker{
-	background-color:#d1d5db;
-} */

@@ -1,4 +1,5 @@
-    /**
+document.write("<script language='javascript' src='../../../js/util/mobileBUGFix.mini.js' ></script>");
+   /**
      * 获得base64
      * @param {Object} obj
      * @param {Number} [obj.width] 图片需要压缩的宽度，高度会跟随调整
@@ -76,7 +77,7 @@
               // 修复IOS
                 if( navigator.userAgent.match(/iphone/i) ) {
                     var mpImg = new MegaPixImage(img);
-                    mpImg.render(canvas, { maxWidth: w, maxHeight: h, quality: obj.quality || 0.8, orientation: 6 });
+                    mpImg.render(canvas, { maxWidth: w, maxHeight: h, quality: obj.quality || 0.8, orientation: 0 });
                     base64 = canvas.toDataURL('image/jpeg', obj.quality || 0.8 );
                 }
 

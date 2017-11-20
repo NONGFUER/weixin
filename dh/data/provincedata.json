@@ -1,0 +1,223 @@
+{
+  "cityinfo": {
+    "rows": [
+      {
+        "cityPlate": "",
+        "contName": "天津市",
+        "fgFlag": "",
+        "flag": "",
+        "id": "1",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "浙江省",
+        "fgFlag": "",
+        "flag": "",
+        "id": "10",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "安徽省",
+        "fgFlag": "",
+        "flag": "",
+        "id": "11",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "福建省",
+        "fgFlag": "",
+        "flag": "",
+        "id": "13",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "江西省",
+        "fgFlag": "",
+        "flag": "",
+        "id": "14",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "山东省",
+        "fgFlag": "",
+        "flag": "",
+        "id": "16",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "河南省",
+        "fgFlag": "",
+        "flag": "",
+        "id": "17",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "湖北省",
+        "fgFlag": "",
+        "flag": "",
+        "id": "18",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "湖南省",
+        "fgFlag": "",
+        "flag": "",
+        "id": "19",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "河北省",
+        "fgFlag": "",
+        "flag": "",
+        "id": "2",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "广东省",
+        "fgFlag": "",
+        "flag": "",
+        "id": "21",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "广西壮族自治区",
+        "fgFlag": "",
+        "flag": "",
+        "id": "22",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "海南省",
+        "fgFlag": "",
+        "flag": "",
+        "id": "23",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "重庆市",
+        "fgFlag": "",
+        "flag": "",
+        "id": "24",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "四川省",
+        "fgFlag": "",
+        "flag": "",
+        "id": "25",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "贵州省",
+        "fgFlag": "",
+        "flag": "",
+        "id": "26",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "云南省",
+        "fgFlag": "",
+        "flag": "",
+        "id": "27",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "陕西省",
+        "fgFlag": "",
+        "flag": "",
+        "id": "28",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "甘肃省",
+        "fgFlag": "",
+        "flag": "",
+        "id": "29",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "山西省",
+        "fgFlag": "",
+        "flag": "",
+        "id": "3",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "新疆维吾尔族区",
+        "fgFlag": "",
+        "flag": "",
+        "id": "30",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "北京",
+        "fgFlag": "",
+        "flag": "",
+        "id": "32",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "辽宁省",
+        "fgFlag": "",
+        "flag": "",
+        "id": "5",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "吉林省",
+        "fgFlag": "",
+        "flag": "",
+        "id": "6",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "黑龙江省",
+        "fgFlag": "",
+        "flag": "",
+        "id": "7",
+        "rank": ""
+      },
+      {
+        "cityPlate": "",
+        "contName": "江苏省",
+        "fgFlag": "",
+        "flag": "",
+        "id": "8",
+        "rank": ""
+      }
+    ]
+  },
+  "status": {
+    "channel": "",
+    "returns": {},
+    "statusCode": "000000",
+    "statusMessage": "",
+    "transTime": "",
+    "transToken": "",
+    "userCode": ""
+  }
+}

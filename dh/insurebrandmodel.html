@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<!-- 忽略IOS将页面中的数字识别为电话号码 -->
+<meta name="format-detection" content="telephone=no" />
+<!-- 忽略Android平台中对邮箱地址的识别 -->
+<meta name="format-detection" content="email=no" />
+<!-- 缓存 -->
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<meta HTTP-EQUIV="expires" CONTENT="0">
+<title>品牌型号选择</title>
+<link rel="stylesheet" href="css/mui/mui.min.css" />
+<link rel="stylesheet" href="css/mui/mui.picker.min.css" />
+<link rel="stylesheet" href="css/common.css" />
+</head>
+<body class="lightwhitebackground">
+
+<header  id="header" class="mui-bar mui-bar-nav header">
+	<a id="back" class="mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<h1 class="mui-title">品牌型号选择</h1>
+</header>
+
+<div id="licenseshadow" class="mui-backdrop" style="display: none;">
+	<div class="backdrop-content" style="margin-top: 100px;">
+		<p class="whitetext">请按照行驶证填写</p>
+		<br>
+		<img style="width: 100%" src="img/license.png">
+		<br>
+		<br>
+		<img style="width:30px;" src="img/close.png">
+	</div>
+</div>
+
+<div class="mui-content ">
+   <div id="main" class="mui-content-padded">
+		<div id="brandmodelname">
+			<span class="search">
+			 	<img class="smallimg" src="img/chioce.png">
+			 	<input class="graytext" type="text" autocomplete="off" placeholder="请输入关键字点击查询" >
+			</span>
+			<label class="searchbtn">搜索</label>
+		</div>
+		<div id="license">
+			<p class="mui-content-padded searchnotice">
+				<img class="smallimg" src="img/ask.png" />
+				提示：请按行驶证上型号填写汉字、字母和数字,如“别克SGM7180”。进口车辆请填写实际品牌型号如“奥迪AUDI Q7”，可按之前保单型号填写或询问车辆经销商。
+			</p> 
+		</div>
+	</div>
+	<div style="height: 1px;"></div>
+	<div id="unrecord" class="unrecord lightwhitebackground" >
+		<img class="largeimg" src="img/unrecord.png"/>
+		<br /><br />
+		<p class="graytext">抱歉，没有查到您的车型！</p>
+	</div>
+	<div id="record" class="mui-scroll-wrapper">
+		<div class="mui-scroll ">
+			<ul class="mui-table-view" >
+				<li class="mui-table-view-cell listtext">
+					<div class="mui-row">
+						<div class="mui-col-xs-8 mui-text-left"></div>
+						<div class="mui-col-xs-4 mui-text-right"></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/zepto/zepto.min.js" ></script>
+<script type="text/javascript" src="js/mui/mui.min.js" ></script>
+<script type="text/javascript" src="js/mui/mui.picker.min.js" ></script>
+<script type="text/javascript" src="js/operatedata.js"></script>
+<script type="text/javascript" src="js/insurebrandmodel.js"></script>
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="js/ajaxservice.js"></script>
+<script type="text/javascript" src="js/constant.js"></script>
+
+</html>

@@ -253,6 +253,16 @@ table.gridtable td {
 	display: inline-block;
 	float: right;
 }
+.relation{
+	font-size: 14px;
+	height: 22px;
+	padding: 1px 0;
+	color: #333;
+	text-align: right;
+	width: 30%;
+	display: inline-block;
+	float: right;
+}
 
 #profession,
 #FieldAN {
@@ -363,3 +373,12 @@ table.gridtable td {
 	color: #FFFFFF;
 	font-weight: 100;
 }
+.riqi {
+	padding: 0;
+    text-align: left;
+    background: url(../../../image/common/date.png) no-repeat;
+    background-position: right;
+    background-size: 8%;
+    padding-right:8% !important;
+}
+   

@@ -1,0 +1,64 @@
+{
+  "userCode": "",
+  "channel": "1",
+  "transTime": "2017-10-03 11:49:41",
+  "transToken": "",
+  "statusCode": "000000",
+  "statusMessage": "渠道查询成功！",
+  "returns": {
+    "bxCxChannel": [
+      {
+        "text": "天安佰盈",
+        "value": "01"
+      },
+      {
+        "text": "建设银行",
+        "value": "02"
+      },
+      {
+        "text": "中国银行",
+        "value": "03"
+      },
+      {
+        "text": "工商银行",
+        "value": "04"
+      },
+      {
+        "text": "中信银行",
+        "value": "05"
+      },
+      {
+        "text": "晋商行",
+        "value": "06"
+      },
+      {
+        "text": "天安人寿",
+        "value": "07"
+      },
+      {
+        "text": "雀掌柜APP",
+        "value": "08"
+      },
+      {
+        "text": "pp停车",
+        "value": "09"
+      },
+      {
+        "text": "东方航空普通",
+        "value": "10"
+      },
+      {
+        "text": "东方航空会员",
+        "value": "11"
+      },
+      {
+        "text": "天山哈密银行",
+        "value": "12"
+      },
+      {
+        "text": "农业银行",
+        "value": "13"
+      }
+    ]
+  }
+}

@@ -447,14 +447,14 @@
 	font-size:16px;
 	color:#444;
 	float:left;
-	font-weight:blod;
+	font-weight:bold;
 }
 .carimg img{
 	width:18px;
 	height:16px;
 	margin-right:8px;
 }
-.howInput{
+.howInput,.sfzHowInput{
 	float:right;
 	width:32%;
 	font-size:12px;
@@ -462,7 +462,7 @@
 	padding-right:15px;
 	text-align: right;
 }
-.howInput img{
+.howInput img,.sfzHowInput img{
 	width:12px;
 	height:12px;
 	margin-left:4px;
@@ -481,7 +481,17 @@
     z-index: 1000;
     text-align: center;
 }
-
+/* 省份证提示样式 */
+#sfz{
+	width:84%;
+	font-size: 18px;
+    color: #fff;
+    position: absolute;
+    top: 70px;
+    left: 8%;
+    z-index: 1000;
+    text-align: center;
+}
 
 
 

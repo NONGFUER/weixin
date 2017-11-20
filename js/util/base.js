@@ -1,10 +1,7 @@
 /**
  * @作者：马巍巍 时间：2016-01-13 功能：包含移动端所用的一些方法
  */
-document.write("<script language='javascript' src='../../../js/util/rollups/aes.js' ></script>");
-document.write("<script language='javascript' src='../../../js/util/components/pad-iso10126-min.js' ></script>");
-document.write("<script src='http://pv.sohu.com/cityjson?ie=utf-8'></script>");
-document.write("<script language='javascript' src='../../../js/util/weixin.js'></script>");
+
 // 秘钥
 var secretKey = "t171420100302rsa";
 var actionStartTime;//浏览页面的埋点时间
@@ -21,6 +18,10 @@ var base = {
 var suixinyi = {
 		url : window.location.protocol+"//"+window.location.host+"/tongdaoSxyPlatform/",
 }
+document.write("<script language='javascript' src='"+base.url+"weixin/js/util/rollups/aes.js' ></script>");
+document.write("<script language='javascript' src='"+base.url+"weixin/js/util/components/pad-iso10126-min.js' ></script>");
+document.write("<script src='http://pv.sohu.com/cityjson?ie=utf-8'></script>");
+document.write("<script language='javascript' src='"+base.url+"weixin/js/util/weixin.js'></script>");
 var dic_m = new Map();
 var dic_m1 = new Map();
 if (typeof tit !== 'object') {
@@ -619,7 +620,7 @@ $.ajaxPrevent = function() {
 	ajaxPrevent += "<div class='ajax_prevent_a' style='width: 30%;margin-top: 55%;"
 			+ "margin-left: 35%;text-align: center;background-clip: padding-box;"
 			+ "color: #585858;'>";
-	ajaxPrevent += "<img src='../../image/dh_loading.gif' style='width:100%'></div></div>";
+	ajaxPrevent += "<img src='"+base.url+"weixin/images/common/dh_loading.gif' style='width:100%'></div></div>";
 	$("body").append(ajaxPrevent);
 	$(".ajax_prevent_a").css("margin-top",(window.innerHeight - $(".ajax_prevent_a").width())/2);
 };

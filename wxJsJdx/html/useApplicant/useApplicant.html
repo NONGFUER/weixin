@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<!-- 忽略IOS将页面中的数字识别为电话号码 -->
+		<meta name="format-detection" content="telephone=no" />
+		<!-- 忽略Android平台中对邮箱地址的识别 -->
+		<meta name="format-detection" content="email=no" />
+		<title>常用保险人</title>
+		<link rel="stylesheet" type="text/css" href="../../css/lib/widget/mui/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/lib/common/base.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/lib/common/common.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/usage/useApplicant/useApplicant.css" />
+	</head>
+
+	<body>
+		<div class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<div class="man mui-table-view">
+					<div id='list' class="man-div-body ">
+						<ul class="man-div-body-ul ">
+							<!-- <li class="man-div-body-ul_li mui-table-view-cell">
+								<div class="mui-slider-right mui-disabled shanchu">
+									<a class="mui-btn blue">
+										<i class="bianji">
+											<img src="../../image/useApplicant/bianji.png"/>
+										</i>
+										<span>编辑</span>
+									</a>
+									<a class="mui-btn red">
+										<i class="shanchu">
+											<img src="../../image/useApplicant/shanchu.png"/>
+										</i>
+										<span>删除</span>
+									</a>
+								</div>
+								<div class="man-div-body-ul_li_div mui-slider-handle">
+									<ul class="ul_title">
+										<li>
+											<div class="title_name_left">
+												<span>伟维持</span>
+												<span>本人</span>
+											</div>
+											<div class="title_name_right">
+												<span><img src="../../image/useApplicant/email.png"/></span>
+												<span>1233213123@qq.com</span>
+											</div>
+										</li>
+										<li>
+											<div class="title_body_left">
+												<span style="font-size: 13px;font-weight: bold;">13333333333</span>
+											</div>
+											<div class="title_body_right">
+												<span><img src="../../image/useApplicant/shenfenzheng.png"/></span>
+												<span>321321321321312</span>
+											</div>
+										</li>
+										<li class="dizi">
+											上海市长江入海口海口海口海口南岸东海之滨11号111室
+										</li>
+									</ul>
+								</div>
+							</li>  -->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="note" id="addholder">
+			<div class="note-div">
+				<div class="note-div_title">
+					<div class="title">新增常用保险人</div>
+					<div class="note-div_title_right"></div>
+				</div>
+				<div class="note-div_body">
+					<div class="popcontent">
+						<div class="bar clearfix">
+							<div class="label_icon fl">
+								<div class="imgContent"><img src="../../image/useApplicant/name.png"></div>
+							</div>
+							<div class="inputContent ri">
+								<input type="text" id="addName" placeholder="请输入姓名">
+							</div>
+						</div>
+						<div class="bar clearfix">
+							<div class="label_icon fl">
+								<div class="imgContent ph"><img src="../../image/useApplicant/phone.png"></div>
+							</div>
+							<div class="inputContent ri">
+								<input type="text" id="addPhone" placeholder="请输入手机号" maxlength="11">
+							</div>
+						</div>
+						<div class="bar clearfix">
+							<div class="label_icon fl">
+								<div class="imgContent iden"><img src="../../image/useApplicant/shenfenzheng.png"></div>
+							</div>
+							<div class="inputContent ri">
+								<input type="text" id="addIdNo" placeholder="请输入身份证号" maxlength="18">
+							</div>
+						</div>
+						<div class="bar clearfix">
+							<div class="label_icon fl">
+								<div class="imgContent ema"><img src="../../image/useApplicant/email.png"></div>
+							</div>
+							<div class="inputContent ri">
+								<input type="text" id="addEmail" placeholder="请输入邮箱">
+							</div>
+						</div>
+						<div class="bar clearfix">
+							<div class="label_icon fl">
+								<div class="imgContent ema"><img src="../../image/useApplicant/email.png"></div>
+							</div>
+							<div class="inputContent ri">
+								<input type="text" id="addAddress" placeholder="请输入地址">
+							</div>
+						</div>
+					</div>
+					<div class="popfooter">
+						<div id="addBtn" class="confirmButton">
+							添加
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="note" id="editholder">
+			<div class="note-div">
+				<div class="note-div_title">
+					<div class="title">编辑常用保险人</div>
+					<div class="note-div_title_right"></div>
+				</div>
+				<div class="note-div_body">
+					<div class="popcontent">
+					<input type="hidden"  id="updateId"  />
+						<div class="bar clearfix">
+							<div class="label_icon fl">
+								<div class="imgContent"><img src="../../image/useApplicant/name.png"></div>
+							</div>
+							<div class="inputContent ri">
+								<input type="text" id="editName" placeholder="请输入姓名">
+							</div>
+						</div>
+						<div class="bar clearfix">
+							<div class="label_icon fl">
+								<div class="imgContent ph"><img src="../../image/useApplicant/phone.png"></div>
+							</div>
+							<div class="inputContent ri">
+								<input type="text" id="editPhone" placeholder="请输入手机号" maxlength="11">
+							</div>
+						</div>
+						<div class="bar clearfix">
+							<div class="label_icon fl">
+								<div class="imgContent iden"><img src="../../image/useApplicant/shenfenzheng.png"></div>
+							</div>
+							<div class="inputContent ri">
+								<input type="text" id="editIdNo" placeholder="请输入身份证号" maxlength="18">
+							</div>
+						</div>
+						<div class="bar clearfix">
+							<div class="label_icon fl">
+								<div class="imgContent ema"><img src="../../image/useApplicant/email.png"></div>
+							</div>
+							<div class="inputContent ri">
+								<input type="text" id="editEmail" placeholder="请输入邮箱">
+							</div>
+						</div>
+						<div class="bar clearfix">
+							<div class="label_icon fl">
+								<div class="imgContent ema"><img src="../../image/useApplicant/email.png"></div>
+							</div>
+							<div class="inputContent ri">
+								<input type="text" id="editAddress" placeholder="请输入地址">
+							</div>
+						</div>
+					</div>
+					<div class="popfooter">
+						<div id="updateBtn" class="confirmButton">
+							保存
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../js/lib/widget/mui/mui.min.js"></script>
+	<script src="../../js/lib/common/zepto.min.js"></script>
+	<script src="../../js/lib/common/base.js"></script>
+	<script src="../../js/lib/common/common.js"></script>
+	<script src="../../js/lib/widget/mui/vue.mi.js"></script>
+	<script src="../../js/usage/useApplicant/useApplicant.js"></script>
+
+</html>

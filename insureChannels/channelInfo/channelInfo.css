@@ -1,0 +1,93 @@
+#bodyMuiScroll {
+	margin-top:44px;
+}
+
+.insure-form-group {
+	background-color: #fff;
+}
+
+dt,
+dd {
+	height: 40px;
+	padding: 9px 0;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.group-title {
+	border-bottom: 1px solid #e0e0e0;
+	padding-left: 4.4%;
+}
+
+.group-title-main {
+	font-size: 16px;
+	font-weight: bold;
+	display: inline-block;
+}
+
+label {
+	color: #333;
+	font-size: 14px;
+}
+
+dd input[type=text] {
+	font-size: 14px;
+	height: 22px;
+	padding: 1px 0;
+	color: #333;
+	text-align: right;
+	width: 60%;
+	display: inline-block;
+	float: right;
+}
+
+.insure-form-group {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+
+.insure-form-group dd {
+	margin-left: 4.4%;
+	padding-right: 4.4%;
+}
+.isSame {
+	float: right;
+	padding-right: 14px;
+	color: #1B6BB8;
+	vertical-align: middle;
+	font-size: 14px;
+}
+
+/* 省市选择 */
+.zi {
+	color: #333;
+	font-size: 14px;
+	float: right;
+	margin-left: 4px;
+}
+.down1 {
+	width: 10px;
+	margin-left: 4px;
+	position: relative;
+	float: right;
+	top: 8px;
+	display: none;
+}
+.orgProvinceCode,
+.orgCityCode {
+	color: #333;
+	font-size: 14px;
+	float: right;
+	margin-left: 4px;
+}
+.next {
+    height: 45px;
+    width: 92%;
+    margin: 30px auto 10px auto;
+    background: #1B6BB8;
+    border-radius: 10px;
+    line-height: 45px;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 16px;
+}

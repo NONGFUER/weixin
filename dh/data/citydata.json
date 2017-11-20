@@ -1,0 +1,23 @@
+{
+  "cityinfo": {
+    "rows": [
+      {
+        "cityPlate": "京",
+        "contName": "北京市",
+        "fgFlag": "",
+        "flag": "0",
+        "id": "3110000",
+        "rank": ""
+      }
+    ]
+  },
+  "status": {
+    "channel": "",
+    "returns": {},
+    "statusCode": "000000",
+    "statusMessage": "",
+    "transTime": "",
+    "transToken": "",
+    "userCode": ""
+  }
+}

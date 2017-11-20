@@ -1,0 +1,34 @@
+{
+  "cxDistribution":
+  {
+    "address": "北京",
+    "city": "",
+    "citycode": "",
+    "companycode": "000",
+    "createdBy": "",
+    "dateCreated": null,
+    "dateUpdated": null,
+    "defaultflag": "0",
+    "id": 7883,
+    "province": "江苏省 南通",
+    "provincecode": "",
+    "receivername": "李川",
+    "receiverphoneno": "15901197623",
+    "remark": "",
+    "town": "",
+    "towncode": "",
+    "updatedBy": "",
+    "username": "3a19e9ddb23e4c61bc0a8d2385483511"
+  },
+  "status": {
+    "channel": "",
+    "returns": {
+
+    },
+    "statusCode": "000000",
+    "statusMessage": "",
+    "transTime": "",
+    "transToken": "",
+    "userCode": ""
+  }
+}

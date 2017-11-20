@@ -341,3 +341,28 @@ function getCustomerInfo(posturl) {
 	  // Do something with the request variable
 	}
 
+$.reqAjaxsFalse = function(url, requestData, callBack) {
+	var requestJson = aesEncrypt(JSON.stringify(requestData), secretKey, secretKey);
+	requestJson = URLencodeForBase64(requestJson);
+	$.ajax({
+		url: url,
+		type: 'POST',
+		data: "jsonKey=" + requestJson,
+		dataType: "json",
+		timeout: 60000,
+		success: function(data) {
+			$(".ajax_prevent").remove(); // 去除遮罩
+			if(!$.isNull(callBack)) {
+				callBack(data);
+			}
+		},
+		error: function(data) {
+			$(".ajax_prevent").remove(); // 去除遮罩
+			modelAlert("网络好像开小差了呢，请设置给力一点儿网络吧！");
+		},
+		beforeSend: function(xhr) {
+			$.ajaxPrevent();
+		},
+		async: false,
+	});
+};

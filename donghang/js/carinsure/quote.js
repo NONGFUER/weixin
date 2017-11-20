@@ -705,7 +705,7 @@ $.loadData = function(param) {
 						$.toAjaxs(url, data, function(param){
 							param = eval("(" + param + ")");
 							if (param.status.statusCode == "000000") {
-								if(param.gfbDistribution!=""){
+								if(param.cxDistribution!=""){
 									addressInfo.province = param.cxDistribution.province;
 									addressInfo.address = param.cxDistribution.address;
 									if (addressInfo != "" && addressInfo != null) {//该用户有默认地址
@@ -728,9 +728,18 @@ $.loadData = function(param) {
 						$(".addressInfo").show();
 					}
 				}
-				/*车船税为0时提示*/
-				if(param.cxInfo.cxOffer.vehicletaxPre==0){
-					modelAlert("您当前购买的车险保单无法代缴车船税，如需了解详情，可拨打客服热线 4006895505 进行咨询");
+				
+				var vehicletaxPre=param.cxInfo.cxOffer.vehicletaxPre;
+				var forceBeginYear=param.cxInfo.cxOffer.jqxBegindate!=null?new Date(param.cxInfo.cxOffer.jqxBegindate.time).getFullYear():"";
+				var curYear=new Date().getFullYear()
+				var nextYear=curYear+1;
+				//如果用户购买交强险起保时间为当前系统时间的后一年，且需缴纳的车船税金额为零时，给出以下提示：
+				if(vehicletaxPre==0){
+					if(forceBeginYear==nextYear){
+						modelAlert("当前时间购买交强险只能缴纳"+curYear+"年的车船税。如您需代缴"+nextYear+"年的车船税，可在"+nextYear+"年内购买交强险。");
+					}else{/*车船税为0时提示*/
+						modelAlert("您当前购买的车险保单无法代缴车船税，如需了解详情，可拨打客服热线 4006895505 进行咨询");
+					}
 				}
 				
 				if(parm.body.samebeibao!=null){//被保人信息与车主不一致

@@ -1,0 +1,553 @@
+@CHARSET "UTF-8";
+/** 
+ *wusaijie songhuajian
+ *2017/08/16
+ *同道项目2.0公共样式
+ **/
+body{
+	background: #ebebeb;
+}
+a {
+    text-decoration: none;
+    color: #48a0f0;
+}
+.hidden{
+	display: none;
+}
+/* 底部外边距10px */
+.mb10{
+	margin-bottom: 10px;
+}
+/*隐藏仍占用位置  */
+.yc {
+    visibility: hidden;
+}
+/*蓝底白字按钮*/
+.on1{
+  background:#48a0f0;
+  color: #fff !important;
+} 
+.clearfix:after {
+	content:"";
+	display:block;
+	height:0;
+	visibility:hidden;
+	clear:both;
+}
+li:after{
+	content:"";
+	display:block;
+	height:0;
+	visibility:hidden;
+	clear:both;
+}
+.orange{
+	 color:#ff6e1a;
+}
+.iconleft{
+	background: url("../../../image/common/right_arrow.png") no-repeat;
+	display: inline-block;
+    width: 6.5px;
+	height: 11px;
+	background-size: 100% 100%;
+	margin-left: 10px;
+	position: relative;
+    top: 2px;
+}
+.contact{
+	font-size:14px;
+	margin-bottom: 60px;
+	text-align:center;
+}
+.phone{
+	width: 15.5px;
+	height: 17px;
+	position: relative;
+	top: -4px;
+	margin: 0 4px;
+}
+.huise{
+	color: #999;
+	font-size: 12px;
+	margin-left: 4px;
+}
+/*底部纯色按钮  */
+.single-footer{
+	width: 100%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 100;
+	height: 50px;
+	line-height: 50px;
+	font-size:17px;
+	text-align: center;
+	color:#fff;
+	font-weight: bold;
+	opacity: 0;	
+}
+.blue{
+	background:#48A0F0;
+	opacity: 1;
+}
+.grey{
+	background:#999;
+	opacity: 1;
+}
+.font12{
+	font-size: 12px;
+} 
+.font13{
+	font-size: 13px;
+} 
+.greyfont{
+	color:#999;
+}
+.none{
+	display:none;
+}
+/*--------------------------------重写mui部分样式--------------------------*/
+
+input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {
+    line-height: 22px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+    padding: inherit;
+    -webkit-user-select: text;
+    border: none;
+    border-radius: 0;
+    outline: 0;
+    background-color: #fff;
+    -webkit-appearance: none;
+}
+/* 上拉加载底部样式 */
+.mui-pull-bottom-tips {
+	text-align: center;
+	background-color: #efeff4;
+	font-size: 15px;
+	line-height: 40px;
+	color: #777;
+}	
+.mui-toast-container{
+	width: 100%;
+	margin: 0 auto;
+	bottom: 100px;
+}
+.mui-toast-message{
+	width: 200px;
+	height: 3rem;
+	padding: 0; 
+	font-size: 14px;
+	margin: 0 auto;
+	border-radius: 2rem;
+	line-height: 3rem;
+}
+/*--------------------------------XXX公共样式--------------------------*/
+/*H3列表头公用样式*/
+h1, h2, h3, h4, h5, h6{
+	margin: 0;
+	padding: 0;
+}
+p{
+	margin-bottom: 0;
+	color: #333;
+}
+.h3-list_title{
+	font-size: 16px;
+	font-weight: 800;
+	color: #212121;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+/*span列表公用样式*/
+.span-list_body{
+	font-size: 12px;
+	color: #333333;
+}
+/*页面list间隔*/
+.man-li{
+	margin-bottom: 10px;
+}
+/*重写mui 列表背景颜色*/
+.mui-table-view{
+	background-color: #ECECEC;
+}
+.mui-media{
+	background: #FFFFFF;
+}
+/*包裹icon标签的p的样式*/
+.p_icon{
+	overflow: hidden;
+	margin-bottom: 0;
+	margin: 10px 20px 10px 20px;
+}
+/*蓝色小标签*/
+.icon-blue{
+	color: #48A0F0;
+	background-color: #EBF5FF;
+	font-size: 11px;
+	padding:2px 5px;
+	margin: 0 6px 6px 0;
+	line-height: 13px;
+	float: left;
+	
+}
+/*推广费*/
+.icon_tuiguang{
+	font-size: 12px;
+	color: #FF6E1A;
+	padding:2px 5px;
+	margin: 0 6px 6px 0;
+	line-height:14px;
+	float: right;
+}
+/*--------------------------------线上产品公共样式--------------------------*/
+/*线上产品bannner图  */
+.bannner{
+	display: block;
+	width: 100%;
+}
+/*白色背景*/
+.whitebackground{
+	background: #fff; 
+}
+/*基本的内边距  */
+.con{
+	padding: 10px 4%;
+}
+.banner-con h3{
+	line-height: 20px;
+	font-size: 15px;
+	color: #212121;
+	font-weight: bold;
+}
+.banner-con .company{
+	line-height: 20px;
+	font-size: 12px;
+	color: #333;
+}
+/*在线产品试算项样式  */
+.insurance-choice{
+	padding: 10px 4%;
+    font-size: 13px;
+}
+.insurance-choice .d1{
+	width: 100%;
+	overflow: hidden;
+    margin-bottom: 10px;
+}
+.label{
+	color:#222;
+	width: 70px;
+    height: 24px;
+    line-height: 24px;
+	float: left;
+	display: table;
+}
+.conter{
+	width: 70%;
+	float: left;
+    line-height: 24px;
+	position: relative;
+	/* margin-top: -5px; */
+}
+.insurance-choice .radio li {
+	font-size: 12px;
+	float: left;
+	
+    padding: 0 3px;
+    overflow: hidden;   
+    min-width: 58px;
+    text-align: center;
+    height: 26px;
+    line-height:24px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    margin-right: 10px;
+	color: #999;
+	margin-bottom: 5px;
+}
+.insurance-choice .radio .on{
+	color:#ff6e1a;
+	border: 1px solid #ff6e1a;
+}
+/*保费显示颜色  */
+.baofee{
+	color:#ee1919;	
+	font-weight: bold;	
+}
+.content-title{
+	padding: 10px 4%;
+	font-size: 15px;
+	color: #212121;
+	font-weight: bold;
+	border-bottom: 1px solid #e0e0e0;
+}
+.content-title img{
+	width: 14px;
+	height: 16px;
+	position: relative;
+	top: -2px;
+	margin-right: 5px;
+}
+.content-info p{
+	font-size: 13px;
+}
+.star p:before{
+	content: "";
+	margin-right: 8px;
+	display: inline-block;
+	width: 13.5px;
+	height: 13.5px;
+	background: url(../../../image/insurance/five.png) no-repeat;
+	background-size:100% 100%;
+	-webkit-background-size: 100% 100%;
+}
+.content-info li{
+	margin-left: 4%;
+	padding:10px 4% 10px 0 ;
+	border-bottom: 1px solid #ebebeb;
+}
+.li-left{
+	
+	float: left;
+	width:60%;
+	
+}
+.li-right{
+	text-align: right;
+	float: right;
+	
+}
+
+/*--------------------------------支付结果公共样式--------------------------*/
+.result{
+	padding: 0 7%;
+}
+.result-status{
+	padding: 26px 0;
+	border-bottom: 1px solid #ccc;
+}
+.result-status_img{
+	width: 65px;
+	margin: 0 auto;
+	display: block;
+}
+.result-status_p{
+	text-align: center;
+	color:#222;
+	line-height: 20px;
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 16px;
+	
+}
+.result-content{
+	padding-bottom:20px;
+}
+.result-content dd{
+	font-size: 14px;
+	color: #4d4d4d;
+	line-height: 20px;
+}
+.result-content dt{
+	padding:12px 0;
+	font-size: 16px;
+	font-weight: bold;
+}
+/*12号字体，3个中文间距设置  */
+.letter3{
+	letter-spacing: 4px;
+}
+.result-click{
+	background: #ebebeb;
+	padding: 50px 0;
+}
+.result-button{
+	color: #48a0f0;
+	text-align: center;
+    width: 34%;
+    float: left;
+    border: 1px solid #48a0f0;
+    border-radius: 5px;
+    padding: 8px;
+	font-size: 16px;
+	margin: 0 8%;
+}
+/*--------------------------------弹窗样式--------------------------*/
+.popup-shadow{
+	width: 100%;
+    height: 100%;
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;   
+    z-index: 300;
+	background: rgba(0,0,0,.7);
+	display:none;
+}
+.popup-content{
+	width: 86%;
+	margin: 164px auto 0 auto;
+	/* position:fixed; */
+	z-index: 400;
+	background:#fff;
+	border-radius: 10px;
+	padding-bottom: 25px;
+}
+.popup-content_title{
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+	font-weight: bold;
+	color:#222;
+	text-align: center;
+	/* background: #f7f7f7; */
+	border-radius: 10px;	
+	background: url("../../../image/common/titile.png") no-repeat;
+	background-size: 100% 100%;
+
+}
+.sanjiao{
+	position: absolute;
+	right: 7%;
+	 width: 50px;
+    height: 50px;
+    
+} 
+.popup-content_body{
+	width:90.625%;
+	margin: 0 auto;
+	padding-top: 13px;
+	padding-bottom: 10px;
+}
+.popup-content_button{
+	width:50%;
+	margin: 0 auto;
+	height: 37px;
+	line-height: 37px;
+	background: #48A0F0;
+	color:#fff;
+	font-size: 15px;
+	text-align:center;
+	border-radius: 5px;
+}
+.popup-content_body li{
+	height: 44px;
+	padding: 10px 0;
+	border-bottom: 1px solid #e0e0e0;
+}
+.popup-content_body label{
+	height: 20px;
+	line-height: 20px;
+	font-size: 14px;
+	border-right: 1px solid #e0e0e0;
+	padding-right: 20px;
+}
+.popup-content_body input{
+	height: 20px;
+	line-height: 20px;
+	color:#222;
+	display:inline;
+	width:60%;
+	font-size: 14px;
+	margin-left: 20px;
+	padding: 0;
+}
+.pinfo{
+	height: 44px;
+	padding: 12px 0;
+}
+.pinfo img{
+	width: 11px;
+	height: 12px;
+	position: relative;
+	top:-2px;
+}
+/*产品下面投保*/
+.insure_footer {
+	width: 100%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 300;
+	height: 56px;
+	line-height: 56px;
+	color: #fff;
+	font-size: 18px;
+	text-align: center;
+}
+
+.insure_footer .a1,
+.insure_footer .a3 {
+	float: left
+}
+
+.insure_footer .a1 {
+	width: 86%;
+	height: 100%;
+	background: #48a0f0;
+}
+
+.insure_footer .a2 {
+	display: none;
+	height: 100%
+}
+
+.insure_footer .a3 {
+	width: 14%;
+	height: 100%;
+	background: rgba(0, 0, 0, .8);
+	box-sizing: border-box;
+	border-right: 1px solid #4a4a4a
+}
+
+.insure_footer .a3 a {
+	color: #fff
+}
+
+.insure_footer .a3 span {
+	display: block;
+	height: 29px;
+	padding-top: 6px;
+	line-height: 29px;
+	font-size: 24px;
+}
+
+.insure_footer .a3 p {
+	text-align: center;
+	font-size: 16px;
+	line-height: 24px;
+	transform: scale(.84);
+	-webkit-transform: scale(.84);
+	-moz-transform: scanle(.84);
+	color: #fff;
+}
+
+.footer2 .a1,
+.footer2 .a2,
+.footer2 .a3 {
+	float: left
+}
+
+.footer2 .a1 {
+	width: 36%
+}
+
+.footer2 .a2 {
+	width: 50%;
+	background: rgba(0, 0, 0, .8);
+	display: block
+}
+
+.footer2 .a3 {
+	width: 14%;
+	background: rgba(0, 0, 0, .8);
+	display: block;
+	box-sizing: border-box;
+	border-right: 1px solid #4a4a4a
+}
+[v-cloak] {
+  display: none;
+}

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<!-- 忽略IOS将页面中的数字识别为电话号码 -->
+<meta name="format-detection" content="telephone=no" />
+<!-- 忽略Android平台中对邮箱地址的识别 -->
+<meta name="format-detection" content="email=no" />
+<!-- 缓存 -->
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<meta HTTP-EQUIV="expires" CONTENT="0">
+<title>车辆信息</title> 
+<link rel="stylesheet" href="css/mui/mui.min.css" />
+<link rel="stylesheet" href="css/mui/mui.picker.min.css" />
+<link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+
+<header  id="header" class="mui-bar mui-bar-nav header">
+	<a id="back" class="mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<h1 class="mui-title">车辆信息</h1>
+</header>
+
+<div id="licenseshadow" class="mui-backdrop" style="display: none;">
+	<div class="backdrop-content" style="margin-top: 100px;">
+		<p class="whitetext">请按照行驶证填写</p>
+		<br>
+		<img style="width: 100%" src="img/drivinglicense.png">
+		<br>
+		<br>
+		<img style="width:30px;" src="img/close.png">
+	</div>
+</div>
+
+<div id="contractshadow" class="mui-backdrop" style="display: none;">
+	<div class="backdrop-content"  style="margin-top: 100px;">
+		<p class="whitetext">请按照销售发票填写</p>
+		<br>
+		<img style="width: 100%" src="img/contract.png">
+		<br>
+		<br>
+		<img style="width:30px;" src="img/close.png">
+	</div>
+</div>
+
+<div id="idcardshadow" class="mui-backdrop" style="display: none;">
+	<div class="backdrop-content"  style="margin-top: 40px;">
+		<p class="whitetext">请按照身份证填写</p>
+		<br>
+		<img style="width: 100%" src="img/idcard.png">
+		<br>
+		<br>
+		<img style="width:30px;" src="img/close.png">
+	</div>
+</div>
+
+<div class="mui-content">
+	<div id="scroll" class="mui-scroll-wrapper">
+		<div class="mui-scroll">
+			<ul class="mui-table-view">
+				<li id="license" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-1 mui-text-left"><img class="middleimg" src="img/car.png"/></div>
+				        <div class="mui-col-xs-7 mui-text-left"><h4 class="">车辆信息</h4></div>
+				        <div class="mui-col-xs-4 mui-text-right"><span class="graytext">如何填写</span>&nbsp;<img class="smallimg" src="img/ask.png" /></div>
+				    </div>
+				</li>
+				<li id="rackno" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">车辆识别代码</span></div>
+				        <div class="mui-col-xs-8 mui-text-left"><input class="blacktext" type="text" autocomplete="off" maxlength="17" placeholder="请输入车辆识别代码" onkeyup="this.value=this.value.toUpperCase()" ></div>
+				    </div>
+				</li>
+				<li id="engineno" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">发动机号</span></div>
+				        <div class="mui-col-xs-8 mui-text-left"><input class="blacktext" type="text" autocomplete="off" maxlength="19" placeholder="请输入发动机号" onkeyup="this.value=this.value.toUpperCase()" ></div>
+				    </div>
+				</li>
+				<li id="registdate" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">车辆注册日期</span></div>
+				        <div class="mui-col-xs-7 mui-text-left"><input class="blacktext" type="text" autocomplete="off" readonly placeholder="请选择注册日期"></div>
+						<div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+				    </div>
+				</li>
+				<li id="istransfer" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">是否过户车</span></div>
+				        <div class="mui-col-xs-6"></div>
+				        	<div class="mui-col-xs-2 mui-text-right">
+					        	<div class="mui-switch mui-switch-mini">
+								<div class="mui-switch-handle"></div>
+							</div>
+				        </div>
+				    </div>
+				</li>
+				<li id="transferdate" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">车辆过户日期</span></div>
+				        <div class="mui-col-xs-7 mui-text-left"><input class="blacktext" type="text" readonly placeholder="请选择车辆过户日期"></div>
+						<div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+				    </div>
+				</li>
+				<li id="brandmodel" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">车辆品牌型号</span></div>
+				        <div class="mui-col-xs-7 mui-text-left"><input class="blacktext" type="text" readonly placeholder="请选择车辆品牌型号"></div>
+						<div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+				    </div>
+				</li>
+				<li id="seatcount" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">车辆座位数</span></div>
+				        <div class="mui-col-xs-8 mui-text-left"><input class="blacktext" type="text" maxlength="1" placeholder="座位数"></div>
+				    </div>
+				</li>
+				<li id="isforeign" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">是否外地车</span></div>
+				        <div class="mui-col-xs-6"></div>
+				        	<div class="mui-col-xs-2 mui-text-right">
+					        	<div class="mui-switch mui-switch-mini">
+								<div class="mui-switch-handle"></div>
+							</div>
+				        </div>
+				    </div>
+				</li>
+			</ul>
+			<br>
+			<ul id="certificate" class="mui-table-view">
+				<li id="contract" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-1 mui-text-left"><img class="middleimg" src="img/record.png"/></div>
+				        <div class="mui-col-xs-7 mui-text-left"><h4 class="">购买信息</h4></div>
+				        <div class="mui-col-xs-4 mui-text-right"><span class="graytext">如何填写</span>&nbsp;<img class="smallimg" src="img/ask.png" /></div>
+				    </div>
+				</li>
+				<li id="fueltype" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">车辆能源种类</span></div>
+				        <div class="mui-col-xs-7 mui-text-left"><input class="blacktext" type="text" readonly placeholder="请选择车辆能源种类"></div>
+						<div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+				    </div>
+				</li>
+				<li id="certificatetype" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">车辆来历凭证种类</span></div>
+				        <div class="mui-col-xs-7 mui-text-left"><input class="blacktext" type="text" readonly placeholder="请选择凭证种类"></div>
+						<div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+				    </div>
+				</li>
+				<li id="certificateno" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">车辆来历凭证编号</span></div>
+				        <div class="mui-col-xs-8 mui-text-left"><input class="blacktext" type="text" maxlength="30" placeholder="请输入凭证编号" onkeyup="this.value=this.value.toUpperCase()"></div>
+				    </div>
+				</li>
+				<li id="certificatedate" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">车辆来历凭证所载日期</span></div>
+				        <div class="mui-col-xs-7 mui-text-left"><input class="blacktext" type="text" readonly placeholder="请选择凭证所载日期"></div>
+						<div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+				    </div>
+				</li>
+			</ul>
+			<ul class="mui-table-view">
+				<li id="checkcode" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">验证码</span></div>
+				        <div class="mui-col-xs-4 mui-text-left"><input class="blacktext" type="text" autocomplete="off" maxlength="6" placeholder="验证码"></div>
+				        <div class="mui-col-xs-4 ">
+							<img class="checkimg" alt="验证码图片" >
+				        </div>
+				    </div>
+				</li>
+			</ul>
+			<br />
+			<ul class="mui-table-view">
+				<li id="idcard" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-1 mui-text-left"><img class="middleimg" src="img/carower.png"/></div>
+				        <div class="mui-col-xs-7 mui-text-left"><h4 class="">车主信息</h4></div>
+				        <div class="mui-col-xs-4 mui-text-right"><span class="graytext">如何填写</span>&nbsp;<img class="smallimg" src="img/ask.png" /></div>
+				    </div>
+				</li>
+				<li id="ownername" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">车主姓名</span></div>
+				        <div class="mui-col-xs-8 mui-text-left"><input class="blacktext" type="text" maxlength="20" placeholder="请输入车主姓名" ></div>
+				    </div>
+				</li>
+				<li id="ownermobile" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">车主手机号码</span></div>
+				        <div class="mui-col-xs-8 mui-text-left"><input class="blacktext" type="text" maxlength="11" placeholder="请输入车主手机号码" ></div>
+				    </div>
+				</li>
+				<li id="owneremail" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">车主邮箱</span></div>
+				        <div class="mui-col-xs-8 mui-text-left"><input class="blacktext" type="text" maxlength="50" placeholder="请输入车主邮箱" ></div>
+				    </div>
+				</li>
+				<li id="owneridcard" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">车主身份证号</span></div>
+				        <div class="mui-col-xs-8 mui-text-left"><input class="blacktext" type="text" maxlength="18" placeholder="请输入车主身份证号" onkeyup="this.value=this.value.toUpperCase()"></div>
+				    </div>
+				</li>
+				<li id="owneridbegindate" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">身份证有效起期</span></div>
+				        <div class="mui-col-xs-7 mui-text-left"><input class="blacktext" type="text" readonly placeholder="请选择身份证有效起期"></div>
+						<div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+				    </div>
+				</li>
+				<li id="owneridenddate" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">身份证有效止期</span></div>
+				        <div class="mui-col-xs-7 mui-text-left"><input class="blacktext" type="text" readonly placeholder="请选择身份证有效止期"></div>
+						<div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+				    </div>
+				</li>
+				<li id="ownernation" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">身份证民族</span></div>
+				        <div class="mui-col-xs-7 mui-text-left"><input class="blacktext" type="text" readonly placeholder="请选择身份证民族"></div>
+						<div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+				    </div>
+				</li>
+				<li id="ownerpublish" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">身份证签发机构</span></div>
+				        <div class="mui-col-xs-8 mui-text-left"><input class="blacktext" type="text" maxlength="50" placeholder="请输入身份证签发机构"></div>
+				    </div>
+				</li>
+			</ul>
+			<div class="mui-content-padded" >
+				<p class="mui-text-left notice"></p>
+				<button id="submit" type="button" class="mui-btn mui-btn-block mui-btn-outlined submitbtn">查看报价</button>
+				<br/>
+                <p class="mui-text-center">&nbsp;天安财险服务电话：95505</p>
+			</div>
+			<div id="scollfill" style="height: 250px;display: none;" >&nbsp;</div>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/zepto/zepto.min.js" ></script>
+<script type="text/javascript" src="js/mui/mui.min.js" ></script>
+<script type="text/javascript" src="js/mui/mui.picker.min.js" ></script>
+<script type="text/javascript" src="js/operatedata.js"></script>
+<script type="text/javascript" src="js/insurecarinfo.js"></script>
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="js/ajaxservice.js"></script>
+<script type="text/javascript" src="js/constant.js"></script>
+</html>

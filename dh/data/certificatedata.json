@@ -1,0 +1,48 @@
+{
+  "userCode": "",
+  "channel": "",
+  "transTime": "",
+  "transToken": "",
+  "statusCode": "000000",
+  "statusMessage": "",
+  "returns": {
+    "cacheValue": [
+      {
+        "text": "销售发票",
+        "value": "01"
+      },
+      {
+        "text": "法院调解书",
+        "value": "02"
+      },
+      {
+        "text": "法院裁定书",
+        "value": "03"
+      },
+      {
+        "text": "法院判决书",
+        "value": "04"
+      },
+      {
+        "text": "仲裁裁决书",
+        "value": "05"
+      },
+      {
+        "text": "相关文书（继承、赠予、协议抵债）",
+        "value": "06"
+      },
+      {
+        "text": "批准文件",
+        "value": "07"
+      },
+      {
+        "text": "调拨证明",
+        "value": "08"
+      },
+      {
+        "text": "修理发票",
+        "value": "09"
+      }
+    ]
+  }
+}

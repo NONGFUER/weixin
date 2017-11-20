@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>所在位置</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="../css/mui/mui.min.css" />
+    <link rel="stylesheet" href="../css/common/base.css">
+    <link rel="stylesheet" href="../css/common/public.css">
+    <style type="text/css">
+    	.channelEntry{
+    		margin-top:44px;
+    		padding-top:40px;
+    	}
+    	.channelButton{
+    		width:90%;
+    		height:60px;
+    		line-height:60px;
+    		margin:0 auto;
+    		background:#48a0f0;
+    		text-align:center;
+    		font-size:18px;
+    		color:#fff;
+    		margin-bottom:20px;
+    	}
+    </style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">渠道出单</h1>
+	</header>
+	<div class="channelEntry">
+		<div class="channelButton" id="mainChannel">全国通用渠道</div>
+		<div class="channelButton" id="otherChannel">其他渠道</div>
+	</div>
+	<script src="../js/util/zepto.min.js"></script>
+	<script src="../js/mui/mui.min.js"></script>
+	<script src="../js/util/base.js"></script>
+	<script src="../js/util/common.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//全国通用渠道
+			$('#mainChannel').unbind('tap').bind('tap',function(){
+				var urlParm = {};
+					//urlParm.openid     = getUrlQueryString("openid");	//用于登陆
+					urlParm.mobile     = getUrlQueryString("mobile");	//手机号
+					urlParm.customerId = getUrlQueryString("cusId");	//用户id
+					urlParm.roleType   = getUrlQueryString("roletype"); //用户角色
+					//openid=ohNt9vx44UP2EnqzE6_C2dOXZQ4Q&mobile=13852291705&cusId=812&roletype=01
+			  	var jsonStr = UrlEncode(JSON.stringify(urlParm));
+				window.location.href = base.url + 'weixin/insureChannels/channelInfo/channelInfo.html?jsonKey=' + jsonStr;//
+			});
+			//其他渠道
+			$('#otherChannel').unbind('tap').bind('tap',function(){
+				alert('其他渠道');
+			});
+		});
+	</script>
+</body>
+</html>

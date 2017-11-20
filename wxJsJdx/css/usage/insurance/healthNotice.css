@@ -1,0 +1,215 @@
+@charset "utf-8";
+.healthy-box .h01 {
+	position: relative;
+	font-family: SimHei;
+	overflow: inherit;
+	height: .34rem;
+	line-height: .34rem;
+	font-size: .15rem;
+	border-bottom: 1px solid #ccc;
+	margin: .0 0 0 .2rem
+}
+
+.healthy-box .h01:before {
+	content: "";
+	position: absolute;
+	z-index: 10;
+	width: 2px;
+	height: .15rem;
+	left: -.2rem;
+	top: 50%;
+	margin-top: -.075rem;
+	background: #1B6BB8
+}
+
+.healthy-box .box {
+	margin: .2rem .2rem 0
+}
+
+.healthy-box .infromCon {
+	margin-top: .2rem
+}
+
+.healthy-box .btnHaif {
+	width: 42%;
+	height: .4rem;
+	line-height: .4rem;
+	background: #1B6BB8;
+	color: #fff;
+	text-align: center;
+	font-size: .14rem;
+	border-radius: .06rem;
+	margin: .1rem 0 .2rem
+}
+
+.healthy-box .nobtnHaif {
+	width: 42%;
+	height: .4rem;
+	line-height: .4rem;
+	background: #FFFFFF;
+	color: #1B6BB8;
+	text-align: center;
+	font-size: .14rem;
+	border:1px solid #1B6BB8;
+	border-radius: .06rem;
+	margin: .1rem 0 .2rem
+}
+
+/*.healthy-box .errorBtn {
+	margin-top: .18rem
+}
+*/
+.healthy-box .gaozhiBtn {
+	border-bottom: 1px solid #1B6BB8;
+	display: inline-block
+}
+
+.baoxiantiaokuan .neirong {
+	max-height: 3.8rem;
+	box-sizing: border-box;
+	padding: 10px
+}
+
+.easeAmount {
+	width: .3rem;
+	height: .14rem;
+	line-height: .14rem;
+	padding: 0 .03rem;
+	text-align: right;
+	margin: 0 .03rem;
+	border-radius: .02rem;
+	border: 1px solid #ccc;
+	outline: 0
+}
+
+.easeAmount.error {
+	border-color: red
+}
+
+.health-BMI {
+	padding: .2rem 0
+}
+
+.health-BMI li {
+	margin-bottom: .1rem
+}
+
+.health-BMI li label {
+	width: .4rem;
+	line-height: .2rem;
+	display: inline-block
+}
+
+.health-BMI li input {
+	width: 1rem;
+	height: .18rem;
+	line-height: .18rem;
+	border-radius: .04rem;
+	text-align: right;
+	border: .01rem solid #ccc;
+	padding-right: .1rem
+}
+
+.health-BMI li input em {
+	width: .2rem;
+	line-height: .2rem;
+	display: inline-block
+}
+
+.health-BMI .bmi-result {
+	display: none
+}
+
+.zyselectBox {
+	height: .2rem;
+	line-height: .2rem;
+	margin-top: .1rem
+}
+
+.zyselectBox select {
+	width: 2rem;
+	height: .2rem;
+	line-height: .2rem
+}
+
+.zyselectBox span {
+	float: left;
+	width: .6rem
+}
+
+.zyselectBox .lastFloor,
+.zyselectBox select {
+	display: none
+}
+
+.zyselectBox .lastFloor:first-child,
+.zyselectBox select:first-child {
+	display: block
+}
+
+.zyselectBox .fail {
+	float: left;
+	overflow: hidden
+}
+
+.zyselectBox .fail-txt {
+	line-height: .4rem;
+	color: red;
+	padding: 0 .1rem
+}
+
+.zyselectBox .btn {
+	background: #1B6BB8;
+	color: #fff;
+	width: .8rem;
+	height: .3rem;
+	line-height: .3rem;
+	text-align: center;
+	border-radius: .04rem;
+	margin-top: .05rem;
+	display: inline-block
+}
+
+.selectBox5 {
+	overflow: hidden
+}
+
+.healthy-error {
+	display: none
+}
+
+.healthy-error p {
+	width: 94%;
+	line-height: .28rem;
+	margin: 0 auto;
+	text-align: left
+}
+
+.healthy-error .content {
+	padding: 25px 0
+}
+
+.healthy-error .a1 {
+	padding: 3px 0;
+	width: 1.45rem;
+	text-align: center;
+	background: #E3E5E7;
+	font-size: .15rem;
+	color: #646360;
+	display: block;
+	margin: 10px auto;
+	border-radius: .5rem
+}
+
+.healthy-error .a1 span {
+	margin-left: 10px
+}
+
+.healthy-error .d1 {
+	width: 70%;
+	margin: 0 auto
+}
+
+.healthy-error .d1 a {
+	width: 45%
+}

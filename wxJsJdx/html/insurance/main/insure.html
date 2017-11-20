@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>投保</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="../../../css/lib/widget/mui/mui.min.css" />
+    <link rel="stylesheet" href="../../../css/lib/widget/mui/mui.picker.min.css" />
+    <link rel="stylesheet" href="../../../css/lib/common/base.css">
+    <link rel="stylesheet" href="../../../css/lib/common/common.css">
+    <link rel="stylesheet" href="../../../css/usage/insurance/insure.css">
+</head>
+<body>
+    <div id="bodyMuiScroll" class="mui-scroll-wrapper">
+     	<div class="mui-scroll">
+     		<div class="insure-form-content">
+     			<!-- 投保人信息 -->
+     			<dl class="insure-form-group">
+     				<dt class="group-title">
+     					<div class="group-title-main">投保人信息</div><div id="commonHolders" class="isSame">常用保险人</div>
+     				</dt>
+     				<dd>
+     					<label>投保人姓名</label> <input type="text" id="insureName" value="" placeholder="请输入正确的姓名"/>
+     				</dd>
+     				<dd>
+     					<label>证件类型  </label> <input type="text" id="certificateType" value="身份证" readonly/>
+     				</dd>
+     				<dd>
+     					<label>证件号码  </label> <input type="text" id="certificateNo" value="" maxlength="18" placeholder="请输入正确的证件号码"/>
+     				</dd>
+     				<dd>
+     					<label>性别      </label> <input type="text" id="gender" value="" readonly data-gender=""/>
+     				</dd>
+     				<dd>
+     					<label>出生日期   </label> <input type="text" id="birthDate" value="" readonly/>
+     				</dd>
+     				<dd>
+     					<label>手机号码   </label> <input type="text" id="telNo" value="" maxlength="11" placeholder="请输入正确的手机号码"/>
+     				</dd>
+     				<dd style="display:none" class="diqu">
+     					<label>投保地区   </label> 
+     					
+     					<span class="zi">市</span>
+     					<img alt="" src="../../../image/insurance/down.png" class="down1 cdown">
+     					<span class="orgCityCode" id="orgCityCode">请选择</span>
+     					
+     					<span class="zi">省</span>
+     					<img alt="" src="../../../image/insurance/down.png" class="down1 pdown">
+     					<span class="orgProvinceCode" id="orgProvinceCode">请选择</span>
+     				</dd>
+     				<dd style="display:none">
+     					<label>地址/住址  </label> <input type="text" id="address" value="" maxlength="50" placeholder="请输入地址"/>
+     				</dd>
+     				<dd style="display:none" class="email">
+     					<label>电子邮箱 </label> <input type="text" id="email" value="" maxlength="20" placeholder="请输入电子邮箱"/>
+     				</dd>
+     			</dl>
+     			<!-- 被保人信息 -->
+     			<dl class="insure-form-group">
+     				<dt class="group-title">
+     					<div class="group-title-main">被保人信息</div> <div id="isSame" class="isSame on yincang"><img src="../../../image/common/gou.png" alt="">同投保人信息</div>
+     				</dt>
+     				<dd class="beiNone">
+     					<label>与投保人关系</label> <span id="relation">请选择</span>
+     					<!-- <input type="text" id="relation" value="请选择" data-relation="" readonly/> -->
+     				</dd>
+     				<dd class="beiNone">
+     					<label>被保人姓名  </label> <input type="text" id="recognizeeName" value="" placeholder="请输入正确的姓名"/>
+     				</dd>
+     				<dd class="beiNone">
+     					<label>证件类型    </label> <input type="text" id="recogCertificateType" value="身份证" readonly/>
+     				</dd>
+					<dd class="beiNone">
+     					<label>证件号码    </label> <input type="text" id="recogCertificateNo" value="" maxlength="18" placeholder="请输入正确的证件号码"/>
+					</dd >
+					<dd class="beiNone">
+     					<label>性别   	 </label> <input type="text" id="recogGender" value="" readonly/>
+					</dd>
+					<dd class="beiNone">
+     					<label>出生日期    </label> <input type="text" id="recogBirthDate" value="" readonly/>
+					</dd>
+					<!--
+					<dd class="beiNone">
+     					<label>手机号码    </label> <input type="text" id="recogTelNo" value="" maxlength="11" placeholder="请输入正确的手机号码"/>
+					</dd>
+					<-->					
+					<dd style="display:none" class="zhiye">
+     					<label>承保职业    </label> <img alt="" src="../../../image/insurance/wenhao.png" class="search"><img alt="" src="../../../image/insurance/down.png" class="down prdown"><span id="profession">请选择职业</span> 
+					</dd>
+					<dd class="llhmAddress">
+     					<label>房屋坐落地址 </label> <input type="text" id="FieldAA" value="" maxlength="50" placeholder="请输入房屋坐落地址"/>
+     				</dd>
+     				<dd class="Field">
+     					<label>交通工具种类   </label> <input type="text" id="FieldAD" value="机动车" readonly/>
+					</dd >
+					<dd class="Field">
+     					<label>使用性质   </label> <input type="text" id="FieldAG" value="非营运类" readonly/>
+					</dd >
+					<dd class="Field">
+     					<label>车架号   </label> <input type="text" id="FieldAJ" value="" maxlength="17" placeholder="请输入正确的车架号" />
+					</dd >
+					<dd class="Field">
+     					<label>车牌号   </label> <span class="xinche">新车未上牌</span><img id="chooseicon" class="chooseicon" src="../../../image/insurance/gouxuankuang.png"/><input type="text" id="FieldAI" value="" maxlength="8" placeholder="请输入正确的车牌号"/>
+					</dd >
+					<dd class="Field">
+     					<label>核定座位数   </label> <img alt="" src="../../../image/insurance/down.png" class="down zdown"><span id="FieldAN">请选择</span> 
+					</dd >   				    				     				     				     				
+				 </dl>
+				 <dl class="insure-form-group hidden" id="dai">
+     				<dt class="group-title">
+     					<div class="group-title-main">借贷合同信息</div> 
+     				</dt>     				
+     				<dd >
+     					<label>发放贷款银行名称：  </label> <input type="text" id="cBankName" value="" maxlength="50" placeholder="请输入发放贷款银行名称"/>
+     				</dd>
+					<dd >
+     					<label>贷款合同号：    </label> <input type="text" id="cHtNo" value="" maxlength="50" placeholder="请输入贷款合同号"/>
+					</dd >
+					<dd >
+     					<label>贷款起期：    </label> <input type="text" id="cDaiBegin" value="" maxlength="18" class="riqi" placeholder="请选择贷款起期" readonly/>
+					</dd >
+					<dd >
+     					<label>贷款止期：    </label> <input type="text" id="cDaiEnd" value="" maxlength="18" class="riqi" placeholder="请选择贷款止期" readonly/>
+					</dd >				   				    				     				     				     				
+				 </dl>
+				<!-- 保险信息 -->
+     			<dl class="insure-form-group">				
+     				<dt class="group-title">
+     					<div class="group-title-main">保险信息</div>
+     				</dt>
+     				<dd>
+     					<label>保险名称</label> <input type="text" id="insuranceName" value="" readonly/>
+     				</dd>
+     				<dd>
+     					<label>生效日期</label> <input type="text" id="effectivDate" value="" readonly/>
+     				</dd>
+     				<dd>
+     					<label>终止日期</label> <input type="text" id="endDate" value="" readonly/>
+     				</dd>
+					<dd>
+     					<label>受益人  </label> <input type="text" id="beneficiary" value="法定" readonly/>
+					</dd>
+					<dd style="height:auto">
+     					<label>保障说明</label> 
+						<div class="duty"></div>
+					</dd>			    				     				     				     				
+				 </dl>
+				<!-- 是否接受协议-->
+				<div class="footer-check footer " id="footer">
+	            	<p id="word" class="on">
+	                	<span id="tiaokuan" class="font1"></span> 我已经认真阅读<a class="tiaokuan">《保险条款》</a>、<a class="xuzhi">《保险须知》</a>,
+	                	了解并接受包括有关责任条款及免除责任条款等约定。
+	            	</p>           
+				</div>
+				<form id="f1" action="" style="display:none;" method='post'>
+					<textarea id="requestDoc" name="requestDoc"></textarea>
+					<input type="submit" value="Submit" />
+				</form>
+     		</div>
+     	</div>
+	 </div>
+	 <div id="insure_footer" class="insure_footer footer2">		
+		<div class="a3 kefu">
+			<a class="kefuPhone"><span class="iconfont">&#xe601;</span><p>客服</p></a>
+		</div>
+		<div class="a2"><span id="jwx_foot_price"></span></div>
+		<div id="toubao" class="a1">立即投保</div>
+	</div>
+    <script src="../../../js/lib/common/zepto.min.js"></script>
+    <script src="../../../js/lib/widget/mui/mui.min.js"></script>
+    <script src="../../../js/lib/widget/mui/mui.picker.min.js"></script>
+    <script src="../../../js/lib/common/base.js"></script>
+	<script src="../../../js/lib/common/common.js"></script>
+	<script src="../../../js/usage/insurance/head.js?v=201710251904"></script>
+	<script src="../../../js/usage/insurance/insure.js?v=201710250907"></script>
+</body>
+</html>

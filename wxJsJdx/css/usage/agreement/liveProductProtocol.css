@@ -1,0 +1,161 @@
+.mui-title {
+	color: #FFFFFF;
+	font-size: 18px;
+}
+
+.mui-bar {
+	background-color: #1b6bb8;
+	height: 44px;
+}
+
+.mui-icon {
+	color: #FFFFFF;
+	padding-top: 5px!important;
+	padding-bottom: 5px!important;
+	font-size: 32px!important;
+	margin-right: -10px;
+	margin-left: -10px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+
+/*内容*/
+
+.man_title {
+	text-align: center;
+	width: 100%;
+	color: #333;
+	box-sizing: border-box;
+	border-bottom: 2px solid #ddd;
+	text-align: center;
+	background: #fff;
+	font-weight: bold;
+}
+
+.man_title_div {
+	padding: 5px;
+}
+
+.man_title h3 {
+	font-size: 17px;
+	line-height: 25px;
+}
+
+.countarea {
+	width: 100%;
+	height: 44px;
+	line-height: 44px;
+	background-color: #fff;
+	font-size: 16px;
+	color: #333;
+	margin-top: 0.5rem;
+}
+
+.countarea div {
+	display: inline-block;
+}
+
+.countlisttext {
+	margin-left: 5%;
+	position: relative;
+	top: 2px;
+}
+
+.clear {
+	clear: both;
+}
+
+.img {
+	float: right;
+	margin-right: 5%;
+	max-width: 100%;
+	margin-top: 5px;
+}
+
+.specially {
+	padding-left: 5.56%;
+	padding-right: 1.45rem;
+	padding-top: 0.8rem;
+	padding-bottom: 0.6rem;
+	background: #fafafa;
+}
+
+.specially p {
+	width: 100%;
+	text-align: justify;
+	font-size: 10px;
+	color: #000;
+	margin-bottom: 0.3rem;
+}
+
+/*头部*/
+header .h_title {
+	float: left;
+	width: 50%;
+	height: 44px;
+	line-height: 44px;
+	font-size: 17px;
+	color: #000;
+	text-align: center;
+	font-weight: 500;
+	color: #fff;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+header .h_next {
+	float: right;
+	width: 20%;
+	height: 3.5833rem;
+	color: #000;
+	margin-left: 4.5%;
+}
+
+header .h_back div {
+	width: 12%;
+	height: 1.5rem;
+}
+
+img {
+	max-width: 100%;
+	width: 100%;
+	vertical-align: middle;
+	border: 0;
+}
+
+#list {
+	margin-top: 3.5833rem;
+	border-top: 2px solid #dee3de;
+}
+a{
+	color: #FFFFFF;
+}
+
+.pdiv{
+	display:block;
+	line-height:44px;
+	color:black;
+	height:44px;
+	text-align:center;
+	background:#fff;
+	width:100%;
+	padding: 12px 4%;
+}
+
+.ltk{
+	float: left;
+    height: 20px;
+    line-height: 20px;
+    font-size: 13px;
+}
+.rtk{
+	float: right;
+    background: #48a0f0;
+    color: #fff;
+    height: 20px;
+    line-height: 20px;
+    width: 50px;
+    font-size: 13px;
+}

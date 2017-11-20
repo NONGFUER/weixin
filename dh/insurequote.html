@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<!-- 忽略IOS将页面中的数字识别为电话号码 -->
+<meta name="format-detection" content="telephone=no" />
+<!-- 忽略Android平台中对邮箱地址的识别 -->
+<meta name="format-detection" content="email=no" />
+<!-- 缓存 -->
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<meta HTTP-EQUIV="expires" CONTENT="0">
+<title>精确报价</title>
+	<link rel="stylesheet" href="css/mui/mui.min.css" />
+	<link rel="stylesheet" href="css/mui/mui.picker.min.css" />
+	<link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+
+<header  id="header" class="mui-bar mui-bar-nav header">
+	<a id="back" class="mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<h1 class="mui-title">精确报价</h1>
+</header>
+
+<div class="mui-content">
+	<div id="scroll" class="mui-scroll-wrapper">
+		<div class="mui-scroll">
+			<ul class="mui-table-view">
+				<li  class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-1 mui-text-left"><img class="middleimg" src="img/car.png"/></div>
+				        <div class="mui-col-xs-6 mui-text-left"><span>被保车辆</span></div>
+						<div class="mui-col-xs-5 mui-text-right"><span id="plateno" class="graytext"></span></div>
+				    </div>
+				</li>
+				<li id="price" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-3 mui-text-left"><img class="bigimg" src="img/logo.png"/></div>
+				        <div class="mui-col-xs-3 mui-text-left"><b class="graytext">&nbsp;天安车险<br />出行更放心</b></div>
+						<div class="mui-col-xs-5 mui-text-right"><b class="feetext"><h3 id="totalpre" ></h3></b></div>
+				        <div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+				    </div>
+				</li>
+				<li id="jqx" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-1 mui-text-left"><img class="middleimg" src="img/time.png"/></div>
+				        <div class="mui-col-xs-6 mui-text-left"><span class="graytext">交强险起保时间</span><br/><span class="blacktext">交强险保费</span><br/><span class="blacktext">车&nbsp;&nbsp;&nbsp;&nbsp;船&nbsp;&nbsp;&nbsp;税</span></div>
+				        <div class="mui-col-xs-4 mui-text-left"><input id="jqxbegindate" class="redtext" type="text" readonly placeholder="起保时间"><span id="jqxpre" class="blacktext"></span><br /><span id="vehicletaxpre" class="blacktext"></span></div>
+				        <div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+				    </div>
+				</li>
+				<li id="business" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-1 mui-text-left"><img class="middleimg" src="img/time.png"/></div>
+				        <div class="mui-col-xs-6 mui-text-left"><span class="graytext">商业险起保时间</span><br/><span class="blacktext">商业险保费</span></div>
+				        <div class="mui-col-xs-4 mui-text-left"><input id="businessbegindate" class="redtext" type="text" readonly placeholder="起保时间"><span id="businesspre" class="blacktext"></span></div>
+				        <div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+				    </div>
+				</li>
+			</ul>
+			<p>
+				<ul id="addaddress" class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="mui-row">
+					        <div class="mui-col-xs-1 mui-text-left"><img class="middleimg" src="img/address.png"/></div>
+					        <div class="mui-col-xs-10 mui-text-left"><span>保单邮寄地址</span></div>
+					        <div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+					   </div>
+					</li>
+				</ul>
+				<ul id="address" class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="mui-row">
+							<div class="mui-col-xs-5 mui-text-center"><span id="addressprovince" class="blacktext"></span></div>
+							<div class="mui-col-xs-3 mui-text-center"><span id="addressname" class="blacktext"></span></div>
+							<div class="mui-col-xs-4 mui-text-center"><span id="addressmobile" class="blacktext"></span></div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-row">
+							<div class="mui-col-xs-12 mui-text-left"><span id="addressinfo" class="blacktext"></span></div>
+						</div>
+					</li>
+				</ul>
+			</p>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-1 mui-text-left"><img class="middleimg" src="img/info.png"/></div>
+				        <div class="mui-col-xs-11 mui-text-left"><span>投保信息</span></div>
+				    </div>
+				</li>
+				<li id="insured" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-10 mui-text-left ">被保人信息与车主一致</div>
+				        	<div class="mui-col-xs-2 mui-text-right">
+					        	<div class="mui-switch mui-switch-mini ">
+								<div class="mui-switch-handle"></div>
+							</div>
+				        </div>
+				    </div>
+				</li>
+				<ul id="insuredinfo" class="mui-table-view">
+					<li id="insuredname" class="mui-table-view-cell">
+						<div class="mui-row">
+					        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">被保人姓名</span></div>
+					        <div class="mui-col-xs-8 mui-text-left"><input class="graytext" type="text" maxlength="20" placeholder="请输入被保人姓名" ></div>
+					    </div>
+					</li>
+					<li id="insuredidcard" class="mui-table-view-cell">
+						<div class="mui-row">
+					        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">被投人身份证号</span></div>
+					        <div class="mui-col-xs-8 mui-text-left"><input class="graytext" type="text" maxlength="18" placeholder="请输入被保人身份证号" onkeyup="this.value=this.value.toUpperCase()"></div>
+					    </div>
+					</li>
+					<li id="insuredmobile" class="mui-table-view-cell">
+						<div class="mui-row">
+					        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">被保人手机号码</span></div>
+					        <div class="mui-col-xs-8 mui-text-left"><input class="graytext" type="text" maxlength="11" placeholder="请输入被保人手机号码" ></div>
+					    </div>
+					</li>
+					<li id="insuredemail" class="mui-table-view-cell">
+						<div class="mui-row">
+					        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">被保人邮箱</span></div>
+					        <div class="mui-col-xs-8 mui-text-left"><input class="graytext" type="text" maxlength="50" placeholder="请输入被保人邮箱" ></div>
+					    </div>
+					</li>
+					
+					<li id="insuredidbegindate" class="mui-table-view-cell">
+						<div class="mui-row">
+					        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">身份证有效起期</span></div>
+					        <div class="mui-col-xs-7 mui-text-left"><input class="graytext" type="text" readonly placeholder="请选择身份证有效起期"></div>
+					        <div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+					    </div>
+					</li>
+					<li id="insuredidenddate" class="mui-table-view-cell">
+						<div class="mui-row">
+					        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">身份证有效止期</span></div>
+					        <div class="mui-col-xs-7 mui-text-left"><input class="graytext" type="text" readonly placeholder="请选择身份证有效止期"></div>
+					        <div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+					    </div>
+					</li>
+					<li id="insurednation" class="mui-table-view-cell">
+						<div class="mui-row">
+					        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">身份证民族</span></div>
+					        <div class="mui-col-xs-7 mui-text-left"><input class="graytext" type="text" readonly placeholder="请选择身份证民族"></div>
+					        <div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+					    </div>
+					</li>
+					<li id="insuredpublish" class="mui-table-view-cell">
+						<div class="mui-row">
+					        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">身份证签发机构</span></div>
+					        <div class="mui-col-xs-8 mui-text-left"><input class="graytext" type="text" maxlength="50" placeholder="请输入身份证签发机构" ></div>
+					    </div>
+					</li>
+				</ul>
+				<li id="policyholder" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-10 mui-text-left">投保人信息与车主一致</div>
+				        	<div class="mui-col-xs-2 mui-text-right">
+					        	<div class="mui-switch mui-switch-mini">
+								<div class="mui-switch-handle"></div>
+							</div>
+				        </div>
+				    </div>
+				</li>
+				<ul id="policyholderinfo" class="mui-table-view">
+					<li id="policyholdername" class="mui-table-view-cell">
+						<div class="mui-row">
+					        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">投保人姓名</span></div>
+					        <div class="mui-col-xs-8 mui-text-left"><input class="graytext" type="text" maxlength="20" placeholder="请输入投保人姓名" ></div>
+					    </div>
+					</li>
+					<li id="policyholderidcard" class="mui-table-view-cell">
+						<div class="mui-row">
+					        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">投保人身份证号</span></div>
+					        <div class="mui-col-xs-8 mui-text-left"><input class="graytext" type="text" maxlength="18" placeholder="请输入投保人身份证号" onkeyup="this.value=this.value.toUpperCase()"></div>
+					    </div>
+					</li>
+					<li id="policyholdermobile" class="mui-table-view-cell">
+						<div class="mui-row">
+					        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">投保人手机号码</span></div>
+					        <div class="mui-col-xs-8 mui-text-left"><input class="graytext" type="text" maxlength="11" placeholder="请输入投保人手机号码" ></div>
+					    </div>
+					</li>
+					<li id="policyholderemail" class="mui-table-view-cell">
+						<div class="mui-row">
+					        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">投保人邮箱</span></div>
+					        <div class="mui-col-xs-8 mui-text-left"><input class="graytext" type="text" maxlength="50" placeholder="请输入投保人邮箱" ></div>
+					    </div>
+					</li>
+					
+					<li id="policyholderidbegindate" class="mui-table-view-cell">
+						<div class="mui-row">
+					        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">身份证有效起期</span></div>
+					        <div class="mui-col-xs-7 mui-text-left"><input class="graytext" type="text" readonly placeholder="请选择身份证有效起期"></div>
+					        <div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+					    </div>
+					</li>
+					<li id="policyholderidenddate" class="mui-table-view-cell">
+						<div class="mui-row">
+					        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">身份证有效止期</span></div>
+					        <div class="mui-col-xs-7 mui-text-left"><input class="graytext" type="text" readonly placeholder="请选择身份证有效止期"></div>
+					        <div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+					    </div>
+					</li>
+					<li id="policyholdernation" class="mui-table-view-cell">
+						<div class="mui-row">
+					        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">身份证民族</span></div>
+					        <div class="mui-col-xs-7 mui-text-left"><input class="graytext" type="text" readonly placeholder="请选择身份证民族"></div>
+					        <div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+					    </div>
+					</li>
+					<li id="policyholderpublish" class="mui-table-view-cell">
+						<div class="mui-row">
+					        <div class="mui-col-xs-4 mui-text-left"><span class="blacktext">身份证签发机构</span></div>
+					        <div class="mui-col-xs-8 mui-text-left"><input class="graytext" type="text" maxlength="50" placeholder="请输入身份证签发机构" ></div>
+					    </div>
+					</li>
+				</ul>
+			</ul>
+			
+			<div class="mui-content-padded" >
+				<p class="mui-text-left notice"></p>
+				<button id="submit" type="button" class="mui-btn mui-btn-block mui-btn-outlined submitbtn">立即投保</button>
+				<br/>
+                <p class="mui-text-center">&nbsp;天安财险服务电话：95505</p>
+			</div>
+			<div id="scollfill" style="height: 250px;display: none;" >&nbsp;</div>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/zepto/zepto.min.js" ></script>
+<script type="text/javascript" src="js/mui/mui.min.js" ></script>
+<script type="text/javascript" src="js/mui/mui.picker.min.js" ></script>
+<script type="text/javascript" src="js/operatedata.js"></script>
+<script type="text/javascript" src="js/insurequote.js?20171120"></script>
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="js/ajaxservice.js"></script>
+<script type="text/javascript" src="js/constant.js"></script>
+
+</html>

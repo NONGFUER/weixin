@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<!-- 忽略IOS将页面中的数字识别为电话号码 -->
+		<meta name="format-detection" content="telephone=no" />
+		<!-- 忽略Android平台中对邮箱地址的识别 -->
+		<meta name="format-detection" content="email=no" />
+		<title>保险须知</title>
+		<link rel="stylesheet" href="../../css/lib/widget/mui/mui.min.css" />
+		<link rel="stylesheet" href="../../css/lib/common/base.css" />
+		<link rel="stylesheet" href="../../css/lib/common/common.css" />
+		<link rel="stylesheet" href="../../css/usage/agreement/tiaokuan.css" />	
+		
+	</head>
+
+	<body>
+		<div id="noticecontent" class="mui-scroll-wrapper">
+			<section id="noticecontainer2" class="noticecontainer mui-scroll">
+
+				<div class="notice">
+					<p class="b">保险须知</p>
+					<div class="render" style="font-size:14px"></div>
+									
+					
+				</div>
+			</section>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/lib/common/zepto.min.js"></script>
+	<script type="text/javascript" src="../../js/lib/widget/mui/mui.min.js" ></script>
+	<script type="text/javascript" src="../../js/lib/common/base.js" ></script>
+    <script type="text/javascript" src="../../js/lib/common/common.js" ></script>	
+	 <script>
+		var myScroll;
+		var urlParm = JSON.parse(UrlDecode(getUrlQueryString("jsonKey")));	
+		var ccId = urlParm.ccId;				//上个页面传过来的riskCode
+		var mobile = urlParm.mobile;
+		$(function() {
+			getXuzhi();
+			$(".h_back").unbind("tap").bind("tap",function(){
+				window.history.back();
+			})
+		/*设置滑动区域*/
+			$.setscroll();
+		});
+		function getXuzhi(){
+			var url = base.url + "commodityCombination/getNotice.do";
+			var reqData = {
+					"head":{
+						"channel"  :"01",
+						"userCode" :mobile,
+						"transTime":$.getTimeStr(),
+						"transToken":""
+					},
+					"body":{
+						"commodityCombinationId": ccId
+					}
+			};
+			$.reqAjaxs(url,reqData,xuzhi);
+		}
+		function xuzhi(data){			
+			if(data.statusCode == "000000"){
+				console.log(data.returns.notice.modueInfo)
+				var xuzhiContent = data.returns.notice.modueInfo;
+				//xuzhiContent = xuzhiContent.replace(/\|/gi, "<br/>")
+				$(".render").html(xuzhiContent);
+			}else{
+				modelAlert(data.statusMessage);
+			}
+			
+		}
+
+		/*设置滑动区域*/
+		$.setscroll = function() {
+			var Scrollheight = window.innerHeight - $("header").height() - 10;
+			$("#noticecontent").height(Scrollheight + "px");
+		};
+		function backlast(){			
+			urlParm.leftIco = "1";
+			urlParm.rightIco = "0";
+			urlParm.downIco = "0";
+			if( urlParm.frompage == "insureHtml" ){
+				urlParm.title = "投保信息";
+				var jsonStr = UrlEncode(JSON.stringify(urlParm));
+				var toUrl = base.url + "tongdaoApp/html/insurance/main/insure.html?jsonKey="+jsonStr;
+			}else if( urlParm.frompage == "jcxHtml" ){
+				urlParm.title = "驾乘人员意外伤害保险";
+				var jsonStr = UrlEncode(JSON.stringify(urlParm));
+				var toUrl = base.url + "tongdaoApp/html/insurance/jiachengxian/jcxshouye.html?jsonKey="+jsonStr;
+			}			
+			window.location.href = toUrl;
+			
+		}
+	</script>
+</html>

@@ -1,0 +1,151 @@
+#tagScroll{
+	background:#fff;
+}
+#slider{
+	margin-top:44px;
+}
+#item1mobile{
+	height:500px;
+}
+#item2mobile{
+	height:500px;
+}
+#item3mobile,
+#item4mobile,
+#item5mobile,
+#item6mobile,
+#item7mobile,
+#item8mobile,
+#item9mobile,
+#item10mobile,
+#item11mobile,
+#item12mobile,
+#item13mobile,
+#item14mobile,
+#item15mobile,
+#item16mobile,
+#item17mobile{
+	height:500px;
+}
+
+/* -------------------------------------------------------------------------- */
+.product-item{
+	padding: 17px 4% 17px 0;
+	border-bottom:1px solid #ccc;
+}
+.product-items{
+	background:#fff;
+	padding-left:4%;
+}
+.item-img{
+	width:110px;
+}
+.item-detail{
+	float:left;
+	height:100%;
+}
+.item-img{
+	float:left;
+}
+
+.box-flex0 {
+    box-flex: 0;
+    -webkit-box-flex: 0;
+}
+
+.con-box .list {
+    position: relative;
+    z-index: 1;
+    padding: 17px 4% 17px 0;
+    border-bottom: 1px solid #ebecf1;
+}
+.display-box {
+    display: box;
+    display: -webkit-box;
+}
+
+.con-box .list #pic {
+    width: 110px;
+    height:80px;
+    display: block;
+    background-color: #ccc;
+}
+
+.con-box .list .cont {
+    margin-left: 15px;
+    padding: 4px 0;
+}
+.box-flex1 {
+    box-flex: 1;
+    -webkit-box-flex: 1;
+}
+
+
+.con-box .list h3 {
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    color: #444;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.con-box .list .tips {
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    color: #999;
+    margin-top: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.con-box .list .price-box {
+    height: 32px;
+    line-height: 32px;
+    color: #999;
+    font-size: 18px;
+    text-align: left;
+    overflow: hidden;
+    color: #ff6e1a;
+}
+
+
+.con-box .list .price-box .price {
+    position: relative;
+    top: -2px;
+    float: left;
+    color: #e60012;
+    font-size: 12px;
+}
+
+.con-box .list .price-box .coupon-type {
+    float: left;
+    overflow: hidden;
+    padding-left: .24rem;
+    margin-top: .02rem;
+}
+.con-box .list .com-vol {
+    height: .3rem;
+    line-height: .3rem;
+    font-size: .24rem;
+}
+.con-box .list .com-vol .complany {
+    color: #ff6f00;
+    margin-right: .3rem;
+}
+#proGroup{
+	transition-duration: 1000ms !important;
+}
+.locaicon{
+	font-size: 16px;
+    position: relative;
+    z-index: 20;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}

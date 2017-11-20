@@ -4,8 +4,9 @@ var fromtype = getUrlQueryString("fromtype");
 var jsonKey = getUrlQueryString("jsonKey");
 var wxchannel = getUrlQueryString("wxchannel");
 var inviterPhone = getUrlQueryString("inviterPhone") ? getUrlQueryString("inviterPhone") : "";
-if(jsonKey){
+if(jsonKey) {
 	var urlParm = JSON.parse(UrlDecode(jsonKey));
+	var shareMobile=urlParm.shareMobile;
 }
 
 $(function() {
@@ -35,6 +36,7 @@ $(function() {
 	$(".h_back").bind("tap", function() {
 		$(".first").show();
 		$(".second").hide();
+		$('.mui-scroll').css('transform','translate3d(0px, 0px, 0px)');
 	});
 	//点击获取验证码
 	$("#getPIN").on("tap", function() {
@@ -50,26 +52,26 @@ $(function() {
 			countdown = 60;
 			settime();
 			getRegCodeRequest();
-//			var url = base.url + "/customer/GetRegCode.do";
-//			var reqData = {
-//				"head": {
-//					"userCode": "",
-//					"transTime": $.getTimeStr(),
-//					"channel": "1"
-//				},
-//				"body": {
-//					"userName": $("#phone_input").val(),
-//					"type": "103"
-//				}
-//			};
-//			$.reqAjaxs(url, reqData, function(data) {
-//				console.log(data);
-//				if(data.statusCode == "000000") {
-//					validateCode = data.returns.validateCode;
-//				} else {
-//					modelAlert(data.statusMessage);
-//				}
-//			});
+			//			var url = base.url + "/customer/GetRegCode.do";
+			//			var reqData = {
+			//				"head": {
+			//					"userCode": "",
+			//					"transTime": $.getTimeStr(),
+			//					"channel": "1"
+			//				},
+			//				"body": {
+			//					"userName": $("#phone_input").val(),
+			//					"type": "103"
+			//				}
+			//			};
+			//			$.reqAjaxs(url, reqData, function(data) {
+			//				console.log(data);
+			//				if(data.statusCode == "000000") {
+			//					validateCode = data.returns.validateCode;
+			//				} else {
+			//					modelAlert(data.statusMessage);
+			//				}
+			//			});
 		} else {
 			modelAlert('手机号校验错误，请重新输入！');
 		}
@@ -248,25 +250,25 @@ function suixinyiPage() {
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 //发送短信
-function  getRegCodeRequest(){
+function getRegCodeRequest() {
 	var url = req.getRegCode;
 	var reqData = {
 		"head": {
 			"channel": "02",
 			"userCode": "",
 			"transTime": $.getTimeStr(),
-			"transToken":""
+			"transToken": ""
 		},
 		"body": {
 			"userName": $("#phone_input").val(),
-			"type": "1105"//103
+			"type": "1105" //103
 		}
 	};
-	$.reqAjaxs( url, reqData, getRegCodeCallBack );
+	$.reqAjaxs(url, reqData, getRegCodeCallBack);
 }
 
 //发送短信回掉，获取到验证码
-function getRegCodeCallBack(data){
+function getRegCodeCallBack(data) {
 	console.log(data);
 	if(data.statusCode == "000000") {
 		validateCode = data.returns.validateCode;
@@ -283,137 +285,163 @@ function validate(phoneNo) {
 			"userCode": "",
 			"transTime": $.getTimeStr(),
 			"channel": "02",
-			"transToken" : ""
+			"transToken": ""
 		},
 		"body": {
-			 "userName": phoneNo,
-			 "passWord": "",
-			 "uuid":"",
-			 "version":"",
-			 "mobileSf":"",
+			"userName": phoneNo,
+			"passWord": "",
+			"uuid": "",
+			"version": "",
+			"mobileSf": "",
 			// "loginSystem": "03",	//03同道出行 04 通道代理人
-			 "systemVersion":"",
-			 "loginType": "",
-			 "openId": openid,
-			 "inviterPhone":inviterPhone
+			"systemVersion": "",
+			"loginType": "",
+			"openId": openid,
+			"inviterPhone": inviterPhone
 		}
 	};
-	if( wxchannel == "02" ){
+	if(wxchannel == "02") {
 		reqData.body.loginSystem = "04";
-	}else{
+	} else {
 		reqData.body.loginSystem = "03";
 	}
-	$.reqAjaxs(url, reqData, loginCallBack );
+	$.reqAjaxs(url, reqData, loginCallBack);
 }
-function loginCallBack(data){
+
+function loginCallBack(data) {
 	console.log(data);
 	if(data.statusCode == "000000") {
 		$("#phone_input").val("请输入手机号码");
 		$("#valificationCode_input").val("请输入验证码");
-		$("#getPIN").val("获取验证码");		
+		$("#getPIN").val("获取验证码");
 		var customerId = data.returns.customerBasic.id + "";
 		var userName = data.returns.customerBasic.userName;
 		var type = data.returns.customerBasic.type;
 		var idAuth = data.returns.customerBasic.idAuth;
 		if(fromtype == "1") { //个人中心
-			window.location.href = "personal.html?fromtype=1&mobile=" + userName + "&roleType=" + type + "&customerId=" + customerId + "&openid=" + openid + "&wxchannel="+wxchannel+"&idAuth="+idAuth;
-		}else if( fromtype == "online" ){		
-			toOnlineInsureHtml(customerId,userName,type);
-		}else if( fromtype == "onlineHealth" ){
-			toOnlineHealthHtml(customerId,userName,type);
-		}else if( fromtype == "jcx" ){
-			toJcxInsureHtml(customerId,userName,type);
-		}else if( fromtype == "ghx" ){
-			toOnlineInsureHtml(customerId,userName,type);
-		}else if( fromtype == "licai" ){
-			toOnlicaiHealthHtml(customerId,userName,type);
-		}else if( fromtype == "cancerWechat" ){
-			toCancerWechatHtml(customerId,userName,type);
-		}else if( fromtype == "cancerHealthWechat" ){
-			toCancerHealthWechatHtml(customerId,userName,type);
-		}else if( fromtype == "7" ){
-			toOnjiachangHealthHtml(customerId,userName,type);
-		}else if( fromtype == "2" ){
-			mydingdanHtml(customerId,userName,type);
-		}else if( fromtype == "3" ){
-			mybaodanHtml(customerId,userName,type);
-		}else if( fromtype == "8" ){
-			toOnjiachangHealthHtml(customerId,userName,type);
-		}			
-	}else{
+			window.location.href = "personal.html?fromtype=1&mobile=" + userName + "&roleType=" + type + "&customerId=" + customerId + "&openid=" + openid + "&wxchannel=" + wxchannel + "&idAuth=" + idAuth;
+		} else if(fromtype == "online") {
+			toOnlineInsureHtml(customerId, userName, type);
+		} else if(fromtype == "onlineHealth") {
+			toOnlineHealthHtml(customerId, userName, type);
+		} else if(fromtype == "jcx") {
+			toJcxInsureHtml(customerId, userName, type);
+		} else if(fromtype == "ghx") {
+			toOnlineInsureHtml(customerId, userName, type);
+		} else if(fromtype == "licai") {
+			toOnlicaiHealthHtml(customerId, userName, type);
+		} else if(fromtype == "cancerWechat") {
+			toCancerWechatHtml(customerId, userName, type);
+		} else if(fromtype == "cancerHealthWechat") {
+			toCancerHealthWechatHtml(customerId, userName, type);
+		}else if(fromtype == "jsjdx"){	//晋商借贷险
+			toJsjdxWechatHtml(customerId, userName, type);
+		} else if(fromtype == "7") {
+			toOnjiachangHealthHtml(customerId, userName, type);
+		} else if(fromtype == "2") {
+			mydingdanHtml(customerId, userName, type);
+		} else if(fromtype == "3") {
+			mybaodanHtml(customerId, userName, type);
+		} else if(fromtype == "8") {
+			toOnjiachangHealthHtml(customerId, userName, type);
+		}
+	} else {
 		modelAlert(data.statusMessage);
-	}	
+	}
 }
 
 //跳转驾乘险
-function toJcxInsureHtml(customerId,userName,type){
+function toJcxInsureHtml(customerId, userName, type) {
 	urlParm.customerId = customerId;
 	urlParm.mobile = userName;
 	urlParm.roleType = type;
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
-	window.location.href = base.url +"tongdaoApp/html/share/insurance/jiachengxian/jcxshouyeShare.html?jsonKey="+jsonStr; 
+	window.location.href = base.url + "tongdaoApp/html/share/insurance/jiachengxian/jcxshouyeShare.html?jsonKey=" + jsonStr;
 }
-//跳转在线投保||挂号线
-function toOnlineInsureHtml(customerId,userName,type){
+//跳转在线投保||挂号线||保全家
+function toOnlineInsureHtml(customerId, userName, type) {
 	urlParm.customerId = customerId;
 	urlParm.mobile = userName;
 	urlParm.roleType = type;
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
-	window.location.href = base.url + "tongdaoApp/html/share/insurance/main/insure.html?jsonKey="+jsonStr;
+	if( urlParm.ccId == "21" ){	//
+		window.location.href = base.url + "tongdaoApp/html/share/insurance/yian/familyInsure.html?jsonKey=" + jsonStr; 
+	}else{
+		window.location.href = base.url + "tongdaoApp/html/share/insurance/main/insure.html?jsonKey=" + jsonStr;
+	}
+	
 }
 //跳转健康告知
-function toOnlineHealthHtml(customerId,userName,type){
+function toOnlineHealthHtml(customerId, userName, type) {
 	urlParm.customerId = customerId;
 	urlParm.mobile = userName;
 	urlParm.roleType = type;
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
-	window.location.href = base.url + "tongdaoApp/html/share/insurance/main/healthNotice.html?jsonKey="+jsonStr;
+	window.location.href = base.url + "tongdaoApp/html/share/insurance/main/healthNotice.html?jsonKey=" + jsonStr;
 }
 //跳转youchu在线投保||挂号线
-function toCancerWechatHtml(customerId,userName,type){
+function toCancerWechatHtml(customerId, userName, type) {
 	urlParm.customerId = customerId;
 	urlParm.mobile = userName;
 	urlParm.roleType = type;
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
-	window.location.href = base.url + "weixin/ycCancer/html/insurance/main/insure.html?jsonKey="+jsonStr;
+	window.location.href = base.url + "weixin/ycCancer/html/insurance/main/insure.html?jsonKey=" + jsonStr;
+}
+//跳转晋商借贷险在线投保
+function toJsjdxWechatHtml(customerId, userName, type) {
+	urlParm.customerId = customerId;
+	urlParm.mobile = userName;
+	urlParm.roleType = type;
+	var jsonStr = UrlEncode(JSON.stringify(urlParm));
+	window.location.href = base.url + "weixin/wxJsJdx/html/insurance/main/insure.html?jsonKey=" + jsonStr;
 }
 //跳转youchu健康告知
-function toCancerHealthWechatHtml(customerId,userName,type){
+function toCancerHealthWechatHtml(customerId, userName, type) {
 	urlParm.customerId = customerId;
 	urlParm.mobile = userName;
 	urlParm.roleType = type;
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
-	window.location.href = base.url + "weixin/ycCancer/html/insurance/main/healthNotice.html?jsonKey="+jsonStr;
+	window.location.href = base.url + "weixin/ycCancer/html/insurance/main/healthNotice.html?jsonKey=" + jsonStr;
 }
 /*跳转理财*/
-function toOnlicaiHealthHtml(customerId,userName,type){
+function toOnlicaiHealthHtml(customerId, userName, type) {
 	urlParm.customerId = customerId;
 	urlParm.userCode = userName;
 	urlParm.roleType = type;
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
-	window.location.href = base.url + "tongdaoApp/html/managemoney/productDetailsWeChat/productDetailsWeChat.html?jsonKey="+jsonStr;
+	window.location.href = base.url + "tongdaoApp/html/managemoney/productDetailsWeChat/productDetailsWeChat.html?jsonKey=" + jsonStr;
 }
 /*我的订单*/
-function mydingdanHtml(customerId,userName,type){
+function mydingdanHtml(customerId, userName, type) {
+	if(urlParm == '' || urlParm == null) {
+		urlParm = {};
+	}
 	urlParm.customerId = customerId;
 	urlParm.userCode = userName;
 	urlParm.roleType = type;
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
-	window.location.href = base.url + "tongdaoApp/html/account/myOrder/allOrderWeChat.html?jsonKey="+jsonStr;
+	window.location.href = base.url + "tongdaoApp/html/account/myOrder/allOrderWeChat.html?jsonKey=" + jsonStr;
 }
 /*我的保单*/
-function mybaodanHtml(customerId,userName,type){
+function mybaodanHtml(customerId, userName, type) {
+	if(urlParm == '' || urlParm == null) {
+		urlParm = {};
+	}
 	urlParm.customerId = customerId;
 	urlParm.userCode = userName;
 	urlParm.roleType = type;
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
-	window.location.href = base.url + "tongdaoApp/html/account/myOrder/policyListWeChat.html?jsonKey="+jsonStr;
+	window.location.href = base.url + "tongdaoApp/html/account/myOrder/policyListWeChat.html?jsonKey=" + jsonStr;
 }
-/*跳驾乘险*/
-function toOnjiachangHealthHtml(customerId,userName,type){
-	urlParm.customerId = customerId;
+/*跳驾乘险微信*/
+function toOnjiachangHealthHtml(customerId, userName, type) {
+	if(urlParm == '' || urlParm == null) {
+		urlParm = {};
+	}
+	urlParm.shareMobile=shareMobile;
 	urlParm.mobile = userName;
 	urlParm.roleType = type;
+	urlParm.customerId = customerId;
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
-	window.location.href = base.url + "weixin/wxjiachangxian/html/zhuanqu.html?jsonKey="+jsonStr;
+	window.location.href = base.url + "weixin/wxjiachangxian/html/zhuanqu.html?jsonKey=" + jsonStr;
 }

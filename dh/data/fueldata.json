@@ -1,0 +1,60 @@
+{
+  "userCode": "",
+  "channel": "",
+  "transTime": "",
+  "transToken": "",
+  "statusCode": "000000",
+  "statusMessage": "",
+  "returns": {
+    "cacheValue": [
+      {
+        "text": "汽油",
+        "value": "A"
+      },
+      {
+        "text": "柴油",
+        "value": "B"
+      },
+      {
+        "text": "电",
+        "value": "C"
+      },
+      {
+        "text": "混合油",
+        "value": "D"
+      },
+      {
+        "text": "天然气",
+        "value": "E"
+      },
+      {
+        "text": "液化石油气",
+        "value": "F"
+      },
+      {
+        "text": "甲醇",
+        "value": "L"
+      },
+      {
+        "text": "乙醇",
+        "value": "M"
+      },
+      {
+        "text": "太阳能",
+        "value": "N"
+      },
+      {
+        "text": "混合动力",
+        "value": "O"
+      },
+      {
+        "text": "无",
+        "value": "Y"
+      },
+      {
+        "text": "其它",
+        "value": "Z"
+      }
+    ]
+  }
+}

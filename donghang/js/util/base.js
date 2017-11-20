@@ -408,7 +408,10 @@ function showzhezhao_div() {
  * tel：13564515264
  */
 function modelAlert(message, describe, method) {
-	$("body").append('<div class="mui-popup mui-popup-in" style="display: block;"><div class="mui-popup-inner"><div class="mui-popup-title">温馨提示</div><div class="mui-popup-text">'+message+'</div></div><div class="mui-popup-buttons"><span class="mui-popup-button mui-popup-button-bold">确定</span></div></div>');
+	if(describe==""||describe==undefined){
+		describe="确定";
+	}
+	$("body").append('<div class="mui-popup mui-popup-in" style="display: block;"><div class="mui-popup-inner"><div class="mui-popup-title">温馨提示</div><div class="mui-popup-text">'+message+'</div></div><div class="mui-popup-buttons"><span class="mui-popup-button mui-popup-button-bold">'+describe+'</span></div></div>');
 	$("body").append('<div class="mui-popup-backdrop mui-active" style="display: block;"></div>');
 	$(".mui-popup-button").on("tap",function(){
 		setTimeout(function(){
@@ -1573,15 +1576,29 @@ $.pulluptoRefresmui = function(id1, id2, pageNo, method) {
  * author: maweiwei tel：13564515264
  */
 
-function openDataNowDate(id) {
+function openDataNowDate(id,type) {
+	var date=new Date();
+	date.setDate(date.getDate() - 1);
+	var year = date.getFullYear();
+	var month = date.getMonth() + 1;
+	var day = date.getDate();
+	var result = document.getElementById(id);
+	var defaultTime= result.value;
+	if(!/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/.test(defaultTime)){
+		defaultTime =$.getTimeStr2(year + "-" + month + "-" + day);
+	}
 	var pickers = {};
-	var optionsJson = '{"type":"date","beginYear":"1980"}';
+	var optionsJson = '{"type":"date","beginYear":"1980","value":"'+defaultTime+'","endYear":'+year+',"endMonth":'+month+',"endDay":'+day+'}';
 	var options = JSON.parse(optionsJson);
 	var id = id;
-	var result = document.getElementById(id);
+	
 	pickers[id] = pickers[id] || new mui.DtPicker(options);
 	pickers[id].show(function(rs) {
 		result.value = rs.text;
+		if(type == "zcrqi" && registDate!= rs.text){
+			registDate =rs.text;
+			$("#brand_model_input").val("请选择品牌型号");
+		}
 		pickers[id].dispose();// 释放组件资源
 
 	});

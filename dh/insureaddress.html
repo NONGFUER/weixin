@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<!-- 忽略IOS将页面中的数字识别为电话号码 -->
+<meta name="format-detection" content="telephone=no" />
+<!-- 忽略Android平台中对邮箱地址的识别 -->
+<meta name="format-detection" content="email=no" />
+<!-- 缓存 -->
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<meta HTTP-EQUIV="expires" CONTENT="0">
+<title>保单配送地址</title>
+<link rel="stylesheet" href="css/mui/mui.min.css" />
+<link rel="stylesheet" href="css/mui/mui.picker.min.css" />
+<link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+
+<header  id="header" class="mui-bar mui-bar-nav header">
+	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<h1 class="mui-title">保单配送地址</h1>
+</header>
+
+<div class="mui-content">
+	<div id="scroll" class="mui-scroll-wrapper">
+		<div class="mui-scroll">
+			<ul class="mui-table-view">
+				<li id="addressname" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-3 mui-text-left"><span class="blacktext">收件人姓名</span></div>
+				        <div class="mui-col-xs-9 mui-text-left"><input class="blacktext" type="text" autocomplete="off" maxlength="20" placeholder="请输入收件人姓名"></div>
+				    </div>
+				</li>
+				<li id="addressmobile" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-3 mui-text-left"><span class="blacktext">手机号码</span></div>
+				        <div class="mui-col-xs-9 mui-text-left"><input class="blacktext" type="text" autocomplete="off" maxlength="11" placeholder="请输入收件人手机号"></div>
+				    </div>
+				</li>
+				<li id="addressprovince" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-3 mui-text-left"><span class="blacktext">选择省市</span></div>
+				        <div class="mui-col-xs-8 mui-text-left"><input class="blacktext" type="text" readonly placeholder="请选择省市"></div>
+				        <div class="mui-col-xs-1 mui-text-right"><span class="mui-icon mui-icon-arrowright graytext"></span></div>
+				    </div>
+				</li>
+				<li id="addressinfo" class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-3 mui-text-left"><span class="blacktext">详细地址</span></div>
+				        <div class="mui-col-xs-9 mui-text-left">
+				        	<textarea class="blacktext" maxlength="25" placeholder="详细地址(如门牌号等)"></textarea>
+				        </div>
+				    </div>
+				</li>
+			</ul>
+
+			<div class="mui-content-padded" >
+				<p id="notice1" style="display: none" class="mui-text-left notice">&nbsp;&nbsp;&nbsp;&nbsp;北京地区全面实施"车险电子保单",投保成功后，您填写的车主(投保人)手机号将收到投保确认信息，交强险商业险电子保单、电子交强险标志及电子发票将发送到车主(投保人)电子邮箱，请注意接收保存打印！</p>
+				<p id="notice2" style="display: none" class="mui-text-left notice">&nbsp;&nbsp;&nbsp;&nbsp;投保成功后，您填写的车主(投保人)手机号将收到投保确认信息，并在三个工作日内将纸质交强险保单、商业险保单、交强险标志、车船税及发票，寄送出到您指定的地址！</p>
+			
+				<button id="submit" type="button" class="mui-btn mui-btn-block mui-btn-outlined submitbtn">保&nbsp;&nbsp;&nbsp;&nbsp;存</button>
+				<br />
+			</div>
+
+		</div>
+
+
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/zepto/zepto.min.js" ></script>
+<script type="text/javascript" src="js/mui/mui.min.js" ></script>
+<script type="text/javascript" src="js/mui/mui.picker.min.js" ></script>
+<script type="text/javascript" src="js/operatedata.js"></script>
+<script type="text/javascript" src="js/insureaddress.js"></script>
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="js/ajaxservice.js"></script>
+<script type="text/javascript" src="js/constant.js"></script>
+</html>

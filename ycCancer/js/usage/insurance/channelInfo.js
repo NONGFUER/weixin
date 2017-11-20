@@ -28,7 +28,11 @@ $(function(){
 
 /**页面初始化****/
 function init(){
-	var url = base.url + "cancerRisk/queryLatestInfo.do";
+	if( ccId != "1" && ccId != "2" && ccId != "3" ){
+		var url = base.url + "ecard/queryLatestInfo.do";
+	}else{
+		var url = base.url + "cancerRisk/queryLatestInfo.do";
+	}
 	var reqData = {
 		"head":{
 			"channel":"01",
@@ -77,7 +81,11 @@ function checkDotCode(dotCode){
 }
 /**通过邮储网点代码查询渠道信息****/
 function queryChannelInfo(dotCode){
-	var url = base.url + "cancerRisk/queryChannelInfo.do";
+	if( ccId != "1" && ccId != "2" && ccId != "3" ){
+		var url = base.url + "ecard/queryChannelInfo.do";
+	}else{
+		var url = base.url + "cancerRisk/queryChannelInfo.do";
+	}
 	var reqData = {
 		"head":{
 			"channel":"01",
@@ -90,14 +98,19 @@ function queryChannelInfo(dotCode){
 	}	
 	$.toAjaxs(url,reqData,function(data){
 	    if(data.statusCode == "000000") {
-	    	$("#dotName").attr("data-code",data.returns.bxFaxSalesman.branchCompanyCode);
-	    	$("#dotName").attr("data-midcode",data.returns.bxFaxSalesman.midBranchCompanyCode);
-	    	$("#dotName").val(data.returns.bxFaxSalesman.dotName);
-	    	$("#institutionName").val(data.returns.bxFaxSalesman.institutionName);
-	    	$("#cityName").val(data.returns.bxFaxSalesman.cityName);
-	    	$("#cityXy").val(data.returns.bxFaxSalesman.cityXy);
-	    	$("#agentCode").val(data.returns.bxFaxSalesman.agentCode);
-	    	$("#salesmanName").val(data.returns.bxFaxSalesman.salesmanName);
+	    	if( ccId != "1" && ccId != "2" && ccId != "3" ){
+				var bxFaxSalesman = data.returns.salesmanPostOffice;
+			}else{
+				var bxFaxSalesman = data.returns.bxFaxSalesman;
+			}
+		    $("#dotName").attr("data-code",bxFaxSalesman.branchCompanyCode);
+		    $("#dotName").attr("data-midcode",bxFaxSalesman.midBranchCompanyCode);
+		    $("#dotName").val(bxFaxSalesman.dotName);
+		    $("#institutionName").val(bxFaxSalesman.institutionName);
+		    $("#cityName").val(bxFaxSalesman.cityName);
+		    $("#cityXy").val(bxFaxSalesman.cityXy);
+		    $("#agentCode").val(bxFaxSalesman.agentCode);
+		    $("#salesmanName").val(bxFaxSalesman.salesmanName);
 	    }else {
 		   modelAlert(data.statusMessage);
 		   $("#dotName,#institutionName,#cityName,#cityXy,#agentCode,#salesmanName").val("");
@@ -112,7 +125,11 @@ function queryChannelInfo(dotCode){
 /**保存渠道信息****/
 function saveChannelInfo(){
 	if(!$.isNull($("#salesmanName").val())){
-		var url = base.url + "cancerRisk/saveChannelInfo.do";
+		if( ccId != "1" && ccId != "2" && ccId != "3" ){
+			var url = base.url + "ecard/saveChannelInfo.do";
+		}else{
+			var url = base.url + "cancerRisk/saveChannelInfo.do";
+		}
 		var reqData = {
 			"head":{
 				"channel":"01",
@@ -160,15 +177,18 @@ function payRequest(serialNo){
 	}
 	var reqData = {
 	    "head":{
-	        "channel":"01",
+	        "channel":"02",
 	        "userCode":mobile,
 	        "transTime":$.getTimeStr()
 	    },"body":{
 	        "serialNo":serialNo	       
 	    }
 	}
-	reqData.body.orderResource = "8";
-		
+	if( ccId != "1" && ccId != "2" && ccId != "3" ){
+		reqData.body.payType = "7"
+	}else{
+		reqData.body.orderResource = "8";
+	}		
 	$.toAjaxs(url,reqData,payReturnReponse);
 }
 

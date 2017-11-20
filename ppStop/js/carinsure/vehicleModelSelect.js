@@ -81,6 +81,8 @@ $.addData = function(param) {
 		sessionStorage.setItem("checkNo", param.status.returns.tradeNoDto.checkNo);
 		sessionStorage.setItem("checkFlag", param.carsinfo.checkFlag);
 		sessionStorage.setItem("checkCode", param.status.returns.tradeNoDto.checkCode);
+		sessionStorage.setItem("checkImg", param.status.returns.tradeNoDto.checkCode);//验证码图片
+		sessionStorage.setItem("brandKey", $("#searchtext").val().toUpperCase());//搜索关键字
 		if (!$.isNull(param.carsinfo.total) && param.carsinfo.total > 0) {
 			if (param.carsinfo.total % 20 == 0) {
 				totalPageNum = param.carsinfo.total / 20;//总页数
