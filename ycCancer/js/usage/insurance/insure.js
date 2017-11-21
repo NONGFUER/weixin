@@ -562,27 +562,26 @@ function getFormData(){
 }
 //customerId查询落地城市
 function sendFeeCityRequest( cusId, ccId){
-	var url = requestUrl.defalultArea;
+	var url = requestUrl.xgDefalultArea;
 	var reqData = {
-	        "head":{
-	            "channel"  :"01",
-	            "userCode" :mobile,
-	            "transTime":$.getTimeStr()
-	        },
-	        "body":{
-	            "customerId":cusId,//customerId,//773  198980 250
-	            "commodityCombinationId" : ccId, //
-	            "attributionChannels": "14"
-	        }
-	}
-	$.reqAjaxs(url,reqData,feeCityReponse);
+			"head":{
+				"channel"  :"02",
+				"userCode" :mobile,
+				"transTime":$.getTimeStr()
+			},
+			"body":{
+				"customerId":cusId,//customerId,//773  198980 250
+				"attributionChannel" : '14' //
+			}
+	}		
+	$.reqAjaxs(url,reqData,xgFeeCityReponse);
 }
 //落地城市返回
-function feeCityReponse(data){
+function xgFeeCityReponse(data){
 	console.log(data);
 	if(data.statusCode == "000000"){
 		var body = data.returns;
-		var lsf = body.landingServiceFee;
+		var lsf = body.defaultArea;
 		if( lsf ){		
 				var orgCityCode     = lsf.orgCityCode;
 				var orgCityName 	= lsf.orgCityName;
@@ -603,126 +602,76 @@ function feeCityReponse(data){
 				$("#orgCityCode").attr("certiNo",certiNo);
 				$("#orgCityCode").attr("businessSource",businessSource);
 				$("#orgCityCode").attr("agentName",agentName);
-				sendCityRequest( "", "", ccId );		
+				sendCityRequest(provinceCode,cityCode,ccId)		
 		}else{
-			sendCityRequest( "", "", ccId );
+			sendCityRequest(provinceCode,cityCode,ccId)
 		}    
 	}else{
-		sendCityRequest( "", "", ccId );
+		sendCityRequest(provinceCode,cityCode,ccId)
 	}
 }
 
 //落地市
 function sendCityRequest(provinceCode,cityCode,ccId){
-	var url = requestUrl.chooseArea;
+	var url = requestUrl.xgChooseArea;
 	var reqData = {
-	        "head":{
-	            "channel"  :"01",
-	            "userCode" :mobile,
-	            "transTime":$.getTimeStr()
-	        },
-	        "body":{
-	            "provinceCode":provinceCode,
-	            "commodityCombinationId": ccId,//commodityCombinationId,
-	            "cityCode" : cityCode,
-	            "attributionChannels": "14"
-	        }
+			"head":{
+				"channel"  :"02",
+				"userCode" :mobile,
+				"transTime":$.getTimeStr()
+			},
+			"body":{
+				 "attributionChannel" : '14'
+			}
 	}
-	if( provinceCode == "" && cityCode == "" ){
-		$.reqAjaxs(url,reqData,provinceReponse);
-	}else if( provinceCode != "" && cityCode == "" ){
-		$.reqAjaxs(url,reqData,cityReponse);
-	}else if( provinceCode != "" && cityCode != "" ){
-		$.reqAjaxs(url,reqData,getAllReponse);		
-	}
+	$.reqAjaxs(url,reqData,xgProvinceReponse);
+}
 
-}
-//落地省份响应
-function provinceReponse(data){
+//省事
+function xgProvinceReponse(data){
+	console.log(data)
 	if(data.statusCode == "000000"){
-		var ccsa = data.returns.commodityCombinationSaleAreas;
-		if( ccsa.length == 1){
-			$("#orgProvinceCode").text(ccsa[0].provinceName);
-			$("#orgProvinceCode").attr("name",ccsa[0].provinceCode);
-			sendCityRequest(ccsa[0].provinceCode, "", ccId);
-		}else{		
-			$(".orgProvinceCode").unbind("tap").bind("tap",function(){
-				var selectPicker2 = new mui.PopPicker();
-				var ccsa = data.returns.commodityCombinationSaleAreas;
-				var popArray = [];
-				for( var i = 0; i < ccsa.length; i++ ){
-					var item ={ 
-							"text":ccsa[i].provinceName,
-							"value":ccsa[i].provinceCode
-							}
-					popArray.push(item);
-				}
-				selectPicker2.setData(popArray);
-				selectPicker2.show(function(item){
-					$("#orgProvinceCode").text(item[0].text);
-					$("#orgProvinceCode").attr("name",item[0].value);
-					$("#orgCityCode").text("请选择");
-					$("#orgCityCode").attr("name","");	
-					provinceCode = item[0].value;
-					sendCityRequest(item[0].value, "", ccId);
-				});
-			});	
-		}
-	}
-}
-function cityReponse(data){
-	if(data.statusCode == "000000"){
-	    console.log(data);
-	    $("#orgCityCode").unbind("tap").bind("tap",function(){
+		 var ccsa1 = data.returns.areas;
+		$("#orgProvinceCode").text(ccsa1[0].orgProvinceName);
+		$("#orgProvinceCode").attr("name",ccsa1[0].orgProvinceCode);	
+		provinceCode = ccsa1[0].orgProvinceCode;
+		$("#orgCityCode").unbind("tap").bind("tap",function(){
 	        var selectPicker3 = new mui.PopPicker();
-	        var ccsa = data.returns.commodityCombinationSaleAreas;
-	        var cityArray = [];
-	        for( var i = 0; i < ccsa.length; i++ ){
-	        	if( ccsa[i].cityCode != ""){
-	        		var item ={ 
-		                    "text":ccsa[i].cityName,
-		                    "value":ccsa[i].cityCode,
-		                    "agentCode":ccsa[i].intermediaryCode,//中介代码
-		                    "teamCode":ccsa[i].teamCode,//团队代码
-		                    "certiNo":ccsa[i].agentCode,
-		                    "businessSource":ccsa[i].yewuSource,
-		                    "agentName":ccsa[i].agnetName
+	       
+	        var cityArray1 = [];
+	        for( var i = 0; i < ccsa1.length; i++ ){
+	        	if( ccsa1[i].cityCode != ""){
+		            var item ={ 
+		                    "text":ccsa1[i].orgCityName,
+		                    "value":ccsa1[i].orgCityCode,
+		                    "agentCode":ccsa1[i].intermediaryCode,//中介代码
+		                    "teamCode":ccsa1[i].teamCode,//团队代码
+		                    "certiNo":ccsa1[i].agentCode,
+		                    "businessSource":ccsa1[i].yewuSource,
+		                    "agentName":ccsa1[i].agnetName
 		                    }
-		            cityArray.push(item);
-	        	}	            
+		            cityArray1.push(item);
+	        	}
 	        }
-	        selectPicker3.setData(cityArray);
+	        selectPicker3.setData(cityArray1);
 	        selectPicker3.show(function(item){
+	        	
 	            $("#orgCityCode").text(item[0].text);
 	            $("#orgCityCode").attr("name",item[0].value);           
 	            cityCode = item[0].value;
-	            sendCityRequest( provinceCode, item[0].value, ccId);
+	            var agentCode	    = item[0].agentCode;
+	            var teamCode	    = item[0].teamCode;	
+	            var certiNo			= item[0].certiNo;
+	            var businessSource  = item[0].businessSource;
+	            var agentName		= item[0].agentName;
+	            $("#orgCityCode").attr("agentCode",agentCode);
+	   		 	$("#orgCityCode").attr("teamCode",teamCode);
+	   		 	$("#orgCityCode").attr("certiNo",certiNo);
+	   		 	$("#orgCityCode").attr("businessSource",businessSource);
+	   		 	$("#orgCityCode").attr("agentName",agentName);
 	            selectPicker3.dispose();
 	        });
 	    });
-	}else{
-	    
-	}
-}
-function getAllReponse(data){
-	if(data.statusCode == "000000"){
-		 var lsf = data.returns.landingServiceFee;
-		 var agentCode	    = lsf.intermediaryCode;
-         var teamCode	    = lsf.teamCode;	
-         var certiNo			= lsf.agentCode;
-         var businessSource  = lsf.yewuSource;
-         var agentName		= lsf.agnetName;
-         var orgCityCode    = lsf.orgCityCode;
-         var orgProvinceCode = lsf.orgProvinceCode;
-         $("#orgCityCode").attr("name",orgCityCode);
-		 $("#orgProvinceCode").attr("name",orgProvinceCode);
-		 $("#orgCityCode").attr("agentCode",agentCode);
-		 $("#orgCityCode").attr("teamCode",teamCode);
-		 $("#orgCityCode").attr("certiNo",certiNo);
-		 $("#orgCityCode").attr("businessSource",businessSource);
-		 $("#orgCityCode").attr("agentName",agentName);
-	}else{
-		 modelAlert("获取业务员信息异常!");
 	}
 }
 //投保请求

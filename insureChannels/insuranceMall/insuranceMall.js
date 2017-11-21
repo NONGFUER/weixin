@@ -1,12 +1,7 @@
-var urlParm = JSON.parse(UrlDecode(getUrlQueryString("jsonKey")));
-var mobile = urlParm.mobile + '';
-var customerId = urlParm.customerId + '';
-var roleType = urlParm.roleType + '';
-var agentId = "";
 var tagsList = [];
 $(function(){
 	commodifyTagRequest();	 //获取商品标签
-	getAgentInfoRequest();   //获取当前用户基本信息
+	//getAgentInfoRequest();   //获取当前用户基本信息
 	bannerRequest();		 //banner轮播列表
 	//onlineProductRequest("2");  //在线产品请求
 	mui("#lunslider").slider({
@@ -165,12 +160,12 @@ function onlineProductRequest(index){
 			},
 			"body":{
 				"tagInfo":tagInfo,
-				"provinceCode":"",
-				"cityCode":"",
+				"provinceCode":provinceCode,
+				"cityCode":cityCode,
 				"pageNo":"1",
 				"pageSize":"100",
 				"type":"01",		//角色
-				"salesChannels":"02",   //销售渠道：01佰盈渠道，02
+				"salesChannels":salesChannels,   //销售渠道：01佰盈渠道，02
 				"commodityCombinationShowType":"01" //商品组合展示类型01-线上；02-线下；03-即将上线   04-微信
 			}
 	}

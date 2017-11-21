@@ -4,7 +4,8 @@ if(getUrlQueryString("jsonKey")){
 	var customerId = urlParm.customerId + '';
 	var roleType = urlParm.roleType + '';
 	//var openid = urlParm.openid;
-	var provinceCode = '';
-	var cityCode = '';
-	var agentId = '';
+	var provinceCode = urlParm.provinceCode + '';
+	var cityCode = urlParm.cityCode + '';
+	var agentId = urlParm.agentId + '';
+	var salesChannels = '13'//urlParm.salesChannels + '';
 }

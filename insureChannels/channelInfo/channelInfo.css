@@ -91,3 +91,21 @@ dd input[type=text] {
     color: #fff;
     font-size: 16px;
 }
+.chooicespan{
+	color: #333;
+    font-size: 14px;
+    float: right;
+    margin-left: 4px;
+    width:68%;
+    display:inline-block;
+    text-align:right;
+}
+.ib{
+	display:inline-block;
+	width: 95.6%;
+	height:auto;
+} 
+
+.qqhidden{
+	display:none;	
+}

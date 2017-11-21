@@ -210,7 +210,7 @@ function toProduct(obj){
 	urlParm.mobile = mobile;									//mobile:"13852291705"																
 	urlParm.provinceCode = '';									//provinceCode:"200000"																
 	urlParm.roleType = roleType;								//roleType:"01"
-	urlParm.entry = "qudao";										//区分入口:微信渠道,微信保险商城
+	urlParm.entry = "mall";										//区分入口:微信渠道,微信保险商城
 																//ccCode:"00500006"  不需要
 																//rightIco:"0"
 																//leftIco:"1"

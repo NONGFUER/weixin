@@ -133,90 +133,6 @@ function settime() {
 	}, 1000)
 }
 
-//function validate(phoneNo) {
-//	var url = base.url + "/register/quickRegister.do";
-//	var reqData = {
-//		"head": {
-//			"userCode": "",
-//			"transTime": $.getTimeStr(),
-//			"channel": "1"
-//		},
-//		"body": {
-//			"openId": openid,
-//			"userName": phoneNo,
-//			"flag": "10",
-//			"customerSource": "2" //用户来源(1app注册，2微信注册（同道出行），3微信注册（微信代理人）)							
-//		}
-//	};
-//	$.reqAjaxs(url, reqData, function(data) {
-//		if(data.statusCode == "000000") {
-//			$("#phone_input").val("请输入手机号码");
-//			$("#valificationCode_input").val("请输入验证码");
-//			$("#getPIN").val("获取验证码");
-//			if(data.returns.idAuth == "0") { //未实名
-//				if(fromtype == "ecard") {
-//					var urlParm = JSON.parse(UrlDecode(jsonStr));
-//					urlParm.head.mobile = phoneNo;
-//					urlParm.body.customerId = data.returns.bxTdCustomer.id + "";
-//					var jsonStr1 = UrlEncode(JSON.stringify(urlParm));
-//					window.location.href = "certification.html?mobile=" + phoneNo + "&fromtype=" + fromtype + "&openid=" + openid + "&jsonKey=" + jsonStr1;
-//				} else if(fromtype == "xpx") {
-//					var urlParm = JSON.parse(UrlDecode(jsonStr));
-//					urlParm.head.mobile = phoneNo;
-//					urlParm.body.customerId = data.returns.bxTdCustomer.id + "";
-//					var jsonStr1 = UrlEncode(JSON.stringify(urlParm));
-//					window.location.href = "certification.html?mobile=" + phoneNo + "&fromtype=" + fromtype + "&openid=" + openid + "&jsonKey=" + jsonStr1;
-//				}else if(fromtype == "cancer") {
-//					var urlParm = JSON.parse(UrlDecode(jsonStr));
-//					urlParm.head.mobile = phoneNo;
-//					urlParm.head.customerId = data.returns.bxTdCustomer.id + "";
-//					var jsonStr1 = UrlEncode(JSON.stringify(urlParm));
-//					window.location.href = "certification.html?mobile=" + phoneNo + "&fromtype=" + fromtype + "&openid=" + openid + "&fromflag=" + fromType + "&channel=" + channel + "&jsonKey=" + jsonStr1;
-//				} else if(fromtype == "Tian") {
-//					var urlParm = JSON.parse(UrlDecode(jsonStr));
-//					urlParm.head.mobile = phoneNo;
-//					urlParm.body.customerId = data.returns.bxTdCustomer.id + "";
-//					var jsonStr1 = UrlEncode(JSON.stringify(urlParm));
-//					window.location.href = "certification.html?mobile=" + phoneNo + "&fromtype=" + fromtype + "&openid=" + openid + "&jsonKey=" + jsonStr1;
-//				} else {
-//					window.location.href = "certification.html?mobile=" + phoneNo + "&fromtype=" + fromtype + "&openid=" + openid;
-//				}
-//			} else { //影像已上传状态||用户离职
-//				if(fromtype == "3") { //个人中心
-//					window.location.href = "personal.html?openid=" + openid;
-//				} else if(fromtype == "1") { //购买车险
-//					window.location.href = base.url + "/weixin/wxcar/html/carinsure/carMes.html?openid=" + openid + "&mobile=" + phoneNo;
-//				} else if(fromtype == "2") { //车险订单查询
-//					window.location.href = base.url + "/weixin/wxcar/html/carinsure/PolicyManagement.html?openid=" + openid + "&mobile=" + phoneNo;
-//				} else if(fromtype == "4") { //保单车询
-//					window.location.href = base.url + "/weixin/wxcar/html/carinsure/policyQuery.html?openid=" + openid + "&mobile=" + phoneNo;
-//				} else if(fromtype == "5") {
-//					suixinyiPage();
-//				} else if(fromtype == "ecard") {
-//					var urlParm = JSON.parse(UrlDecode(jsonStr));
-//					urlParm.head.mobile = phoneNo;
-//					urlParm.body.customerId = data.returns.bxTdCustomer.id + "";
-//					var jsonStr1 = UrlEncode(JSON.stringify(urlParm));
-//					window.location.href = base.url + "tongdaoApp/page/html/ecardWechat/insureForm.html?jsonKey=" + jsonStr1;
-//				} else if(fromtype == "xpx") {
-//					var urlParm = JSON.parse(UrlDecode(jsonStr));
-//					urlParm.head.mobile = phoneNo;
-//					urlParm.body.customerId = data.returns.bxTdCustomer.id + "";
-//					var jsonStr1 = UrlEncode(JSON.stringify(urlParm));
-//					window.location.href = base.url + "tongdaoApp/page/html/TiananmashangWeChat/insureForm.html?jsonKey=" + jsonStr1;
-//				}else if(fromtype == "cancer") {
-//					var urlParm = JSON.parse(UrlDecode(jsonStr));
-//					urlParm.head.mobile = phoneNo;
-//					urlParm.head.customerId = data.returns.bxTdCustomer.id + "";
-//					var jsonStr1 = UrlEncode(JSON.stringify(urlParm));
-//					window.location.href = base.url + "tongdaoApp/page/html/cancerRisk/healthNotice.html?jsonKey=" + jsonStr1 + "&fromType=" + fromType + "&channel=" + channel;
-//				}
-//			}
-//		} else {
-//			modelAlert(data.statusMessage);
-//		}
-//	});
-//};
 //随心易，查询订单状态，根据订单状态跳页面
 function suixinyiPage() {
 	var url = suixinyi.url + "common/getTrafficTime.do";
@@ -348,6 +264,8 @@ function loginCallBack(data) {
 			mybaodanHtml(customerId, userName, type);
 		} else if(fromtype == "8") {
 			toOnjiachangHealthHtml(customerId, userName, type);
+		} else if(fromtype == "10"){
+			toQudaoHtml(customerId, userName, type );
 		}
 	} else {
 		modelAlert(data.statusMessage);
@@ -469,4 +387,8 @@ function toOnlineHealthHtmlX(customerId, userName, type) {
 	urlParm.roleType = type;
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
 	window.location.href = base.url + "tongdaoApp/html/insurance/main/healthNotice.html?jsonKey=" + jsonStr;
+}
+//跳转渠道出单
+function toQudaoHtml(customerId, userName, type) {		
+	window.location.href = base.url + "weixin/insureChannels/index.html?openid=" + openid +'&cusId='+ customerId +'&roletype='+type+'&mobile='+userName;
 }
