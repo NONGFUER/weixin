@@ -197,12 +197,12 @@ function onlineProductCallback(data){
 function toProduct(obj){
 	var urlto = $(obj).attr("data-url");	 	
 	urlParm.ccId = $(obj).attr("data-ccid");					//ccId:"23"		
-	urlParm.cityCode = '';										//cityCode:"200000"
+	urlParm.cityCode = cityCode;										//cityCode:"200000"
 	urlParm.commodityCombinationId = $(obj).attr("data-ccid");	//commodityCombinationId:"23"
 	urlParm.customerId = customerId;							//customerId:"812"	
 	urlParm.isComing = '0';										//isComing:"0"																
 	urlParm.mobile = mobile;									//mobile:"13852291705"																
-	urlParm.provinceCode = '';									//provinceCode:"200000"																
+	urlParm.provinceCode = provinceCode;									//provinceCode:"200000"																
 	urlParm.roleType = roleType;								//roleType:"01"
 	urlParm.entry = "qudao";										//区分入口:微信渠道,微信保险商城
 																//ccCode:"00500006"  不需要

@@ -109,3 +109,10 @@ dd input[type=text] {
 .qqhidden{
 	display:none;	
 }
+.isSame img {
+    position: relative;
+    width: 15px;
+    vertical-align: middle;
+    margin-right: 5px;
+    top: -2px;
+}

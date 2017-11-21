@@ -11,7 +11,60 @@ $(function(){
 	$('#next').unbind('tap').bind('tap',function(){
 		toInsuranceMall();
 	});
+	$('#isGou').unbind('tap').bind('tap',function(){
+		if($(this).hasClass("on")){
+			$(this).removeClass("on");
+			$(this).find("img").attr("src","../../images/common/meigou.png");
+			$(".baiy").show(1000);
+		}else{
+			$(this).addClass("on");
+	        $(this).find("img").attr("src","../../images/common/gou.png");
+	        $(".baiy").hide(1000);
+		}
+	});
 });
+
+function queryShowInfo(customerId){
+	var url = base.url + 'channel/queryShowInfo.do';
+	var reqData = {
+			'request':{
+				"customerId" : customerId
+			}
+	}
+	$.reqAjaxs( url, reqData, queryShowInfoCallback );
+}
+
+function queryShowInfoCallback(data){
+	if( data.statusCode == '000000' ){
+		var channelCustomerEdit     = data.returns.channelCustomerEdit;
+		$("#qdDotName").attr('agentId',channelCustomerEdit.agentId);
+		$("#ywyCode").val(channelCustomerEdit.bySalesmanCode); //业务员工号
+		$("#ywyName").val(channelCustomerEdit.bySalesmanName); //业务员名称
+		$("#ywyCompany").attr('name',channelCustomerEdit.bySalesmanOrgCode);//业务员分公司
+		$("#ywyCompany").val(channelCustomerEdit.bySalesmanOrgName);
+		$("#ywySubPany").attr('name',channelCustomerEdit.bySalesmanSubOrgCode);//业务员中支机构
+		$("#ywySubPany").val(channelCustomerEdit.bySalesmanSubOrgName);
+		
+		$("#orgProvinceCode").attr('name',channelCustomerEdit.salesProvinceCode);			//渠道所属地区
+		$("#orgProvinceCode").text(channelCustomerEdit.salesProvinceName);
+		$("#orgCityCode").attr('name',channelCustomerEdit.salesCityCode);		//渠道所属地区
+		$("#orgCityCode").text(channelCustomerEdit.salesCityName);
+		$("#qdName").attr('name',channelCustomerEdit.salesChannelCode);			//渠道名称
+		$("#qdName").text(channelCustomerEdit.salesChannelName);
+		$("#qdDotName").attr('name',channelCustomerEdit.dotCode);			//渠道网点名称
+		$("#qdDotName").text(channelCustomerEdit.dotName);
+		if(channelCustomerEdit.isShow == '1'){
+			$('.qqhidden').show();
+		}
+		$("#salesmanCode").val(channelCustomerEdit.salesmanCode);				//渠道员工工号
+		$("#salesmanMobile").val(channelCustomerEdit.salesmanMobile);			//渠道员工名称
+		$("#salesmanName").val(channelCustomerEdit.salesmanName);				//渠道员工手机号码
+		$("#remark").val(channelCustomerEdit.remark);					//备注
+	}else{
+		modelAlert(data.statusMessage)
+	}
+}
+
 
 //查询推荐人信息查询
 function isWhiteRequest(obj){
@@ -303,20 +356,6 @@ function getFormData(){
 	formData.remark               = remark;
 	
 	return formData;
-}
-
-function queryShowInfo(customerId){
-	var url = base.url + 'channel/queryShowInfo.do';
-	var reqData = {
-			'request':{
-				"customerId" : customerId
-			}
-	}
-	$.reqAjaxs( url, reqData, queryShowInfoCallback );
-}
-
-function queryShowInfoCallback(data){
-	console.log(data)
 }
 
 function saveShowInfo(){
