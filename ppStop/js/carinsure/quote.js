@@ -178,7 +178,7 @@ function baojia(){
 	}
 	if($("#jqxmoney").html()=="￥0.00"){
 		data.body.quoteInfo.jqxBegindate=$.getDateStr("0","",1);
-		data.body.quoteInfo.businessBegindate=$("#jqxBdate").val();
+		data.body.quoteInfo.businessBegindate=$("#businessBdate").val();
 	}else if($("#busmoney").html()=="￥0.00"){
 		data.body.quoteInfo.businessBegindate=$.getDateStr("0","",1);
 		data.body.quoteInfo.jqxBegindate=$("#jqxBdate").val();
@@ -533,7 +533,6 @@ $.loadData = function(param) {
 				tradeNo=param.cxInfo.cxOrder.tradeno;//请求天安核保接口交易流水号
 				//商业险起保时间
 				if(param.cxInfo.cxOffer.businessPre==0){
-					$("#businessBdate").val($.getDateStr("0","",1));//起保日期 T+1天
 					$(".BusquoteTable").hide();
 				}else{
 					$("#businessBdate").val(timeFormatDate(param.cxInfo.cxOffer.businessBegindate.time, 'yyyy-MM-dd'))
@@ -541,9 +540,7 @@ $.loadData = function(param) {
 				
 				//交强险起保时间
 				if(param.cxInfo.cxOffer.jqxPre==0){
-					$("#jqxBdate").val(timeFormatDate(param.cxInfo.cxOffer.businessBegindate.time, 'yyyy-MM-dd'))
-					$(".BusquoteTable").hide();
-					$(".tabel").html("商业险起保时间")
+					$(".JqxquoteTable").hide();
 				}else{
 					$("#jqxBdate").val(timeFormatDate(param.cxInfo.cxOffer.jqxBegindate.time, 'yyyy-MM-dd'))
 				}
@@ -620,7 +617,13 @@ $.loadData = function(param) {
 					if(forceBeginYear==nextYear){
 						modelAlert("当前时间购买交强险只能缴纳"+curYear+"年的车船税。如您需代缴"+nextYear+"年的车船税，可在"+nextYear+"年内购买交强险。");
 					}else{/*车船税为0时提示*/
-						modelAlert("您当前购买的车险保单无法代缴车船税，如需了解详情，可拨打客服热线 4006895505 进行咨询");
+						if(forceBeginYear!=""){
+							if(parm.body.cityCode=="3120000"){//天津
+								modelAlert("天津地区购买车险暂不支持代缴车船税。");
+							}else{
+								modelAlert("您当前购买的车险保单无法代缴车船税，如需了解详情，可拨打客服热线 4006895505 进行咨询");
+							}
+						}
 					}
 				}
 				

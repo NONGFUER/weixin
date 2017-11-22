@@ -2345,6 +2345,22 @@ function changeLevel(level){
 	return level;
 }
 
+/**--风险评测枚举转换--*/
+function simpleChangeLevel(level){
+	if(level.indexOf("a")!=-1){
+		level="A类";
+	}else if(level.indexOf("b")!=-1){
+		level="B类";
+	}else if(level.indexOf("c")!=-1){
+		level="C类";
+	}else if(level.indexOf("d")!=-1){
+		level="D类";
+	}else{
+		level="无等级";
+	}
+	return level;
+}
+
 /**--渠道代码转渠道名称--*/
 function changeChannel(channel){
 	var url = base.url + "bill/selectChannel.do";

@@ -84,10 +84,13 @@ function exception_translatematch(content)
     if(carmodelold != "" && carmodelnew != "")
 	{
 		//字母开头
-        if(/^[a-zA-Z0-9_-]+.*$/.test(carmodelnew))
-            return "车辆识别代码与车辆品牌不符<br/>[" + carmodelold + "]<br/>请正确选择车辆品牌<br/>";
-        else
-            return "车辆识别代码与车辆品牌不符<br/>[" + carmodelold + "]<br/>请正确选择车辆品牌<br/>[" + carmodelnew + "]";
+        if(/^[a-zA-Z0-9_-]+.*$/.test(carmodelnew)){
+            return "您选择的车辆型号<br/>[" + carmodelold + "]<br/>与车辆识别代码不一致，报价失败。";
+        }else{
+        	var pos = carmodelnew.indexOf("-");
+            if(pos != -1) carmodelnew = carmodelnew.substring(0,pos);
+            return "您选择的车辆型号<br/>[" + carmodelold + "]<br/>与车辆识别代码不一致，报价失败。<br/>请选择下面车辆型号重新报价。<br/>[" + carmodelnew + "]";
+        }   
 	}
     return content;
 }
@@ -95,7 +98,7 @@ function exception_translatematch(content)
 // 从格式化的文本中 获得 车型 搜索内容
 function exception_getcarmodelkey(content)
 {
-    if(content.indexOf("车辆识别代码与车辆品牌不符") == -1) return "";
+    if(content.indexOf("与车辆识别代码不一致") == -1) return "";
 
     var carmodelkey = content.replace(/.*\[(.*)\].*/, '$1');
     carmodelkey = exception_carmodelkey(carmodelkey);
@@ -113,8 +116,6 @@ function exception_match(content,keyword)
 // 获得品牌型号搜索关键字
 function exception_carmodelkey(carmodelold)
 {
-    var pos = carmodelold.indexOf("-");
-    if(pos != -1) carmodelold = carmodelold.substring(0,pos);
 
 	var keys = carmodelold.split(/\s/g);
 	if(keys.length <= 2) return carmodelold;

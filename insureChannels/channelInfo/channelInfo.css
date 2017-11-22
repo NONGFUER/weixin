@@ -70,7 +70,6 @@ dd input[type=text] {
 	position: relative;
 	float: right;
 	top: 8px;
-	display: none;
 }
 .orgProvinceCode,
 .orgCityCode {

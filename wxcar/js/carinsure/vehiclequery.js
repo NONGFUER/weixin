@@ -12,11 +12,23 @@ $(function() {
 	// 计算页面高度
 	$.setscroll();
 	$("#searchtext").val(sessionStorage.getItem("brandKey"));
+	var cityCode=parm.body.cityCode;
+	if(cityCode!="3110000"&&cityCode!="3310000"){//非北京  非上海
+	  $(".demomodel").html(sessionStorage.getItem("brandKey"));
+	}
 	
 	/***返回***/
 	$(".h_back").unbind("tap").bind("tap",function() {
 		window.history.back();
 	});
+	/***品牌填写示例***/
+	$(".noticediv").unbind("tap").bind("tap",function() {
+		$("#licenseshadow").show();
+	});
+	$("#licenseshadow").unbind("tap").bind("tap",function() {
+		$("#licenseshadow").hide();
+	});
+	
 	//查询品牌型号事件
 	$("#selectbtn").unbind("tap").bind("tap",function() {
 		$("#searchtext").blur();
@@ -242,7 +254,9 @@ function pullupRefreshlist(){
 
 /*设置滑动区域*/
 $.setscroll = function(){
-	var Scrollheight = window.innerHeight- $("header").height()-100;
-	$("#wrapper").height(Scrollheight + "px");
+	var top=$("header").height()+$(".searcharea").height()
+	var Scrollheight = window.innerHeight-top+"px";
+	$("#wrapper").height(Scrollheight);
+	$("#wrapper").css("top",top);
 	mui("#wrapper").scroll();
 };

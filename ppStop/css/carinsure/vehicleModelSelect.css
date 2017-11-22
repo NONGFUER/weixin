@@ -9,6 +9,7 @@ header {
 	width: 100%;
 	background-color: #ebebeb;
 	margin-top: 44px;
+	padding-bottom: 10px;
 }
 
 .inputCssdiv{
@@ -24,13 +25,11 @@ header {
 }
 .noticediv{
 	width: 100%;
-	height:50px;
 	font-size: 14px;
 	padding-left: 5%;
 	padding-right: 3%;
 	color: #666;
 	background-color: #ebebeb;
-	border-bottom: 1px solid #ccc;
 }
 .cusselectClass{
 	float: left;
@@ -53,7 +52,6 @@ header {
 }
 .wrapper {
 	width: 100%;
-	top: 138px;
 	position: absolute;
 }
 .divWrapper {
@@ -339,4 +337,27 @@ aside ul li{
 /*** 小写转大写 ***/
 #searchtext {
     text-transform: Uppercase;
+}
+
+
+
+/* 品牌填写示例 */
+.wenhao{
+	width: 12px;
+    height: 12px;
+    margin-left: 4px;
+}
+.whitetext
+{
+	color: #fff;
+	font-size: 14px;
+}
+.backdrop-content{
+	width:84%;
+	font-size: 18px;
+    color: #fff;
+    position: absolute;
+    left: 8%;
+    z-index: 1000;
+    text-align: center;
 }

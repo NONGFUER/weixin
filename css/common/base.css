@@ -41,10 +41,10 @@ input,select,textarea {
 	outline: none;
 	color: #ccc;
 }
-input::-webkit-input-placeholder,textarea::-webkit-input-placeholder { 
+/* input::-webkit-input-placeholder,textarea::-webkit-input-placeholder { 
     color: #ccc;
     line-height: 3;
-}
+} */
 .fl {
 	float: left;
 }

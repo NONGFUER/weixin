@@ -36,40 +36,7 @@ header{
 	float: right;
      padding-right: 20px;
 }
-/**--------------------------------------------- 商业险交强险 --------------------------------------*/
-.priceTable{
-	width:100%;
-}
-.priceTable td{
-	height:60px;
-	vertical-align: middle;
-}
-.priceTable tr td:nth-child(1){
-	width:4.67%;
-}
-.priceTable tr td:nth-child(2){
-	width:15.33%;
-}
-.priceTable tr td:nth-child(3){
-	width:30%;
-	font-size:14px;
-	color:#888;
-	text-align: center;
-}
-.priceTable tr td:nth-child(4){
-	width:40%;
-	text-align: right;
-}
-.priceTable tr td:nth-child(5){
-	width:10%;
-	text-align: right;
-	padding-right: 20px;
-}
-/* 向右箭头 */
-.linkicon {
-    width: 8px;
-    height: 10px;
-}
+
 /**-- 保费---- */
 #premium{
 	color:#e63f52;
@@ -77,22 +44,15 @@ header{
 }
 /**---------------------------------------------------- 起保时间---- ---------------------*/
 #businessBdate,#jqxBdate{
-	width:50%;
+	width:70%;
 	color:#444;
 	text-align: right;
-	float: right;
+	background: url(../../images/date.png) no-repeat right;
+	background-size: 10%;
+	padding-right: 10%;
+	
 }
-#timeTable,#jqxtimeTable{
-	font-weight: bold;
-	font-size: 14px;
-}
-#timeTable td,#jqxtimeTable td{
-	height: 30px;
-}
-#jqpj,#sypj{
-	float:right;
-	padding-right: 10px;
-}
+
 /**------------------------------------------ 配送地址 ---------------------------*/
 .addressPart,.toubaoPart{
 	margin-top: 10px;
@@ -106,14 +66,6 @@ header{
 .addressInfoCell{
 	height:45px;
 	line-height:45px;
-}
-#sjrName{
-	width:30%;
-	float: left;
-}
-#jqxPhone{
-	width:40%;
-	float:left;
 }
 /*---------------------------------------- 投被保人信息------------------ */
 .toubaoPart{

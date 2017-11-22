@@ -20,8 +20,6 @@ var suixinyi = {
 }
 document.write("<script language='javascript' src='"+base.url+"weixin/js/util/rollups/aes.js' ></script>");
 document.write("<script language='javascript' src='"+base.url+"weixin/js/util/components/pad-iso10126-min.js' ></script>");
-document.write("<script src='http://pv.sohu.com/cityjson?ie=utf-8'></script>");
-document.write("<script language='javascript' src='"+base.url+"weixin/js/util/weixin.js'></script>");
 var dic_m = new Map();
 var dic_m1 = new Map();
 if (typeof tit !== 'object') {

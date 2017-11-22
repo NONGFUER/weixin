@@ -1,3 +1,4 @@
+var chaoFlag = '';
 $(function(){
 	mui('.mui-scroll-wrapper').scroll({
 		deceleration: 0.0005 
@@ -150,6 +151,7 @@ function loadPrivinceCallback(data){
 				$("#qdName").attr('name','');			//清空
 				$("#qdDotName").text('请选择');			//清空
 				$("#qdDotName").attr('name','');		//清空
+				$("#qdDotName").attr('isShow','');
 				loadArea(item[0].value)
 			});
 		});
@@ -185,6 +187,7 @@ function loadCityCallback(data){
 				$("#qdName").attr('name','');			//清空
 				$("#qdDotName").text('请选择');			//清空
 				$("#qdDotName").attr('name','');		//清空
+				$("#qdDotName").attr('isShow','');
 				loadChannel(item[0].value)
 			});
 		});
@@ -226,6 +229,10 @@ function loadChannelCallback(data){
 				$("#qdName").attr('name',item[0].value);
 				$("#qdDotName").text('请选择');			//清空
 				$("#qdDotName").attr('name','');	//清空
+				$("#qdDotName").attr('isShow','');
+				$("#salesmanCode").val('');				//渠道员工工号
+				$("#salesmanMobile").val('');			//渠道员工名称
+				$("#salesmanName").val('');				//渠道员工手机号码
 				loadDot(item[0].value)
 			});
 		});
@@ -239,6 +246,7 @@ function loadDot(qdcode){
 	var url = base.url + 'channel/loadDot.do';
 	var reqData = {
 			'request':{
+				"cityCode":$("#orgCityCode").attr('name'),
 				"channelCode" : qdcode
 			}
 	}
@@ -268,6 +276,7 @@ function loadDotCallback(data){
 				$("#qdDotName").text(item[0].text);
 				$("#qdDotName").attr('name',item[0].value);
 				$("#qdDotName").attr('agentId',item[0].agentId);
+				$("#qdDotName").attr('isShow',item[0].isShow);
 				if(item[0].isShow == '1'){
 					$('.qqhidden').show();
 				}
@@ -289,19 +298,28 @@ function validateSalesManInfo(obj){
 				"channelCode" : $('#qdName').attr('name')
 			}
 	}
-	$.reqAjaxs( url, reqData, validateSalesManInfoCallback );
+	$.reqAjaxsFalse( url, reqData, validateSalesManInfoCallback );
 }
 
 function validateSalesManInfoCallback(data){
 	if(data.statusCode == '000000'){
 		if(JSON.stringify(data.returns) == '{}'){
-			modelAlert('该渠道工号不存在！');
+			modelAlert('该渠道工号不存在！','',chao);
+			$("#salesmanCode").val('');				//渠道员工工号
+			$("#salesmanMobile").val('');			//渠道员工名称
+			$("#salesmanName").val('');				//渠道员工手机号码
+			chaoFlag = 'chao'
 		}else{
 			$('#salesmanMobile').val(data.returns.salesMan.salesmanMobile);
 			$('#salesmanName').val(data.returns.salesMan.salesmanName);
 		}		
 	}else{
-		modelAlert(data.statusMessage);
+		chaoFlag = 'chao'
+		$("#salesmanCode").val('');				//渠道员工工号
+		$("#salesmanMobile").val('');			//渠道员工名称
+		$("#salesmanName").val('');				//渠道员工手机号码
+		modelAlert(data.statusMessage,'',chao);
+		return false;
 	}
 	
 }
@@ -324,6 +342,7 @@ function getFormData(){
 	var salesChannelName		= $("#qdName").text();
 	var dotCode 				= $("#qdDotName").attr('name');			//渠道网点名称
 	var dotName 				= $("#qdDotName").text();
+	var isShow 				    = $("#qdDotName").attr('isShow');			//渠道网点名称
 	var salesmanCode 			= $.trim($("#salesmanCode").val());				//渠道员工工号
 	var salesmanMobile 			= $.trim($("#salesmanMobile").val());			//渠道员工名称
 	var salesmanName 			= $.trim($("#salesmanName").val());				//渠道员工手机号码
@@ -333,7 +352,12 @@ function getFormData(){
 	if($.isNull(salesCityCode)){modelAlert('请选择渠道所属市');return false;}
 	if($.isNull(salesChannelCode)){modelAlert('请选择渠道名称');return false;}
 	if($.isNull(dotCode)){modelAlert('请选择渠道网点名称');return false;}
-	
+	if($.isNull(salesmanMobile)){
+		salesmanCode = '';
+		salesmanMobile = '';
+		salesmanName = '';
+	}
+	formData.isShow				  = isShow;
 	formData.agentId 			  = agentId;
 	formData.bySalesmanCode       = bySalesmanCode;
 	formData.bySalesmanName       = bySalesmanName;
@@ -383,6 +407,15 @@ function saveShowInfoCallback(data){
 
 //跳转到下个页面
 function toInsuranceMall(){
+	if( $('#salesmanCode').val() ){
+		validateSalesManInfo(document.getElementById('salesmanCode'))
+	}	
+	if(chaoFlag == 'chao'){
+		return false;
+	}
 	saveShowInfo();
 	
+}
+function chao(){
+	chaoFlag = '';
 }

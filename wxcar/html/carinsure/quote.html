@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="../../css/mui/mui.picker.min.css" />
     <link rel="stylesheet" href="../../css/common/base.css" />
     <link rel="stylesheet" href="../../css/common/common.css" />
-    <link rel="stylesheet" href="../../css/carinsure/quote.css?v=20170606"/>
+    <link rel="stylesheet" href="../../css/carinsure/quote.css?V=20171117"/>
     
 </head>
 <body>
@@ -41,82 +41,117 @@
 			         <td colspan="2">被保车辆 <span class="plateNo"></span></td>
 			       </tr>
 		    </table>
-		      <!--   保费部分-->
-		     <table class="priceTable">
-		       <tr>
-		         <td></td>
-		         <td class="border-1px-bottom"><img class="chexianLogo" src="../../images/tiananlogo.png"></td>
-		         <td class="border-1px-bottom"><div style="width:100%;">天安车险<br>出行更放心</div></td>
-		         <td class="border-1px-bottom"><span id="premium"></span></td>
-		         <td><img class="linkicon" src="../../images/xiala.png"></td>
-		       </tr>
-		    </table> 
+		       <!--   保费部分-->
+		    <ul class="mui-table-view priceTable">
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-3 mui-text-left"><img src="../../images/tianan.png"></div>
+				        <div class="mui-col-xs-6 mui-text-right"><span id="premium"></span></div>
+				        <div class="mui-col-xs-3 mui-text-right"><img style="width:90%;" src="../../images/detail.png"></div>
+				    </div>
+		        </li>
+		    </ul>
+		   <ul class="mui-table-view BusquoteTable">
+		        <li class="mui-table-view-cell">
+		            <div class="mui-col-xs-12 mui-text-left"><h4>天安车险商业险</h4></div>
+		        </li>
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-3 mui-text-left">起保时间</div>
+				        <div class="mui-col-xs-9 mui-text-right"><input id="businessBdate" class="datechoose" type="text"  readonly="readonly"/></div>
+				    </div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-3 mui-text-left">保费</div>
+				        <div class="mui-col-xs-8 mui-text-right"><span id="busmoney"></span></div>
+				        <div class="mui-col-xs-1 mui-text-left"></div>
+				    </div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-3 mui-text-left">风险评估</div>
+				        <div class="mui-col-xs-8 mui-text-right"><span id="sypj"></span></div>
+				        <div class="mui-col-xs-1 mui-text-left"></div>
+				    </div>
+				</li>
+		    </ul>
 		    
-		     <table class="JQxquoteTable quoteTable">
-			       <tr>
-			         <td></td>
-			         <td><img class="cheliang" src="../../images/time.png"></td>
-			         <td><span class="tabel">交强险起保时间</span><input id="jqxBdate" class="datechoose" type="text"  readonly="readonly"/></td>
-			         <td><img class="linkicon" src="../../images/xiala.png"></td>
-		     </table>
-		     <table id="jqxtimeTable" class="quoteTable">
-			       <tr>
-			         <td></td>
-			         <td></td>
-			         <td colspan="2">交强险保费：<span id="jqxmoney"></span><span id="jqpj"></span></td>
-			       </tr>
-			 </table>   
-			 
-		     <table class="BusquoteTable quoteTable">
-		        <tr>
-		         <td></td>
-		         <td><img class="cheliang" src="../../images/time.png"></td>
-		         <td>商业险起保时间<input id="businessBdate" class="datechoose" type="text"  readonly="readonly"/></td>
-		         <td><img class="linkicon" src="../../images/xiala.png"></td>
-		        </tr> 
-		      </table>
-		      <table id="timeTable" class="quoteTable">
-			      <tr>
-			         <td></td>
-			         <td></td>
-			         <td colspan="2">商业险保费：<span id="busmoney"></span><span id="sypj"></span></td>
-			       </tr>
-			       <tr>
-			         <td></td>
-			         <td></td>
-			         <td colspan="2">车&nbsp;&nbsp;&nbsp;船&nbsp;&nbsp;&nbsp;税&nbsp;：<span id="vehicletaxPre"></span></td>
-			       </tr>
-			  </table>
-		    <div style="width:100%;height: 10px;background-color: #fff;"></div>
-		  </div>
+		     <ul class="mui-table-view JqxquoteTable">
+		        <li class="mui-table-view-cell">
+		            <div class="mui-col-xs-12 mui-text-left"><h4>天安车险交强险</h4></div>
+		        </li>
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-3 mui-text-left">起保时间</div>
+				        <div class="mui-col-xs-9 mui-text-right"><input id="jqxBdate" class="datechoose" type="text"  readonly="readonly"/></div>
+				    </div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-3 mui-text-left">保费</div>
+				        <div class="mui-col-xs-8 mui-text-right"><span id="jqxmoney"></span></div>
+				        <div class="mui-col-xs-1 mui-text-left"></div>
+				    </div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-3 mui-text-left">风险评估</div>
+				        <div class="mui-col-xs-8 mui-text-right"><span id="jqpj"></span></div>
+				        <div class="mui-col-xs-1 mui-text-left"></div>
+				    </div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-3 mui-text-left"><b>车船税</b></div>
+				        <div class="mui-col-xs-8 mui-text-right"><span id="vehicletaxPre"></span></div>
+				        <div class="mui-col-xs-1 mui-text-left"></div>
+				    </div>
+				</li>
+		    </ul>
 		    
 		    <!-- 配送地址部分 -->
-		  <div class="addressPart">
-		      <!--   邮寄地址 -->
-		     <table id="addressHead" class="quoteTable border-1px-bottom">
-			       <tr>
-			         <td></td>
-			         <td><img class="cheliang" src="../../images/address.png"></td>
-			         <td>保单邮寄地址</td>
-			         <td><img class="linkicon" src="../../images/xiala.png"></td>
-			       </tr>
-		    </table>
-		    <div class="addressInfo" style="display:none">
-		       <div class="addressInfoCell border-1px-bottom"><div id="sjrName"></div><div id="sjrPhone"></div></div>
-		       <div class="addressInfoCell"><span id="addresseeprovince"></span><span id="psAddress"></span></div>
-		    </div>
-		  </div> 
+	       <ul id="addressHead" class="mui-table-view addressPart">
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-9 mui-text-left"><h4>保单邮寄地址</h4></div>
+				        <div class="mui-col-xs-3 mui-text-right"><img style="width:90%;" src="../../images/xgaddress.png"></div>
+				    </div>
+		        </li>
+		    </ul>
+	        <ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-3 mui-text-left">姓名</div>
+				        <div id="sjrName" class="mui-col-xs-8 mui-text-right"></div>
+				        <div class="mui-col-xs-1 mui-text-left"></div>
+				    </div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-3 mui-text-left">电话</div>
+				        <div id="sjrPhone" class="mui-col-xs-8 mui-text-right"></div>
+				        <div class="mui-col-xs-1 mui-text-left"></div>
+				    </div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-3 mui-text-left">地址</div>
+				        <div class="mui-col-xs-8 mui-text-right"><span id="addresseeprovince"></span><span id="psAddress"></span></div>
+				        <div class="mui-col-xs-1 mui-text-left"></div>
+				    </div>
+				</li>
+			</ul>
 		    <!-- 投保信息部分 -->
 		  <div class="toubaoPart">
 		      <!--   投保信息 -->
-		     <table class="quoteTable border-1px-bottom">
-			       <tr>
-			         <td></td>
-			         <td><img class="cheliang" src="../../images/toubaoxinxi.png"></td>
-			         <td>投保信息</td>
-			         <td></td>
-			       </tr>
-		    </table>
+		     <ul id="addressHead" class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<div class="mui-row">
+				        <div class="mui-col-xs-12 mui-text-left"><h4>投保信息</h4></div>
+				    </div>
+		        </li>
+		    </ul>
 		    <div class="addressInfo">
 		             <!--     被保人信息 -->
 		       <div class="addressInfoCell border-1px-bottom">
@@ -379,6 +414,6 @@
     <script type="text/javascript" src="../../js/mui/mui.picker.min.js"></script>
     <script type="text/javascript" src="../../js/util/base.js" ></script>
     <script type="text/javascript" src="../../js/util/common.js" ></script> 
-    <script type="text/javascript" src="../../js/carinsure/quote.js?20171109" ></script>
+    <script type="text/javascript" src="../../js/carinsure/quote.js?V=20171117" ></script>
 </body>
 </html>

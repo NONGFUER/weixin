@@ -17,8 +17,8 @@
 	<link rel="stylesheet" href="/tongdaoPlatform/weixin/ppStop/css/mui/mui.picker.min.css" />
     <link rel="stylesheet" href="/tongdaoPlatform/weixin/ppStop/css/common/base.css" />
     <link rel="stylesheet" href="/tongdaoPlatform/weixin/ppStop/css/common/common.css" />
-    <link rel="stylesheet" href="/tongdaoPlatform/weixin/ppStop/css/carinsure/carMes.css?20170620"/>
-    <link rel="stylesheet" href="/tongdaoPlatform/weixin/ppStop/css/carinsure/vehicleModelSelect.css"/>
+    <link rel="stylesheet" href="/tongdaoPlatform/weixin/ppStop/css/carinsure/carMes.css?v=201701116"/>
+    <link rel="stylesheet" href="/tongdaoPlatform/weixin/ppStop/css/carinsure/vehicleModelSelect.css?v=201701116"/>
 </head>
 <body>
 	<header>
@@ -339,11 +339,16 @@
 				</div>
 				<div id="selectbtn" class="selectbtn">搜索</div>
 			</div>
-			<div class="noticediv"><span>提示：品牌型号如“别克SGM7180”可只填写汉字、字母和数字</span></div>
+			<div class="noticediv">
+			  <span>
+			    1、请按照行驶证上的型号填写汉字、字母和数字，如“别克SGM7180”。<img class="wenhao" src="../../images/wenhao.png" /><br/>
+				2、如提示车型不对，可按照系统提示信息录入车型。
+              </span>
+             </div>
 		</div>
 		<!-- 无车型信息提示 --> 
 		<div id="maindiv" style="display:none">
-			<section id="section1" class="">
+			<section id="section1">
 				<div class="nowishd1">
 					<img src="/tongdaoPlatform/weixin/ppStop/images/noProduct.png"/>
 					<span>抱歉，没有查到您的车型！</span>
@@ -352,17 +357,27 @@
 		</div>
 		<!-- 品牌型号列表 -->
 		<div id="wrapper" class="wrapper mui-scroll-wrapper">
-					<section id="customManageWrapper" class="mui-scroll">
-						<div class="divWrapper" >
-						    
-						    <div id="searchcustomer">
-						        
-						    </div>
-						</div>
-					</section>	 
-			</div>
+			<section id="customManageWrapper" class="mui-scroll">
+				<div class="divWrapper" >
+				    <div id="searchcustomer">
+				        
+				    </div>
+				</div>
+			</section>	 
+		</div>
 	</div>
 	<!-- 填写小助手 -->
+	<!-- 行驶证填写示例 -->
+	<div id="licenseshadow" class="mui-backdrop" style="display: none;">
+		<div class="backdrop-content" style="margin-top: 100px;">
+			<p class="whitetext">请按照行驶证填写</p>
+			<br>
+			<img style="width: 100%" src="/tongdaoPlatform/weixin/ppStop/images/license.png">
+			<br>
+			<br>
+			<img style="width:30px;" src="/tongdaoPlatform/weixin/ppStop/images/chahao2.png">
+		</div>
+	</div>
 	<!-- 遮罩和卡片填写示例 -->
 	<div class="shadow"></div>
 	 <!-- 行驶证提示 -->
@@ -387,8 +402,8 @@
     <script type="text/javascript" src="/tongdaoPlatform/weixin/ppStop/js/mui/mui.picker.min.js"></script>
     <script type="text/javascript" src="/tongdaoPlatform/weixin/ppStop/js/util/base.js" ></script>
     <script type="text/javascript" src="/tongdaoPlatform/weixin/ppStop/js/util/common.js" ></script> 
-    <script type="text/javascript" src="/tongdaoPlatform/weixin/ppStop/js/carinsure/carMes.js?20171025" ></script>
-    <script type="text/javascript" src="/tongdaoPlatform/weixin/ppStop/js/carinsure/vehicleModelSelect.js" ></script>
+    <script type="text/javascript" src="/tongdaoPlatform/weixin/ppStop/js/carinsure/carMes.js?v=201701116" ></script>
+    <script type="text/javascript" src="/tongdaoPlatform/weixin/ppStop/js/carinsure/vehicleModelSelect.js?v=201701116" ></script>
     <script type="text/javascript" charset="utf-8">
 		var slider = mui("#slider");
 		slider.slider({

@@ -32,7 +32,7 @@
 	</header>
 	<div class="channelEntry">
 		<div class="channelButton" id="mainChannel">全国通用渠道</div>
-		<div class="channelButton" id="otherChannel">其他渠道</div>
+		<div class="channelButton" id="otherChannel">湖北邮政储蓄银行渠道</div>
 	</div>
 	<script src="../js/util/zepto.min.js"></script>
 	<script src="../js/mui/mui.min.js"></script>
@@ -53,7 +53,7 @@
 			});
 			//其他渠道
 			$('#otherChannel').unbind('tap').bind('tap',function(){
-				alert('其他渠道');
+				window.location.href = base.url + '/weixin/ycCancer/html/insurance/main/cancerRisk.html?openid='+getUrlQueryString("openid")+'&mobile='+getUrlQueryString("mobile")+'&cusId='+getUrlQueryString("cusId")+'&type='+getUrlQueryString("roletype")+'&flag=1&channel=yc';//
 			});
 		});
 	</script>

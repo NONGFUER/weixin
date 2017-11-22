@@ -86,7 +86,7 @@ $.InfocallBack = function(data){
 			$("#name_input").val(name);//姓名
 			$("#phone_input").val(mobile);//手机号	
 			$("#id_input").val(idNo);//身份证
-			$("#introducer_input").val(parm.recommendAgentCode);//推荐人工号
+			$("#introducer_input").val(parm.teamCode);//推荐人工号
 			$("#jobarea_input").val(parm.workProvinceName + parm.workCityName);//入职地区	
 			$("#education_input").val(parm.education);//学历
 			$("#nation_input").val(parm.nation);//民族

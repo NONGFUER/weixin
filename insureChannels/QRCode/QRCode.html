@@ -18,20 +18,78 @@
 	 <div id="bodyMuiScroll" class="mui-scroll-wrapper">
      	<div class="mui-scroll">
      	<div>
-     		<div></div>
+     		<div id='ccname'></div>
      		<img id="QRCode">
      		<span id='share'>分享二维码</span>
+     		<dl class="insure-form-group" id="ywy">
+	     		<dt class="group-title">
+	     			<div class="group-title-main">渠道出单所属佰盈业务员</div>
+	     		</dt>
+	     		<dd class="baiy">
+	     			<label>业务员工号</label> <input type="text" id="ywyCode" value=""  readonly="readonly"/>
+	     		</dd>
+	     		<dd class="baiy">
+	     			<label>业务员名称</label> <input type="text" id="ywyName" value=""  readonly="readonly"/>
+	     		</dd>
+	     		<dd class="baiy">
+	     			<label>业务员分公司</label> <input type="text" id="ywyCompany" value=""  readonly="readonly"/>
+	     		</dd>
+	     		<dd class="baiy">
+	     			<label>业务员中支机构</label> <input type="text" id="ywySubPany" value=""  readonly="readonly"/>
+	     		</dd>
+     		</dl>
+     		<dl class="insure-form-group">
+	     		<dt class="group-title">
+	     			<div class="group-title-main">渠道信息</div>
+	     		</dt>
+	     		<dd>
+	     			<label>渠道所属地区</label> 
+
+     				<span class="zi">市</span>
+     				<img alt="" src="../../images/common/down.png" class="down1 cdown">
+     				<span class="orgCityCode" id="orgCityCode">请选择</span>
+     					
+     				<span class="zi">省</span>
+     				<img alt="" src="../../images/common/down.png" class="down1 pdown">
+     				<span class="orgProvinceCode" id="orgProvinceCode">请选择</span>    				
+	     		</dd>
+	     		<dd>
+	     			<label>渠道名称</label> <span class="chooicespan" id='qdName'>请选择</span>
+	     		</dd>
+	     		<dd class="ib">
+	     			<label>渠道网点名称</label> <span class="chooicespan" id='qdDotName'>请选择</span>
+	     		</dd>
+	     		<dd class="qqhidden">
+	     			<label>渠道员工工号</label> <input type="text" id="salesmanCode" value=""  readonly="readonly" />
+	     		</dd>
+	     		<dd class="qqhidden">
+	     			<label>渠道员工名称</label> <input type="text" id="salesmanName" value=""  readonly="readonly"/>
+	     		</dd>
+	     		<dd class="qqhidden">
+	     			<label>渠道员工手机号码</label> <input type="text" id="salesmanMobile" value=""  readonly="readonly"/>
+	     		</dd>
+	     		<dd>
+	     			<label>备注信息</label> <input type="text" id="remark" value=""  readonly="readonly" />
+	     		</dd>
+	     		
+     		</dl>
      	</div>
      	</div>
      </div>
+     <div id="weixin" style="display:none">
+			<img src="../../images/common/weixin.png" alt="" style="z-index: 2; width: 100%;height: 100%;    position: absolute;">
+			<div id="guanbi" style="position: absolute;bottom: 30px;width: 100%;text-align: center;z-index: 3;">
+				<img src="../../images/common/cha.png" style="width: 50px;height: 50px;">
+			</div>
+		</div>
 	<script src="../../js/util/zepto.min.js"></script>
 	<script src="../../js/mui/mui.min.js"></script>	
 	<script src="../../js/util/jweixin-1.2.0.js"></script>
 	<script src="../../js/util/wx-gzpt-share.js"></script>
-	<script src="../../js/util/weixin.js"></script>
+	<script src="../../js/util/weixin1.js"></script>
 	<script src="../../js/util/base.js"></script>
 	<script src="../../js/util/common.js"></script>	
 	<script src="../publicParm.js"></script>
-	<script src="QRCode.js"></script>
+	<script src="QRCode.js?v=20171122"></script>
 </body>
 </html>
