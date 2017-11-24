@@ -76,7 +76,7 @@ function saveRiskServer(callback)
                 if(isEmpty(carmodelkey)) return;
 
                 setViewData("brandmodelname",carmodelkey);
-                window.location.href = "insurebrandmodel.html";
+                window.location.href = "insurebrandmodel.html?backflag=true";
             });
             return;
         }

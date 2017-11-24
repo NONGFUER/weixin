@@ -9,13 +9,15 @@ $(function() {
 	parm = JSON.parse(str);
 	console.log(parm);
 	sessionid = parm.body.cxSessionId;
-	// 计算页面高度
-	$.setscroll();
+	
 	$("#searchtext").val(sessionStorage.getItem("brandKey"));
 	var cityCode=parm.body.cityCode;
 	if(cityCode!="3110000"&&cityCode!="3310000"){//非北京  非上海
 	  $(".demomodel").html(sessionStorage.getItem("brandKey"));
+	  $("#tipModel").show();
 	}
+	// 计算页面高度
+	$.setscroll();
 	/***返回***/
 	$(".h_back").unbind("tap").bind("tap",function() {
 		window.history.back();

@@ -21,8 +21,29 @@ $(function(){
 			$(this).addClass("on");
 	        $(this).find("img").attr("src","../../images/common/gou.png");
 	        $(".baiy").hide(1000);
+	        $("#ywyCode").val(''); //业务员工号
+			$("#ywyName").val(''); //业务员名称
+			$("#ywyCompany").attr('name','');//业务员分公司
+			$("#ywyCompany").val('');
+			$("#ywySubPany").attr('name','');//业务员中支机构
+			$("#ywySubPany").val('');
 		}
 	});
+	$("#orgCityCode").unbind('tap').bind('tap',function(){
+		if(!$("#orgProvinceCode").attr('name')){
+			modelAlert('请先选择渠道所属省！');
+			return false;
+		}
+	})
+	$("#qdName").unbind('tap').bind('tap',function(){
+		if(!$("#orgProvinceCode").attr('name')){modelAlert('请先选择渠道所属省！');return false;}
+		if(!$("#orgCityCode").attr('name')){modelAlert('请先选择渠道所属市！！');return false;}
+	})
+	$("#qdDotName").unbind('tap').bind('tap',function(){
+		if(!$("#orgProvinceCode").attr('name')){modelAlert('请先选择渠道所属省！');return false;}
+		if(!$("#orgCityCode").attr('name')){modelAlert('请先选择渠道所属市！');return false;}
+		if(!$("#qdName").attr('name')){modelAlert('请先选择渠道名称！');return false;}
+	})
 });
 
 function queryShowInfo(customerId){
@@ -38,29 +59,39 @@ function queryShowInfo(customerId){
 function queryShowInfoCallback(data){
 	if( data.statusCode == '000000' ){
 		var channelCustomerEdit     = data.returns.channelCustomerEdit;
-		$("#qdDotName").attr('agentId',channelCustomerEdit.agentId);
-		$("#ywyCode").val(channelCustomerEdit.bySalesmanCode); //业务员工号
-		$("#ywyName").val(channelCustomerEdit.bySalesmanName); //业务员名称
-		$("#ywyCompany").attr('name',channelCustomerEdit.bySalesmanOrgCode);//业务员分公司
-		$("#ywyCompany").val(channelCustomerEdit.bySalesmanOrgName);
-		$("#ywySubPany").attr('name',channelCustomerEdit.bySalesmanSubOrgCode);//业务员中支机构
-		$("#ywySubPany").val(channelCustomerEdit.bySalesmanSubOrgName);
-		
-		$("#orgProvinceCode").attr('name',channelCustomerEdit.salesProvinceCode);			//渠道所属地区
-		$("#orgProvinceCode").text(channelCustomerEdit.salesProvinceName);
-		$("#orgCityCode").attr('name',channelCustomerEdit.salesCityCode);		//渠道所属地区
-		$("#orgCityCode").text(channelCustomerEdit.salesCityName);
-		$("#qdName").attr('name',channelCustomerEdit.salesChannelCode);			//渠道名称
-		$("#qdName").text(channelCustomerEdit.salesChannelName);
-		$("#qdDotName").attr('name',channelCustomerEdit.dotCode);			//渠道网点名称
-		$("#qdDotName").text(channelCustomerEdit.dotName);
-		if(channelCustomerEdit.isShow == '1'){
-			$('.qqhidden').show();
+		if(channelCustomerEdit){
+			$("#qdDotName").attr('agentId',channelCustomerEdit.agentId);
+			$("#ywyCode").val(channelCustomerEdit.bySalesmanCode); //业务员工号
+			$("#ywyName").val(channelCustomerEdit.bySalesmanName); //业务员名称
+			$("#ywyCompany").attr('name',channelCustomerEdit.bySalesmanOrgCode);//业务员分公司
+			$("#ywyCompany").val(channelCustomerEdit.bySalesmanOrgName);
+			$("#ywySubPany").attr('name',channelCustomerEdit.bySalesmanSubOrgCode);//业务员中支机构
+			$("#ywySubPany").val(channelCustomerEdit.bySalesmanSubOrgName);
+			
+			$("#orgProvinceCode").attr('name',channelCustomerEdit.salesProvinceCode);			//渠道所属地区
+			$("#orgProvinceCode").text(channelCustomerEdit.salesProvinceName);
+			if(channelCustomerEdit.salesProvinceCode){
+				loadArea(channelCustomerEdit.salesProvinceCode)
+			}
+			$("#orgCityCode").attr('name',channelCustomerEdit.salesCityCode);		//渠道所属地区
+			$("#orgCityCode").text(channelCustomerEdit.salesCityName);
+			if(channelCustomerEdit.salesCityCode){
+				loadChannel(channelCustomerEdit.salesCityCode)
+			}	
+			$("#qdName").attr('name',channelCustomerEdit.salesChannelCode);			//渠道名称
+			$("#qdName").text(channelCustomerEdit.salesChannelName);
+			if(channelCustomerEdit.salesChannelCode){
+				loadDot(channelCustomerEdit.salesChannelCode)
+			}
+			
+			$("#qdDotName").attr('name',channelCustomerEdit.dotCode);			//渠道网点名称
+			$("#qdDotName").text(channelCustomerEdit.dotName);
+			$("#qdDotName").attr('isShow',channelCustomerEdit.isShow);
+			$("#salesmanCode").val(channelCustomerEdit.salesmanCode);				//渠道员工工号
+			$("#salesmanMobile").val(channelCustomerEdit.salesmanMobile);			//渠道员工名称
+			$("#salesmanName").val(channelCustomerEdit.salesmanName);				//渠道员工手机号码
+			$("#remark").val(channelCustomerEdit.remark);					//备注		
 		}
-		$("#salesmanCode").val(channelCustomerEdit.salesmanCode);				//渠道员工工号
-		$("#salesmanMobile").val(channelCustomerEdit.salesmanMobile);			//渠道员工名称
-		$("#salesmanName").val(channelCustomerEdit.salesmanName);				//渠道员工手机号码
-		$("#remark").val(channelCustomerEdit.remark);					//备注
 	}else{
 		modelAlert(data.statusMessage)
 	}
@@ -71,7 +102,12 @@ function queryShowInfoCallback(data){
 function isWhiteRequest(obj){
 	var whiteCode = $.trim($(obj).val());
 	if($.isNull(whiteCode)){
-		modelAlert("请先填写渠道出单所属佰盈业务员工号！");
+		$("#ywyCode").val('');
+		$("#ywyName").val( '' );
+		$("#ywyCompany").val( '');
+		$("#ywyCompany").attr("name", '');
+		$("#ywySubPany").val( '');
+		$("#ywySubPany").attr("name", '');
 		return false;
 	}
 	var url = base.url + 'agent/isWhite.do';
@@ -87,7 +123,7 @@ function isWhiteRequest(obj){
 				"recommendId": whiteCode
 			}
 	}
-	$.reqAjaxs( url, sendJson, isWhiteCallBack );
+	$.reqAjaxsFalse( url, sendJson, isWhiteCallBack );
 }
 
 function isWhiteCallBack( data ){
@@ -112,7 +148,14 @@ function isWhiteCallBack( data ){
 		$("#ywySubPany").val(reComCityName);
 		$("#ywySubPany").attr("name",reComCityCode);								
 	}else{
-		modelAlert(data.statusMessage);		
+		chaoFlag = 'chao'
+		$("#ywyCode").val('');
+		$("#ywyName").val( '' );
+		$("#ywyCompany").val( '');
+		$("#ywyCompany").attr("name", '');
+		$("#ywySubPany").val( '');
+		$("#ywySubPany").attr("name", '');
+		modelAlert(data.statusMessage,'',chao);		
 		return false;
 	}
 }
@@ -167,7 +210,7 @@ function loadCityCallback(data){
 		var lists = data.returns.list;
 		$("#orgCityCode").unbind('tap').bind('tap',function(){
 			if(!$("#orgProvinceCode").attr('name')){
-				modelAlert('请先选择省！');
+				modelAlert('请先选择渠道所属省！');
 				return false;
 			}
 			var selectPicker1 = new mui.PopPicker();
@@ -212,8 +255,8 @@ function loadChannelCallback(data){
 	if( data.statusCode == "000000"){	
 		var lists = data.returns.list;
 		$("#qdName").unbind('tap').bind('tap',function(){
-			if(!$("#orgProvinceCode").attr('name')){modelAlert('请先选择省！');return false;}
-			if(!$("#orgCityCode").attr('name')){modelAlert('请先选择市！');return false;}
+			if(!$("#orgProvinceCode").attr('name')){modelAlert('请先选择渠道所属省！');return false;}
+			if(!$("#orgCityCode").attr('name')){modelAlert('请先选择渠道所属市！！');return false;}
 			var selectPicker2 = new mui.PopPicker();
 			var popArray = [];
 			for( var i = 0; i < lists.length; i++ ){
@@ -277,9 +320,6 @@ function loadDotCallback(data){
 				$("#qdDotName").attr('name',item[0].value);
 				$("#qdDotName").attr('agentId',item[0].agentId);
 				$("#qdDotName").attr('isShow',item[0].isShow);
-				if(item[0].isShow == '1'){
-					$('.qqhidden').show();
-				}
 			});
 		});
 	}else{
@@ -291,6 +331,7 @@ function loadDotCallback(data){
 function validateSalesManInfo(obj){
 	if( $.trim($(obj).val()) == '' ){return false;}
 	if(!$('#qdName').attr('name')){modelAlert('请先选择渠道！');return false;}
+	if($("#qdDotName").attr('isShow') != '1'){return false;}
 	var url = base.url + 'channel/validateSalesManInfo.do';
 	var reqData = {
 			'request':{
@@ -357,6 +398,15 @@ function getFormData(){
 		salesmanMobile = '';
 		salesmanName = '';
 	}
+	if($.isNull(bySalesmanName)&& !$.isNull(bySalesmanCode)){
+		bySalesmanCode = '';
+		modelAlert('该工号不存在！');
+	}
+	if($.isNull($('#ywyCode').val())){
+		formData.byIsShow	= '0';
+	}else{
+		formData.byIsShow	= '1';
+	}
 	formData.isShow				  = isShow;
 	formData.agentId 			  = agentId;
 	formData.bySalesmanCode       = bySalesmanCode;
@@ -407,7 +457,17 @@ function saveShowInfoCallback(data){
 
 //跳转到下个页面
 function toInsuranceMall(){
-	if( $('#salesmanCode').val() ){
+	if($('#isGou').hasClass("on")){
+		
+	}else{
+		if($.isNull($("#ywyCode").val())){
+			modelAlert("请填写渠道出单所属佰盈业务员工号");
+			return false;
+		}
+		isWhiteRequest(document.getElementById('ywyCode'))		
+	}
+	
+	if( $("#qdDotName").attr('isShow') == '1' ){
 		validateSalesManInfo(document.getElementById('salesmanCode'))
 	}	
 	if(chaoFlag == 'chao'){
@@ -418,4 +478,8 @@ function toInsuranceMall(){
 }
 function chao(){
 	chaoFlag = '';
+}
+
+function backlast(){
+	
 }

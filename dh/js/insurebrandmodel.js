@@ -13,17 +13,26 @@ function scrollScreen()
 
 function showHeader()
 {
+	var backflag = getUrlParam("backflag");
+	if(backflag){
+		 var citycode = getViewData("citycode");
+		 if(citycode!="3110000"&&citycode!="3310000"){//非北京  非上海
+			 var brandmodelname = getViewData("brandmodelname");
+		     $(".demomodel").html(brandmodelname||"");
+		     $("#tip").show();
+		 }
+	}
     if(isApp() == 'yes')
     {
         $("#header").hide();
         $("#main").css("margin-top","-35px");
-        $("#record").css("margin-top","145px");
+        $("#record").css("margin-top",145+$("#tip").height()+10+"px");
     }
     else
     {
         $("#header").show();
         $("#main").css("margin-top","5px");
-        $("#record").css("margin-top","180px");
+        $("#record").css("margin-top",180+$("#tip").height()+10+"px");
     }
 }
 

@@ -407,6 +407,43 @@ $(function() {
 						}else{
 							$("#plateEmail").hide();
 						}
+						var cxOrder=paramList.cxOrder;
+						if(cxOrder!=null){
+							var cxCarMessage=paramList.cxCarMessage;
+							 $("#vehicle_identification_input").val(cxCarMessage.rackNo);
+							 $("#engine_number_input").val(cxCarMessage.engineNo);
+							 var registerDate = timeFormatDate(cxCarMessage.registerDate.time,'yyyy-MM-dd');
+							 $("#vehicle_registration_date").val(registerDate);
+							//是否过户
+							if(cxCarMessage.transferFlag == 1){
+								document.getElementById("chooseIcons").src = base.ppStopImagePath + "dakai.png";
+								$("#specialCarDate_select").show();
+								var transferDate = timeFormatDate(cxCarMessage.transferDate.time,'yyyy-MM-dd'); //过户日期
+							    $("#specialCarDate").val(transferDate);
+							}else{
+								document.getElementById("chooseIcons").src = base.ppStopImagePath + "guanbi.png";
+								$("#specialCarDate_select").hide();
+								$("#specialCarDate").val("");
+							}
+							//是否外地车
+							if(cxCarMessage.ecdemicVehicleFlag == 1){
+								document.getElementById("choosecar").src = base.ppStopImagePath + "dakai.png";
+							}else{
+								document.getElementById("choosecar").src = base.ppStopImagePath + "guanbi.png";
+							}
+							$("#fuelType").attr("name",cxCarMessage.fuelType).val(cxCarMessage.fuelTypeName);
+							
+							$("#owner_name").val(cxOrder.ownerName);
+							sessionStorage.setItem("brandKey",cxCarMessage.vehicleBrand);
+						    $("#owner_idNo").val("");
+						    $("#owner_mobile").val("");
+						    $("#owner_email").val("");
+						    
+						    $("#certiStartDate").val("");
+                         	$("#certiEndDate").val("");
+                        	$("#nation").val("");
+							$("#issuer").val("");
+						}
 						setTimeout(function() {
 							$(".firstPart").hide();//车辆投保地区隐藏
 							$(".lastPart").show();//车辆详细信息显示

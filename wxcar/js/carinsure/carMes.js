@@ -451,6 +451,44 @@ $(function() {
 						}else{
 							$("#plateEmail").hide();
 						}
+						var cxOrder=paramList.cxOrder;
+						if(cxOrder!=null){
+							var cxCarMessage=paramList.cxCarMessage;
+							 $("#vehicle_identification_input").val(cxCarMessage.rackNo).css("color","#585858");
+							 $("#engine_number_input").val(cxCarMessage.engineNo).css("color","#585858");
+							 var registerDate = timeFormatDate(cxCarMessage.registerDate.time,'yyyy-MM-dd');
+							 $("#vehicle_registration_date").val(registerDate).css("color","#585858");
+							//是否过户
+							if(cxCarMessage.transferFlag == 1){
+								document.getElementById("chooseIcons").src = base.imagePath + "dakai.png";
+								$("#specialCarDate_select").show();
+								var transferDate = timeFormatDate(cxCarMessage.transferDate.time,'yyyy-MM-dd'); //过户日期
+							    $("#specialCarDate").val(transferDate).css("color","#585858");
+							}else{
+								document.getElementById("chooseIcons").src = base.imagePath + "guanbi.png";
+								$("#specialCarDate_select").hide();
+								$("#specialCarDate").val("请选择过户日期").css("color","#585858");
+							}
+							//是否外地车
+							if(cxCarMessage.ecdemicVehicleFlag == 1){
+								$("#info_car_choose div").css("color","#1b6bb8");
+								document.getElementById("choosecar").src = base.imagePath + "dakai.png";
+							}else{
+								$("#info_car_choose div").css("color","#585858");
+								document.getElementById("choosecar").src = base.imagePath + "guanbi.png";
+							}
+							$("#fuelType").attr("name",cxCarMessage.fuelType).val(cxCarMessage.fuelTypeName);
+							$("#owner_name").val(cxOrder.ownerName).css("color","#585858");
+							sessionStorage.setItem("brandKey",cxCarMessage.vehicleBrand);
+						    $("#owner_idNo").val("请输入车主身份证号");
+						    $("#owner_mobile").val("请输入车主手机号码");
+						    $("#owner_email").val("请输入车主邮箱");
+						    
+						    $("#certiStartDate").val("请选择身份证有效起期");
+                         	$("#certiEndDate").val("请选择身份证有效止期");
+                        	$("#nation").val("请选择民族");
+							$("#issuer").val("请输入签发机构");
+						}
 						$(".backindex").show();//返回按钮显示
 						$("#plateNumber").hide();
 						$(".mesdetail").show("fast");

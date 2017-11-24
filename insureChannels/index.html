@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="../css/common/public.css">
     <style type="text/css">
     	.channelEntry{
-    		margin-top:44px;
     		padding-top:40px;
     	}
     	.channelButton{
@@ -27,7 +26,7 @@
     </style>
 </head>
 <body>
-	<header class="mui-bar mui-bar-nav">
+	<header class="mui-bar mui-bar-nav hidden">
 		<h1 class="mui-title">渠道出单</h1>
 	</header>
 	<div class="channelEntry">
@@ -35,27 +34,52 @@
 		<div class="channelButton" id="otherChannel">湖北邮政储蓄银行渠道</div>
 	</div>
 	<script src="../js/util/zepto.min.js"></script>
+	<script src="../js/util/weixin.js"></script>
 	<script src="../js/mui/mui.min.js"></script>
 	<script src="../js/util/base.js"></script>
 	<script src="../js/util/common.js"></script>
 	<script type="text/javascript">
 		$(function(){
 			//全国通用渠道
-			$('#mainChannel').unbind('tap').bind('tap',function(){
-				var urlParm = {};
-					//urlParm.openid     = getUrlQueryString("openid");	//用于登陆
-					urlParm.mobile     = getUrlQueryString("mobile");	//手机号
-					urlParm.customerId = getUrlQueryString("cusId");	//用户id
-					urlParm.roleType   = getUrlQueryString("roletype"); //用户角色
-					//openid=ohNt9vx44UP2EnqzE6_C2dOXZQ4Q&mobile=13852291705&cusId=812&roletype=01
-			  	var jsonStr = UrlEncode(JSON.stringify(urlParm));
+			
+			if(getUrlQueryString("jsonKey")){
+				var urlParm = JSON.parse(UrlDecode(getUrlQueryString("jsonKey")));
+					urlParm.title = '填写出单信息';
+					urlParm.mobile = urlParm.userCode;
+					urlParm.customerId = urlParm.cusId;
+			}else{
+				var urlParm = {};				
+				urlParm.mobile     = getUrlQueryString("mobile");	//手机号
+				urlParm.customerId = getUrlQueryString("cusId");	//用户id
+				urlParm.roleType   = getUrlQueryString("roletype"); //用户角色
+				urlParm.entry      = 'qudao'
+			}
+			var jsonStr = UrlEncode(JSON.stringify(urlParm));
+			var mobile = urlParm.mobile;
+			var customerId = urlParm.customerId;
+			var roleType = urlParm.roleType;
+			var entry = urlParm.entry;
+			if( entry != 'app' ){
+				$("header").show();
+				$(".channelEntry").css("margin-top", "44px");
+			}			
+			$('#mainChannel').unbind('tap').bind('tap',function(){												  
 				window.location.href = base.url + 'weixin/insureChannels/channelInfo/channelInfo.html?jsonKey=' + jsonStr;//
 			});
 			//其他渠道
 			$('#otherChannel').unbind('tap').bind('tap',function(){
-				window.location.href = base.url + '/weixin/ycCancer/html/insurance/main/cancerRisk.html?openid='+getUrlQueryString("openid")+'&mobile='+getUrlQueryString("mobile")+'&cusId='+getUrlQueryString("cusId")+'&type='+getUrlQueryString("roletype")+'&flag=1&channel=yc';//
+				if( entry == 'qudao'){
+					window.location.href = base.url + '/weixin/ycCancer/html/insurance/main/cancerRisk.html?openid='+getUrlQueryString("openid")+'&mobile='+getUrlQueryString("mobile")+'&cusId='+getUrlQueryString("cusId")+'&type='+getUrlQueryString("roletype")+'&flag=1&channel=yc';//
+				}else{
+					window.location.href = base.url + '/weixin/ycCancer/html/insurance/main/cancerRisk.html?jsonKey=' + jsonStr;
+				}			
 			});
 		});
+		function backlast(){
+			if( entry == 'app'){
+				sysback();
+			}		
+		}
 	</script>
 </body>
 </html>

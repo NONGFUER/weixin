@@ -369,9 +369,7 @@ function submit()
     if(!checkPlate()) return;
 
     submitServer(function (){
-        loadCarInfo(function (){
-            window.location.href = "insurecarinfo.html";
-        });
+    	window.location.href = "insurecarinfo.html";
     });
 }
 
@@ -386,7 +384,45 @@ function submitServer(callback)
         setViewData("sessionid",result.sessionId);
         reloadView();
 
-        callback();
+        var plateno = getViewData("plateno");
+        if(!isEmpty(plateno)) {
+        	var cxOrder=result.cxOrder;
+			if(cxOrder!=null){
+				 var cxCarMessage=result.cxCarMessage;
+				 var registdate = typeof cxCarMessage.registerDate== "object"&& cxCarMessage.registerDate!=null?new Date(cxCarMessage.registerDate.time).Format("yyyy-MM-dd"):"";
+		         var transferdate =typeof cxCarMessage.transferDate== "object"&& cxCarMessage.transferDate!=null?new Date(cxCarMessage.transferDate.time).Format("yyyy-MM-dd"):"";
+				 var data = {
+			        "rackno": cxCarMessage.rackNo||"",
+			        "engineno": cxCarMessage.engineNo||"",
+			        "brandmodelname": cxCarMessage.vehicleBrand||"",
+			        "istransfer":cxCarMessage.transferFlag == "1"?"true":"false",
+	                "isforeign":cxCarMessage.ecdemicVehicleFlag == "1"?"true":"false",
+	                "registdate":registdate,
+	                "transferdate":transferdate,
+	                
+	                "seatcount":parseInt(cxCarMessage.seats||"0") + "",
+	                "fueltypecode":cxCarMessage.fuelType||"",
+	                "fueltypename":cxCarMessage.fuelTypeName||"",
+	                
+	                "ownername":cxOrder.ownerName||"",
+	                "ownermobile":"",
+	                "owneremail":"",
+	                "owneridcard":"",
+	                "ownernation":"",
+	                "ownerpublish":"",
+	                "owneridbegindate":"",
+	                "owneridenddate":""
+	                
+			    };
+			    setViewDatas(data);
+			}else{
+				//先加载 url的信息
+		        loadUrlInfo();
+			}
+        	
+        }
+      
+        callback();//跳转insurecarinfo.html
     };
 
     var randomno = getViewData("randomno");
@@ -402,39 +438,6 @@ function submitServer(callback)
         ServiceSend.saveSimpleCarInfo(randomno,channelcode,isnewplate,plateno,provincecode,provincename,citycode,cityname,fun);
     else
         $.get("data/savecarinfodata.json", fun);
-}
-
-function loadCarInfo(callback)
-{
-    // 方法定义
-    var fun = function (result){
-        if (result.status.statusCode != "000000") {
-            muiAlert(result.status.statusMessage);
-            return;
-        }
-
-        // 在这里 获得 续保信息
-
-        callback();
-    };
-
-    var plateno = getViewData("plateno");
-    if(isEmpty(plateno)) {
-    	callback();
-    	return;
-    }
-
-    //先加载 url的信息
-    loadUrlInfo();
-
-    if (!isFake){
-    	callback();
-    	// ServiceSend.loadCarInfo(plateno,fun);
-    }
-    else{
-    	$.get("data/loadcarinfodata.json", fun);
-    }
-        
 }
 
 function reloadView()

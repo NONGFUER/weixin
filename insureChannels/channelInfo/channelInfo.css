@@ -95,7 +95,7 @@ dd input[type=text] {
     font-size: 14px;
     float: right;
     margin-left: 4px;
-    width:68%;
+    width:62%;
     display:inline-block;
     text-align:right;
 }
@@ -114,4 +114,10 @@ dd input[type=text] {
     vertical-align: middle;
     margin-right: 5px;
     top: -2px;
+}
+b{
+	color:red;
+}
+.xz{
+	font-size:12px
 }

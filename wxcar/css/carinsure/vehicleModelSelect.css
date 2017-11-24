@@ -8,9 +8,7 @@ header {
 .searcharea{
 	width: 100%;
 	background-color: #ebebeb;
-	position: fixed;
-	top: 44px;
-	z-index: 100;
+	margin-top: 44px;
 	padding-bottom:10px; 
 }
 
@@ -257,7 +255,7 @@ aside ul li{
 	width: 70%;
 	height: 22.4375rem;
 	border-radius:3px;
-	margin-top: 70%;
+	margin-top: 250px;
 }
 .nowishd1 img{
 	margin-top:2.5rem;

@@ -1,4 +1,4 @@
-document.write("<script language='javascript' src='js/saverisk.js?v=20171110' ></script>");
+document.write("<script language='javascript' src='js/saverisk.js?v=20171123' ></script>");
 
 //显示专享服务
 var displayService = false;
@@ -481,6 +481,85 @@ function specialOperate(data)
         }
     }
 
+    
+    // 套餐一 单独处理
+    if(currentMeal == "meal1")
+    {
+        // 机动车损失险 不投保
+        if(riskcode == "carlosscoverage"){
+            data[riskcode + "value"] = "不投保";
+            data[riskcode + "code"] = "0";
+
+            setRiskData(riskcode + "value",data[riskcode + "value"]);
+            setRiskData(riskcode + "code",data[riskcode + "code"]);
+
+            data[riskcode + "mpvalue"] = "不投保";
+            data[riskcode + "mpcode"] = "0";
+
+            setRiskData(riskcode + "mpvalue",data[riskcode + "mpvalue"]);
+            setRiskData(riskcode + "mpcode",data[riskcode + "mpcode"]);
+        }
+        // 驾驶人责任险 不投保
+        if(riskcode == "drivercoverage"){
+            data[riskcode + "value"] = "不投保";
+            data[riskcode + "code"] = "0";
+
+            setRiskData(riskcode + "value",data[riskcode + "value"]);
+            setRiskData(riskcode + "code",data[riskcode + "code"]);
+
+            data[riskcode + "mpvalue"] = "不投保";
+            data[riskcode + "mpcode"] = "0";
+
+            setRiskData(riskcode + "mpvalue",data[riskcode + "mpvalue"]);
+            setRiskData(riskcode + "mpcode",data[riskcode + "mpcode"]);
+        }
+
+        // 乘客责任险 不投保
+        if(riskcode == "passengercoverage"){
+            data[riskcode + "value"] = "不投保";
+            data[riskcode + "code"] = "0";
+
+            setRiskData(riskcode + "value",data[riskcode + "value"]);
+            setRiskData(riskcode + "code",data[riskcode + "code"]);
+
+            data[riskcode + "mpvalue"] = "不投保";
+            data[riskcode + "mpcode"] = "0";
+
+            setRiskData(riskcode + "mpvalue",data[riskcode + "mpvalue"]);
+            setRiskData(riskcode + "mpcode",data[riskcode + "mpcode"]);
+        }
+
+        // 第三者责任险 投保 100万
+        if(riskcode == "thirdpartycoverage"){
+            data[riskcode + "value"] = "100万";
+            data[riskcode + "code"] = "1000000";
+
+            setRiskData(riskcode + "value",data[riskcode + "value"]);
+            setRiskData(riskcode + "code",data[riskcode + "code"]);
+
+            data[riskcode + "mpvalue"] = "投保";
+            data[riskcode + "mpcode"] = "1";
+
+            setRiskData(riskcode + "mpvalue",data[riskcode + "mpvalue"]);
+            setRiskData(riskcode + "mpcode",data[riskcode + "mpcode"]);
+        }
+
+        // 全车盗抢险 不投保
+        if(riskcode == "theftcoverage"){
+            data[riskcode + "value"] = "不投保";
+            data[riskcode + "code"] = "0";
+
+            setRiskData(riskcode + "value",data[riskcode + "value"]);
+            setRiskData(riskcode + "code",data[riskcode + "code"]);
+
+            data[riskcode + "mpvalue"] = "不投保";
+            data[riskcode + "mpcode"] = "0";
+
+            setRiskData(riskcode + "mpvalue",data[riskcode + "mpvalue"]);
+            setRiskData(riskcode + "mpcode",data[riskcode + "mpcode"]);
+        }
+    }
+    
     // 套餐二 单独处理
     if(currentMeal == "meal2")
     {

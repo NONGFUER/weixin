@@ -436,7 +436,7 @@ function getDistributionInfo()
             var provincename = getViewData("provincename");
             var cityname = getViewData("cityname");
             addressprovince = provincename + " " + cityname;
-            addressinfo = provincename + cityname;
+           // addressinfo = provincename + cityname;
             
         }
         if(isEmpty(addressname)) addressname = getViewData("ownername");

@@ -24,3 +24,6 @@ var provinceCode = urlParm.provinceCode + '';
 var cityCode = urlParm.cityCode + '';
 var agentId = urlParm.agentId + '';
 var salesChannels = urlParm.salesChannels + '';
+if(urlParm.shareFlag != 'Y'){
+	$('#local').removeClass('yincang')
+}

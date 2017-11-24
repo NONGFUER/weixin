@@ -37,10 +37,10 @@
      		</dl>
      		<dl class="insure-form-group">
 	     		<dt class="group-title">
-	     			<div class="group-title-main">渠道信息</div>
+	     			<div class="group-title-main">渠道信息<span class="xz">(带<b>*</b>项目为必选项)</span></div>
 	     		</dt>
 	     		<dd>
-	     			<label>渠道所属地区</label> 
+	     			<label><b>*</b>渠道所属地区</label> 
 
      				<span class="zi">市</span>
      				<img alt="" src="../../images/common/down.png" class="down1 cdown">
@@ -51,22 +51,22 @@
      				<span class="orgProvinceCode" id="orgProvinceCode">请选择</span>    				
 	     		</dd>
 	     		<dd>
-	     			<label>渠道名称</label><img alt="" src="../../images/common/down.png" class="down1 cdown"> <span class="chooicespan" id='qdName'>请选择</span>
+	     			<label><b>*</b>渠道名称</label><img alt="" src="../../images/common/down.png" class="down1 cdown"> <span class="chooicespan" id='qdName'>请选择</span>
 	     		</dd>
 	     		<dd class="ib">
-	     			<label>渠道网点名称</label><img alt="" src="../../images/common/down.png" class="down1 cdown"> <span class="chooicespan" id='qdDotName'>请选择</span>
+	     			<label><b>*</b>渠道网点名称</label><img alt="" src="../../images/common/down.png" class="down1 cdown"> <span class="chooicespan" id='qdDotName'>请选择</span>
 	     		</dd>
-	     		<dd class="qqhidden">
-	     			<label>渠道员工工号</label> <input type="text" id="salesmanCode" value="" onblur="validateSalesManInfo(this)" />
+	     		<dd >
+	     			<label>渠道员工工号</label> <input type="text" id="salesmanCode" value="" onblur="validateSalesManInfo(this)" maxlength='20' />
 	     		</dd>
-	     		<dd class="qqhidden">
-	     			<label>渠道员工名称</label> <input type="text" id="salesmanName" value="" readonly/>
+	     		<dd >
+	     			<label>渠道员工名称</label> <input type="text" id="salesmanName" value="" maxlength=20'  />
 	     		</dd>
-	     		<dd class="qqhidden">
-	     			<label>渠道员工手机号码</label> <input type="text" id="salesmanMobile" value="" readonly/>
+	     		<dd >
+	     			<label>渠道员工手机号码</label> <input type="text" id="salesmanMobile" maxlength='11' value="" />
 	     		</dd>
 	     		<dd>
-	     			<label>备注信息</label> <input type="text" id="remark" value="" />
+	     			<label>备注信息</label> <input type="text" id="remark" value="" maxlength='50'/>
 	     		</dd>
 	     		
      		</dl>
@@ -74,12 +74,13 @@
      	</div>
      </div>
 	<script src="../../js/util/zepto.min.js"></script>
+	<script src="../../js/util/weixin.js"></script>
 	<script src="../../js/mui/mui.min.js"></script>	
 	<script src="../../js/mui/mui.picker.min.js"></script>
 	<script src="../../js/util/base.js"></script>
 	<script src="../../js/util/common.js"></script>	
 	<script src="../publicParm.js"></script>	
-	<script src="channelInfo.js"></script>
+	<script src="channelInfo.js?v=2017112315"></script>
 			
 </body>
 </html>

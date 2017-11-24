@@ -237,9 +237,9 @@ function pullupRefreshlist(){
 }
 /*设置滑动区域*/
 $.setscroll = function(){
-	var Scrollheight = window.innerHeight- 162;
+	var Scrollheight = window.innerHeight- 170;
 	$("#wrapper").height(Scrollheight + "px");
-	$("#wrapper").css("top","162px");
+	$("#wrapper").css("top","170px");
 	mui("#wrapper").scroll();
 };
 
