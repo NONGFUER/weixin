@@ -12,12 +12,12 @@
     <link rel="stylesheet" href="insuranceMall.css">
 </head>
 <body>
-	<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>			
+	<header class="mui-bar mui-bar-nav hidden">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left hidden" id='arrow'></a>			
 			<h1 class="mui-title">保险商城</h1>
 			<a class="mui-pull-right locaicon yincang" id="local" onclick='deshi()'>出单二维码</a>
 	</header>
-	<div id="slider" >
+	<div id="bodyMuiScroll" >
 		<div class="">
 			<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
 				<div class="mui-scroll" id="tagScroll">
@@ -47,7 +47,7 @@
 	<script src="../../js/util/wx-gzpt-share.js"></script>
 	<script src="../../js/util/weixin.js"></script>
 	<script src="../../js/util/base.js"></script>
-	<script src="../../js/util/common.js"></script>
+	<script src="../../js/util/appCommon.js"></script>
 	<script src="../publicParm.js"></script>
 	<script src="insuranceMall.js?v=201711221626"></script>
 	<script src="../../js/mui/mui.min.js"></script>

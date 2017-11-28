@@ -19,11 +19,17 @@ if(getUrlQueryString("jsonKey")){
 var mobile = urlParm.mobile + '';
 var customerId = urlParm.customerId + '';
 var roleType = urlParm.roleType + '';
-//var openid = urlParm.openid;
+var openid = urlParm.openid;
 var provinceCode = urlParm.provinceCode + '';
 var cityCode = urlParm.cityCode + '';
 var agentId = urlParm.agentId + '';
 var salesChannels = urlParm.salesChannels + '';
+var entry = urlParm.entry;
 if(urlParm.shareFlag != 'Y'){
 	$('#local').removeClass('yincang')
+	$('#arrow').removeClass('hidden');
+}
+if( entry != 'app' ){
+	$("header").show();
+	$("#bodyMuiScroll").css("margin-top", "44px");
 }

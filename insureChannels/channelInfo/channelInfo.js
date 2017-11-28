@@ -450,6 +450,8 @@ function saveShowInfoCallback(data){
 			urlParm.cityCode = $("#orgCityCode").attr('name');
 			urlParm.agentId = $("#qdDotName").attr('agentId');
 			urlParm.salesChannels = $("#qdName").attr('name');
+			urlParm.title = '保险商城';
+			urlParm.rightIco = '6';			//出单二维码
 		var jsonStr = UrlEncode(JSON.stringify(urlParm));
 		window.location.href = base.url + 'weixin/insureChannels/insuranceMall/insuranceMall.html?jsonKey=' + jsonStr;
 	}
@@ -480,6 +482,16 @@ function chao(){
 	chaoFlag = '';
 }
 
+//返回上一页
+//app:返回渠道出单首页weixin/insureChannels/index.html 参数jsonkey
+//分享：不显示或者关闭
+//微信：返回渠道出单首页weixin/insureChannels/index.html	参数&字符参openid=ohNt9vx44UP2EnqzE6_C2dOXZQ4Q&mobile=12300000000&cusId=89884&roletype=01
 function backlast(){
-	
+	if( entry == 'app' ){
+		urlParm.title = '渠道出单';
+		var jsonStr = UrlEncode(JSON.stringify(urlParm));
+		window.location.href = base.url + 'weixin/insureChannels/index.html?jsonKey='+jsonStr;
+	}else if( entry == 'qudao'){
+		window.location.href = base.url + 'weixin/insureChannels/index.html?openid='+openid+'&mobile='+mobile+'&cusId='+customerId+'&roletype='+roleType;
+	}
 }

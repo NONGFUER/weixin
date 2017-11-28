@@ -37,28 +37,27 @@
 	<script src="../js/util/weixin.js"></script>
 	<script src="../js/mui/mui.min.js"></script>
 	<script src="../js/util/base.js"></script>
-	<script src="../js/util/common.js"></script>
+	<script src="../js/util/appCommon.js"></script>
 	<script type="text/javascript">
+		if(getUrlQueryString("jsonKey")){
+			var urlParm = JSON.parse(UrlDecode(getUrlQueryString("jsonKey")));
+				urlParm.title = '填写出单信息';
+				urlParm.mobile = urlParm.userCode;
+				urlParm.customerId = urlParm.cusId;
+		}else{
+			var urlParm = {};				
+			urlParm.mobile     = getUrlQueryString("mobile");	//手机号
+			urlParm.customerId = getUrlQueryString("cusId");	//用户id
+			urlParm.roleType   = getUrlQueryString("roletype"); //用户角色
+			urlParm.entry      = 'qudao'
+		}
+		var jsonStr = UrlEncode(JSON.stringify(urlParm));
+		var mobile = urlParm.mobile;
+		var customerId = urlParm.customerId;
+		var roleType = urlParm.roleType;
+		var entry = urlParm.entry;
 		$(function(){
-			//全国通用渠道
-			
-			if(getUrlQueryString("jsonKey")){
-				var urlParm = JSON.parse(UrlDecode(getUrlQueryString("jsonKey")));
-					urlParm.title = '填写出单信息';
-					urlParm.mobile = urlParm.userCode;
-					urlParm.customerId = urlParm.cusId;
-			}else{
-				var urlParm = {};				
-				urlParm.mobile     = getUrlQueryString("mobile");	//手机号
-				urlParm.customerId = getUrlQueryString("cusId");	//用户id
-				urlParm.roleType   = getUrlQueryString("roletype"); //用户角色
-				urlParm.entry      = 'qudao'
-			}
-			var jsonStr = UrlEncode(JSON.stringify(urlParm));
-			var mobile = urlParm.mobile;
-			var customerId = urlParm.customerId;
-			var roleType = urlParm.roleType;
-			var entry = urlParm.entry;
+			//全国通用渠道						
 			if( entry != 'app' ){
 				$("header").show();
 				$(".channelEntry").css("margin-top", "44px");

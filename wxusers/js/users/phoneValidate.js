@@ -234,6 +234,17 @@ function loginCallBack(data) {
 		var userName = data.returns.customerBasic.userName;
 		var type = data.returns.customerBasic.type;
 		var idAuth = data.returns.customerBasic.idAuth;
+		//有归属地区    跳下一个投保页 insure.html
+		//无归属地区    跳回详情页
+		var cityCode = data.returns.customerBasic.cityCode;
+		if($.isNull(cityCode)){
+			if(fromtype == 'onlineX' || fromtype == "onlineHealthX"){	//微信端登陆
+				window.location.href = base.url + 'weixin/insuranceMall/mall/insuranceMall.html?cusId='+customerId+'&mobile='+userName+'&roletype='+type+'&openid='+ openid;
+			}else if(fromtype == 'online' || fromtype == "onlineHealth" || fromtype == "ghx"){//分享情况下登陆
+				window.location.href = base.url + 'tongdaoApp/html/share/insurance/main/productDetail.html?openid='+openid+'&roletype='+type+'&mobile='+userName+'&shareMobile='+urlParm.shareMobile+'&shareCusId='+urlParm.shareCusId+'&provinceCode='+urlParm.provinceCode+'&cityCode='+urlParm.cityCode+'&ccId='+urlParm.ccId+'&customerId='+customerId+'&shareFlag=Y'
+				return false;
+			}
+		}
 		if(fromtype == "1") { //个人中心
 			window.location.href = "personal.html?fromtype=1&mobile=" + userName + "&roleType=" + type + "&customerId=" + customerId + "&openid=" + openid + "&wxchannel=" + wxchannel + "&idAuth=" + idAuth;
 		} else if(fromtype == "online") {
@@ -392,3 +403,4 @@ function toOnlineHealthHtmlX(customerId, userName, type) {
 function toQudaoHtml(customerId, userName, type) {		
 	window.location.href = base.url + "weixin/insureChannels/index.html?openid=" + openid +'&cusId='+ customerId +'&roletype='+type+'&mobile='+userName;
 }
+

@@ -46,7 +46,7 @@ function commodifyTagCallBack(data){
 		}
 		onlineProductRequest(document.getElementById('first'));
 		$('.tagg').unbind('tap').bind('tap',function(){
-			onlineProductRequest1($(this))
+			onlineProductRequest($(this))
 		});
 	}
 }
@@ -149,6 +149,10 @@ function agentInfoCallback(data){
 	if(data.statusCode == "000000"){
 		//agentId = data.returns.agentInfo.agentId + "";
 		cityCode = data.returns.customerBasic.cityCode;
+		if($.isNull(cityCode)){
+			var jsonStr = UrlEncode(JSON.stringify(urlParm));
+			window.location.href = base.url + 'weixin/insuranceMall/location/location.html?jsonKey='+jsonStr;
+		}
 		var cityName = data.returns.customerBasic.cityName;
 		provinceCode = data.returns.customerBasic.provinceCode;
 		var provinceName = data.returns.customerBasic.provinceName;	
@@ -174,7 +178,7 @@ function onlineProductRequest(obj){
 				"pageSize":"100",
 				"type":"01",
 				"salesChannels":"01",   //销售渠道：01佰盈渠道，02
-				"commodityCombinationShowType":"01" //商品组合展示类型01-线上；02-线下；03-即将上线   04-微信
+				"commodityCombinationShowType":"04" //商品组合展示类型01-线上；02-线下；03-即将上线   04-微信
 			}
 	}
 	$.reqAjaxs( url, sendJson, onlineProductCallback );

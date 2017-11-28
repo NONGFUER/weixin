@@ -76,7 +76,13 @@ function saveLocationCallback(data){
 				+ '&mobile=' + mobile
 				+ '&roletype=' + roleType
 				+ '&openid=' + openid
-		window.location.href = base.url + 'weixin/insuranceMall/mall/insuranceMall.html' + parmWechat;
+		if( urlParm.pagesource == 'insureShare'){
+			//?openid=ohNt9vx44UP2EnqzE6_C2dOXZQ4Q&roletype=01&mobile=12300000000&shareMobile=13852291705&shareCusId=812&provinceCode=null&cityCode=null&ccId=18&customerId=89884&shareFlag=Y
+			window.location.href = base.url + 'tongdaoApp/html/share/insurance/main/productDetail.html?openid='+urlParm.openid+'&roletype='+urlParm.roleType+'&mobile='+urlParm.mobile+'&shareMobile='+urlParm.shareMobile+'&shareCusId='+urlParm.shareCusId+'&provinceCode='+urlParm.provinceCode+'&cityCode='+urlParm.cityCode+'&ccId='+urlParm.ccId+'&customerId='+urlParm.customerId+'&shareFlag=Y';
+		}else{
+			window.location.href = base.url + 'weixin/insuranceMall/mall/insuranceMall.html' + parmWechat;
+		}
+		
 	}
 }
 

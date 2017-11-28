@@ -74,7 +74,7 @@ $.infoCallBack = function(data){
 				customerState = customerBasic.status;//离职状态
 				if( idAuth == "0" ){
 					//mobile=17317957601&roleType=01&customerId=89149&openid=ohNt9vwoSa9L2X66vFoc-q7UItg8&wxchannel=02&idAuth=0
-					window.location.href = "certification.html?customerId="+customerId+"&mobile="+phone+"&roleType="+roletype+"&openid="+openId+"&wxchannel="+wxchannel;
+					window.location.href = "certification.html?customerId="+customerId+"&mobile="+phone+"&roleType="+roletype+"&openid="+openId+"&wxchannel="+wxchannel+'&fromtype=1';
 				}
 				if(customerBasic.userImage == "" || customerBasic.userImage == null){
 					headImgUrl = "../../image/morentouxiang.png";

@@ -251,15 +251,15 @@ function toProduct(obj){
 	urlParm.mobile = mobile;									//mobile:"13852291705"																
 	urlParm.provinceCode = provinceCode;									//provinceCode:"200000"																
 	urlParm.roleType = roleType;								//roleType:"01"
-	urlParm.entry = "qudao";										//区分入口:微信渠道,微信保险商城
-																//ccCode:"00500006"  不需要
+	urlParm.entry = entry;										//区分入口:微信渠道,微信保险商城
+	urlParm.title = '产品详情';									//title:"产品详情"					
+	urlParm.rightIco = '0';															//ccCode:"00500006"  不需要
 																//rightIco:"0"
 																//leftIco:"1"
 																//downIco:"0"
 																//idAuth:"1"
 																//name:"张瑞"
-																//idNo:"41272719910403262X"
-																//title:"产品详情"
+																//idNo:"41272719910403262X"															
 																//transToken:"40bcc8a9c52618a928ab6165be49c711"
 																//userCode:"13852291705"
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
@@ -277,15 +277,15 @@ function toProductX(obj){
 	urlParm.mobile = mobile;									//mobile:"13852291705"																
 	urlParm.provinceCode = provinceCode;									//provinceCode:"200000"																
 	urlParm.roleType = roleType;								//roleType:"01"
-	urlParm.entry = "qudao";										//区分入口:微信渠道,微信保险商城
-																//ccCode:"00500006"  不需要
+	urlParm.entry = entry;										//区分入口:微信渠道,微信保险商城
+	urlparm.title = '产品详情'									//title:"产品详情"
+	urlParm.rightIco = '0';															//ccCode:"00500006"  不需要
 																//rightIco:"0"
 																//leftIco:"1"
 																//downIco:"0"
 																//idAuth:"1"
 																//name:"张瑞"
-																//idNo:"41272719910403262X"
-																//title:"产品详情"
+																//idNo:"41272719910403262X"																
 																//transToken:"40bcc8a9c52618a928ab6165be49c711"
 																//userCode:"13852291705"
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
@@ -316,10 +316,31 @@ function getAgentInfoCallback(data){
 	}
 }
 
-//跳转到定位
+//跳转到二维码出单
 function deshi(){
 	//urlParm.lastUrl = window.location.href;
-	urlParm.qrFlag = 'mall';
+	urlParm.qrFlag = 'mall';							//区别是从保险商城页跳过去还是从产品详情页跳过去
+	urlParm.title = '出单二维码';
+	urlParm.rightIco = '0';
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
 	window.location.href = base.url + 'weixin/insureChannels/QRCode/QRCode.html?jsonKey='+jsonStr;
+}
+
+function shareHandle(){
+	urlParm.qrFlag = 'mall';							//区别是从保险商城页跳过去还是从产品详情页跳过去
+	urlParm.title = '出单二维码';
+	urlParm.rightIco = '0';
+	var jsonStr = UrlEncode(JSON.stringify(urlParm));
+	window.location.href = base.url + 'weixin/insureChannels/QRCode/QRCode.html?jsonKey='+jsonStr;
+}
+
+//返回上一页
+//app:返回渠道出单首页weixin/insureChannels/index.html 参数jsonkey
+//分享：不显示或者关闭
+//微信：返回渠道出单首页weixin/insureChannels/index.html	参数&字符参openid=ohNt9vx44UP2EnqzE6_C2dOXZQ4Q&mobile=12300000000&cusId=89884&roletype=01
+function backlast(){
+	urlParm.title = '填写出单渠道';
+	urlParm.rightIco = '0';
+	var jsonStr = UrlEncode(JSON.stringify(urlParm));
+	window.location.href = base.url + 'weixin/insureChannels/channelInfo/channelInfo.html?jsonKey='+jsonStr;
 }
