@@ -143,3 +143,17 @@ function queryShowInfoCallback(data){
 		modelAlert(data.statusMessage)
 	}
 }
+
+function backlast(){
+	if( urlParm.qrFlag == 'mall' ){  //微信端保险商城进去
+		urlParm.rightIco = '6';
+		urlParm.title = '保险商城';
+		var jsonStr = UrlEncode(JSON.stringify(urlParm));
+		window.location.href = base.url +'weixin/insureChannels/insuranceMall/insuranceMall.html?jsonKey='+jsonStr;
+	}else if( urlParm.qrFlag == 'detail' ){//app端产品详情页进去
+		urlParm.rightIco = '1';
+		urlParm.title = '产品详情';
+		var jsonStr = UrlEncode(JSON.stringify(urlParm));
+		window.location.href = base.url +'tongdaoApp/html/insurance/main/productDetail.html?jsonKey='+jsonStr;
+	}
+}

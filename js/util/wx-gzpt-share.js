@@ -19,7 +19,7 @@ $.getConfigBack = function(param) {
 			nonceStr : param.returns.config.nonceStr, // 必填，生成签名的随机串
 			signature : param.returns.config.signature,// 必填，签名，见附录1
 			"url":location.href.split('#')[0],
-			jsApiList : [ 'chooseImage','onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','hideMenuItems','showMenuItems']
+			jsApiList : [ 'chooseImage','onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','hideMenuItems','showMenuItems','uploadImage']
 		// 必填，需要使用的JS接口列表，所有JS接口列表见附录2
 		});
 		wx.error(function(res) {
@@ -29,7 +29,7 @@ $.getConfigBack = function(param) {
 		});
 		wx.ready(function() {
 			wx.checkJsApi({
-			    jsApiList: ['chooseImage','onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+			    jsApiList: ['chooseImage','onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','uploadImage'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
 			    success: function(res) {
 			    	//alert("wxReady--" + res);
 			        // 以键值对的形式返回，可用的api值true，不可用为false

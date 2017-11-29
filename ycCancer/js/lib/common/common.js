@@ -168,7 +168,7 @@ function cxShareMethod(cxSessionId) {
 		}
 		objcObject.share(shareParams)
 	} else if(systemsource == "android") {
-		android.JsShareBy("2", "同道出行", "专业车险在线展业平台", "", shareurl);
+		android.JsShareBy("0","0", "同道出行", "专业车险在线展业平台", "", shareurl);
 	}
 }
 //防癌险 壳上分享方法

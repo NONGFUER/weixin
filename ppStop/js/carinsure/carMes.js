@@ -237,9 +237,6 @@ $(function() {
 	iframe();
 	
 	/** ************************车主信息********************************* */
-	$("#checkNo").val("请输入验证码").css("color","#888");
-	$.replacePlaceholder($("#checkNo"), "请输入验证码");
-	
 	$("#carselectChannel").unbind("tap").bind("tap",function() {
 		selectChannel();
 		$("#brand_model_input").val("");

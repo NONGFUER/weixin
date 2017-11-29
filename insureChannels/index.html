@@ -51,7 +51,7 @@
 			urlParm.roleType   = getUrlQueryString("roletype"); //用户角色
 			urlParm.entry      = 'qudao'
 		}
-		var jsonStr = UrlEncode(JSON.stringify(urlParm));
+		
 		var mobile = urlParm.mobile;
 		var customerId = urlParm.customerId;
 		var roleType = urlParm.roleType;
@@ -62,7 +62,8 @@
 				$("header").show();
 				$(".channelEntry").css("margin-top", "44px");
 			}			
-			$('#mainChannel').unbind('tap').bind('tap',function(){												  
+			$('#mainChannel').unbind('tap').bind('tap',function(){	
+				var jsonStr = UrlEncode(JSON.stringify(urlParm));
 				window.location.href = base.url + 'weixin/insureChannels/channelInfo/channelInfo.html?jsonKey=' + jsonStr;//
 			});
 			//其他渠道
@@ -70,6 +71,8 @@
 				if( entry == 'qudao'){
 					window.location.href = base.url + '/weixin/ycCancer/html/insurance/main/cancerRisk.html?openid='+getUrlQueryString("openid")+'&mobile='+getUrlQueryString("mobile")+'&cusId='+getUrlQueryString("cusId")+'&type='+getUrlQueryString("roletype")+'&flag=1&channel=yc';//
 				}else{
+					urlParm.title = '产品列表';
+					var jsonStr = UrlEncode(JSON.stringify(urlParm));
 					window.location.href = base.url + '/weixin/ycCancer/html/insurance/main/cancerRisk.html?jsonKey=' + jsonStr;
 				}			
 			});

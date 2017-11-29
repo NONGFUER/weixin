@@ -23,3 +23,6 @@ function makeJsonKey(ccId,mobile,customerId,roleType,openid){
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
 	return jsonStr;
 }
+function backlast(){
+	
+}

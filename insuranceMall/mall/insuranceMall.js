@@ -5,6 +5,8 @@ $(function(){
 	}	
 	if($.isNull(ctCode)){
 		getAgentInfoRequest();   //获取当前用户基本信息
+	}else if($.isNull(ctName)){
+		getAgentInfoRequest();   //获取当前用户基本信息
 	}else{
 		$('#local').text(ctName);
 	}
@@ -15,6 +17,49 @@ $(function(){
 		interval: 2000
 	});
 	mui('.mui-scroll-wrapper').scroll();
+	if( urlParm.shareFlag != 'Y' && roleType != '00'){
+		var method = function() {
+			var title = "同道保险";
+			var desc = "为您提供专业的保险服务";
+			var picUrl = base.url+'tongdaoApp/image/share/tongdaoic.png'		
+			var shareUrl = base.url+"tongdaoApp/html/share/kongbai.html?mobile="+mobile+'&ccId=&type=12';
+			wx.showMenuItems({
+				menuList: ['menuItem:share:appMessage', 'menuItem:share:timeline'] // 要显示的菜单项
+			});
+	
+			//分享给朋友
+			wx.onMenuShareAppMessage({
+				title: title, // 分享标题
+				desc: desc, // 分享描述
+				link: shareUrl, // 分享链接
+				imgUrl: picUrl, // 分享图标
+				type: '', // 分享类型,music、video或link，不填默认为link
+				dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+				success: function() {
+					// 用户确认分享后执行的回调函数
+					// mui.alert("您已成功分享给好友！","温馨提示");
+				},
+				cancel: function() {
+					// 用户取消分享后执行的回调函数
+					mui.alert("您取消了分享！", "温馨提示");
+				}
+			});
+			//分享到朋友圈
+			wx.onMenuShareTimeline({
+				title: title + "-" + desc, // 分享描述, // 分享标题  
+				link: shareUrl, // 分享链接  
+				imgUrl: picUrl, // 分享图标  
+				success: function() {
+					// 用户确认分享后执行的回调函数  
+				},
+				cancel: function() {
+					// 用户取消分享后执行的回调函数  
+					mui.alert("您取消了分享！", "温馨提示");
+				}
+			});
+		}
+		getConfig(method);
+	}
 });
 
 //获取商品类别标签

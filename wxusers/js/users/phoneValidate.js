@@ -238,9 +238,7 @@ function loginCallBack(data) {
 		//无归属地区    跳回详情页
 		var cityCode = data.returns.customerBasic.cityCode;
 		if($.isNull(cityCode)){
-			if(fromtype == 'onlineX' || fromtype == "onlineHealthX"){	//微信端登陆
-				window.location.href = base.url + 'weixin/insuranceMall/mall/insuranceMall.html?cusId='+customerId+'&mobile='+userName+'&roletype='+type+'&openid='+ openid;
-			}else if(fromtype == 'online' || fromtype == "onlineHealth" || fromtype == "ghx"){//分享情况下登陆
+			if(fromtype == 'online' || fromtype == "onlineHealth" || fromtype == "ghx"){//分享情况下登陆
 				window.location.href = base.url + 'tongdaoApp/html/share/insurance/main/productDetail.html?openid='+openid+'&roletype='+type+'&mobile='+userName+'&shareMobile='+urlParm.shareMobile+'&shareCusId='+urlParm.shareCusId+'&provinceCode='+urlParm.provinceCode+'&cityCode='+urlParm.cityCode+'&ccId='+urlParm.ccId+'&customerId='+customerId+'&shareFlag=Y'
 				return false;
 			}
@@ -277,6 +275,8 @@ function loginCallBack(data) {
 			toOnjiachangHealthHtml(customerId, userName, type);
 		} else if(fromtype == "10"){
 			toQudaoHtml(customerId, userName, type );
+		} else if(fromtype == 'onlineMall'){
+			window.location.href = base.url + 'weixin/insuranceMall/mall/insuranceMall.html?cusId='+customerId+'&mobile='+userName+'&roletype='+type+'&openid='+ openid;
 		}
 	} else {
 		modelAlert(data.statusMessage);

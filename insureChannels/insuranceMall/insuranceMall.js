@@ -253,7 +253,7 @@ function toProduct(obj){
 	urlParm.roleType = roleType;								//roleType:"01"
 	urlParm.entry = entry;										//区分入口:微信渠道,微信保险商城
 	urlParm.title = '产品详情';									//title:"产品详情"					
-	urlParm.rightIco = '0';															//ccCode:"00500006"  不需要
+	urlParm.rightIco = '1';															//ccCode:"00500006"  不需要
 																//rightIco:"0"
 																//leftIco:"1"
 																//downIco:"0"
@@ -262,6 +262,7 @@ function toProduct(obj){
 																//idNo:"41272719910403262X"															
 																//transToken:"40bcc8a9c52618a928ab6165be49c711"
 																//userCode:"13852291705"
+	urlParm.sourcePage = 'qudaoMall'
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
 	window.location.href = base.url + urlto +'?jsonKey='+jsonStr;	
 }
@@ -278,8 +279,8 @@ function toProductX(obj){
 	urlParm.provinceCode = provinceCode;									//provinceCode:"200000"																
 	urlParm.roleType = roleType;								//roleType:"01"
 	urlParm.entry = entry;										//区分入口:微信渠道,微信保险商城
-	urlparm.title = '产品详情'									//title:"产品详情"
-	urlParm.rightIco = '0';															//ccCode:"00500006"  不需要
+	urlParm.title = '产品详情'									//title:"产品详情"
+	urlParm.rightIco = '1';															//ccCode:"00500006"  不需要
 																//rightIco:"0"
 																//leftIco:"1"
 																//downIco:"0"
@@ -288,6 +289,7 @@ function toProductX(obj){
 																//idNo:"41272719910403262X"																
 																//transToken:"40bcc8a9c52618a928ab6165be49c711"
 																//userCode:"13852291705"
+	urlParm.sourcePage = 'qudaoMall'
 	var jsonStr = UrlEncode(JSON.stringify(urlParm));
 	window.location.href = urlto +'?jsonKey='+jsonStr;	
 }

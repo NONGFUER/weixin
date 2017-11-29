@@ -53,6 +53,7 @@ function initData()
 
         var backurl = getUrlParam("backurl");
         if(isEmpty(backurl)) backurl = getViewData("basebackurl");
+        if(regex.base64.test(backurl)) backurl = new Base64().decode(backurl);  
         setViewData("basebackurl",backurl);
 
         var isnewplate = getViewData("isnewplate");
@@ -67,10 +68,12 @@ function vaildateData()
 {
     var randomno = getUrlParam("randomno");
     var backurl = getUrlParam("backurl");
+    if(regex.base64.test(backurl)) backurl = new Base64().decode(backurl);  
     if(isEmpty(backurl)) backurl = getViewData("basebackurl");
 
     if(isEmpty(randomno))
     {
+    	
         muiAlert("对不起,信息不完整请重试!");
         if(isEmpty(backurl))
             window.history.go(-2);
@@ -384,43 +387,42 @@ function submitServer(callback)
         setViewData("sessionid",result.sessionId);
         reloadView();
 
-        var plateno = getViewData("plateno");
-        if(!isEmpty(plateno)) {
-        	var cxOrder=result.cxOrder;
-			if(cxOrder!=null){
-				 var cxCarMessage=result.cxCarMessage;
-				 var registdate = typeof cxCarMessage.registerDate== "object"&& cxCarMessage.registerDate!=null?new Date(cxCarMessage.registerDate.time).Format("yyyy-MM-dd"):"";
-		         var transferdate =typeof cxCarMessage.transferDate== "object"&& cxCarMessage.transferDate!=null?new Date(cxCarMessage.transferDate.time).Format("yyyy-MM-dd"):"";
-				 var data = {
-			        "rackno": cxCarMessage.rackNo||"",
-			        "engineno": cxCarMessage.engineNo||"",
-			        "brandmodelname": cxCarMessage.vehicleBrand||"",
-			        "istransfer":cxCarMessage.transferFlag == "1"?"true":"false",
-	                "isforeign":cxCarMessage.ecdemicVehicleFlag == "1"?"true":"false",
-	                "registdate":registdate,
-	                "transferdate":transferdate,
-	                
-	                "seatcount":parseInt(cxCarMessage.seats||"0") + "",
-	                "fueltypecode":cxCarMessage.fuelType||"",
-	                "fueltypename":cxCarMessage.fuelTypeName||"",
-	                
-	                "ownername":cxOrder.ownerName||"",
-	                "ownermobile":"",
-	                "owneremail":"",
-	                "owneridcard":"",
-	                "ownernation":"",
-	                "ownerpublish":"",
-	                "owneridbegindate":"",
-	                "owneridenddate":""
-	                
-			    };
-			    setViewDatas(data);
-			}else{
-				//先加载 url的信息
-		        loadUrlInfo();
-			}
+       
+		var cxOrder=result.cxOrder;
+		if(cxOrder!=null){
+			 var cxCarMessage=result.cxCarMessage;
+			 var registdate = typeof cxCarMessage.registerDate== "object"&& cxCarMessage.registerDate!=null?new Date(cxCarMessage.registerDate.time).Format("yyyy-MM-dd"):"";
+	         var transferdate =typeof cxCarMessage.transferDate== "object"&& cxCarMessage.transferDate!=null?new Date(cxCarMessage.transferDate.time).Format("yyyy-MM-dd"):"";
+			 var data = {
+		        "rackno": cxCarMessage.rackNo||"",
+		        "engineno": cxCarMessage.engineNo||"",
+		        "brandmodelname": cxCarMessage.vehicleBrand||"",
+		        "istransfer":cxCarMessage.transferFlag == "1"?"true":"false",
+	            "isforeign":cxCarMessage.ecdemicVehicleFlag == "1"?"true":"false",
+	            "registdate":registdate,
+	            "transferdate":transferdate,
+	            
+	            "seatcount":parseInt(cxCarMessage.seats||"0") + "",
+	            "fueltypecode":cxCarMessage.fuelType||"",
+	            "fueltypename":cxCarMessage.fuelTypeName||"",
+	            
+	            "ownername":cxOrder.ownerName||"",
+	            "ownermobile":"",
+	            "owneremail":"",
+	            "owneridcard":"",
+	            "ownernation":"",
+	            "ownerpublish":"",
+	            "owneridbegindate":"",
+	            "owneridenddate":""
+	            
+		    };
+		    setViewDatas(data);
+		}else{
+			 var plateno = getViewData("plateno");
+			//先加载 url的信息
+	        loadUrlInfo(plateno);
+		}
         	
-        }
       
         callback();//跳转insurecarinfo.html
     };

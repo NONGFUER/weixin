@@ -83,13 +83,13 @@ function setEvent()
     });
 
     $("#jqx").unbind("tap").bind("tap",function() {
-        var begindate = new Date(getViewData("jqxbegindate"));
+        var begindate=addDate(1);
         var enddate = addDate(90);
         popJqxAndBusinessDate("jqxbegindate",$("#jqx input").val(),begindate,enddate);
     });
 
     $("#business").unbind("tap").bind("tap",function() {
-        var begindate = new Date(getViewData("businessbegindate"));
+    	var begindate=addDate(1);
         var enddate = addDate(90);
         popJqxAndBusinessDate("businessbegindate",$("#business input").val(),begindate,enddate);
     });

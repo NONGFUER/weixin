@@ -19,10 +19,12 @@ if(getUrlQueryString("jsonKey")){
 	var agentId = getUrlQueryString("agentId")+ '' ? getUrlQueryString("agentId")+"" : "";
 	var provinceCode = $.isNull(getUrlQueryString("provinceCode")) ? '' :getUrlQueryString("provinceCode");
 	var cityCode = $.isNull(getUrlQueryString("cityCode")) ? '' :getUrlQueryString("cityCode");
+	var shareFlag =$.isNull(getUrlQueryString("shareFlag")) ? '' :getUrlQueryString("shareFlag");
 	urlParm.mobile     = mobile;
 	urlParm.customerId = customerId;
 	urlParm.roleType   = roleType;
 	urlParm.openid     = openid;
+	urlParm.shareFlag  = shareFlag;
 }
 
 
